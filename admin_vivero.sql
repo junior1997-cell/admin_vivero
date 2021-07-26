@@ -1,0 +1,102 @@
+-- MySQL Workbench Synchronization
+-- Generated: 2021-07-26 11:55
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: Junior
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+CREATE SCHEMA IF NOT EXISTS `admin_vivero` DEFAULT CHARACTER SET utf8 ;
+
+CREATE TABLE IF NOT EXISTS `admin_vivero`.`planta` (
+  `idplanta` INT(11) NOT NULL AUTO_INCREMENT,
+  `categoria_idcategoria` INT(11) NOT NULL,
+  `color_idcolor` INT(11) NOT NULL,
+  `nombre` TEXT NULL DEFAULT NULL,
+  `nombre_cientifico` TEXT NULL DEFAULT NULL,
+  `familia` TEXT NULL DEFAULT NULL,
+  `apodo` TEXT NULL DEFAULT NULL,
+  `descripcion` TEXT NULL DEFAULT NULL,
+  `img` TEXT NULL DEFAULT NULL,
+  `fecha` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `estado` CHAR(1) NULL DEFAULT 1,
+  PRIMARY KEY (`idplanta`),
+  INDEX `fk_planta_categoria_idx` (`categoria_idcategoria` ASC) VISIBLE,
+  INDEX `fk_planta_color1_idx` (`color_idcolor` ASC) VISIBLE,
+  CONSTRAINT `fk_planta_categoria`
+    FOREIGN KEY (`categoria_idcategoria`)
+    REFERENCES `admin_vivero`.`categoria` (`idcategoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_planta_color1`
+    FOREIGN KEY (`color_idcolor`)
+    REFERENCES `admin_vivero`.`color` (`idcolor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `admin_vivero`.`categoria` (
+  `idcategoria` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(50) NULL DEFAULT NULL,
+  `fecha` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `estado` CHAR(1) NULL DEFAULT '1',
+  PRIMARY KEY (`idcategoria`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `admin_vivero`.`color` (
+  `idcolor` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(50) NULL DEFAULT NULL,
+  `fecha` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `estado` CHAR(1) NULL DEFAULT '1',
+  PRIMARY KEY (`idcolor`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `admin_vivero`.`user` (
+  `iduser` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(50) NULL DEFAULT NULL,
+  `apellidos` VARCHAR(50) NULL DEFAULT NULL,
+  `dni` VARCHAR(9) NULL DEFAULT NULL,
+  `direccion` TEXT NULL DEFAULT NULL,
+  `celular` VARCHAR(15) NULL DEFAULT NULL,
+  `correo` TEXT NULL DEFAULT NULL,
+  `img` TEXT NULL DEFAULT NULL,
+  `usuario` VARCHAR(50) NULL DEFAULT NULL,
+  `password` VARCHAR(50) NULL DEFAULT NULL,
+  `fecha` TIMESTAMP NULL DEFAULT NULL,
+  `estado` CHAR(1) NULL DEFAULT '1',
+  PRIMARY KEY (`iduser`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `admin_vivero`.`nosotros` (
+  `idnosotros` INT(11) NOT NULL AUTO_INCREMENT,
+  `mision` TEXT NULL DEFAULT NULL,
+  `vision` TEXT NULL DEFAULT NULL,
+  `descripcion` TEXT NULL DEFAULT NULL,
+  `img` TEXT NULL DEFAULT NULL,
+  `fecha` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `estado` CHAR(1) NULL DEFAULT '1',
+  PRIMARY KEY (`idnosotros`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `admin_vivero`.`carrucel` (
+  `idcarrucel` INT(11) NOT NULL AUTO_INCREMENT,
+  `img` TEXT NULL DEFAULT NULL,
+  `categoria` VARCHAR(50) NULL DEFAULT NULL,
+  `fecha` TIMESTAMP NULL DEFAULT NULL,
+  `estado` CHAR(1) NULL DEFAULT '1',
+  PRIMARY KEY (`idcarrucel`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

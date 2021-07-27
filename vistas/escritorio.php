@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <?php
+      // REQUIRED CSS
       require 'header.php';
-    ?>  
+    ?>
+    <title>Vivero | Escritorio</title>  
   </head>
-  <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed">
     <div class="wrapper">
-      <!-- Preloader -->
+      <!-- Precargado -->
       <div class="preloader flex-column justify-content-center align-items-center">
         <img class="animation__wobble" src="../freshshop/images/logo.png" alt="AdminLTELogo" height="120" width="260" />
       </div>
-      
+      <!-- Fin-Precargado -->
+
       <?php
+        // REQUIRED NAVBAR "ARRIBA"
         require 'navbar.php';
+        // REQUIRED SIDEBAR "LATERAL IZQUIERDA"
         require 'sidebar.php';
       ?>      
 
-      <!-- Content Wrapper. Contains page content -->
+      <!-- Contenido de la página -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Contentenido Header -->
         <div class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
@@ -39,9 +45,9 @@
           </div>
           <!-- /.container-fluid -->
         </div>
-        <!-- /.content-header -->
+        <!-- Fin-header -->
 
-        <!-- Main content -->
+        <!-- Contenido Boby -->
         <section class="content">
           <div class="container-fluid">
             <!-- Info boxes -->
@@ -872,49 +878,19 @@
           </div>
           <!--/. container-fluid -->
         </section>
-        <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
+        <!-- Fin-Body -->
 
-      
+      </div>            
+      <!-- Fin-contenido -->
 
-      <!-- Main Footer -->
-      <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block"><b>Version</b> 3.1.0</div>
-      </footer>
+      <?php
+        require 'footer.php';
+      ?>
+    </div> 
 
-      <!-- Control Sidebar -->
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-      </aside>
-      <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../dist/js/adminlte.js"></script>
-
-    <!-- PAGE PLUGINS -->
-    <!-- jQuery Mapael -->
-    <script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-    <script src="../plugins/raphael/raphael.min.js"></script>
-    <script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
-    <script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
-    <!-- ChartJS -->
-    <script src="../plugins/chart.js/Chart.min.js"></script>
-
-    <!-- AdminLTE for demo purposes -->
-    <script src="../dist/js/demo.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../dist/js/pages/dashboard2.js"></script>
+    <?php
+      // REQUIRED SCRIPTS
+      require 'script.php';
+    ?>
   </body>
 </html>

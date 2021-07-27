@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AdminLTE 3 | Dashboard 2</title>
+
 
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
@@ -10,9 +10,6 @@
 <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
-
-
-
 
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -26,3 +23,7 @@
 <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+
+<!-- icono -->    
+<link rel="apple-touch-icon" href="../freshshop/images/logo-ico.png">
+<link rel="shortcut icon" href="../freshshop/images/logo-ico.png">

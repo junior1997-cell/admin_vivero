@@ -2,24 +2,30 @@
 <html lang="en">
   <head>
     <?php
+      // REQUIRED CSS
       require 'header.php';
     ?>
+    
+    <title>Vivero | Galeria</title>
   </head>
   <body class="hold-transition  sidebar-mini layout-fixed  layout-navbar-fixed">
     <div class="wrapper">
-      <!-- Preloader -->
+      <!-- Precargado -->
       <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="../dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60" />
+        <img class="animation__shake" src="../freshshop/images/logo.png" alt="AdminLTELogo" height="120" width="260" />
       </div>
+      <!-- Fin Precargado -->
 
       <?php
+        // REQUIRED NAVBAR "ARRIBA"
         require 'navbar.php';
+        // REQUIRED SIDEBAR "LATERAL IZQUIERDA"
         require 'sidebar.php';
-      ?>
+      ?>   
 
-      <!-- Content Wrapper. Contains page content -->
+      <!-- Contenido de la página -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Contentenido Header -->
         <div class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
@@ -39,9 +45,9 @@
           </div>
           <!-- /.container-fluid -->
         </div>
-        <!-- /.content-header -->
+        <!-- Fin-header -->
 
-        <!-- Main content -->
+        <!-- Contenido Boby -->
         <section class="content">
           <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
@@ -317,26 +323,19 @@
           </div>
           <!-- /.container-fluid -->
         </section>
-        <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
+        <!-- Fin-Body -->
 
-      <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block"><b>Version</b> 3.1.0</div>
-      </footer>
+      </div> 
+      <!-- Fin contenido --> 
 
-      <!-- Control Sidebar -->
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-      </aside>
-      <!-- /.control-sidebar -->
+      <?php
+        require 'footer.php';
+      ?>
     </div>
-    <!-- ./wrapper -->
 
+    <!-- REQUIRED SCRIPTS -->
     <?php
-      require 'footer.php';
+      require 'script.php';
     ?>
   </body>
 </html>

@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <?php
       // REQUIRED CSS
       require 'header.php';
     ?>
-    <title>Vivero | Escritorio</title>  
+    
+    <title>Vivero | Agregar Categoria</title>
   </head>
-  <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed">
+  <body class="hold-transition  sidebar-mini layout-fixed  layout-navbar-fixed">
     <div class="wrapper">
       <!-- Precargado -->
       <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble" src="../freshshop/images/logo.png" alt="AdminLTELogo" height="120" width="260" />
+        <img class="animation__shake" src="../freshshop/images/logo.png" alt="AdminLTELogo" height="120" width="260" />
       </div>
-      <!-- Fin-Precargado -->
+      <!-- Fin Precargado -->
 
       <?php
         // REQUIRED NAVBAR "ARRIBA"
         require 'navbar.php';
         // REQUIRED SIDEBAR "LATERAL IZQUIERDA"
         require 'sidebar.php';
-      ?>      
+      ?>   
 
       <!-- Contenido de la página -->
       <div class="content-wrapper">
-        
         <!-- Contentenido Header -->
         <div class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Dashboard v22</h1>
+                <h1 class="m-0">Dashboard</h1>
               </div>
               <!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Dashboard v2</li>
+                  <li class="breadcrumb-item active">Dashboard v1</li>
                 </ol>
               </div>
               <!-- /.col -->
@@ -51,80 +50,80 @@
         <!-- Contenido Boby -->
         <section class="content">
           <div class="container-fluid">
-            <!-- Info boxes -->
+            <!-- Small boxes (Stat box) -->
             <div class="row">
-              <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box">
-                  <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>150</h3>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">CPU Traffic</span>
-                    <span class="info-box-number">
-                      10
-                      <small>%</small>
-                    </span>
+                    <p>New Orders</p>
                   </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-              </div>
-              <!-- /.col -->
-              <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                  <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Likes</span>
-                    <span class="info-box-number">41,410</span>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
                   </div>
-                  <!-- /.info-box-content -->
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>53<sup style="font-size: 20px;">%</sup></h3>
 
-              <!-- fix for small devices only -->
-              <div class="clearfix hidden-md-up"></div>
-
-              <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                  <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Sales</span>
-                    <span class="info-box-number">760</span>
+                    <p>Bounce Rate</p>
                   </div>
-                  <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-              </div>
-              <!-- /.col -->
-              <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                  <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">New Members</span>
-                    <span class="info-box-number">2,000</span>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
                   </div>
-                  <!-- /.info-box-content -->
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>44</h3>
+
+                    <p>User Registrations</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>65</h3>
+
+                    <p>Unique Visitors</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
             </div>
-            <!-- /.row -->           
-
+            <!-- /.row -->
             <!-- Main row -->
             <div class="row">
-              <div class="col-md-12">
+              <section class="col-lg-12 connectedSortable">
                 <!-- DIRECT CHAT -->
-                <div class="card direct-chat direct-chat-warning">
+                <div class="card direct-chat direct-chat-primary">
                   <div class="card-header">
                     <h3 class="card-title">Direct Chat</h3>
 
                     <div class="card-tools">
-                      <span title="3 New Messages" class="badge badge-warning">3</span>
+                      <span title="3 New Messages" class="badge badge-primary">3</span>
                       <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -310,7 +309,7 @@
                       <div class="input-group">
                         <input type="text" name="message" placeholder="Type Message ..." class="form-control" />
                         <span class="input-group-append">
-                          <button type="button" class="btn btn-warning">Send</button>
+                          <button type="button" class="btn btn-primary">Send</button>
                         </span>
                       </div>
                     </form>
@@ -318,24 +317,24 @@
                   <!-- /.card-footer-->
                 </div>
                 <!--/.direct-chat -->
-              </div>
+              </section>               
             </div>
-            <!-- /.row -->
+            <!-- /.row (main row) -->
           </div>
-          <!--/. container-fluid -->
+          <!-- /.container-fluid -->
         </section>
         <!-- Fin-Body -->
 
-      </div>            
-      <!-- Fin-contenido -->
+      </div> 
+      <!-- Fin contenido --> 
 
       <?php
         require 'footer.php';
       ?>
-    </div> 
+    </div>
 
+    <!-- REQUIRED SCRIPTS -->
     <?php
-      // REQUIRED SCRIPTS
       require 'script.php';
     ?>
   </body>

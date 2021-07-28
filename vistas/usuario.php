@@ -106,8 +106,9 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="formulario_usuario">
                     <div class="row">
+                      <input type ="number" class="form-control" placeholder="DNI" name="dni" id="dni" min="8">
                       <!-- =================== DNI ==================== -->
                       <div class="col-md-6" style="padding-bottom: 10px;">
                             <label for="dni" class="control-label">DNI</label>
@@ -193,7 +194,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-success">Save changes</button>
+                  <button type="button" id="guardar_registro" class="btn btn-success">Save changes</button>
                 </div>
               </div>
               <!-- /.modal-content -->

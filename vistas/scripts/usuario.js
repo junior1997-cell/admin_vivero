@@ -5,10 +5,8 @@ function init(){
 	mostrarform(false);
 	listar();
 
-	$("#formulario").on("submit",function(e)
-	{
-		guardaryeditar(e);	
-	})
+  $("#guardar_registro").on('click', function(e){ $("#formulario_usuario").submit(); });
+	$("#formulario_usuario").on("submit",function(e){	guardaryeditar(e); })
 
 	$("#imagenmuestra").hide();
 	//Mostramos los permisos
@@ -16,7 +14,16 @@ function init(){
 	        $("#permisos").html(r);
 	});
 	$('#mAcceso').addClass("treeview active");
-    $('#lUsuarios').addClass("active");
+  $('#lUsuarios').addClass("active");
+
+  var Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
+   
+  
 }
 
 //Función limpiar
@@ -107,21 +114,24 @@ function listar()
 function guardaryeditar(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	$("#btnGuardar").prop("disabled",true);
-	var formData = new FormData($("#formulario")[0]);
-
+	var formData = new FormData($("#formulario_usuario")[0]);
+  console.log(formData);
 	$.ajax({
-		url: "../ajax/usuario.php?op=guardaryeditar",
+		url: "../ajax/usuario.ajax.php?op=guardaryeditar",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
 	    processData: false,
 
 	    success: function(datos)
-	    {                    
-	          bootbox.alert(datos);	          
-	          mostrarform(false);
-	          tabla.ajax.reload();
+	    {      
+        console.log(datos);              
+        if (datos == 1) {
+          toastr.success('Cliente Registrado Correctamente.')
+        } else {
+          toastr.error('No se pudo completar correctamente la accion.')
+        }
+	      tabla.ajax.reload();
 	    }
 
 	});

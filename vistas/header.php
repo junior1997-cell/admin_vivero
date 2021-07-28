@@ -14,6 +14,11 @@
 <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+<!-- Toastr -->
+<link rel="stylesheet" href="../plugins/toastr/toastr.min.css">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
 <!-- Theme style -->
 <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
 

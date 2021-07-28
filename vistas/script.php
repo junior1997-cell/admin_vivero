@@ -41,12 +41,16 @@
 <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+<!-- Toastr -->
+<script src="../plugins/toastr/toastr.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
  
-
 
 
 <!-- PAGE PLUGINS -->
@@ -55,4 +59,3 @@
 <script src="../plugins/raphael/raphael.min.js"></script>
 <script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
 <script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
-

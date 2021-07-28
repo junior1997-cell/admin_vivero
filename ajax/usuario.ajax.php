@@ -20,47 +20,33 @@ $clave=isset($_POST["clave"])? limpiarCadena($_POST["clave"]):"";
 $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
 
 switch ($_GET["op"]){
-	case 'guardaryeditar':
-		if (!isset($_SESSION["nombre"]))
-		{
-		  header("Location: ../vistas/login.html");//Validamos el acceso solo a los usuarios logueados al sistema.
-		}
-		else
-		{
-			//Validamos el acceso solo al usuario logueado y autorizado.
-			if ($_SESSION['almacen']==1)
-			{
-				if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name']))
-				{
-					$imagen=$_POST["imagenactual"];
-				}
-				else 
-				{
-					$ext = explode(".", $_FILES["imagen"]["name"]);
-					if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png")
-					{
-						$imagen = round(microtime(true)) . '.' . end($ext);
-						move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/usuarios/" . $imagen);
-					}
-				}
-				//Hash SHA256 en la contraseña
-				$clavehash=hash("SHA256",$clave);
+	case 'guardaryeditar':		
+			
+    if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name']))
+    {
+      $imagen=$_POST["imagenactual"];
+    }
+    else 
+    {
+      $ext = explode(".", $_FILES["imagen"]["name"]);
+      if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png")
+      {
+        $imagen = round(microtime(true)) . '.' . end($ext);
+        move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/usuarios/" . $imagen);
+      }
+    }
+    //Hash SHA256 en la contraseña
+    $clavehash=hash("SHA256",$clave);
 
-				if (empty($idusuario)){
-					$rspta=$usuario->insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
-					echo $rspta ? "Usuario registrado" : "No se pudieron registrar todos los datos del usuario";
-				}
-				else {
-					$rspta=$usuario->editar($idusuario,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
-					echo $rspta ? "Usuario actualizado" : "Usuario no se pudo actualizar";
-				}
-			//Fin de las validaciones de acceso
-			}
-			else
-			{
-		  	require 'noacceso.php';
-			}
-		}		
+    if (empty($idusuario)){
+      $rspta=$usuario->insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
+      echo $rspta ? "Usuario registrado" : "No se pudieron registrar todos los datos del usuario";
+    }
+    else {
+      $rspta=$usuario->editar($idusuario,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
+      echo $rspta ? "Usuario actualizado" : "Usuario no se pudo actualizar";
+    }
+			
 	break;
 
 	case 'desactivar':

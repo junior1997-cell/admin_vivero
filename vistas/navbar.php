@@ -44,7 +44,7 @@
     <!-- Perfil -->
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
-        <i class="far fa-user-circle"></i>  
+        <i class="far fa-user-circle" style="font-size: 20px;"></i>  
         <!-- <span class="badge badge-danger navbar-badge">3</span> -->
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -55,27 +55,33 @@
               <img class="profile-user-img img-fluid img-circle" src="../dist/img/user4-128x128.jpg"  alt="User profile picture">
             </div>
 
-            <h3 class="profile-username text-center">Nina Mcintire</h3>
+            <h3 class="profile-username text-center">Mirella Huaman Camisan</h3>
 
-            <p class="text-muted text-center">Software Engineer</p>
+            <p class="text-muted text-center">Administrador</p>
 
-            <ul class="list-group list-group-unbordered mb-3">
+            <ul class="list-group list-group-unbordered">
               <li class="list-group-item">
-                <b>Followers</b> <a class="float-right">1,322</a>
+                <strong><i class="fas fa-book mr-1"></i> Celular</strong>
+                <p class="text-muted">
+                  +51 923 736 989
+                </p>
               </li>
               <li class="list-group-item">
-                <b>Following</b> <a class="float-right">543</a>
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Direccion</strong>
+                <p class="text-muted">Jr. Los jardines #543</p>
               </li>
               <li class="list-group-item">
-                <b>Friends</b> <a class="float-right">13,287</a>
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Email</strong>
+                <p class="text-muted">huaman@upeu.edu.pe</p>
               </li>
-            </ul>
-
-            <a href="#" class="btn btn-danger btn-block"><b>Salir</b></a>
+            </ul>            
           </div>
-          <!-- /.card-body -->
-        </div>
+          <!-- /.card-body -->          
+        </div>        
         <!-- /.card -->
+        <div class="px-4 pb-3">
+          <a href="#" class="btn btn-danger btn-block"><b>Salir</b></a>
+        </div>
       </div>
     </li>
 

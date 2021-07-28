@@ -115,37 +115,11 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.php">INICIO</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.php">ACERCA DE nosotros</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Servicios</a>
-                            <!--<ul class="dropdown-menu">                                                          
-                                <li><a href="shop.php">Venta de plantas</a></li>
-                                <li><a href="shop-detail.php">Shop Detail</a></li>
-                                <li><a href="cart.php">Cart</a></li>
-                                <li><a href="checkout.php">Checkout</a></li>
-                                <li><a href="my-account.php">My Account</a></li>
-                                <li><a href="wishlist.php">Wishlist</a></li>                            
-                            </ul>-->
-                        </li>
                         <li class="nav-item"><a class="nav-link" href="gallery.php">Galeria</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact-us.php">Contactos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
-
-                <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
-                    <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu">
-                            <a href="#">
-                                <i class="fa fa-shopping-bag"></i>
-                                <span class="badge">3</span>
-                                <p>CARRITO</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
             <div class="side">

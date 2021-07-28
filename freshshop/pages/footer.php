@@ -96,19 +96,34 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="footer-link-contact">
-                            <h4>CONTÁCTENOS</h4>
-                            <ul>
-                                <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
-                                </li>
-                            </ul>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="footer-link-contact">
+                                    <h4>CONTÁCTENOS</h4>
+                                    <ul>
+                                        <li>
+                                            <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="footer-link-contact">
+                                    <h4>INTRANET</h4>
+                                    <ul class="list list-icons list-icons-lg text-left">
+                                        <li>
+                                            <p><i class="fas fa-user"></i><a href="#" target="_blank">Web Master</a></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -117,9 +132,10 @@
     </footer>
     <!-- End Footer  -->
 
+
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <img src="https://tarapoto.upeu.edu.pe/wp-content/uploads/2019/09/logo-footer-UPeU.png">
+        <img src="../images/logo-footer-UPeU.png">
         <p class="footer-company">Todos los derechos son reservados. &copy; 2020 <a href="https://www.upeu.edu.pe/">Universidad Peruana union</a> 
     </div>
     <!-- End copyright  -->
@@ -145,7 +161,4 @@
     <script src="../js/all.js"></script>
 
 </body>
- <!--#6b202e
-negro
- #282828-->
 </html>

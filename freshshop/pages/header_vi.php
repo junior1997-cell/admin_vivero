@@ -160,7 +160,7 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="../pages/index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../pages/about.php">Sobre nosotros</a></li>
-                        <li class="dropdown">
+                       <!-- <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
                                 <li><a href="shop.php">Sidebar Shop</a></li>
@@ -170,7 +170,7 @@
                                 <li><a href="my-account.php">My Account</a></li>
                                 <li><a href="wishlist.php">Wishlist</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="nav-item"><a class="nav-link" href="../pages/gallery.php">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="../pages/contact-us.php">Contact Us</a></li>
                     </ul>

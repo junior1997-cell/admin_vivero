@@ -162,17 +162,17 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.php">Acerca de nosotros</a></li>
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Servicios</a>
-                            <!--<ul class="dropdown-menu">
+                           <ul class="dropdown-menu">
                                 <li><a href="shop.php">Sidebar Shop</a></li>
                                 <li><a href="shop-detail.php">Shop Detail</a></li>
                                 <li><a href="cart.php">Cart</a></li>
                                 <li><a href="checkout.php">Checkout</a></li>
                                 <li><a href="my-account.php">My Account</a></li>
                                 <li><a href="wishlist.php">Wishlist</a></li>
-                            </ul>-->
-                        </li>
+                            </ul>
+                        </li>-->
                         <li class="nav-item"><a class="nav-link" href="gallery.php">Galería</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact-us.php">Contactos</a></li>
                     </ul>

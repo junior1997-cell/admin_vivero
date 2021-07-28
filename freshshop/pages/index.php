@@ -1,6 +1,9 @@
 <?php
 require'header.php';
 ?>
+<style>
+.mi_iamgen:hover {filter: blur(5px);}
+</style>
 
 
     <!-- Start Top Search -->
@@ -15,15 +18,15 @@ require'header.php';
     </div>
     <!-- End Top Search -->
 
-    
 
+   <!-- Videos carousel Pincipal-->
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-center">
                 <div class="container">
                     <div class="head content">
                     <div class="head-video">   
-                    <video loop="loop" src="../images/video5.mp4" autoplay playsinline muted width="1650" height="1250" style="margin-top: -300px; margin-left: -120px; z-index: -5000px;">                                                                                      
+                    <video loop="loop" src="../images/video5.mp4" autoplay playsinline muted>                                                                                      
                      </video>  
                      <div class="head-overlay"></div>        
                      </div> 
@@ -33,41 +36,17 @@ require'header.php';
                         <h1 style = "font-family:Clan Pro News; font-size:23px;"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
 
                         <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Arboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1> <br>
-                        <p><a class="btn hvr-hover" href="#">Login</a></p>
                      </div>
                  </div>
                 </div>
                  
                 </div>
             </li>
-
-             <li class="text-center">
-                <div class="container">
-                    <div class="head content">
-                    <div class="head-video">   
-                    <video loop="loop" src="../images/pa2.mp4" autoplay playsinline muted width="1650" height="1250" style="margin-top: -300px; margin-left: -120px; z-index: -5000px;">                                                                                              
-                     </video>  
-                     <div class="head-overlay"></div>        
-                     </div> 
-                <div class="row">       
-                        <div class="col-md-12 banner-cell" style="margin-top: 120px;">                   
-                        <h1 style = "font-family:CLAN PRO" class="m-b-20"><strong>BIENVENIDOS AL <br> VIVERO UPeU</strong></h1><br>
-                        <h1 style = "font-family:Clan Pro News; font-size:23px;"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
-
-                        <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Arboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>   <br>                     
-                        <p><a class="btn hvr-hover" href="#">Login</a></p>
-                     </div>
-                 </div>
-                </div>
-                 
-                </div>
-            </li>
-
             <li class="text-center">
                 <div class="container">
                     <div class="head content">
                     <div class="head-video">   
-                    <video loop="loop" src="../images/video1.mp4" autoplay playsinline muted width="1650" height="1250" style="margin-top: -300px; margin-left: -120px; z-index: -5000px;">                                                                                              
+                    <video loop="loop" src="../images/video1.mp4" autoplay playsinline muted>                                                                                              
                      </video>  
                      <div class="head-overlay"></div>        
                      </div> 
@@ -77,19 +56,17 @@ require'header.php';
                         <h1 style = "font-family:Clan Pro News; font-size:23px;"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
 
                         <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Arboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>    <br>                   
-                        <p><a class="btn hvr-hover" href="#">Login</a></p>
                      </div>
                  </div>
                 </div>
                  
                 </div>
             </li>
-
             <li class="text-center">
                 <div class="container">
                     <div class="head content">
                     <div class="head-video">   
-                    <video loop="loop" src="../images/video3.mp4" autoplay playsinline muted width="1650" height="1250" style="margin-top: -300px; margin-left: -120px; z-index: -5000px;">                                                                                              
+                    <video loop="loop" src="../images/video3.mp4" autoplay playsinline muted>                                                                                              
                      </video>  
                      <div class="head-overlay"></div>        
                      </div> 
@@ -99,23 +76,17 @@ require'header.php';
                         <h1 style = "font-family:Clan Pro News; font-size:23px;"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
 
                         <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Arboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>   <br>                   
-                        <p><a class="btn hvr-hover" href="#">Login</a></p>
+
                      </div>
                  </div>
                 </div>
                  
                 </div>
             </li>            
-
-           
         </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
     </div>
-    
-    
+        <!-- Videos carousel Pincipal-->
+        <!-- fin Products  -->
     <div class="products-box">
         <div class="container">
             <div class="row">
@@ -801,52 +772,35 @@ require'header.php';
             </div>
         </div>
     </div>
-
-        <div class="col-lg-12">
-                    <div class="title-all text-center">
-                       <h1>Acerca De Nosotros</h1>
-                        <p>Somos una empresa reconocida</p>
-                    </div>
-                </div>
-        <div class="row " style="background-color: #22D14C; width: 101%">      
-             <div class="col-lg-6 col-sm-12 style_image">
-             <img class="full-img" src="../images/03.png"/>
-             </div>         
-            <div class="col-lg-6 col-sm-12">         
-            <h2 class="m-b-20 text-white" style="margin-top: 100px; font-family: cursive; font-size: 50px;">VIVERO <b>UPeU</b></h2>
-            <p class="margin-bottom" style="font-family: cursive; font-size: 20px;">Bienvenidos al mundo de  <b>Vivero UPeU</b>, un mundo de comercialización de plantas, tenemos lo mejor para ti</p>
-                 
-            </div>       
-       </div> 
-       <br>
-
-           <!-- <div >
-                 <div class="">
-                    <h1 style="text-align: center;">Acerca De Nosotros</h1>
-                    <p style="text-align: center;">Somos una empresa especializada</p>
-                </div>
-                <div class="row" style="width: 100%">
-                    
-                    <div  class="col-lg-6 col-sm-12" style="">
-                        <img style="border-left: -50px;" class="" src="../images/03.png"/>
-                    </div>
-                    <div class="col-lg-6" style="background-color: #22D14C">
-                        <h2 class="m-b-20 text-white" style="margin-top: 50px; font-family: cursive; font-size: 50px;">VIVERO <b>UPeU</b></h2>
-                        <p class="margin-bottom" style="font-family: cursive; font-size: 20px;">Bienvenidos al mundo de  <b>Vivero UPeU</b>, un mundo de comercialización de plantas, tenemos lo mejor para ti</p>
-
-                        
-                    </div>
-                </div>
-             </div>-->
-
-
-    <!-- Start Products  -->
+        <!-- fin Products  -->
     
-    <!-- End Products  -->
+        <!-- Acerca De Nosotros  
+        col-	.col-sm-	.col-md-	.col-lg-	.col-xl-	.col-xxl--->
+        <div class="col-col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+            <div class="title-all text-center">
+                <h1>Acerca De Nosotros</h1>
+                <p>Somos una empresa reconocida</p>
+            </div>
+       
+            <div class="row" style="background-color: aquamarine;">      
+                <div class="col-col-12 col-lg-6" style="padding: 4px 10px 4px 10px;">
+                     <img class="mi_iamgen" src="../images/03.png" style="float: right;height: 100%;width: 100%;"/>
+                </div>  
+                <div class="col-col-12 col-lg-6" style="padding: 4px 10px 4px 4px;">
+                    <h2 class="m-b-20 text-white" style="margin-top: 10px; font-family: cursive; font-size: 50px;text-align: center;">VIVERO <b>UPeU</b></h2>
+                    <p  style="font-family: cursive; font-size: 20px; padding: 5px;text-align: justify;">
+                    Bienvenidos al mundo de  <b>Vivero UPeU</b>, 
+                    un mundo de comercialización de plantas, tenemos lo mejor para ti
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium aut, non doloribus sunt qui perferendis 
+                    facilis error dicta eaque quae beatae, modi earum nam, quas numquam facere aspernatur est?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium aut, non doloribus sunt qui perferendis 
+                    facilis error dicta eaque quae beatae, modi earum nam, quas numquam facere aspernatur est?
+                    </p>                   
+                </div>  
+            </div>
+       </div>
+       <!-- Fin Acerca De Nosotros  -->
 
-    <!-- Start Blog  -->
-    
-    <!-- End Blog  -->
 <?php
 require'footer.php';
 ?>

@@ -23,49 +23,188 @@ if ($_SESSION['almacen']==1)
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 class="box-title">Categoría <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button> <a href="../reportes/rptcategorias.php" target="_blank"><button class="btn btn-info"><i class="fa fa-clipboard"></i> Reporte</button></a></h1>
+                          <h1 class="box-title">CONTACTANOS </h1>
                         <div class="box-tools pull-right">
                         </div>
                     </div>
                     <!-- /.box-header -->
-                    <!-- centro -->
-                    <div class="panel-body table-responsive" id="listadoregistros">
-                        <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
-                          <thead>
-                            <th>Opciones</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Estado</th>
-                          </thead>
-                          <tbody>                            
-                          </tbody>
-                          <tfoot>
-                            <th>Opciones</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Estado</th>
-                          </tfoot>
-                        </table>
-                    </div>
-                    <div class="panel-body" style="height: 400px;" id="formularioregistros">
-                        <form name="formulario" id="formulario" method="POST">
-                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Nombre:</label>
-                            <input type="hidden" name="idcategoria" id="idcategoria">
-                            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required>
-                          </div>
-                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Descripción:</label>
-                            <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción">
-                          </div>
-                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                    <!-- CONTENIDO  -->
+      <section class="content">
 
-                            <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
-                          </div>
-                        </form>
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <!-- ===================== ..:: BOX ::.. ===================== -->
+            <div class="box box-primary">
+
+              <!-- ===================== ..:: BOX HEADER ::.. ===================== -->
+              <div class="box-header">
+                <center>
+                  <h3 class="box-title fa fa-book"> DATOS DE CONTACTANOS</h3>
+                </center>
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                          </button>
+                </div>
+              </div>
+
+              <!-- ===================== ..:: CUERPO DEL BOX ::.. ===================== -->
+              <div class="box-body">
+                <!-- ===================== ..:: FOMULARIO ::.. ===================== -->
+                <form class="form" id="formulario_contactanos">
+                  <div class="box-body">
+
+                    <!-- ===================== ..:: INPUT DIRECCION ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="direccion" class="control-label">
+                        <i class="fa fa-address-card" style="font-size: 20px; "></i>
+                        Dirección
+                      </label>
+                      <input id="direccion" name="direccion" type="text" class="form-control" placeholder="Ingrese la dirección de J&A Expeditions...">
                     </div>
-                    <!--Fin centro -->
+
+                    <!-- ===================== ..:: INPUT COOR. MAPA ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="coordenadas" class="control-label">
+                        <i class="fa fa-map-marker" style="font-size: 20px; "></i>
+                        Coordenadas del mapa
+                      </label>
+                      <input id="coordenadas" name="coordenadas" type="text" class="form-control" placeholder="Ingrese las coordenadas del mapa...">
+                    </div>
+
+                    <!-- ===================== ..:: INPUT TELEFONO ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="telefono" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        Telefono
+                      </label>
+                      <input id="telefono" name="telefono" type="text" class="form-control" placeholder="Ingrese telefono(s) de J&A Expeditions...">
+                    </div>
+
+                    <!-- ===================== ..:: INPUT EMAIL ::.. ===================== -->
+                    <div class="form-group  col-md-12">
+                      <label for="email" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        E-Mail
+                      </label>
+                      <input id="email" name="email" type="text" class="form-control" placeholder="Ingrese la e-mail de J&A Expeditions...">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- ===================== ..:: BOX FOOTER ::.. ===================== -->
+              <div class="box-footer">
+                <center>
+                  <button id="btn_editar_m" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar</button>
+                  <button id="btn_actualizar_m" type="submit" class="btn btn-primary"><i class="fa fa-refresh"></i> Actualizar datos contactanos</button>
+                </center>
+              </div>
+            </div>
+            <!-- ===================== ..:: FIN-BOX ::.. ===================== -->
+          </div>
+
+          <div class="col-md-6">
+            <!-- ===================== ..:: BOX::.. ===================== -->
+            <div class="box box-primary">
+              <!-- ===================== ..:: BOX HEADER ::.. ===================== -->
+              <div class="box-header">
+                <center>
+                  <h3 class="box-title fa fa-university"> DATOS Del VIVERO-UPeU</h3>
+                </center>
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                          </button>
+                </div>
+              </div>
+
+              <!-- ===================== ..:: BOX CUERPO ::.. ===================== -->
+              <div class="box-body">
+                <!-- ===================== ..:: FORMULARIO ::.. ===================== -->
+                <form class="form" id="formulario_empresa">
+                  <div class="box-body">
+                    <!-- ===================== ..:: INPUT NOMBRE ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="nombre" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        Nombre
+                      </label>
+                      <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Ingrese la dirección de J&A Expeditions...">
+                    </div>
+
+                    <!-- ===================== ..:: INPUT PRESENTACION ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="descripcion" class="control-label">
+                        <i class="fa fa-calendar" style="font-size: 20px; "></i>
+                        Presentacion
+                      </label>
+                      <textarea class="form-control" name="descripcion" id="descripcion" rows="5"></textarea>
+                    </div>
+
+                    <!-- ===================== ..:: INPUT MISION ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="mision" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        Misión
+                      </label>
+                      <textarea class="form-control" name="mision" id="mision" rows="4"></textarea>
+                    </div>
+
+                    <!-- ===================== ..:: INPUT VISION ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="vision" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        Visión
+                      </label>
+                      <textarea class="form-control" name="vision" id="vision" rows="4"></textarea>
+                    </div>
+
+                    <!-- ===================== ..:: INPUT OBJETIVOS ::.. ===================== -->
+                    <div class="form-group col-md-12">
+                      <label for="objetivos" class="control-label">
+                        <i class="fa fa-telegram" style="font-size: 20px; "></i>
+                        Objetivos
+                      </label>
+                      <textarea class="form-control" name="objetivos" id="objetivos" rows="10"></textarea>
+                    </div>
+
+                   <!--  <div class="form-group col-md-12">
+                      <label for="politica" class="control-label">Pólitica</label>
+                      <textarea class="form-control" name="politica" id="politica" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                      <label for="servicios" class="control-label">Servicios</label>
+                      <textarea class="form-control" name="servicios" id="servicios" rows="3"></textarea>
+                    </div> -->
+
+                  </div>
+                </form>
+              </div>
+              <!-- ===================== ..:: BOX FOOTER ::.. ===================== -->
+              <div class="box-footer">
+                <center>
+                  <button id="btn_editar_e" type="button" class="btn btn-warning">
+                    <i class="fa fa-pencil"></i> Editar
+                  </button>
+                  <button id="btn_actualizar_e" type="submit" class="btn btn-primary">
+                    <i class="fa fa-refresh"></i> Actualizar datos empresa
+                  </button>
+                </center>
+              </div>
+            </div>
+            <!-- FIN-BOX ::.. ===================== -->
+          </div>
+        </div>
+
+        <div class="row">
+
+        </div>
+
+      </section>
+      <!-- FIN CONTENIDO -->
+
                   </div><!-- /.box -->
               </div><!-- /.col -->
           </div><!-- /.row -->
@@ -82,7 +221,7 @@ else
 
 require 'footer.php';
 ?>
-<script type="text/javascript" src="scripts/categoria.js"></script>
+<script type="text/javascript" src="scripts/contactanos.js"></script>
 <?php 
 }
 ob_end_flush();

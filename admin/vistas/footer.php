@@ -27,8 +27,11 @@
     <script src="../public/datatables/datatables-responsive/js/dataTables.responsive.min.js"></script>
     <script src="../public/datatables/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
-    <script src="../public/js/bootbox.min.js"></script> 
+    <script src="../public/js/bootbox.min.js"></script>
+     <!--Select2  -->
     <script src="../public/js/bootstrap-select.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+    <!-- <script src="../public/select2/js/select2.full.min.js"></script> -->
 
     <!-- Toastr -->
     <script src="../public/toastr/toastr.min.js"></script>

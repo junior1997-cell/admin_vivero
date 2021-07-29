@@ -11,11 +11,27 @@ Class Articulo
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen)
+	public function insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $img)
 	{
-		$sql="INSERT INTO articulo (idcategoria,codigo,nombre,stock,descripcion,imagen,condicion)
-		VALUES ('$idcategoria','$codigo','$nombre','$stock','$descripcion','$imagen','1')";
-		return ejecutarConsulta($sql);
+		$sql="INSERT INTO planta (id_categoria, nombre, stock, nombre_cientifico, familia, apodo, descripcion, img)
+		VALUES ('$id_categoria','$nombre','$stock','$nombre_cientifico','$familia','$apodo','$descripcion','$img')";
+
+		if (0 == count($id_color)) {
+			$planta_id = ejecutarConsulta_retornarID($sql);
+			$num_elementos=0;
+			$sw=true;
+
+			while ($num_elementos < count($id_color))
+			{
+				$sql_detalle = "INSERT INTO plantacolor(id_planta, id_color) VALUES('$planta_id', '$id_color[$num_elementos]')";
+				ejecutarConsulta($sql_detalle) or $sw = false;
+				$num_elementos=$num_elementos + 1;
+			}
+			return $sw;
+		}else {
+			return ejecutarConsulta($sql);
+		}
+		
 	}
 
 	//Implementamos un método para editar registros
@@ -49,7 +65,10 @@ Class Articulo
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT a.idarticulo,a.idcategoria,c.nombre as categoria,a.codigo,a.nombre,a.stock,a.descripcion,a.imagen,a.condicion FROM articulo a INNER JOIN categoria c ON a.idcategoria=c.idcategoria";
+		$sql="SELECT p.idplanta ,p.id_categoria ,c.nombre as categoria,
+			p.nombre, p.stock, p.nombre_cientifico, p.familia, p.apodo, p.descripcion, p.img, p.fecha, p.estado 
+		FROM planta p 
+		INNER JOIN categoria c ON p.id_categoria =c.idcategoria";
 		return ejecutarConsulta($sql);		
 	}
 

@@ -16,8 +16,7 @@ if (strlen(session_id()) < 1)
     <link rel="stylesheet" href="../public/css/font-awesome.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
+    <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../public/css/_all-skins.min.css">
     <link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
     <link rel="shortcut icon" href="../public/img/favicon.ico">
@@ -27,7 +26,11 @@ if (strlen(session_id()) < 1)
     <link href="../public/datatables/buttons.dataTables.min.css" rel="stylesheet"/>
     <link href="../public/datatables/responsive.dataTables.min.css" rel="stylesheet"/>
 
+    <!-- slect2 -->
     <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="../public/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../public/select2-bootstrap4-theme/select2-bootstrap4.min.css"> -->
 
     <!-- Toastr -->
     <link rel="stylesheet" href="../public/toastr/toastr.min.css">

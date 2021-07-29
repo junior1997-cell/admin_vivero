@@ -16,36 +16,40 @@ require_once "../modelos/Articulo.php";
 
 $articulo=new Articulo();
 
-$idarticulo=isset($_POST["idarticulo"])? limpiarCadena($_POST["idarticulo"]):"";
-$idcategoria=isset($_POST["idcategoria"])? limpiarCadena($_POST["idcategoria"]):"";
-$codigo=isset($_POST["codigo"])? limpiarCadena($_POST["codigo"]):"";
-$nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
-$stock=isset($_POST["stock"])? limpiarCadena($_POST["stock"]):"";
-$descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
-$imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
+$idarticulo		=isset($_POST["idarticulo"])? limpiarCadena($_POST["idarticulo"]):"";
+$id_categoria	=isset($_POST["idcategoria"])? limpiarCadena($_POST["idcategoria"]):"";
+$id_color		=isset($_POST["idcolor"])? $_POST["idcolor"]:"";
+$nombre			=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
+$stock			=isset($_POST["stock"])? limpiarCadena($_POST["stock"]):"";
+$nombre_cientifico=isset($_POST["nombre_cientifico"])? limpiarCadena($_POST["nombre_cientifico"]):"";
+$familia		=isset($_POST["familia"])? limpiarCadena($_POST["familia"]):"";
+$apodo			=isset($_POST["apodo"])? limpiarCadena($_POST["apodo"]):"";
+$descripcion	=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
+$img			=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
+$codigo			=isset($_POST["codigo"])? limpiarCadena($_POST["codigo"]):"";
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 
 		if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name']))
 		{
-			$imagen=$_POST["imagenactual"];
+			$img=$_POST["imagenactual"];
 		}
 		else 
 		{
 			$ext = explode(".", $_FILES["imagen"]["name"]);
 			if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png")
 			{
-				$imagen = round(microtime(true)) . '.' . end($ext);
-				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/" . $imagen);
+				$img = round(microtime(true)) . '.' . end($ext);
+				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/" . $img);
 			}
 		}
 		if (empty($idarticulo)){
-			$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
-			echo $rspta ? "Artículo registrado" : "Artículo no se pudo registrar";
+			$rspta=$articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $img);
+			echo $rspta ? "ok" : "Planta: ".strtoupper($nombre)." no se pudo registrar";
 		}
 		else {
-			$rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
+			$rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$img);
 			echo $rspta ? "Artículo actualizado" : "Artículo no se pudo actualizar";
 		}
 	break;
@@ -73,16 +77,16 @@ switch ($_GET["op"]){
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
- 				"0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-danger" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':
- 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-primary" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
+ 				"0"=>($reg->estado)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idplanta.')"><i class="fa fa-pencil"></i></button>'.
+ 					' <button class="btn btn-danger" onclick="desactivar('.$reg->idplanta.')"><i class="fa fa-close"></i></button>':
+ 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idplanta.')"><i class="fa fa-pencil"></i></button>'.
+ 					' <button class="btn btn-primary" onclick="activar('.$reg->idplanta.')"><i class="fa fa-check"></i></button>',
  				"1"=>$reg->nombre,
  				"2"=>$reg->categoria,
- 				"3"=>$reg->codigo,
+ 				"3"=>$reg->familia,
  				"4"=>$reg->stock,
- 				"5"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px' >",
- 				"6"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
+ 				"5"=>"<img src='../files/articulos/".$reg->img."' height='50px' width='50px' >",
+ 				"6"=>($reg->estado)?'<span class="label bg-green">Activado</span>':
  				'<span class="label bg-red">Desactivado</span>'
  				);
  		}
@@ -104,6 +108,17 @@ switch ($_GET["op"]){
 		while ($reg = $rspta->fetch_object())
 				{
 					echo '<option value=' . $reg->idcategoria . '>' . $reg->nombre . '</option>';
+				}
+	break;
+	case "selectColor":
+		require_once "../modelos/Color.php";
+		$color = new Color();
+
+		$rspta = $color->select();
+
+		while ($reg = $rspta->fetch_object())
+				{
+					echo '<option value=' . $reg->idcolor . '>' . $reg->nombre . '</option>';
 				}
 	break;
 }

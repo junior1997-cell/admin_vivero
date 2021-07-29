@@ -57,15 +57,32 @@ if ($_SESSION['almacen']==1)
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Nombre(*):</label>
                             <input type="hidden" name="idarticulo" id="idarticulo">
-                            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
+                            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" >
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Categoría(*):</label>
-                            <select id="idcategoria" name="idcategoria" class="form-control selectpicker" data-live-search="true" required></select>
+                            <select id="idcategoria" name="idcategoria" class="form-control selectpicker" data-live-search="true" ></select>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Color(*):</label><br>
+                            <select id="idcolor" name="idcolor[]" class="form-control selectpicker" multiple  data-live-search="true"  ></select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Stock(*):</label>
-                            <input type="number" class="form-control" name="stock" id="stock" required>
+                            <input type="number" class="form-control" name="stock" id="stock" >
+                          </div>
+                          
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Nombre Cientifico:</label>
+                            <input type="text" class="form-control" name="nombre_cientifico" id="nombre_cientifico" maxlength="256" placeholder="Descripción">
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Familia:</label>
+                            <input type="text" class="form-control" name="familia" id="familia" maxlength="256" placeholder="Descripción">
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Apodo:</label>
+                            <input type="text" class="form-control" name="apodo" id="apodo" maxlength="256" placeholder="Descripción">
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Descripción:</label>
@@ -87,7 +104,7 @@ if ($_SESSION['almacen']==1)
                             </div>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                            <button class="btn btn-primary" type="submit"  id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
 
                             <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
                           </div>
@@ -112,6 +129,7 @@ require 'footer.php';
 <script type="text/javascript" src="../public/js/JsBarcode.all.min.js"></script>
 <script type="text/javascript" src="../public/js/jquery.PrintArea.js"></script>
 <script type="text/javascript" src="scripts/articulo.js"></script>
+
 <?php 
 }
 ob_end_flush();

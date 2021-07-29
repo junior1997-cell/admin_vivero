@@ -9,13 +9,21 @@ function init(){
 	{
 		guardaryeditar(e);	
 	})
-
+	 
 	//Cargamos los items al select categoria
 	$.post("../ajax/articulo.php?op=selectCategoria", function(r){
-	            $("#idcategoria").html(r);
-	            $('#idcategoria').selectpicker('refresh');
+		$("#idcategoria").html(r);
+		$('#idcategoria').selectpicker('refresh');
 
 	});
+	
+	//Cargamos los items al select COLOR
+	$.post("../ajax/articulo.php?op=selectColor", function(r){
+		$("#idcolor").html(r);
+		$('#idcolor').selectpicker('refresh');
+
+	});
+
 	$("#imagenmuestra").hide();
 	$('#mAlmacen').addClass("treeview active");
     $('#lArticulos').addClass("active");
@@ -104,7 +112,7 @@ function listar()
 function guardaryeditar(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	$("#btnGuardar").prop("disabled",true);
+	
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
@@ -116,13 +124,21 @@ function guardaryeditar(e)
 
 	    success: function(datos)
 	    {                    
-	          bootbox.alert(datos);	          
-	          mostrarform(false);
-	          tabla.ajax.reload();
+	        //bootbox.alert(datos);
+			if (datos == 'ok') {
+				$("#btnGuardar").prop("disabled",true);
+				toastr.success('Planta registrada correctamente')
+				mostrarform(false);
+	        	tabla.ajax.reload();
+				limpiar();
+			}else{
+				toastr.error(datos)
+			}	          
+	        
 	    }
 
 	});
-	limpiar();
+	
 }
 
 function mostrar(idarticulo)

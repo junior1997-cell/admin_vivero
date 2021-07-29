@@ -129,6 +129,25 @@ if (strlen(session_id()) < 1)
             }
             ?>
 
+        <!-- nosotros -->
+
+            <?php 
+            if ($_SESSION['almacen']==1)
+            {
+              echo '<li id="mAlmacen" class="treeview">
+              <a href="#">
+                <i class="fa fa-university"></i>
+                <span>Institucion</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="lArticulos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> nosotros</a></li>                
+              </ul>
+            </li>';
+            }
+            ?>
+
+
             <?php 
             if ($_SESSION['compras']==1)
             {

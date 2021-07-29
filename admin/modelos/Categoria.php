@@ -13,7 +13,7 @@ Class Categoria
 	//Implementamos un método para insertar registros
 	public function insertar($nombre,$descripcion)
 	{
-		$sql="INSERT INTO categoria (nombre,descripcion,condicion)
+		$sql="INSERT INTO categoria (nombre,descripcion,estado)
 		VALUES ('$nombre','$descripcion','1')";
 		return ejecutarConsulta($sql);
 	}
@@ -28,14 +28,14 @@ Class Categoria
 	//Implementamos un método para desactivar categorías
 	public function desactivar($idcategoria)
 	{
-		$sql="UPDATE categoria SET condicion='0' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE categoria SET estado='0' WHERE idcategoria='$idcategoria'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para activar categorías
 	public function activar($idcategoria)
 	{
-		$sql="UPDATE categoria SET condicion='1' WHERE idcategoria='$idcategoria'";
+		$sql="UPDATE categoria SET estado='1' WHERE idcategoria='$idcategoria'";
 		return ejecutarConsulta($sql);
 	}
 
@@ -55,7 +55,7 @@ Class Categoria
 	//Implementar un método para listar los registros y mostrar en el select
 	public function select()
 	{
-		$sql="SELECT * FROM categoria where condicion=1";
+		$sql="SELECT * FROM categoria where estado=1";
 		return ejecutarConsulta($sql);		
 	}
 }

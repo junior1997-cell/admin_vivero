@@ -113,13 +113,14 @@ if (strlen(session_id()) < 1)
             {
               echo '<li id="mAlmacen" class="treeview">
               <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Almacén</span>
+                <i class="fa fa-tree"></i>
+                <span>Planta</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="lArticulos"><a href="articulo.php"><i class="fa fa-circle-o"></i> Artículos</a></li>
+                <li id="lArticulos"><a href="articulo.php"><i class="fa fa-circle-o"></i> Planta</a></li>
                 <li id="lCategorias"><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                <li id="lColor"><a href="color.php"><i class="fa fa-circle-o"></i>Color</a></li>
               </ul>
             </li>';
             }

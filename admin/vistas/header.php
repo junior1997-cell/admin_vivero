@@ -37,6 +37,8 @@ if (strlen(session_id()) < 1)
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="../public/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
+    <!-- drop zone -->
+    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
   </head>
   <body class="hold-transition skin-blue-light sidebar-mini">
     <div class="wrapper">

@@ -16,7 +16,9 @@ Class Articulo
 		$sql="INSERT INTO planta (id_categoria, nombre, stock, nombre_cientifico, familia, apodo, descripcion, img)
 		VALUES ('$id_categoria','$nombre','$stock','$nombre_cientifico','$familia','$apodo','$descripcion','$img')";
 
-		if (0 == count($id_color)) {
+		if ($id_color == "") {
+			return ejecutarConsulta($sql);
+		}else {
 			$planta_id = ejecutarConsulta_retornarID($sql);
 			$num_elementos=0;
 			$sw=true;
@@ -28,8 +30,7 @@ Class Articulo
 				$num_elementos=$num_elementos + 1;
 			}
 			return $sw;
-		}else {
-			return ejecutarConsulta($sql);
+			
 		}
 		
 	}

@@ -38,5 +38,7 @@
     <!-- SweetAlert2 -->
     <script src="../public/sweetalert2/sweetalert2.min.js"></script>
 
+    <!-- drop zone -->
+    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
   </body>
 </html>

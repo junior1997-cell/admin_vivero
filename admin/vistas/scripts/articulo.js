@@ -29,6 +29,8 @@ function init(){
     $('#lArticulos').addClass("active");
 }
 
+$("div.imagen_dropzone").dropzone({ url: "/file/post" });
+
 //Función limpiar
 function limpiar()
 {

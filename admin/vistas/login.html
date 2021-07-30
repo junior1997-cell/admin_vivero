@@ -1,67 +1,187 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ADVentas | www.incanatoit.com</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../public/css/font-awesome.css">
-   
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="../public/css/blue.css">
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Vivero | Login</title>
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+            <!-- Font Awesome -->
+        <link rel="stylesheet" href="../public/css/font-awesome.css">
+        <link rel="apple-touch-icon" href="../../freshshop/images/logo-ico.png" />
+        <link rel="shortcut icon" href="../../freshshop/images/logo-ico.png" />
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+        <link rel="apple-touch-icon" href="../freshshop/images/logo-ico.png" />
+        <link rel="shortcut icon" href="../freshshop/images/logo-ico.png" />
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style type="text/css">
+        html,body{
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        font-family: 'Numans', sans-serif;
+        }
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        .container{
+        height: 100%;
+        align-content: center;
+        }
+
+        .card{
+        height: 370px;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 400px;
+        background-color: rgba(0,0,0,0.5) !important;
+        }
+
+        .social_icon span{
+        font-size: 60px;
+        margin-left: 10px;
+        color: #FFC312;
+        }
+
+        .social_icon span:hover{
+        color: white;
+        cursor: pointer;
+        }
+
+        .card-header h3{
+        color: white;
+        }
+
+        .social_icon{
+        position: absolute;
+        right: 20px;
+        top: -45px;
+        }
+
+        .input-group-prepend span{
+        border-radius: 15px;
+        width: 50px;
+        background-color: pink;
+        color: black;
+        border:0 !important;
+        }
+
+        input:focus{
+        outline: 0 0 0 0  !important;
+        box-shadow: 0 0 0 0 !important;
+
+        }
+
+        .remember{
+        color: white;
+        }
+
+        .remember input
+        {
+        width: 20px;
+        height: 20px;
+        margin-left: 15px;
+        margin-right: 5px;
+        }
+
+        .login_btn{
+        border-radius: 15px;
+        color: black;
+        background-color: pink;
+        width: 100px;
+        }
+
+        .login_btn:hover{
+        color: black;
+        background-color: limegreen;
+        }
+
+        .links{
+        color: white;
+        }
+        #myVideo {
+        position: fixed;
+        opacity: 100%;
+        right: 0;
+        bottom: 0;
+        max-width: 150%;
+        max-height: 120%;
+      }
+
+      /* Add some content at the bottom of the video/page */
+      .content {
+        position: fixed;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Style the button used to pause/play the video */
+      #myBtn {
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      #myBtn:hover {
+        background: #ddd;
+        color: black;
+      }
+      .login-form{
+        background: url(../vistas/fondo_for.png)no-repeat 0px 0px;
+        background-size: cover;
+        background-position: center;
+      }
+      </style>
   </head>
   <body class="hold-transition login-page">
-    <div class="login-box">
-      <div class="login-logo">
-        <a href="../../index2.html"><b>ADVentas</b></a>
-      </div><!-- /.login-logo -->
-      <div class="login-box-body">
-        <p class="login-box-msg">Ingrese sus datos de Acceso</p>
-        <form method="post" id="frmAcceso">
-          <div class="form-group has-feedback">
-            <input type="text" id="logina" name="logina" class="form-control" placeholder="Usuario">
-            <span class="fa fa-user form-control-feedback"></span>
-          </div>
-          <div class="form-group has-feedback">
-            <input type="password" id="clavea" name="clavea" class="form-control" placeholder="Password">
-            <span class="fa fa-key form-control-feedback"></span>
-          </div>
-          <div class="row">
-            <div class="col-xs-8">
-              
-            </div><!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-            </div><!-- /.col -->
-          </div>
-        </form>
-        
-
-      </div><!-- /.login-box-body -->
-    </div><!-- /.login-box -->
-
-    <!-- jQuery -->
-    <script src="../public/js/jquery-3.1.1.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="../public/js/bootstrap.min.js"></script>
-     <!-- Bootbox -->
-    <script src="../public/js/bootbox.min.js"></script>
-
-    <script type="text/javascript" src="scripts/login.js"></script>
-
-
-  </body>
+        <video autoplay muted loop id="myVideo">
+            <source src="video.mp4" type="video/mp4" />
+        </video>
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <a href="../index2.html" class="h1"><b class="text-white">Vivero UPeU</b></a>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" id="frmAcceso">
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" align="center" style="border-radius: 40px;"><i class="fa fa-user" ></i></span>
+                                </div>
+                                <input type="text" id="logina" name="logina" style="border-radius: 40px;" class="form-control" placeholder="Correo" />
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="border-radius: 40px;"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="clavea" name="clavea" style="border-radius: 40px;" class="form-control" placeholder="Contraseña" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login" class="btn float-right login_btn" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">Don't have an account?<a href="#">Sign Up</a></div>
+                        <div class="d-flex justify-content-center">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../public/js/jquery-3.1.1.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../public/js/bootstrap.min.js"></script>
+         <!-- Bootbox -->
+        <script src="../public/js/bootbox.min.js"></script>
+        <script type="text/javascript" src="scripts/login.js"></script>
+    </body>
 </html> 

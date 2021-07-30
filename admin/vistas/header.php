@@ -38,7 +38,13 @@ if (strlen(session_id()) < 1)
     <link rel="stylesheet" href="../public/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
     <!-- drop zone -->
-    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+    <link rel="stylesheet" href="../public/dropzone/dist/dropzone.css">
+    <link rel="stylesheet" href="../public/dropzone/dist/min/dropzone.min.css">
+    <style>
+      .dropdown-menu{
+        box-shadow: 0 0 40px #111;         
+      }
+    </style>
   </head>
   <body class="hold-transition skin-blue-light sidebar-mini">
     <div class="wrapper">
@@ -71,22 +77,28 @@ if (strlen(session_id()) < 1)
                   <span class="hidden-xs"><?php echo $_SESSION['nombre']; ?></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
-                    <p>
-                      www.incanatoit.com - Desarrollando Software
-                      <small>www.youtube.com/jcarlosad7</small>
-                    </p>
-                  </li>
-                  
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    
-                    <div class="pull-right">
-                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Cerrar</a>
-                    </div>
-                  </li>
+                   
+                  <div class="box box-primary">
+                    <div class="box-body box-profile">
+                      <img class="profile-user-img img-responsive img-circle" src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" alt="User profile picture">
+                      <h3 class="profile-username text-center"><?php echo $_SESSION['nombre']; ?></h3>
+                      <p class="text-muted text-center">Software Engineer</p>
+
+                      <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                          <b>Followers</b> <a class="pull-right">1,322</a>
+                        </li>
+                        <li class="list-group-item">
+                          <b>Following</b> <a class="pull-right">543</a>
+                        </li>
+                        <li class="list-group-item">
+                          <b>Friends</b> <a class="pull-right">13,287</a>
+                        </li>
+                      </ul>
+
+                      <a href="../ajax/usuario.php?op=salir#" class="btn btn-danger btn-block"><b>SALIR</b></a>
+                    </div><!-- /.box-body -->
+                  </div>
                 </ul>
               </li>
               

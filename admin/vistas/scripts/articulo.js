@@ -28,8 +28,73 @@ function init(){
 	$('#mAlmacen').addClass("treeview active");
     $('#lArticulos').addClass("active");
 }
+var arrayfile = [];
+$("div.imagen_dropzone").dropzone({ 
+	url: "../ajax/articulo.php",
+	addRemoveLinks: true,
+	// acceptedFiles: ".webp",
+	maxFilesize: 1,
+	thumbnailWidth: 314, //I want to change width to 100% instead
+    thumbnailHeight: 314,
+	init: function () {
 
-$("div.imagen_dropzone").dropzone({ url: "/file/post" });
+		this.on("addedfile", function (file) {
+			arrayfile.push(file);
+			console.log("archivos",arrayfile);
+		}),
+		this.on("removedfile", function (file) {
+			var index = arrayfile.indexOf(file);
+			arrayfile.splice(index,1);
+			console.log("archivos",arrayfile);
+		}),
+
+		this.on("thumbnail", function (file) {
+			if (file.height < 5 && file.width < 5) {
+				alert("Tamaño máximo de imagen permitido es 5 x 5 ");
+			}
+		}),
+
+		this.on("error", function (file, message) {
+			toastr.error("("+file.name.toUpperCase()+") no cumple con requisitos")
+			this.removeFile(file);
+		}),
+
+		this.on("dragover", function(file) {
+			toastr.info("Suelte el archivo")
+		})
+	}
+});
+
+// ----------------------
+var puedeLeerArchivos;
+// Check for the various File API support.
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  // Great success! All the File APIs are supported.
+  puedeLeerArchivos =true;
+} else {
+  alert('The File APIs are not fully supported in this browser.');
+  puedeLeerArchivos =false;
+}
+
+function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    var output = [];
+    var fileData = new FormData();
+    fileData.append("cotizacion", 1200);
+    for (var i = 0, f; f = files[i]; i++) {
+     var file = f;
+        // debugger;
+        fileData.append("Document", f);
+      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                  f.size, ' bytes, last modified: ',
+                  f.lastModifiedDate.toLocaleDateString(), '</li>');
+    }
+    
+    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+// ----------------------
 
 //Función limpiar
 function limpiar()

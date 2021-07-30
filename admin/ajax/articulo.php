@@ -25,33 +25,62 @@ $nombre_cientifico=isset($_POST["nombre_cientifico"])? limpiarCadena($_POST["nom
 $familia		=isset($_POST["familia"])? limpiarCadena($_POST["familia"]):"";
 $apodo			=isset($_POST["apodo"])? limpiarCadena($_POST["apodo"]):"";
 $descripcion	=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
-$img			=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
+$img			=isset($_POST["files"])? limpiarCadena($_POST["files"]):"";
 $codigo			=isset($_POST["codigo"])? limpiarCadena($_POST["codigo"]):"";
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
-
-		if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name']))
+		$array_foto = [];
+		if (!file_exists($_FILES['files']['tmp_name'][0]) || !is_uploaded_file($_FILES['files']['tmp_name'][0]))
 		{
-			$img=$_POST["imagenactual"];
+			$img="";
 		}
 		else 
 		{
-			$ext = explode(".", $_FILES["imagen"]["name"]);
-			if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png")
+			//Como el elemento es un arreglos utilizamos foreach para extraer todos los valores
+			foreach($_FILES["files"]['tmp_name'] as $key => $tmp_name)
 			{
-				$img = round(microtime(true)) . '.' . end($ext);
-				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/" . $img);
+				//Validamos que el archivo exista
+				if($_FILES["files"]["name"][$key]) {
+					// extraemos el nombre del array
+					$extencion = explode(".", $_FILES["files"]["name"][$key]);
+					// cambiamos el nombre del archivo
+					$filename = hash("MD2",$_FILES["files"]["name"][$key]). '.' . end($extencion); //Obtenemos el nombre original del archivo
+					
+					$source = $_FILES["files"]["tmp_name"][$key]; //Obtenemos un nombre temporal del archivo
+					
+					$directorio = '../files/articulos'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+					
+					//Validamos si la ruta de destino existe, en caso de no existir la creamos
+					if(!file_exists($directorio)){
+						mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+					}
+					
+					// agregamos los nombre de las fotos al ARRAY
+					array_push($array_foto,$filename);
+
+					$dir=opendir($directorio); //Abrimos el directorio de destino
+					$target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+					
+					//Movemos y validamos que el archivo se haya cargado correctamente
+					//El primer campo es el origen y el segundo el destino
+					 
+					move_uploaded_file($source, $target_path);
+					 
+					closedir($dir); //Cerramos el directorio de destino
+				}
 			}
 		}
 		if (empty($idarticulo)){
-			$rspta=$articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $img);
+			$rspta=$articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $array_foto);
 			echo $rspta ? "ok" : "Planta: ".strtoupper($nombre)." no se pudo registrar";
 		}
 		else {
 			$rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$img);
 			echo $rspta ? "Artículo actualizado" : "Artículo no se pudo actualizar";
 		}
+		 
+
 	break;
 
 	case 'desactivar':

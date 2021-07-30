@@ -88,12 +88,15 @@ if ($_SESSION['almacen']==1)
                             <label>Descripción:</label>
                             <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción">
                           </div>
-                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12 imagen_dropzone dropzone" id="my-awesome-dropzone" action="../public/img/">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12 " >
                             <!-- <label>Imagen:</label>
                             <input type="file" multiple="true" class="form-control" name="imagen" id="imagen" accept="image/x-png,image/gif,image/jpeg">
                             <input type="hidden" name="imagenactual" id="imagenactual">
                             <img src="" width="150px" height="120px" id="imagenmuestra"> -->
-                            <input name="file" type="file" />
+                            <!-- <input name="file" type="file" /> -->
+                            <input type="file" id="files" name="files[]" multiple accept=".webp" />
+                            <output id="list"></output>
+                            
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Código:</label>

@@ -13,24 +13,43 @@ Class Articulo
 	//Implementamos un método para insertar registros
 	public function insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $img)
 	{
-		$sql="INSERT INTO planta (id_categoria, nombre, stock, nombre_cientifico, familia, apodo, descripcion, img)
-		VALUES ('$id_categoria','$nombre','$stock','$nombre_cientifico','$familia','$apodo','$descripcion','$img')";
+		$sql="INSERT INTO planta (id_categoria, nombre, stock, nombre_cientifico, familia, apodo, descripcion)
+		VALUES ('$id_categoria','$nombre','$stock','$nombre_cientifico','$familia','$apodo','$descripcion')";
 
-		if ($id_color == "") {
+		if ($id_color == "" && $img = "") {
 			return ejecutarConsulta($sql);
 		}else {
 			$planta_id = ejecutarConsulta_retornarID($sql);
-			$num_elementos=0;
-			$sw=true;
 
-			while ($num_elementos < count($id_color))
-			{
-				$sql_detalle = "INSERT INTO plantacolor(id_planta, id_color) VALUES('$planta_id', '$id_color[$num_elementos]')";
-				ejecutarConsulta($sql_detalle) or $sw = false;
-				$num_elementos=$num_elementos + 1;
+			if ($id_color) {
+				$num_elementos=0;
+				$sw=true;
+				while ($num_elementos < count($id_color))
+				{
+					$sql_detalle = "INSERT INTO plantacolor(id_planta, id_color) VALUES('$planta_id', '$id_color[$num_elementos]')";
+					ejecutarConsulta($sql_detalle) or $sw = false;
+					$num_elementos=$num_elementos + 1;
+				}
+				
 			}
-			return $sw;
+
+			if ($id_color) {
+				$num_elementos2=0;
+				$sw2=true;	
+				while ($num_elementos2 < count($img))
+				{
+					$sql_detalle2 = "INSERT INTO plantaimg(id_planta, img) VALUES('$planta_id', '$img[$num_elementos2]')";
+					ejecutarConsulta($sql_detalle2) or $sw2 = false;
+					$num_elementos2 = $num_elementos2 + 1;
+				}
+							
+			}
 			
+			if ( $sw=true && $sw2=true ) {
+				return true;	
+			}else{
+				return false;			
+			}
 		}
 		
 	}

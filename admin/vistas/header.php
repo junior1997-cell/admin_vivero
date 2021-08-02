@@ -44,6 +44,9 @@ if (strlen(session_id()) < 1)
       .dropdown-menu{
         box-shadow: 0 0 40px #111;         
       }
+      sub{
+        vertical-align: top; font-size: 1.2em; color:red;
+      }
     </style>
   </head>
   <body class="hold-transition skin-blue-light sidebar-mini">
@@ -82,17 +85,26 @@ if (strlen(session_id()) < 1)
                     <div class="box-body box-profile">
                       <img class="profile-user-img img-responsive img-circle" src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" alt="User profile picture">
                       <h3 class="profile-username text-center"><?php echo $_SESSION['nombre']; ?></h3>
-                      <p class="text-muted text-center">Software Engineer</p>
+                      <p class="text-muted text-center"><?php echo $_SESSION['cargo']; ?></p>
 
                       <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
-                          <b>Followers</b> <a class="pull-right">1,322</a>
+                          <b>Direccion</b>
+                          <p class="text-muted" style="margin-bottom:0px;">
+                            <?php echo $_SESSION['direccion']; ?>
+                          </p>  
                         </li>
                         <li class="list-group-item">
-                          <b>Following</b> <a class="pull-right">543</a>
+                          <b>Telefono</b>
+                          <p class="text-muted" style="margin-bottom:0px;">
+                            <?php echo $_SESSION['telefono']; ?>
+                          </p>  
                         </li>
                         <li class="list-group-item">
-                          <b>Friends</b> <a class="pull-right">13,287</a>
+                          <b>E-mail</b>
+                          <p class="text-muted" style="margin-bottom:0px;">
+                            <?php echo $_SESSION['email']; ?>
+                          </p>  
                         </li>
                       </ul>
 
@@ -214,7 +226,7 @@ if (strlen(session_id()) < 1)
             ?>
 
             <?php 
-            if ($_SESSION['consultac']==1)
+            if ($_SESSION['consultac']==10)
             {
               echo '<li id="mConsultaC" class="treeview">
               <a href="#">
@@ -229,7 +241,7 @@ if (strlen(session_id()) < 1)
             ?>
 
              <?php 
-            if ($_SESSION['consultav']==1)
+            if ($_SESSION['consultav']==10)
             {
               echo '<li id="mConsultaV" class="treeview">
               <a href="#">

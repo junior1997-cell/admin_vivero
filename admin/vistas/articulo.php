@@ -55,21 +55,21 @@ if ($_SESSION['almacen']==1)
                     <div class="panel-body" id="formularioregistros">
                         <form name="formulario" id="formulario" method="POST" >
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Nombre(*):</label>
+                            <label>Nombre: <sub >*</sub> </label>
                             <input type="hidden" name="idarticulo" id="idarticulo">
-                            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" >
+                            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required >
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Categoría(*):</label>
-                            <select id="idcategoria" name="idcategoria" class="form-control selectpicker" data-live-search="true" ></select>
+                            <label>Categoría: <sub >*</sub> </label>
+                            <select id="idcategoria" name="idcategoria" class="form-control selectpicker" required data-live-search="true" title="Seleccione los colores" ></select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Color(*):</label><br>
-                            <select id="idcolor" name="idcolor[]" class="form-control selectpicker" multiple  data-live-search="true"  ></select>
+                            <label>Color:</label><br>
+                            <select id="idcolor" name="idcolor[]" class="form-control selectpicker" multiple  data-live-search="true" title="Seleccione los colores" data-actions-box="true"></select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Stock(*):</label>
-                            <input type="number" class="form-control" name="stock" id="stock" >
+                            <label>Stock: <sub >*</sub> </label>
+                            <input type="number" class="form-control" name="stock" id="stock" required>
                           </div>
                           
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -85,8 +85,8 @@ if ($_SESSION['almacen']==1)
                             <input type="text" class="form-control" name="apodo" id="apodo" maxlength="256" placeholder="Descripción">
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Descripción:</label>
-                            <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción">
+                            <label>Descripción: <sub >*</sub> </label>
+                            <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción" required>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12 " >
                             <!-- <label>Imagen:</label>
@@ -94,8 +94,38 @@ if ($_SESSION['almacen']==1)
                             <input type="hidden" name="imagenactual" id="imagenactual">
                             <img src="" width="150px" height="120px" id="imagenmuestra"> -->
                             <!-- <input name="file" type="file" /> -->
-                            <input type="file" id="files" name="files[]" multiple accept=".webp" />
-                            <output id="list"></output>
+                            <!-- <input type="file" id="files" name="files[]" multiple accept=".webp" /> -->
+                            <!-- <output id="list"></output> -->
+                            <div class="alert alert-info alert-dismissible mt-1">
+                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                              <h3 class="align-self-start" style="margin-top: 0px !important;" ><i class="fa fa-info-circle"></i> Alert!  </h3>
+                              <ol>
+                                <li>Tiene que ser imagen .WEBP</li>
+                                <li>La imagen tiene que ser cuadrada.</li>
+                                <li>La imagen tine que tener 2 Mb como maximo.</li>                               
+                              </ol>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="foto1">Imagen principal <sub >*</sub></label>
+                              <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto1_i" style="cursor: pointer; height: 230px;" width="300px" />
+                              <input style="display: none;" type="file" name="foto1" id="foto1" required />
+                              <input type="hidden" name="foto1_actual" id="foto1_actual" />
+                              <div class="text-center" id="foto1_nombre"> <!-- aqui va el nombre de la FOTO --></div>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="foto2">Imagen Secundaria 1</label>
+                              <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto2_i" style="cursor: pointer; height: 230px;" width="300px" />
+                              <input style="display: none;" type="file" name="foto2" id="foto2" />
+                              <input type="hidden" name="foto2_actual" id="foto2_actual" />
+                              <div class="text-center" id="foto2_nombre"> <!-- aqui va el nombre de la FOTO --></div>
+                            </div>
+                            <div class="col-md-4 ">
+                              <label for="foto3">Imagen Secundaria 2</label>
+                              <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;"  src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto3_i" style="cursor: pointer;height: 230px" width="300px">
+                              <input style="display:none" type="file" name="foto3" id="foto3">
+                              <input type="hidden" name="foto3_actual" id="foto3_actual">
+                              <div class="text-center" id="foto3_nombre"> <!-- aqui va el nombre de la FOTO --></div>
+                            </div>
                             
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">

@@ -27,74 +27,69 @@ function init(){
 	$("#imagenmuestra").hide();
 	$('#mAlmacen').addClass("treeview active");
     $('#lArticulos').addClass("active");
+
+	$("#foto1_i").click(function() {
+		$('#foto1').trigger('click');
+	});
+	$("#foto2_i").click(function() {
+		$('#foto2').trigger('click');
+	});
+	$("#foto3_i").click(function() {
+		$('#foto3').trigger('click');
+	});
+
+	$("#foto1").change(function(e) {
+		addImage(e,$("#foto1").attr("id"));
+	});
+	$("#foto2").change(function(e) {
+		addImage(e,$("#foto2").attr("id"))
+	});
+	$("#foto3").change(function(e) {
+		addImage(e,$("#foto3").attr("id"));
+	});
+
+	// $('#idcolor').selectpicker('val', [1,3,4]); 
+	$('select[name=idcolor]').val(1);
+   $('select[name=idcolor]').change();
 }
-var arrayfile = [];
-$("div.imagen_dropzone").dropzone({ 
-	url: "../ajax/articulo.php",
-	addRemoveLinks: true,
-	// acceptedFiles: ".webp",
-	maxFilesize: 1,
-	thumbnailWidth: 314, //I want to change width to 100% instead
-    thumbnailHeight: 314,
-	init: function () {
 
-		this.on("addedfile", function (file) {
-			arrayfile.push(file);
-			console.log("archivos",arrayfile);
-		}),
-		this.on("removedfile", function (file) {
-			var index = arrayfile.indexOf(file);
-			arrayfile.splice(index,1);
-			console.log("archivos",arrayfile);
-		}),
 
-		this.on("thumbnail", function (file) {
-			if (file.height < 5 && file.width < 5) {
-				alert("Tamaño máximo de imagen permitido es 5 x 5 ");
+
+
+
+/* PREVISUALIZAR LAS IMAGENES */
+function addImage(e,id) {
+	var file = e.target.files[0], imageType = /image.*/;
+	var sizeByte = file.size;
+
+	var sizekiloBytes = parseInt(sizeByte / 1024);
+	var sizemegaBytes = (sizeByte / 1000000);
+	// alert("KILO: "+sizekiloBytes+" MEGA: "+sizemegaBytes)
+	if (!file.type.match(imageType)){
+		// return;
+		toastr.error('Este tipo de ARCHIVO no esta permitido');
+		$("#"+id+"_i").attr("src", "../public/img/default/img_defecto.png");
+	}else{
+		if (sizekiloBytes <= 2048) {
+			var reader = new FileReader();
+			reader.onload = fileOnload;
+			function fileOnload(e) {
+				var result = e.target.result;
+				$("#"+id+"_i").attr("src", result);
+				$("#"+id+"_nombre").html(file.name);
+				toastr.success('Imagen aceptada.')
 			}
-		}),
-
-		this.on("error", function (file, message) {
-			toastr.error("("+file.name.toUpperCase()+") no cumple con requisitos")
-			this.removeFile(file);
-		}),
-
-		this.on("dragover", function(file) {
-			toastr.info("Suelte el archivo")
-		})
-	}
-});
-
-// ----------------------
-var puedeLeerArchivos;
-// Check for the various File API support.
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-  // Great success! All the File APIs are supported.
-  puedeLeerArchivos =true;
-} else {
-  alert('The File APIs are not fully supported in this browser.');
-  puedeLeerArchivos =false;
+			reader.readAsDataURL(file);
+		} else {
+			toastr.warning('La imagen: '+file.name.toUpperCase()+' es muy pesada')
+			$("#"+id+"_i").attr("src", "../public/img/default/img_error.png");
+			$("#"+id).val("");
+			console.log(id);
+		}
+	}	
+	
 }
-
-function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
-    var output = [];
-    var fileData = new FormData();
-    fileData.append("cotizacion", 1200);
-    for (var i = 0, f; f = files[i]; i++) {
-     var file = f;
-        // debugger;
-        fileData.append("Document", f);
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate.toLocaleDateString(), '</li>');
-    }
-    
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  }
-
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
-// ----------------------
+// ----------
 
 //Función limpiar
 function limpiar()
@@ -125,7 +120,9 @@ function mostrarform(flag)
 		$("#listadoregistros").show();
 		$("#formularioregistros").hide();
 		$("#btnagregar").show();
+		
 	}
+	
 }
 
 //Función cancelarform
@@ -140,6 +137,7 @@ function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
+		responsive: true,
 		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor

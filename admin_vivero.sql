@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-07-2021 a las 14:45:39
+-- Tiempo de generación: 02-08-2021 a las 22:24:16
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.4.20
 
@@ -49,14 +49,6 @@ CREATE TABLE `categoria` (
   `estado` char(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `categoria`
---
-
-INSERT INTO `categoria` (`idcategoria`, `nombre`, `descripcion`, `fecha`, `estado`) VALUES
-(1, 'ornamnetal', 'bonnita', '2021-07-29 02:42:23', '1'),
-(2, 'arboles', 'eee', '2021-07-29 05:35:10', '1');
-
 -- --------------------------------------------------------
 
 --
@@ -70,17 +62,18 @@ CREATE TABLE `color` (
   `estado` char(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `color`
+-- Estructura de tabla para la tabla `contactanos`
 --
 
-INSERT INTO `color` (`idcolor`, `nombre`, `fecha`, `estado`) VALUES
-(1, 'rojo', '2021-07-29 02:38:26', '1'),
-(2, 'verde', '2021-07-29 02:38:33', '1'),
-(3, 'amarillo', '2021-07-29 02:39:15', '1'),
-(4, 'rosado', '2021-07-29 02:39:24', '1'),
-(5, 'anaranjado', '2021-07-29 04:09:01', '1'),
-(6, 'fuccia', '2021-07-29 04:09:07', '1');
+CREATE TABLE `contactanos` (
+  `idcontactanos` int(11) NOT NULL,
+  `direccion` text DEFAULT NULL,
+  `coordenadas` text DEFAULT NULL,
+  `email` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -94,6 +87,8 @@ CREATE TABLE `nosotros` (
   `vision` text DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
   `img` text DEFAULT NULL,
+  `nombre` text DEFAULT NULL,
+  `objetivos` text DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT current_timestamp(),
   `estado` char(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -111,19 +106,6 @@ CREATE TABLE `permiso` (
   `estado` char(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `permiso`
---
-
-INSERT INTO `permiso` (`idpermiso`, `nombre`, `fecha`, `estado`) VALUES
-(1, 'Escritorio', '2021-07-28 23:00:00', '1'),
-(2, 'Almacen', '2021-07-28 23:00:00', '1'),
-(3, 'Compras', '2021-07-28 23:00:00', '1'),
-(4, 'Ventas', '2021-07-28 23:00:00', '1'),
-(5, 'Acceso', '2021-07-28 23:00:00', '1'),
-(6, 'Consulta Compras', '2021-07-28 23:00:00', '1'),
-(7, 'Consulta Ventas', '2021-07-28 23:00:00', '1');
-
 -- --------------------------------------------------------
 
 --
@@ -139,34 +121,9 @@ CREATE TABLE `planta` (
   `familia` text DEFAULT NULL,
   `apodo` text DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
-  `img` text DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT current_timestamp(),
   `estado` char(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `planta`
---
-
-INSERT INTO `planta` (`idplanta`, `id_categoria`, `nombre`, `stock`, `nombre_cientifico`, `familia`, `apodo`, `descripcion`, `img`, `fecha`, `estado`) VALUES
-(11, 1, '', 0, '', '', '', '', '', '2021-07-29 06:09:06', '1'),
-(12, 1, '', 0, '', '', '', '', '', '2021-07-29 06:09:47', '1'),
-(24, 1, '', 0, '', '', '', '', '', '2021-07-29 07:14:45', '1'),
-(25, 1, '', 0, '', '', '', '', '', '2021-07-29 07:16:45', '1'),
-(26, 1, '', 0, '', '', '', '', '', '2021-07-29 07:19:13', '1'),
-(27, 1, '', 0, '', '', '', '', '', '2021-07-29 07:19:21', '1'),
-(28, 2, '', 0, '', '', '', '', '', '2021-07-29 07:19:36', '1'),
-(29, 1, '', 0, '', '', '', '', '', '2021-07-29 07:20:27', '1'),
-(30, 1, '', 0, '', '', '', '', '', '2021-07-29 07:20:58', '1'),
-(31, 2, 'rosa', 2, 'rositis drimater', 'rositis', 'tropida', '', '', '2021-07-29 07:26:36', '1'),
-(32, 2, 'rosa', 2, 'rositis drimater', 'rositis', 'tropida', '', '', '2021-07-29 07:27:01', '1'),
-(33, 2, 'rosa', 2, 'rositis drimater', 'rositis', 'tropida', '', '', '2021-07-29 07:27:07', '1'),
-(34, 2, 'rosa', 21, 'rositis drimater', 'rositis', 'tropida', 'soy chivoooo', '', '2021-07-29 07:28:41', '1'),
-(35, 1, 'rosa', 0, '', '', '', '', '', '2021-07-29 07:31:37', '1'),
-(36, 1, '', 0, '', '', '', '', '', '2021-07-29 07:31:57', '1'),
-(37, 1, '', 0, '', '', '', '', '', '2021-07-29 07:32:23', '1'),
-(38, 1, '', 0, '', '', '', '', '', '2021-07-29 07:34:37', '1'),
-(39, 1, '', 0, '', '', '', '', '', '2021-07-29 07:35:23', '1');
 
 -- --------------------------------------------------------
 
@@ -182,22 +139,6 @@ CREATE TABLE `plantacolor` (
   `estado` char(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `plantacolor`
---
-
-INSERT INTO `plantacolor` (`idplantacolor`, `id_planta`, `id_color`, `fecha`, `estado`) VALUES
-(2, 35, 1, '2021-07-29 07:31:37', '1'),
-(3, 35, 2, '2021-07-29 07:31:38', '1'),
-(4, 35, 4, '2021-07-29 07:31:38', '1'),
-(5, 35, 5, '2021-07-29 07:31:38', '1'),
-(6, 35, 6, '2021-07-29 07:31:38', '1'),
-(7, 36, 1, '2021-07-29 07:31:57', '1'),
-(8, 36, 2, '2021-07-29 07:31:57', '1'),
-(9, 36, 4, '2021-07-29 07:31:57', '1'),
-(10, 36, 5, '2021-07-29 07:31:57', '1'),
-(11, 36, 6, '2021-07-29 07:31:57', '1');
-
 -- --------------------------------------------------------
 
 --
@@ -207,6 +148,8 @@ INSERT INTO `plantacolor` (`idplantacolor`, `id_planta`, `id_color`, `fecha`, `e
 CREATE TABLE `plantaimg` (
   `idplantaimg` int(11) NOT NULL,
   `id_planta` int(11) NOT NULL,
+  `img` text DEFAULT NULL,
+  `prioridad` varchar(3) DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT current_timestamp(),
   `estado` char(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -233,17 +176,6 @@ CREATE TABLE `usuario` (
   `fecha` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`idusuario`, `nombre`, `tipo_documento`, `num_documento`, `direccion`, `telefono`, `email`, `cargo`, `login`, `clave`, `imagen`, `condicion`, `fecha`) VALUES
-(1, 'Mirella Huamana Camizan', '12345678', '75867666', 'Jr. Los abalodes #213', '932 921 121', 'mirella@upeu.edu.pe', 'ADMINISTRADORA', 'admin', '123', 'mirella.jpg', '1', '2021-07-28 17:44:10'),
-(2, 'Mirella', 'Huamán Cambizan', '75867666', 'Jr. Los abalodes #213', '932 921 121', 'mirella@upeu.edu.pe', 'mirella.jpg', 'mirella', '123', 'prima.jpg', '1', '2021-07-28 17:44:10'),
-(3, 'Mirella', 'Huamán Cambizan', '75867666', 'Jr. Los abalodes #213', '932 921 121', 'mirella@upeu.edu.pe', 'mirella.jpg', 'mirella', '123', 'prima.jpg', '1', '2021-07-28 17:44:10'),
-(60, 'aaaaaaaaaaaaa', 'aaaaaaaaaaaa', '', 'aaaaaaaaaa', 'aaaaaaaa', 'aaaaaaaaaa', '', 'aaaaaaaaa', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e99', 'prima.jpg', '1', '2021-07-28 17:44:10'),
-(61, 'aaa', 'DNI', 'aaaaa', '', '', '', '', 'aaaaa', 'f2aca93b80cae681221f0445fa4e2cae8a1f9f8fa1e1741d96', '', '1', '2021-07-29 06:11:01');
-
 -- --------------------------------------------------------
 
 --
@@ -256,26 +188,6 @@ CREATE TABLE `usuario_permiso` (
   `idusuario` int(11) NOT NULL,
   `fecha` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `usuario_permiso`
---
-
-INSERT INTO `usuario_permiso` (`idusuario_permiso`, `idpermiso`, `idusuario`, `fecha`) VALUES
-(1, 1, 1, '2021-07-28 23:05:25'),
-(2, 2, 1, '2021-07-28 23:05:25'),
-(3, 3, 1, '2021-07-28 23:05:25'),
-(4, 4, 1, '2021-07-28 23:05:25'),
-(5, 5, 1, '2021-07-28 23:05:25'),
-(6, 6, 1, '2021-07-28 23:05:25'),
-(7, 7, 1, '2021-07-28 23:05:25'),
-(8, 1, 61, '2021-07-29 06:11:01'),
-(9, 2, 61, '2021-07-29 06:11:01'),
-(10, 3, 61, '2021-07-29 06:11:01'),
-(11, 4, 61, '2021-07-29 06:11:02'),
-(12, 5, 61, '2021-07-29 06:11:02'),
-(13, 6, 61, '2021-07-29 06:11:02'),
-(14, 7, 61, '2021-07-29 06:11:02');
 
 --
 -- Índices para tablas volcadas
@@ -298,6 +210,12 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `color`
   ADD PRIMARY KEY (`idcolor`);
+
+--
+-- Indices de la tabla `contactanos`
+--
+ALTER TABLE `contactanos`
+  ADD PRIMARY KEY (`idcontactanos`);
 
 --
 -- Indices de la tabla `nosotros`
@@ -361,13 +279,19 @@ ALTER TABLE `carrucel`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `color`
 --
 ALTER TABLE `color`
-  MODIFY `idcolor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idcolor` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `contactanos`
+--
+ALTER TABLE `contactanos`
+  MODIFY `idcontactanos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `nosotros`
@@ -379,19 +303,19 @@ ALTER TABLE `nosotros`
 -- AUTO_INCREMENT de la tabla `permiso`
 --
 ALTER TABLE `permiso`
-  MODIFY `idpermiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idpermiso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `planta`
 --
 ALTER TABLE `planta`
-  MODIFY `idplanta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `idplanta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `plantacolor`
 --
 ALTER TABLE `plantacolor`
-  MODIFY `idplantacolor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idplantacolor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `plantaimg`
@@ -403,13 +327,13 @@ ALTER TABLE `plantaimg`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_permiso`
 --
 ALTER TABLE `usuario_permiso`
-  MODIFY `idusuario_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idusuario_permiso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

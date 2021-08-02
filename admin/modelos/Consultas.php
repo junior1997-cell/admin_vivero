@@ -29,6 +29,11 @@ Class Consultas
 	{
 		$sql="SELECT COUNT(*) as totalflores FROM planta categoria WHERE id_categoria = 3";
 		return ejecutarConsulta($sql);
+	}	
+	//imagenes escritorios
+	public function imagesscritorio(){
+		$sql = "SELECT img, estado FROM planta WHERE estado=1";
+		return ejecutarConsulta($sql);
 	}
 
 }

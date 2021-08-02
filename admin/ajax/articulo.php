@@ -120,8 +120,7 @@ if (!isset($_SESSION["nombre"])) {
             "2" => $reg->categoria,
             "3" => $reg->familia,
             "4" => $reg->stock,
-            "5" => "<img src='../files/articulos/" . $reg->img . "' height='50px' width='50px' >",
-            "6" => $reg->estado ? '<span class="label bg-green">Activado</span>' : '<span class="label bg-red">Desactivado</span>',
+            "5" => $reg->estado ? '<span class="label bg-green">Activado</span>' : '<span class="label bg-red">Desactivado</span>',
           ];
         }
         $results = [

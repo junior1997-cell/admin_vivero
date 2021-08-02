@@ -94,14 +94,33 @@ function addImage(e,id) {
 //Función limpiar
 function limpiar()
 {
-	$("#codigo").val("");
-	$("#nombre").val("");
-	$("#descripcion").val("");
-	$("#stock").val("");
-	$("#imagenmuestra").attr("src","");
-	$("#imagenactual").val("");
-	$("#print").hide();
 	$("#idarticulo").val("");
+	$("#nombre").val("");
+	$("#idcategoria").val('default').selectpicker("refresh");
+	$("#idcolor").val('default').selectpicker("refresh");
+	$("#stock").val("");
+	$("#nombre_cientifico").val("");
+	$("#familia").val("");
+	$("#apodo").val("");
+	$("#descripcion").val("");
+	
+	
+	$("#foto1_i").attr("src", "recursos/img/img_defecto.png");
+	$("#foto1").val("");
+	$("#foto1_actual").val("");
+	$("#foto2_i").attr("src", "recursos/img/img_defecto.png");
+	$("#foto2").val("");
+	$("#foto2_actual").val("");
+	$("#foto3_i").attr("src", "recursos/img/img_defecto.png");
+	$("#foto3").val("");
+	$("#foto3_actual").val("");
+
+	$("#foto1_nombre").html("");
+	$("#foto2_nombre").html("");
+	$("#foto3_nombre").html("");
+
+	$("#codigo").val("");
+	$("#print").hide();	
 }
 
 //Función mostrar formulario

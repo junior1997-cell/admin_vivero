@@ -48,7 +48,7 @@ Class Articulo
       VALUES ('$planta_id','$foto3','$tipo2')";
       ejecutarConsulta($sql_3) or $sw_4 = false;
     }
-    
+
     return $sw_2;
     
     // if ($id_color == "") {
@@ -98,7 +98,7 @@ Class Articulo
 	public function listar()
 	{
 		$sql="SELECT p.idplanta ,p.id_categoria ,c.nombre as categoria,
-			p.nombre, p.stock, p.nombre_cientifico, p.familia, p.apodo, p.descripcion, p.img, p.fecha, p.estado 
+			p.nombre, p.stock, p.nombre_cientifico, p.familia, p.apodo, p.descripcion, p.fecha, p.estado 
 		FROM planta p 
 		INNER JOIN categoria c ON p.id_categoria =c.idcategoria";
 		return ejecutarConsulta($sql);		

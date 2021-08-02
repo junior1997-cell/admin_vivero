@@ -36,7 +36,6 @@ if ($_SESSION['almacen']==1)
                             <th>Categoría</th>
                             <th>Código</th>
                             <th>Stock</th>
-                            <th>Imagen</th>
                             <th>Estado</th>
                           </thead>
                           <tbody>                            
@@ -47,7 +46,6 @@ if ($_SESSION['almacen']==1)
                             <th>Categoría</th>
                             <th>Código</th>
                             <th>Stock</th>
-                            <th>Imagen</th>
                             <th>Estado</th>
                           </tfoot>
                         </table>
@@ -61,7 +59,7 @@ if ($_SESSION['almacen']==1)
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Categoría: <sub >*</sub> </label>
-                            <select id="idcategoria" name="idcategoria" class="form-control selectpicker" required data-live-search="true" title="Seleccione los colores" ></select>
+                            <select id="idcategoria" name="idcategoria" class="form-control selectpicker" required data-live-search="true" title="Seleccione una categoria" ></select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Color:</label><br>

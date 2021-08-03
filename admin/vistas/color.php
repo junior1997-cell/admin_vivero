@@ -46,18 +46,39 @@ if ($_SESSION['almacen']==1)
                         </table>
                     </div>
                     <div class="panel-body" style="height: 400px;" id="formularioregistros">
-                        <form name="formulario" id="formulario" method="POST">
-                          <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                            <label>Nombre:</label>
-                            <input type="hidden" name="idcolor" id="idcolor">
-                            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required>
+                    <form name="formulario" id="formulario" method="POST">
+                      <div class="row">
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <label>Nombre:</label>
+                          <input type="hidden" name="idcolor" id="idcolor" />
+                          <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required />
+                        </div>
+                        <!-- Color Picker -->
+                        <style>
+                          .colorpicker-element .input-group-addon i {
+                            width: 30px !important;
+                            height: 26px !important;
+                          }
+                        </style>
+                        <!-- <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <div class="form-group">
+                            <label>Color picker with addon:</label>
+                            <div class="input-group my-colorpicker2" >
+                              <div class="input-group-addon" style="padding:2px 2px !important;" >
+                                <i></i>
+                              </div>
+                              <input type="text" class="form-control my-colorpicker1">
+                            </div>
                           </div>
-                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                        </div> -->
 
-                            <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
-                          </div>
-                        </form>
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                          <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+                        </div>
+                      </div>
+                    </form>
+
                     </div>
                     <!--Fin centro -->
                   </div><!-- /.box -->
@@ -77,6 +98,14 @@ else
 require 'footer.php';
 ?>
 <script type="text/javascript" src="scripts/color.js"></script>
+<!-- bootstrap color picker -->
+<script src="../public/colorpicker/bootstrap-colorpicker.min.js"></script>
+<script >
+  //Colorpicker
+  $(".my-colorpicker1").colorpicker();
+  //color picker with addon
+  $(".my-colorpicker2").colorpicker();
+</script>
 <?php 
 }
 ob_end_flush();

@@ -68,7 +68,9 @@ Class Articulo
 	//Implementamos un método para editar registros
 	public function editar($idplanta,$id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $foto1,$foto2, $foto3)
 	{
-		$sql="UPDATE planta SET idcategoria='$idcategoria',codigo='$codigo',nombre='$nombre',stock='$stock',descripcion='$descripcion',imagen='$imagen' WHERE idplanta='$idplanta'";
+		$sql="UPDATE admin_vivero.planta SET id_categoria='$id_categoria',nombre='$nombre',
+			stock='$stock',nombre_cientifico = '$nombre_cientifico',familia = '$familia',apodo = '$apodo',descripcion='$descripcion' 
+		WHERE idplanta='$idplanta'";
 		ejecutarConsulta($sql);
 
 		//Eliminamos todos los colores
@@ -81,7 +83,7 @@ Class Articulo
 			$sw=true;
 			while ($num_elementos < count($id_color))
 			{
-				$sql_detalle = "INSERT INTO plantacolor(id_planta, id_color) VALUES('$planta_id', '$id_color[$num_elementos]')";
+				$sql_detalle = "INSERT INTO plantacolor(id_planta, id_color) VALUES('$idplanta', '$id_color[$num_elementos]')";
 				ejecutarConsulta($sql_detalle) or $sw = false;
 				$num_elementos=$num_elementos + 1;
 			}		
@@ -100,7 +102,7 @@ Class Articulo
 		$sql_3="UPDATE plantaimg SET img='$foto3' WHERE id_planta='$idplanta' and prioridad = '$tipo3'";
 		ejecutarConsulta($sql_3) or $sw_4 = false;
 
-		return sql_3;
+		return $sw_4;
 	}
 
 	//Implementamos un método para desactivar registros

@@ -41,11 +41,13 @@ if (strlen(session_id()) < 1)
     <link rel="stylesheet" href="../public/dropzone/dist/dropzone.css">
     <link rel="stylesheet" href="../public/dropzone/dist/min/dropzone.min.css">
     <style>
-      .dropdown-menu{
-        box-shadow: 0 0 40px #111;         
+      .dropdown-menu {
+        box-shadow: 0 0 40px #111;
       }
-      sub{
-        vertical-align: top; font-size: 1.2em; color:red;
+      sub {
+        vertical-align: top;
+        font-size: 1.2em;
+        color: red;
       }
     </style>
   </head>

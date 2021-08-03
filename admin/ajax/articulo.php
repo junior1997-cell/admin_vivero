@@ -12,7 +12,7 @@ if (!isset($_SESSION["nombre"])) {
 
     $articulo = new Articulo();
 
-    $idarticulo = isset($_POST["idarticulo"]) ? limpiarCadena($_POST["idarticulo"]) : "";
+    $idplanta = isset($_POST["idplanta"]) ? limpiarCadena($_POST["idplanta"]) : "";
     $id_categoria = isset($_POST["idcategoria"]) ? limpiarCadena($_POST["idcategoria"]) : "";
     $id_color = isset($_POST["idcolor"]) ? $_POST["idcolor"] : "";
     $nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
@@ -69,31 +69,78 @@ if (!isset($_SESSION["nombre"])) {
           }
         }
 
-        if (empty($idarticulo)) {
+        if (empty($idplanta)) {
           $rspta = $articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3);
           echo $rspta ? "ok" : "Planta: " . strtoupper($nombre) . " no se pudo registrar";
           
         } else {
-          $rspta = $articulo->editar($idarticulo, $idcategoria, $codigo, $nombre, $stock, $descripcion, $my_fotos);
-          echo $rspta ? "Artículo actualizado" : "Artículo no se pudo actualizar";
+          if($flat_foto1==true){
+            $datos_f1 =$articulo->nombreFoto($idplanta,"p1");
+            $nombre_img_1_ant=$datos_f1->fetch_object()->img;
+            if($nombre_img_1_ant!=""){
+              unlink("../files/articulos/".$nombre_img_1_ant);
+            }
+          }
+          if($flat_foto2==true){
+            $datos_f2 =$articulo->nombreFoto($idplanta,"s2");
+            $nombre_img_2_ant=$datos_f2->fetch_object()->img;
+            if($nombre_img_2_ant!=""){
+              unlink("../files/articulos/".$nombre_img_2_ant);
+            }
+          }
+          if($flat_foto3==true){
+            $datos_f3 =$articulo->nombreFoto($idplanta,"s3");
+            $nombre_img_3_ant=$datos_f3->fetch_object()->img;
+            if($nombre_img_3_ant!=""){
+              unlink("../files/articulos/".$nombre_img_3_ant);
+            }
+          }
+          $rspta = $articulo->editar($idplanta, $id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3);
+          echo $rspta ? "ok" : "Planta: " . strtoupper($nombre) . " no se pudo registrar";
         }
        
         break;
 
       case 'desactivar':
-        $rspta = $articulo->desactivar($idarticulo);
-        echo $rspta ? "Artículo Desactivado" : "Artículo no se puede desactivar";
+        $rspta = $articulo->desactivar($idplanta);
+        echo $rspta ? "ok" : "Artículo no se puede desactivar";
         break;
 
       case 'activar':
-        $rspta = $articulo->activar($idarticulo);
-        echo $rspta ? "Artículo activado" : "Artículo no se puede activar";
+        $rspta = $articulo->activar($idplanta);
+        echo $rspta ? "ok" : "Artículo no se puede activar";
         break;
 
       case 'mostrar':
-        $rspta = $articulo->mostrar($idarticulo);
+        $rspta = $articulo->mostrar($idplanta);
         //Codificar el resultado utilizando json
         echo json_encode($rspta);
+        break;
+
+      case 'mostrar_img':
+        $rspta = $articulo->mostrar_img($_GET['id_planta']);
+        //Vamos a declarar un array
+        $array_img = [];
+        $con = 0;
+        while ($reg = $rspta->fetch_object()) {
+          $array_img[] = [
+            "id_planta"   => $reg->id_planta,
+            "img"         => $reg->img,
+            "prioridad"   => $reg->prioridad,
+            "count"   => $con = $con + 1,
+          ]; 
+        }
+        echo json_encode($array_img);
+        break;
+      case 'mostrar_color':
+        $rspta = $articulo->mostrar_color($_GET['id_planta']);
+        //Vamos a declarar un array
+        $array_color = [];
+        
+        while ($reg = $rspta->fetch_object()) {
+          array_push( $array_color , $reg->id_color);
+        }
+        echo json_encode($array_color);
         break;
 
       case 'listar':

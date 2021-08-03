@@ -133,7 +133,7 @@ function mostrar(idusuario)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
-
+		console.log(data);
 		$("#nombre").val(data.nombre);
 		$("#tipo_documento").val(data.tipo_documento);
 		$("#tipo_documento").selectpicker('refresh');

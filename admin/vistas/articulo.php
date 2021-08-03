@@ -54,7 +54,7 @@ if ($_SESSION['almacen']==1)
                         <form name="formulario" id="formulario" method="POST" >
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Nombre: <sub >*</sub> </label>
-                            <input type="hidden" name="idarticulo" id="idarticulo">
+                            <input type="hidden" name="idplanta" id="idplanta">
                             <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required >
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -84,7 +84,8 @@ if ($_SESSION['almacen']==1)
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Descripción: <sub >*</sub> </label>
-                            <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción" required>
+                            <!-- <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción" required> -->
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50" required> </textarea>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12 " >
                             <!-- <label>Imagen:</label>
@@ -95,7 +96,7 @@ if ($_SESSION['almacen']==1)
                             <!-- <input type="file" id="files" name="files[]" multiple accept=".webp" /> -->
                             <!-- <output id="list"></output> -->
                             <div class="alert alert-info alert-dismissible mt-1">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                              <button type="button" class="close cerrar_alerta_celeste" data-dismiss="alert" aria-hidden="true">&times;</button>
                               <h3 class="align-self-start" style="margin-top: 0px !important;" ><i class="fa fa-info-circle"></i> Alert!  </h3>
                               <ol>
                                 <li>Tiene que ser imagen .WEBP</li>
@@ -103,26 +104,26 @@ if ($_SESSION['almacen']==1)
                                 <li>La imagen tine que tener 2 Mb como maximo.</li>                               
                               </ol>
                             </div>
-                            <div class="col-md-4">
-                              <label for="foto1">Imagen principal <sub >*</sub></label>
+                            <div class="col-md-4 ">
+                              <label for="foto1">Imagen principal <sub >*</sub></label>                                
                               <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto1_i" style="cursor: pointer; height: 230px;" width="300px" />
-                              <input style="display: none;" type="file" name="foto1" id="foto1" required />
+                              <input style="display: none;" type="file" name="foto1" id="foto1" accept=".webp" />
                               <input type="hidden" name="foto1_actual" id="foto1_actual" />
                               <div class="text-center" id="foto1_nombre"> <!-- aqui va el nombre de la FOTO --></div>
                             </div>
                             <div class="col-md-4">
                               <label for="foto2">Imagen Secundaria 1</label>
                               <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto2_i" style="cursor: pointer; height: 230px;" width="300px" />
-                              <input style="display: none;" type="file" name="foto2" id="foto2" />
+                              <input style="display: none;" type="file" name="foto2" id="foto2" accept=".webp"/>
                               <input type="hidden" name="foto2_actual" id="foto2_actual" />
                               <div class="text-center" id="foto2_nombre"> <!-- aqui va el nombre de la FOTO --></div>
                             </div>
                             <div class="col-md-4 ">
                               <label for="foto3">Imagen Secundaria 2</label>
                               <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;"  src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto3_i" style="cursor: pointer;height: 230px" width="300px">
-                              <input style="display:none" type="file" name="foto3" id="foto3">
+                              <input style="display:none" type="file" name="foto3" id="foto3" accept=".webp">
                               <input type="hidden" name="foto3_actual" id="foto3_actual">
-                              <div class="text-center" id="foto3_nombre"> <!-- aqui va el nombre de la FOTO --></div>
+                              <div class="text-center" id="foto3_nombre" > <!-- aqui va el nombre de la FOTO --></div>
                             </div>
                             
                           </div>
@@ -130,9 +131,10 @@ if ($_SESSION['almacen']==1)
                             <label>Código:</label>
                             <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código Barras">
                             <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar</button>
-                            <button class="btn btn-info" type="button" onclick="imprimir()">Imprimir</button>
+                            <button class="btn btn-info" type="button" onclick="imprimir()"><i class="fa fa-print" aria-hidden="true"></i></button>
+                            <button class="btn btn-danger" type="button" onclick="eliminar_barcode()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                             <div id="print">
-                              <svg id="barcode"></svg>
+                              <svg id="barcode" ></svg>
                             </div>
                           </div>
                            
@@ -161,10 +163,10 @@ else
 }
 require 'footer.php';
 ?>
-<script type="text/javascript" src="../public/js/JsBarcode.all.min.js"></script>
-<script type="text/javascript" src="../public/js/jquery.PrintArea.js"></script>
-<script type="text/javascript" src="scripts/articulo.js"></script>
-
+  <script type="text/javascript" src="../public/js/JsBarcode.all.min.js"></script>
+  <script type="text/javascript" src="../public/js/jquery.PrintArea.js"></script>
+  <script type="text/javascript" src="scripts/articulo.js"></script>
+   
 <?php 
 }
 ob_end_flush();

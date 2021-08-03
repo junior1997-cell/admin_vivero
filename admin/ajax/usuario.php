@@ -187,9 +187,9 @@ switch ($_GET["op"]){
 
 		//Almacenar los permisos asignados al usuario en el array
 		while ($per = $marcados->fetch_object())
-			{
-				array_push($valores, $per->idpermiso);
-			}
+		{
+			array_push($valores, $per->idpermiso);
+		}
 
 		//Mostramos la lista de permisos en la vista y si están o no marcados
 		while ($reg = $rspta->fetch_object())

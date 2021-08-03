@@ -1,85 +1,33 @@
-      <!--<link rel="stylesheet" href="css/footer.css">
+<?php
+    //Incluímos inicialmente la conexión a la base de datos
+    require "../../admin/config/Conexion.php";
 
+   	//imagenes escritorios
+        //carousel 
+        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";
+        $carousel_f = ejecutarConsulta($sql);
 
+?> 
 
-   Start Footer  -->
-
+  <!-- Start Footer  -->
    
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/panameñas.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_panameñas.php"><i class="fab fa-instagram"></i></a>
+            <?php
+                while ($row = $carousel_f->fetch_assoc()) { 
+            ?>
+                    <div class="item">
+                        <div class="ins-inner-box">
+                            <img src="../../admin/files/articulos/<?php echo $row['img']; ?>" alt="" />
+                            <div class="hov-in">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/papelillo_caspi_ornamental.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_papelillo_caspi.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/orquidea de tierra.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_orquidea_tierra.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>            
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/delineador.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_delineador.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/cucardas1.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_cucardas.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/choclo amarillo.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_choclo_ama.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/buganvilla- 2174.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_buganvilla.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/cucarda tricolor.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_cucardas_tricolor.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../images/upeu/lengua de suegra.png" alt="" />
-                    <div class="hov-in">
-                        <a href="../pages/c_lengua_suegra.php"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            ?>
         </div>
     </div>
     <!-- End Instagram Feed  -->
@@ -91,8 +39,7 @@
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>ACERCA DE VIVERO UPeU</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
+                            <p id="descripcion"></p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -103,13 +50,13 @@
                                     <h4>CONTÁCTENOS</h4>
                                     <ul>
                                         <li>
-                                            <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                            <p><i class="fas fa-location-arrow"></i>Dirección: <a href="#" id="direccion_f"></a></p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                            <p><i class="fas fa-phone-square"></i>Phone: <a href="#" id="telefono_f"></a></p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                            <p><i class="fas fa-envelope"></i>Email: <a href="#" id="correo_f"></a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -119,7 +66,7 @@
                                     <h4>INTRANET</h4>
                                     <ul class="list list-icons list-icons-lg text-left">
                                         <li>
-                                            <p><i class="fas fa-user"></i><a href="#" target="_blank">Web Master</a></p>
+                                            <p><i class="fas fa-user"></i><a href="../../admin/vistas/login.html" target="_blank">Web Master</a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -141,7 +88,6 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
     <!-- ALL JS FILES -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
@@ -159,6 +105,43 @@
     <script src="../js/contact-form-script.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
+
+    <script>
+        /**Funciones para mostrar en la vista web */
+        function mostrar_contact_v() {
+        $.post("../../admin/ajax/vista_web.php?op=mostrar_contact_v", {
+        }, function(data, status) {
+            data = JSON.parse(data);
+            console.log(data);
+            $("#direccion_f").html(data.direccion);
+        // $("#telefono_f").val(data.coordenadas);
+            $("#telefono_f").html(data.telefono);
+            $("#correo_f").html(data.email);
+        })
+        }
+        /**################# */
+        function mostrar_descrp_v() {
+        $.post("../../admin/ajax/vista_web.php?op=mostrar_descrp_v", {
+        }, function(data, status) {
+            data = JSON.parse(data);
+            console.log(data);
+            $("#descripcion").html("<br>" + (data.descripcion.substr(1,250)+" ...").replace(/\n/ig, '<br>') + "<br>");
+        })
+        }
+        /**################ */
+        function mostrar_descrp_v_index() {
+        $.post("../../admin/ajax/vista_web.php?op=mostrar_descrp_v_index", {
+        }, function(data, status) {
+            data = JSON.parse(data);
+            console.log(data);
+            $("#nombre_index").html(data.nombre);
+            $("#descripcion_index").html("<br>" + (data.descripcion).replace(/\n/ig, '<br>') + "<br>");
+        })
+        }
+        mostrar_descrp_v_index();
+        mostrar_contact_v();
+        mostrar_descrp_v();
+    </script>
 
 </body>
 </html>

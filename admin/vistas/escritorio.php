@@ -11,33 +11,16 @@
     require 'header.php';
 
     if ($_SESSION['escritorio']==1) {
-      require_once "../modelos/Consultas.php";
-      $consulta = new Consultas();
-      //consulta total plantas arboles.
-      $rsptac = $consulta->totalornamnetal();
-      $regc=$rsptac->fetch_object();
-      $totalornamnetal=$regc->totalornamnetal;
-      //consulta total plantas arboles.
-      $rsptac = $consulta->totalarboles();
-      $regc=$rsptac->fetch_object();
-      $totalarboles=$regc->totalarboles;
-      //consulta total plantas arboles.
-      $rsptac = $consulta->totalflores();
-      $regc=$rsptac->fetch_object();
-      $totalflores=$regc->totalflores;
-
-
-	//imagenes escritorios
+   	//imagenes escritorios
         //carousel ornamentales
-        $sql = "SELECT*FROM planta WHERE estado=1 AND id_categoria=1 ORDER BY idplanta DESC";
+        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE id_categoria=1 AND pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";
         $g_Ornamentales = ejecutarConsulta($sql);
         //var_dump($galeria);die();
-
         //carousel arboles
-        $sql = "SELECT*FROM planta WHERE estado=1 AND id_categoria=2 ORDER BY idplanta DESC";
+        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE id_categoria=2 AND pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";
         $g_arboles = ejecutarConsulta($sql);
         //carousel flores
-        $sql = "SELECT*FROM planta WHERE estado=1 AND id_categoria=3 ORDER BY idplanta DESC";
+        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE id_categoria=3 AND pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";
         $g_flores = ejecutarConsulta($sql);
 ?>
 
@@ -67,9 +50,7 @@
                                         </strong>
                                     </h3>
                                     <h4 style="font-size: 50px;">
-                                        <strong>
-                                            <?php echo $totalornamnetal; ?>
-                                        </strong>
+                                        <strong id="totalornamnetal"></strong>
                                     </h4>
                                     <p>Registradas</p>
                                 </div>
@@ -89,9 +70,7 @@
                                             Árboles
                                         </strong></h3>
                                     <h4 style="font-size: 50px;">
-                                        <strong>
-                                            <?php echo $totalarboles; ?>
-                                        </strong>
+                                        <strong id="totalarboles"></strong>
                                     </h4>
                                     <p>Registradas</p>
                                 </div>
@@ -111,9 +90,7 @@
                                             Flores
                                         </strong></h3>
                                     <h4 style="font-size: 50px;">
-                                        <strong>
-                                            <?php echo $totalflores; ?>
-                                        </strong>
+                                        <strong id="totalflores"></strong>
                                     </h4>
                                     <p>Registradas</p>
                                 </div>
@@ -140,7 +117,7 @@
                                                     $active = "active";
                                                     while ($row = $g_Ornamentales->fetch_assoc()) { ?>
                                             <div class="item <?php echo $active; ?>">
-                                                <img src="../images/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
+                                                <img src="../files/articulos/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
                                                 <div>
                                                     <strong>Nombre:
                                                     <span><?php echo $row['nombre']; ?></span>
@@ -151,9 +128,6 @@
                                                     <span><?php echo $row['nombre_cientifico']; ?></span>
                                                 </div> 
                                             </div>
-                                                                                                    
-
-
                                             <?php $active = "";}?>
                                         </div>
                                         </a>
@@ -169,7 +143,7 @@
                                                     $active = "active";
                                                     while ($row = $g_arboles->fetch_assoc()) { ?>
                                             <div class="item <?php echo $active; ?>">
-                                                <img src="../images/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
+                                                <img src="../files/articulos/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
                                                 <div>
                                                     <strong>Nombre:
                                                     <span><?php echo $row['nombre']; ?></span>
@@ -196,7 +170,7 @@
                                                     $active = "active";
                                                     while ($row = $g_flores->fetch_assoc()) { ?>
                                             <div class="item <?php echo $active; ?>">
-                                                <img src="../images/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
+                                                <img src="../files/articulos/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
                                                 <div>
                                                     <strong>Nombre:
                                                     <span><?php echo $row['nombre']; ?></span>
@@ -235,7 +209,7 @@
     }
     require 'footer.php';
 ?>
-
+<script type="text/javascript" src="scripts/consultas.js"></script>
 <script src="../public/js/chart.min.js"></script>
 <script src="../public/js/Chart.bundle.min.js"></script>
 

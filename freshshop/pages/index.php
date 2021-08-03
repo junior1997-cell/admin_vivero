@@ -787,15 +787,8 @@ require'header.php';
                      <img class="mi_iamgen" src="../images/03.png" style="float: right;height: 100%;width: 100%;"/>
                 </div>  
                 <div class="col-col-12 col-lg-6" style="padding: 4px 10px 4px 4px;">
-                    <h2 class="m-b-20 text-white" style="margin-top: 10px; font-family: cursive; font-size: 50px;text-align: center;">VIVERO <b>UPeU</b></h2>
-                    <p  style="font-family: cursive; font-size: 20px; padding: 5px;text-align: justify;">
-                    Bienvenidos al mundo de  <b>Vivero UPeU</b>, 
-                    un mundo de comercialización de plantas, tenemos lo mejor para ti
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium aut, non doloribus sunt qui perferendis 
-                    facilis error dicta eaque quae beatae, modi earum nam, quas numquam facere aspernatur est?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium aut, non doloribus sunt qui perferendis 
-                    facilis error dicta eaque quae beatae, modi earum nam, quas numquam facere aspernatur est?
-                    </p>                   
+                    <h2 class="m-b-20 text-white" style="margin-top: 10px; font-size: 50px;text-align: center;" id="nombre_index"></h2>
+                    <p  style=" font-size: 20px; padding: 5px;text-align: justify;" id="descripcion_index"></p>                   
                 </div>  
             </div>
        </div>
@@ -804,3 +797,7 @@ require'header.php';
 <?php
 require'footer.php';
 ?>
+<script>
+    /**Funciones para mostrar en la vista web */
+
+</script>

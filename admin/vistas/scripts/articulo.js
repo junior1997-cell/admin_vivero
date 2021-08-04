@@ -272,11 +272,11 @@ function guardaryeditar(e)
 function mostrar(idplanta)
 {
 	limpiar();
-	
+
 	$.post("../ajax/articulo.php?op=mostrar",{idplanta : idplanta}, function(data, status)
 	{
 		data = JSON.parse(data);
-		console.log(data); 		
+		// console.log(data); 		
 		mostrarform(true);
 		 
 		$("#idplanta").val(data.idplanta);
@@ -294,30 +294,32 @@ function mostrar(idplanta)
 		if (data.codigo == "") {
 			generarbarcode();
 		}
+		// Imagenes---
+		if (data.img_1 != "") {
+			$("#foto1_i").attr("src", "../files/articulos/" + data.img_1);
+			$("#foto1_actual").val(data.img_1);
+			console.log(data.img_1);
+		} 
+		if (data.img_2 != "") {
+			$("#foto2_i").attr("src", "../files/articulos/" + data.img_2);
+			$("#foto2_actual").val(data.img_2);
+			console.log(data.img_2);
+		} 
+		if (data.img_3 != "") {
+			$("#foto3_i").attr("src", "../files/articulos/" + data.img_3);
+			$("#foto3_actual").val(data.img_3);
+			console.log(data.img_3);
+		} 
  	});
 	
-	$.post("../ajax/articulo.php?op=mostrar_img&id_planta="+idplanta, function(data, status)
-	{
-		data = JSON.parse(data);
+	// $.post("../ajax/articulo.php?op=mostrar_img&id_planta="+idplanta, function(data, status)
+	// {
+	// 	data = JSON.parse(data);
 
-		$.each(data, function (index, value) {
-			if (value.prioridad == "p1") {
-				$("#foto1_i").attr("src", "../files/articulos/" + value.img);
-				$("#foto1_actual").val(value.img);
-				console.log(value.img);
-			} 
-			if (value.prioridad == "s2") {
-				$("#foto2_i").attr("src", "../files/articulos/" + value.img);
-				$("#foto2_actual").val(value.img);
-				console.log(value.img);
-			} 
-			if (value.prioridad == "s3") {
-				$("#foto3_i").attr("src", "../files/articulos/" + value.img);
-				$("#foto3_actual").val(value.img);
-				console.log(value.img);
-			} 
-		});
- 	});
+	// 	$.each(data, function (index, value) {
+			
+	// 	});
+ 	// });
 
 	$.post("../ajax/articulo.php?op=mostrar_color&id_planta="+idplanta, function(data, status)
 	{

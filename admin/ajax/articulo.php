@@ -75,22 +75,22 @@ if (!isset($_SESSION["nombre"])) {
           
         } else {
           if($flat_foto1==true){
-            $datos_f1 =$articulo->nombreFoto($idplanta,"p1");
-            $nombre_img_1_ant=$datos_f1->fetch_object()->img;
+            $datos_f1 =$articulo->nombreFoto($idplanta);
+            $nombre_img_1_ant=$datos_f1->fetch_object()->img_1;
             if($nombre_img_1_ant!=""){
               unlink("../files/articulos/".$nombre_img_1_ant);
             }
           }
           if($flat_foto2==true){
-            $datos_f2 =$articulo->nombreFoto($idplanta,"s2");
-            $nombre_img_2_ant=$datos_f2->fetch_object()->img;
+            $datos_f2 =$articulo->nombreFoto($idplanta);
+            $nombre_img_2_ant=$datos_f2->fetch_object()->img_2;
             if($nombre_img_2_ant!=""){
               unlink("../files/articulos/".$nombre_img_2_ant);
             }
           }
           if($flat_foto3==true){
-            $datos_f3 =$articulo->nombreFoto($idplanta,"s3");
-            $nombre_img_3_ant=$datos_f3->fetch_object()->img;
+            $datos_f3 =$articulo->nombreFoto($idplanta);
+            $nombre_img_3_ant=$datos_f3->fetch_object()->img_3;
             if($nombre_img_3_ant!=""){
               unlink("../files/articulos/".$nombre_img_3_ant);
             }

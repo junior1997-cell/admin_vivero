@@ -20,6 +20,13 @@ function init(){
     });
 }
 
+$('#color_hex').focusout(function() {
+	var x = $(this).val();
+   
+	// Recomiendo usar la consola en lugar de alerts
+	console.log(x);
+});
+
 //Función limpiar
 function limpiar()
 {

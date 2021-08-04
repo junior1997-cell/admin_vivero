@@ -197,7 +197,7 @@ if (!isset($_SESSION["nombre"])) {
         $rspta = $color->select();
 
         while ($reg = $rspta->fetch_object()) {
-          echo '<option value=' . $reg->idcolor . '>' . $reg->nombre . '</option>';
+          echo '<option  value=' . $reg->idcolor . '>' . $reg->nombre . '</option>';
         }
         break;
     }

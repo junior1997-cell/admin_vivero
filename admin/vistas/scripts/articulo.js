@@ -271,6 +271,8 @@ function guardaryeditar(e)
 
 function mostrar(idplanta)
 {
+	limpiar();
+	
 	$.post("../ajax/articulo.php?op=mostrar",{idplanta : idplanta}, function(data, status)
 	{
 		data = JSON.parse(data);
@@ -302,17 +304,17 @@ function mostrar(idplanta)
 			if (value.prioridad == "p1") {
 				$("#foto1_i").attr("src", "../files/articulos/" + value.img);
 				$("#foto1_actual").val(value.img);
-				// console.log(value.img);
+				console.log(value.img);
 			} 
 			if (value.prioridad == "s2") {
 				$("#foto2_i").attr("src", "../files/articulos/" + value.img);
 				$("#foto2_actual").val(value.img);
-				// console.log(value.img);
+				console.log(value.img);
 			} 
 			if (value.prioridad == "s3") {
 				$("#foto3_i").attr("src", "../files/articulos/" + value.img);
 				$("#foto3_actual").val(value.img);
-				// console.log(value.img);
+				console.log(value.img);
 			} 
 		});
  	});

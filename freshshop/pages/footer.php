@@ -112,7 +112,7 @@
         $.post("../../admin/ajax/vista_web.php?op=mostrar_contact_v", {
         }, function(data, status) {
             data = JSON.parse(data);
-            console.log(data);
+           // console.log(data);
             $("#direccion_f").html(data.direccion);
         // $("#telefono_f").val(data.coordenadas);
             $("#telefono_f").html(data.telefono);
@@ -124,7 +124,7 @@
         $.post("../../admin/ajax/vista_web.php?op=mostrar_descrp_v", {
         }, function(data, status) {
             data = JSON.parse(data);
-            console.log(data);
+           // console.log(data);
             $("#descripcion").html("<br>" + (data.descripcion.substr(1,250)+" ...").replace(/\n/ig, '<br>') + "<br>");
         })
         }
@@ -133,7 +133,7 @@
         $.post("../../admin/ajax/vista_web.php?op=mostrar_descrp_v_index", {
         }, function(data, status) {
             data = JSON.parse(data);
-            console.log(data);
+            //console.log(data);
             $("#nombre_index").html(data.nombre);
             $("#descripcion_index").html("<br>" + (data.descripcion).replace(/\n/ig, '<br>') + "<br>");
         })

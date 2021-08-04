@@ -24,6 +24,51 @@ switch($op){
 		$rspta = $vista_web ->mostrarnosotros();
     echo json_encode($rspta);
 	break;
+		//Listar categorias
+	case 'listar_categorias':
+        $rspta = $vista_web->categorias_plantas();
+        $data = array();
+
+        while ($reg=$rspta->fetch_object()) {
+
+            $data[] = array(
+                "idcategoria" => $reg->idcategoria,
+                "nombre" => $reg->nombre
+            );
+        }
+        echo json_encode($data);
+
+    break;
+
+	case 'listar_planta':
+        $id_categoria = $_POST["id_categoria"];
+        if ($id_categoria =='0') {
+            $rspta = $vista_web->listar_plantas_all();
+        } else {
+            $rspta = $vista_web->listar_plantas_cat($id_categoria);
+        }
+
+        $data = array();
+       // $id = 0;
+
+        while ($reg=$rspta->fetch_object()) {
+           // $id++;
+            $data[] = array(
+                "idplanta " => $reg->idplanta,
+                "id_categoria " => $reg->id_categoria,
+                "nombre" => $reg->nombre,
+                "stock" => $reg->stock,
+                "familia" => $reg->familia,
+                "apodo" => $reg->apodo,
+                "descripcion" => $reg->descripcion,
+                "img" => $reg->img,
+                "prioridad" => $reg->prioridad
+            );
+        }
+
+        echo json_encode($data);
+
+    break;
 }
 
 //Fin de las validaciones de acceso

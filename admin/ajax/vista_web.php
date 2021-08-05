@@ -77,6 +77,12 @@ switch($op){
 		$rspta = $vista_web ->detalles_plantas($idplanta);
 		echo json_encode($rspta);
 	break;
+
+    case 'ver_planta_compra':
+		$idplanta_compra = $_POST["idplanta_compra"];
+		$rspta = $vista_web ->detalles_plantas($idplanta_compra);
+		echo json_encode($rspta);
+	break;
 }
 
 //Fin de las validaciones de acceso

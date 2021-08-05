@@ -67,7 +67,7 @@ function listar_plnts_prncpal(id_categoria){
                     imagen=value.img_3;
                 }
                 
-                var idpalntita =value.idplanta;
+                //var idpalntita =value.idplanta;
                 //ver_detalle_plnts(idplanta);
                 var plantas = '' +
                     '<div class="col-lg-3 col-md-6 special-grid top-featured">' +
@@ -80,7 +80,7 @@ function listar_plnts_prncpal(id_categoria){
                                             '<a href="detalles_plantas.php" data-toggle="tooltip" data-placement="right" title="Ver detalle" onclick="ver_detalle_plnts('+value.idplanta+')"><i class="fas fa-eye" style="font-size: 27px;"></i></a>' +
                                         '</li>' +
                                     '</ul>' +
-                                    '<a class="cart" href="c_buganvilla.php" onclick="ver_whatsap_plant('+value.idplanta+')">Al Carrito</a>' +
+                                    '<a class="cart" href="c_plantita.php" onclick="id_planta_compra('+value.idplanta+')">Al Carrito</a>' +
                                 '</div>' +
                             '</div>' +
                             '<div class="why-text">' +
@@ -106,7 +106,7 @@ function ver_detalle_plnts(idplanta){
     // Guardar
     localStorage.setItem("idplanta", idplanta);
 }
-function ver_whatsap_plant(idplanta){
+function id_planta_compra(idplanta){
     // Guardar
     localStorage.setItem("idplanta_compra", idplanta);
 }

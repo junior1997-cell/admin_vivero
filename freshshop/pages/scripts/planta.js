@@ -80,7 +80,7 @@ function listar_plnts_prncpal(id_categoria){
                                             '<a href="detalles_plantas.php" data-toggle="tooltip" data-placement="right" title="Ver detalle" onclick="ver_detalle_plnts('+value.idplanta+')"><i class="fas fa-eye" style="font-size: 27px;"></i></a>' +
                                         '</li>' +
                                     '</ul>' +
-                                    '<a class="cart" href="c_begoña_arbol.php">Al Carrito</a>' +
+                                    '<a class="cart" href="c_buganvilla.php" onclick="ver_whatsap_plant('+value.idplanta+')">Al Carrito</a>' +
                                 '</div>' +
                             '</div>' +
                             '<div class="why-text">' +
@@ -103,10 +103,12 @@ function listar_plnts_prncpal(id_categoria){
     })
 }
 function ver_detalle_plnts(idplanta){
-
     // Guardar
     localStorage.setItem("idplanta", idplanta);
- 
+}
+function ver_whatsap_plant(idplanta){
+    // Guardar
+    localStorage.setItem("idplanta_compra", idplanta);
 }
 
 init();

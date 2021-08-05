@@ -11,31 +11,12 @@ Class Consultas
 	}
 
 	//ornamnetal
-	public function totalornamnetal()
+	public function totalornamnetal($mostrar_planta)
 	{
-		$sql="SELECT COUNT(*) as totalornamnetal FROM planta categoria WHERE id_categoria = 1";
-		return ejecutarConsulta($sql);
+		$sql="SELECT COUNT(*) as totalornamnetal FROM planta WHERE id_categoria = $mostrar_planta";
+		
+		return ejecutarConsultaSimpleFila($sql);
 	}
-	
-	//arboles
-	public function totalarboles()
-	{
-		$sql="SELECT COUNT(*) as totalarboles FROM planta categoria WHERE id_categoria = 2";
-		return ejecutarConsulta($sql);
-	}
-	
-	//flores
-	public function totalflores()
-	{
-		$sql="SELECT COUNT(*) as totalflores FROM planta categoria WHERE id_categoria = 3";
-		return ejecutarConsulta($sql);
-	}	
-	//imagenes escritorios
-	public function imagesscritorio(){
-		$sql = "SELECT img, estado FROM planta WHERE estado=1";
-		return ejecutarConsulta($sql);
-	}
-
 }
 
 ?>

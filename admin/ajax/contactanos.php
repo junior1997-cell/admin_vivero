@@ -50,6 +50,11 @@ switch($op){
 		$rspta = $contactanos ->mostrarnosotros();
     echo json_encode($rspta);
 	break;
+	//Mostrar en la vista
+	case 'mostrar_contact_v':
+		$rspta = $contactanos ->mostrar();
+    echo json_encode($rspta);
+	break;
 }
 
 

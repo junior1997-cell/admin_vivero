@@ -8,7 +8,7 @@ require'header_c.php';
 	<div class="box-add">
 		<div class="container">
 			<div class="row  classrow">
-				<div class="col-lg-1 col-md-2 col-sm-12 entornodiv">
+				<div class="col-lg-1 col-md-2 col-sm-12 entornodiv" style="padding: 0px;">
 					<div class="imgpequeño ecfecto " id="imagenesP">
 						<center>
 							<img src="../images/upeu/buganvilla- 2174.png" id="image1">

@@ -142,5 +142,4 @@ function decodeHtml(str){
     return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {return map[m];});
 }
 
-
 init();

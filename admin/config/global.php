@@ -1,6 +1,10 @@
 <?php 
 //Ip de la pc servidor de base de datos
+<<<<<<< HEAD
 define("DB_HOST","localhost");
+=======
+define("DB_HOST","localhost"); //127.0.0.1:3307 - localhost
+>>>>>>> 1796fdfb141fc278ebcc45b80d467408edec7ca0
 
 //Nombre de la base de datos
 define("DB_NAME", "admin_vivero");

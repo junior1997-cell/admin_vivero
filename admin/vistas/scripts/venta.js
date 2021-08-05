@@ -4,15 +4,22 @@ var tabla;
 function init(){
 	mostrarform(false);
 	listar();
-
-	$("#formulario").on("submit",function(e)
+  fecha_actual();
+	$("#formulario_venta").on("submit",function(e)
 	{
-		guardaryeditar(e);	
+		guardaryeditar_venta(e);	
 	});
+
+	$("#formulario_cliente").on("submit",function(e)
+	{
+		guardaryeditar_cliente(e);	
+    localStorage.setItem("titulo", "Curso de Angular avanzado - Víctor Robles");
+	});
+
 	//Cargamos los items al select cliente
 	$.post("../ajax/venta.php?op=selectCliente", function(r){
-	            $("#idcliente").html(r);
-	            $('#idcliente').selectpicker('refresh');
+    $("#idcliente").html(r);
+    $('#idcliente').selectpicker('refresh');
 	});
 	$('#mVentas').addClass("treeview active");
     $('#lVentas').addClass("active");
@@ -23,39 +30,41 @@ function limpiar()
 {
 	$("#idcliente").val("");
 	$("#cliente").val("");
+  $("#idcliente").val("").selectpicker("refresh");
 	$("#serie_comprobante").val("");
 	$("#num_comprobante").val("");
 	$("#impuesto").val("0");
 
 	$("#total_venta").val("");
 	$(".filas").remove();
-	$("#total").html("0");
+	$("#total").html("0");	
 
-	//Obtenemos la fecha actual
+  //Marcamos el primer tipo_documento
+  $("#tipo_comprobante").val("Boleta");
+	$("#tipo_comprobante").selectpicker('refresh');
+}
+
+function fecha_actual() {
+  //Obtenemos la fecha actual
 	var now = new Date();
 	var day = ("0" + now.getDate()).slice(-2);
 	var month = ("0" + (now.getMonth() + 1)).slice(-2);
 	var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-    $('#fecha_hora').val(today);
-
-    //Marcamos el primer tipo_documento
-    $("#tipo_comprobante").val("Boleta");
-	$("#tipo_comprobante").selectpicker('refresh');
+  $('#fecha_hora').val(today);
 }
-
 //Función mostrar formulario
 function mostrarform(flag)
 {
-	//limpiar();
+	limpiar();
 	if (flag)
 	{
 		$("#listadoregistros").hide();
 		$("#formularioregistros").show();
-		//$("#btnGuardar").prop("disabled",false);
+		//$("#btnGuardar_venta").prop("disabled",false);
 		$("#btnagregar").hide();
 		listarArticulos();
 
-		$("#btnGuardar").hide();
+		$("#btnGuardar_venta").hide();
 		$("#btnCancelar").show();
 		$("#btnAgregarArt").show();
 		detalles=0;
@@ -80,6 +89,7 @@ function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
+		responsive: true,
 		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
@@ -121,9 +131,11 @@ function listarArticulos()
 {
 	tabla=$('#tblarticulos').dataTable(
 	{
+		responsive: true,
+		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
-	    dom: 'Bfrtip',//Definimos los elementos del control de tabla
+	    dom: '<Bl<f>rtip>',//Definimos los elementos del control de tabla
 	    buttons: [		          
 		            
 		        ],
@@ -143,11 +155,11 @@ function listarArticulos()
 }
 //Función para guardar o editar
 
-function guardaryeditar(e)
+function guardaryeditar_venta(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	//$("#btnGuardar").prop("disabled",true);
-	var formData = new FormData($("#formulario")[0]);
+	//$("#btnGuardar_venta").prop("disabled",true);
+	var formData = new FormData($("#formulario_venta")[0]);
 
 	$.ajax({
 		url: "../ajax/venta.php?op=guardaryeditar",
@@ -157,10 +169,51 @@ function guardaryeditar(e)
 	    processData: false,
 
 	    success: function(datos)
-	    {                    
-	          bootbox.alert(datos);	          
-	          mostrarform(false);
-	          listar();
+	    { 
+        if (datos == "ok") {
+          // bootbox.alert(datos);
+          toastr.success('Venta registrada correctamente')	          
+          mostrarform(false);
+          listar();
+        } else {
+          toastr.error(datos)
+        }                   
+        
+	    }
+
+	});
+	limpiar();
+}
+// cliente
+function guardaryeditar_cliente(e)
+{
+	e.preventDefault(); //No se activará la acción predeterminada del evento
+	$("#btnGuardar").prop("disabled",true);
+	var formData = new FormData($("#formulario_cliente")[0]);
+
+	$.ajax({
+		url: "../ajax/persona.php?op=guardaryeditar",
+	    type: "POST",
+	    data: formData,
+	    contentType: false,
+	    processData: false,
+
+	    success: function(datos)
+	    {  
+        if (datos == 'ok') {                  
+          //   bootbox.alert(datos);	          
+          toastr.success('Cliente Registrado Correctamente')
+          $('#agregar_cliente').modal('hide');
+          
+          //Cargamos los items al select cliente
+          $.post("../ajax/venta.php?op=selectCliente", function(r){
+            $("#idcliente").html(r);
+            $('#idcliente').selectpicker('refresh');
+          });
+          $("#idcategoria").val('default').selectpicker("refresh");
+        }else{
+          toastr.error(datos)
+        }
 	    }
 
 	});
@@ -185,7 +238,7 @@ function mostrar(idventa)
 		$("#idventa").val(data.idventa);
 
 		//Ocultar y mostrar los botones
-		$("#btnGuardar").hide();
+		$("#btnGuardar_venta").hide();
 		$("#btnCancelar").show();
 		$("#btnAgregarArt").hide();
  	});
@@ -199,13 +252,18 @@ function mostrar(idventa)
 function anular(idventa)
 {
 	bootbox.confirm("¿Está Seguro de anular la venta?", function(result){
-		if(result)
-        {
-        	$.post("../ajax/venta.php?op=anular", {idventa : idventa}, function(e){
-        		bootbox.alert(e);
-	            tabla.ajax.reload();
-        	});	
+		if(result){
+      $.post("../ajax/venta.php?op=anular", {idventa : idventa}, function(e){
+        if (e = "ok") {
+          // bootbox.alert(e);
+          tabla.ajax.reload();
+          toastr.success('Venta anulada correctamente')
+        } else {
+          toastr.error(datos)
         }
+        
+      });	
+    }
 	})
 }
 
@@ -215,7 +273,7 @@ var impuesto=18;
 var cont=0;
 var detalles=0;
 //$("#guardar").hide();
-$("#btnGuardar").hide();
+$("#btnGuardar_venta").hide();
 $("#tipo_comprobante").change(marcarImpuesto);
 
 function marcarImpuesto()
@@ -293,11 +351,11 @@ function agregarDetalle(idarticulo,articulo,precio_venta)
   function evaluar(){
   	if (detalles>0)
     {
-      $("#btnGuardar").show();
+      $("#btnGuardar_venta").show();
     }
     else
     {
-      $("#btnGuardar").hide(); 
+      $("#btnGuardar_venta").hide(); 
       cont=0;
     }
   }

@@ -40,6 +40,9 @@ if (strlen(session_id()) < 1)
     <!-- drop zone -->
     <link rel="stylesheet" href="../public/dropzone/dist/dropzone.css">
     <link rel="stylesheet" href="../public/dropzone/dist/min/dropzone.min.css">
+
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="../public/colorpicker/bootstrap-colorpicker.min.css">
     <style>
       .dropdown-menu {
         box-shadow: 0 0 40px #111;
@@ -48,7 +51,7 @@ if (strlen(session_id()) < 1)
         vertical-align: top;
         font-size: 1.2em;
         color: red;
-      }
+      }      
     </style>
   </head>
   <body class="hold-transition skin-blue-light sidebar-mini">

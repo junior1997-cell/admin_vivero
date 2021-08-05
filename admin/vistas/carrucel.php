@@ -52,17 +52,21 @@ if ($_SESSION['almacen']==1)
           </div>
           <div class="panel-body" style="height: 400px;" id="formularioregistros">
             <form name="formulario" id="formulario" method="POST">
-              <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class="form-group col-lg-3 col-md-4 col-sm-12 col-xs-12">
                 <label>Nombre:</label>
                 <input type="hidden" name="idcarrucel" id="idcarrucel" />
                 <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required />
               </div>
 
-              <div class="col-md-6">
+              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <label for="img">Imagen principal</label><br />
-                <img onerror="this.src='../public/img/default/img_defecto.png';" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="img_i" style="cursor: pointer; height: 230px;" />
-                <input style="display: none;" type="file" name="img" id="img" accept="video/*, .webp" />
+                <div id="img_i">
+                   <!-- aqui va la previsualización --> 
+                   <img onerror="this.src='../public/img/default/logo-video-y-foto.png';" src="../public/img/default/logo-video-y-foto.png" class="img-thumbnail"  style="cursor: pointer; height: 230px;" />
+                </div>                
+                <input style="display: none;" type="file" name="img" id="img" accept="video/*, .webp" required />
                 <input type="hidden" name="img_actual" id="img_actual" />
+                <div class="text-center" id="foto1_nombre"><!-- aqui va el nombre de la FOTO --></div>
               </div>
 
               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">

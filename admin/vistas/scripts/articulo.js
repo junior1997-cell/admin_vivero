@@ -132,6 +132,7 @@ function limpiar()
 	$("#idcategoria").val('default').selectpicker("refresh");
 	$("#idcolor").val('default').selectpicker("refresh");
 	$("#stock").val("");
+	$("#precio_venta").val("");
 	$("#nombre_cientifico").val("");
 	$("#familia").val("");
 	$("#apodo").val("");
@@ -285,6 +286,7 @@ function mostrar(idplanta)
 		$('#idcategoria').selectpicker('refresh');
 		
 		$("#stock").val(data.stock);
+		$("#precio_venta").val(data.precio_venta);
 		$("#nombre_cientifico").val(data.nombre_cientifico);
 		$("#familia").val(data.familia);
 		$("#apodo").val(data.apodo);

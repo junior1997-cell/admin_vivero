@@ -65,9 +65,13 @@
                     <label>Color:</label><br />
                     <select id="idcolor" name="idcolor[]" class="form-control selectpicker" multiple data-live-search="true" title="Seleccione los colores" data-actions-box="true"></select>
                   </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-6">
                     <label>Stock: <sub>*</sub> </label>
-                    <input type="number" class="form-control" name="stock" id="stock" required />
+                    <input type="number" class="form-control" name="stock" id="stock" required min="1"/>
+                  </div>
+                  <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                    <label>Precio Venta: <sub>*</sub> </label>
+                    <input type="number" class="form-control" name="precio_venta" id="precio_venta" required  min="0.10" step="0.1" />
                   </div>
 
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">

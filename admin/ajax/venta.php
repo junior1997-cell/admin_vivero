@@ -30,7 +30,7 @@ switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idventa)){
 			$rspta=$venta->insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$_POST["idarticulo"],$_POST["cantidad"],$_POST["precio_venta"],$_POST["descuento"]);
-			echo $rspta ? "Venta registrada" : "No se pudieron registrar todos los datos de la venta";
+			echo $rspta ? "ok" : "No se pudieron registrar todos los datos de la venta";
 		}
 		else {
 		}
@@ -38,7 +38,7 @@ switch ($_GET["op"]){
 
 	case 'anular':
 		$rspta=$venta->anular($idventa);
- 		echo $rspta ? "Venta anulada" : "Venta no se puede anular";
+ 		echo $rspta ? "ok" : "Venta no se puede anular";
 	break;
 
 	case 'mostrar':
@@ -91,9 +91,9 @@ switch ($_GET["op"]){
  			}
 
  			$data[]=array(
- 				"0"=>(($reg->estado=='Aceptado')?'<button class="btn btn-warning" onclick="mostrar('.$reg->idventa.')"><i class="fa fa-eye"></i></button>'.
- 					' <button class="btn btn-danger" onclick="anular('.$reg->idventa.')"><i class="fa fa-close"></i></button>':
- 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idventa.')"><i class="fa fa-eye"></i></button>').
+ 				"0"=>(($reg->estado=='Aceptado')?'<button class="btn btn-warning" onclick="mostrar('.$reg->idventa.')" data-toggle="tooltip" data-original-title="Ver detalle"><i class="fa fa-eye"></i></button>'.
+ 					' <button class="btn btn-danger" onclick="anular('.$reg->idventa.')" data-toggle="tooltip" data-original-title="Anular venta"><i class="fa fa-close"></i></button>':
+ 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idventa.')"data-toggle="tooltip" data-original-title="Ver detalle"><i class="fa fa-eye"></i></button>').
  					'<a target="_blank" href="'.$url.$reg->idventa.'"> <button class="btn btn-info"><i class="fa fa-file"></i></button></a>',
  				"1"=>$reg->fecha,
  				"2"=>$reg->cliente,
@@ -122,7 +122,7 @@ switch ($_GET["op"]){
 
 		while ($reg = $rspta->fetch_object())
 				{
-				echo '<option value=' . $reg->idpersona . '>' . $reg->nombre . '</option>';
+				echo '<option value=' . $reg->idpersona . '>' . $reg->nombre .' - '.$reg->num_documento . '</option>';
 				}
 	break;
 
@@ -136,13 +136,15 @@ switch ($_GET["op"]){
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
- 				"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idarticulo.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\')"><span class="fa fa-plus"></span></button>',
- 				"1"=>$reg->nombre,
+ 				"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idplanta.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\')" data-toggle="tooltip" data-original-title="Agregar Planta"><span class="fa fa-plus"></span></button>',
+ 				"1"=>'<div class="user-block">
+						<img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$reg->img_1.'" alt="user image">
+						<span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>
+						<span class="description">'.substr($reg->descripcion, 0, 40).'...</span>
+					</div>',
  				"2"=>$reg->categoria,
- 				"3"=>$reg->codigo,
- 				"4"=>$reg->stock,
- 				"5"=>$reg->precio_venta,
- 				"6"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px' >"
+ 				"3"=>$reg->stock,
+ 				"4"=>$reg->precio_venta
  				);
  		}
  		$results = array(

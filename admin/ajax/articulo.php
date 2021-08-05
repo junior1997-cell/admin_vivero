@@ -17,6 +17,7 @@ if (!isset($_SESSION["nombre"])) {
     $id_color = isset($_POST["idcolor"]) ? $_POST["idcolor"] : "";
     $nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
     $stock = isset($_POST["stock"]) ? limpiarCadena($_POST["stock"]) : "";
+    $precio_venta = isset($_POST["precio_venta"]) ? limpiarCadena($_POST["precio_venta"]) : "";
     $nombre_cientifico = isset($_POST["nombre_cientifico"]) ? limpiarCadena($_POST["nombre_cientifico"]) : "";
     $familia = isset($_POST["familia"]) ? limpiarCadena($_POST["familia"]) : "";
     $apodo = isset($_POST["apodo"]) ? limpiarCadena($_POST["apodo"]) : "";
@@ -70,7 +71,7 @@ if (!isset($_SESSION["nombre"])) {
         }
 
         if (empty($idplanta)) {
-          $rspta = $articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3);
+          $rspta = $articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3,$precio_venta);
           echo $rspta ? "ok" : "Planta: " . strtoupper($nombre) . " no se pudo registrar";
           
         } else {
@@ -95,7 +96,7 @@ if (!isset($_SESSION["nombre"])) {
               unlink("../files/articulos/".$nombre_img_3_ant);
             }
           }
-          $rspta = $articulo->editar($idplanta, $id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3);
+          $rspta = $articulo->editar($idplanta, $id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3,$precio_venta);
           echo $rspta ? "ok" : "Planta: " . strtoupper($nombre) . " no se pudo registrar";
         }
        
@@ -151,19 +152,15 @@ if (!isset($_SESSION["nombre"])) {
         while ($reg = $rspta->fetch_object()) {
           $data[] = [
             "0" => $reg->estado
-              ? '<button class="btn btn-warning" onclick="mostrar(' .
-                $reg->idplanta .
-                ')"><i class="fa fa-pencil"></i></button>' .
-                ' <button class="btn btn-danger" onclick="desactivar(' .
-                $reg->idplanta .
-                ')"><i class="fa fa-close"></i></button>'
-              : '<button class="btn btn-warning" onclick="mostrar(' .
-                $reg->idplanta .
-                ')"><i class="fa fa-pencil"></i></button>' .
-                ' <button class="btn btn-primary" onclick="activar(' .
-                $reg->idplanta .
-                ')"><i class="fa fa-check"></i></button>',
-            "1" => $reg->nombre,
+              ? '<button class="btn btn-warning" onclick="mostrar(' .$reg->idplanta . ')"><i class="fa fa-pencil"></i></button>' .
+                '<button class="btn btn-danger" onclick="desactivar(' . $reg->idplanta . ')"><i class="fa fa-close"></i></button>'
+              : '<button class="btn btn-warning" onclick="mostrar(' . $reg->idplanta . ')"><i class="fa fa-pencil"></i></button>' .
+                '<button class="btn btn-primary" onclick="activar(' . $reg->idplanta . ')"><i class="fa fa-check"></i></button>',
+            "1" =>'<div class="user-block">
+                    <img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$reg->img_1.'" alt="user image">
+                    <span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>
+                    <span class="description">'.substr($reg->descripcion, 0, 30).'...</span>
+                  </div>',
             "2" => $reg->categoria,
             "3" => $reg->familia,
             "4" => $reg->stock,

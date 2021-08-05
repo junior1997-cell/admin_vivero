@@ -2,6 +2,7 @@ function init() {
     listar_categorias();
     listar_plnts_prncpal(id_categoria);
 
+
 };
 
 function listar_categorias() {
@@ -13,8 +14,6 @@ function listar_categorias() {
     $.post("../../admin/ajax/vista_web.php?op=listar_categorias", {}, function (data, status) {
 
         data = JSON.parse(data);
-
-        var pintar = '';
         var home = '';
         var estado_home = true;
 
@@ -36,36 +35,49 @@ function listar_categorias() {
 
 }
 
-
 function listar_plnts_prncpal(id_categoria){
-
+    $("#listar_plantas").html('');
     $.post("../../admin/ajax/vista_web.php?op=listar_planta", { id_categoria: id_categoria }, function (data, status) {
         data = JSON.parse(data);
         console.log(data);
-        $("#listar_plantas").html('');
+        
+        var clasesbadge="";
+        var imagen="";
 
         if (data.length) {
 
             $.each(data, function (index, value) {
 
+                if (value.stock!=0) {
+                    clasesbadge= "success";
+                   // console.log(clasesbadge);
+                    
+                }else{
+                    clasesbadge= "danger";
+                   
+                }
+
+                if (value.img_1!="") {
+                    imagen=value.img_1;
+                    
+                } else if (value.img_2!="") {
+                    imagen=value.img_2;
+                   // console.log('imagen3'+imagen);
+                }else{
+                    imagen=value.img_3;
+                }
+                
+                var idpalntita =value.idplanta;
+                //ver_detalle_plnts(idplanta);
                 var plantas = '' +
                     '<div class="col-lg-3 col-md-6 special-grid top-featured">' +
                         '<div class="products-single fix">' +
                             '<div class="box-img-hover">' +
-                                '<div class="type-lb">' +
-                                    '<p class="sale">Sale</p>' +
-                                '</div>' +
-                                '<img src="../../admin/files/articulos/'+value.img+'" class="img-fluid" alt="Image" />' +
+                                '<img src="../../admin/files/articulos/'+imagen+'" class="img-fluid" alt="Image" />' +
                                 '<div class="mask-icon">' +
                                     '<ul>' +
                                         '<li>' +
-                                            '<a href="../views/begonia_arbol.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a>' +
-                                        '</li>' +
-                                        '<li>' +
-                                            '<a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a>' +
-                                        '</li>' +
-                                        '<li>' +
-                                            '<a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a>' +
+                                            '<a href="detalles_plantas.php" data-toggle="tooltip" data-placement="right" title="Ver detalle" onclick="ver_detalle_plnts('+value.idplanta+')"><i class="fas fa-eye" style="font-size: 27px;"></i></a>' +
                                         '</li>' +
                                     '</ul>' +
                                     '<a class="cart" href="c_begoña_arbol.php">Al Carrito</a>' +
@@ -73,7 +85,7 @@ function listar_plnts_prncpal(id_categoria){
                             '</div>' +
                             '<div class="why-text">' +
                                 '<h4>'+value.nombre+'</h4>' +
-                                '<h5>Stock <span>'+value.stock+'<span></h5>'+
+                                '<span class="badge bg-'+clasesbadge+'" style="font-size: 17px; color: white;">Stock '+ value.stock+'</span>'+
                             '</div>' +
                         '</div>' +
                     '</div>'+
@@ -82,14 +94,19 @@ function listar_plnts_prncpal(id_categoria){
             });
         } else {
             $("#listar_plantas").html('<div class="alert alert-warning alert-dismissible fade show" role="alert" style=" height: 50px; ">' +
-                '<strong>No hay registros!</strong> Puedes agregar productos desde tu administrador.' +
+                '<strong>No hay registros!</strong> Puedes agregar uno desde tu administrador.' +
                 '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
                 '<span aria-hidden="true">&times;</span>' +
                 '</button>' +
                 '</div>')
         }
     })
+}
+function ver_detalle_plnts(idplanta){
 
+    // Guardar
+    localStorage.setItem("idplanta", idplanta);
+ 
 }
 
 init();

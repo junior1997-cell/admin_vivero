@@ -3,11 +3,7 @@ require'header.php';
 ?>
 <style>
 .mi_iamgen:hover {filter: blur(5px);}
-.paint_select_span {
-    background-color: #6B6B6B !important;
-    color: #E2E2E2 !important;
-    border-bottom: 3px solid #f65e48 !important;
-}
+
 </style>
 
 
@@ -113,7 +109,7 @@ require'header.php';
                     </div>
                 </div>
 
-                <div class="row special-list" id="listar_plantas">
+                <div class="row" style="height: 100%!important" id="listar_plantas">
                     
                     <!--Se lista las plantas-->
                     

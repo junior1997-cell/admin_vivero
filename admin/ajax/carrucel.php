@@ -30,7 +30,7 @@ switch ($_GET["op"]){
     }else{
       $flat_img=true;
       $ext_p = explode(".", $_FILES["img"]["name"]);
-      if ($_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/jpeg" || $_FILES['img']['type'] == "image/png"){
+      if ($_FILES['img']['type'] == "video/*" || $_FILES['img']['type'] == "image/webp" ){
         $img = rand(0, 20) . round(microtime(true)) . rand(21, 41) . '.' . end($ext_p);
         move_uploaded_file($_FILES["img"]["tmp_name"], "../files/carrucel/" . $img);
       }

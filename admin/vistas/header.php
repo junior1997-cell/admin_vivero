@@ -256,6 +256,11 @@ if (strlen(session_id()) < 1)
             </li>';
             }
             ?>
+            <li>
+              <a href="carrucel.php">
+                <i class="fa fa-plus-square"></i> <span>Carrousel</span>
+              </a>
+            </li>
 
             <li>
               <a href="ayuda.php">

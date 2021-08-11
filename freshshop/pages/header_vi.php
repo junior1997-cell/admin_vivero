@@ -22,6 +22,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Bootstrap select -->
+    <link rel="stylesheet" href="../css/bootstrap.select.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive CSS -->

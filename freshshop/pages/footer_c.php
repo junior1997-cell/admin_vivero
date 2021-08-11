@@ -102,7 +102,8 @@
     <script src="../js/contact-form-script.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
-    
+    <!--Select2 
+    <script src="../../admin/public/js/bootstrap-select.min.js"></script> -->
 
 </body>
  <!--#6b202e

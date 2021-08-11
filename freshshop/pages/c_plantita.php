@@ -12,7 +12,6 @@ require'header_c.php';
 					<div class="imgpequeño ecfecto " id="img_peque">
 						<!--Aqui va las imagenes ppequeñas-->
 					</div>
-					
 				</div>
 				<div class="col-lg-7 col-md-10 col-sm-12">
 					<div class="imgestilo">
@@ -24,39 +23,27 @@ require'header_c.php';
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-12 col-sm-12 rowww divhead">
-					
-					<center  style="border-radius: 20px;padding: 10px;background-color: aliceblue;">
-						<span id="nombre_planta"></span>
-						<form>
-							<div class="precio">
-						<hr>						
-						<h4 class="h2" id="precio">S/ 50.00</h4>
-					
-							<div style="margin: 25px;">
+				<center>
+					<form action="" class="formulario">
+						<h1 class="formulario__titulo" id="nombre_v"></h1>
+						<input id="nombre" type="hidden" class="formulario__input" required/>
 
-								 <label for="cantidad" class="formulario__label">Cantidad</label>
-		       					 <input id="cantidad" onkeyup="mostrar()" type="text" class="formulario__input" maxlength="4" onkeypress='return validaNumericos(event)' required>
-								<span id="cantlocal" class="cantlocal"  hidden required></span>
+						<label for="precio" class="formulario__label">Precio</label>
+						<h4 class="h2" id="precio_v"> <span>S/</span></h4>
+						<input id="precio" type="hidden" class="formulario__input" required/>
 
-								 <label for="cantidad" class="formulario__label">Seleccionar Color</label>
-								<select name="provincia"id="colores"  class="formulario__input" required>
-									<option value="" disabled selected>Seleccionar</option>
-									<option value="1">Anaranjado</option>
-									<option value="2">Rosado</option>
-									<option value="3">Blanco</option>
-								</select>
-								<span id="colorselect" hidden required></span>
-							</div>
+						<label for="cantidad" class="formulario__label">Indica la cantidad</label>
+						<input id="cantidad" type="number" class="formulario__input" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
 
-							<div style="margin: 10px;">
+						<label for="c_preferencia" class="formulario__label">Indica la color de tu preferencia</label>
+						<input id="c_preferencia" type="text" class="formulario__input" required />
 
-								<button id="submit" class="btn btn-success" >Enviar al whatsapp</button>
-								
-							</div>
-							
+						<button id="submit" class="formulario__submit">Enviar a WhatsApp</button>
+						<!-- https://api.whatsapp.com/send?phone=573105010573&text=*_Barberia%20Lider_*%20%0AReservas%0A%0A*%C2%BFCual%20es%20tu%20nombre?*%0A"Nombres"%20%0A*Barbero%20de%20preferencia*%0A"Barbero"%20%0A -->
+					</form>
+				</center>
 
-						</form>
-					</center>
+
 				</div>
 			</div>
 			<div class="row my-5">
@@ -81,51 +68,9 @@ require'header_c.php';
 <?php
 require'footer_c.php';
 ?>
-<script type="text/javascript" src="carrito/js/c_buganvilla.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--form.js
+<script src=""></script>-->
 <script type="text/javascript" src="scripts/compra_plantas.js"></script>
 
-<script type="text/javascript">	
-
-	function validaNumericos(event) {
-	    if(event.charCode >= 48 && event.charCode <= 58){
-	      return true;
-	     }
-	     return false;        
-	}
-
-	function mostrar() {
-	 var x = $("#cantidad").val();
-	 document.getElementById('cantlocal').innerHTML = x;
-	 //alert(x);
-	}
-
-	var select = document.getElementById('colores');
-
-	select.addEventListener('change',
-  		function(){
-   		 var selectedOption = this.options[select.selectedIndex];
-    	 /*console.log(selectedOption.value + ': ' + selectedOption.text);
-    	 alert(selectedOption.text);*/
-    	 document.getElementById('colorselect').innerHTML = selectedOption.text;
-    });
-
-	document.querySelector('#submit').addEventListener('click',function(){
-
-	    
-	    var nombre_planta = document.getElementById("nombre_pl").innerText;
-	    var cantidad = document.getElementById("cantlocal").innerText;
-	    var precio =  document.getElementById("precio").innerText;
-	    var colorselect =  document.getElementById("colorselect").innerText;
 
 
-	   //alert(precio+nombre_planta+""+cantidad+colorselect);
-
-
-	    let url = "https://api.whatsapp.com/send?phone=+51968701994&text=*_universidad Peruana Unión_*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?%0A"+ nombre_planta + "%0A*Cantidad%0A" + cantidad + "%0A*precio por unidad*%0A"  + precio +"%0A*Color Seleccionado*%0A"  + colorselect + "%0A*¡Gracias por su preferencia!*%0A";
-	    window.open(url);
-
-
-	});
-</script>

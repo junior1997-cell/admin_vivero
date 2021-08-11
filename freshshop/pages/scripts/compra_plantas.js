@@ -3,7 +3,17 @@ function init() {
 var idplanta_compra=localStorage.getItem("idplanta_compra");
 //console.log(idplanta_compra);
 ver_planta_compra(idplanta_compra);
+formulario_what(idplanta_compra)
+
+//Cargamos los items al select COLOR
+$.post("../../admin/ajax/articulo.php?op=selectColor", function(r){
+    $("#idcolor").html(r);
+    $('#idcolor').selectpicker('refresh');
+
+});
+
 };
+
 
 function ver_planta_compra(idplanta_compra){
     //console.log(idplanta_compra);
@@ -11,12 +21,14 @@ function ver_planta_compra(idplanta_compra){
     $.post("../../admin/ajax/vista_web.php?op=ver_planta_compra", {idplanta_compra : idplanta_compra}, function (data, status) {
 
         data = JSON.parse(data);
-        /**nombre_planta
-            vidadigital
+        /**           					
+        *
          */
-		$("#nombre_planta").html(data.nombre);
-
-            /**1-2-3 */
+         $("#nombre_v").html(data.nombre);
+         $("#nombre").val(data.nombre);
+         $("#precio_v").html(data.precio_venta);
+         $("#precio").val(data.precio_venta);
+             /**1-2-3 */
             if (data.img_1 !="" && data.img_2=="" && data.img_3=="") {
                 var secc_img_p = ''+
                 '<center>'+
@@ -40,7 +52,7 @@ function ver_planta_compra(idplanta_compra){
                 });
                 }
 
-            } else if (data.img_1=="" && data.img_2!="" && data.img_3=="") {
+                 } else if (data.img_1=="" && data.img_2!="" && data.img_3=="") {
                 var secc_img_p = ''+
                 '<center>'+
                     '<img src="../../admin/files/articulos/'+data.img_2+'" id="image1">'+
@@ -196,5 +208,21 @@ function ver_planta_compra(idplanta_compra){
     })
 
 }
+
+document.querySelector('#submit').addEventListener('click',function(){
+    
+    let nombre = document.querySelector('#nombre').value;
+    let precio = document.querySelector('#precio').value;
+    let cantidad = document.querySelector('#cantidad').value;
+    let c_preferencia = document.querySelector('#c_preferencia').value;
+
+    //console.log(nombre+preciooo+cantidad+c_preferencia);
+        // Guardar
+        localStorage.setItem("nombre......", nombre);
+
+    let url = "https://api.whatsapp.com/send?phone=+51921487276&text=*__universidad Peruana Unión__*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?*%0A" + nombre + "%0A*Precio por unidad*%0A" + precio + "%0A*Cantidad*%0A" + cantidad + "%0A*Color de preferencia*%0A" + c_preferencia + "%0A*¡Gracias por su preferencia!*%0A%0A*¡EN SEGUIDA CONFIRMAMOS SU PEDIDO!*%0A";
+    window.open(url);
+
+});
 
 init();

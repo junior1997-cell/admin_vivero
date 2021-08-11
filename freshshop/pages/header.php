@@ -22,6 +22,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Bootstrap select -->
+    <link rel="stylesheet" href="../css/bootstrap.select.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive CSS -->
@@ -30,11 +32,6 @@
     <link rel="stylesheet" href="../css/custom.css">
 
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -114,9 +111,9 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.php">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">ACERCA DE nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.php">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contactos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.php">ACERCA DE NOSOTROS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.php">GALERÍA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">CONTACTANOS</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

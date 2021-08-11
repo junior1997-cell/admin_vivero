@@ -341,8 +341,8 @@
                     (numGroup == 1) ? 'Group limit reached ({n} item max)' : 'Group limit reached ({n} items max)',
                 ];
             },
-            selectAllText: 'Select All',
-            deselectAllText: 'Deselect All',
+            selectAllText: 'Seleccionar todo',
+            deselectAllText: 'Deseleccionar todo',
             doneButton: false,
             doneButtonText: 'Close',
             multipleSeparator: ', ',
@@ -364,8 +364,8 @@
             liveSearchNormalize: false,
             liveSearchStyle: 'contains',
             actionsBox: false,
-            iconBase: 'fa',
-            tickIcon: 'fa-check',
+            iconBase: 'fas ',
+            tickIcon: 'fa-eye',
             showTick: false,
             template: {
                 caret: '<span class="caret"></span>',

@@ -30,7 +30,7 @@ switch ($_GET["op"]){
     }else{
       $flat_img=true;
       $ext_p = explode(".", $_FILES["img"]["name"]);
-      if ($_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/jpeg" || $_FILES['img']['type'] == "image/png"){
+      if (true ){
         $img = rand(0, 20) . round(microtime(true)) . rand(21, 41) . '.' . end($ext_p);
         move_uploaded_file($_FILES["img"]["tmp_name"], "../files/carrucel/" . $img);
       }
@@ -77,13 +77,18 @@ switch ($_GET["op"]){
     $data= Array();
 
     while ($reg=$rspta->fetch_object()){
+
+      $ext_data = explode(".", $reg->img); $ext = end($ext_data); $estado = true;
+      
+      if ($ext == "webp" || $ext == "WEBP" ) { $estado = true; } else { $estado = false; }
+      
       $data[]=array(
         "0"=>($reg->estado)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idcarrucel.')"><i class="fa fa-pencil"></i></button>'.
           ' <button class="btn btn-danger" onclick="desactivar('.$reg->idcarrucel.')"><i class="fa fa-close"></i></button>':
           '<button class="btn btn-warning" onclick="mostrar('.$reg->idcarrucel.')"><i class="fa fa-pencil"></i></button>'.
           ' <button class="btn btn-primary" onclick="activar('.$reg->idcarrucel.')"><i class="fa fa-check"></i></button>',
         "1"=>$reg->nombre,
-        "2"=>"<img src='../files/carrucel/".$reg->img."' height='50px' width='50px' >",        
+        "2"=>($estado)?'<img src="../files/carrucel/'.$reg->img.'" height="50px" width="50px">':' <video src="../files/carrucel/'.$reg->img.'" autoplay muted loop height="50px" width="70px"></video>',        
         "3"=>($reg->estado)?'<span class="label bg-green">Activado</span>':
         '<span class="label bg-red">Desactivado</span>'
         );

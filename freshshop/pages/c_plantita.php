@@ -8,13 +8,9 @@ require'header_c.php';
 	<div class="box-add">
 		<div class="container">
 			<div class="row  classrow">
-				<div class="col-lg-1 col-md-2 col-sm-12 entornodiv">
-					<div class="imgpequeño ecfecto " id="imagenesP">
-						<center>
-							<img src="../images/upeu/cucardas.png" id="image1">
-							<img src="../images/upeu/cucardas1.png" id="image2">
-							<img src="carrito/img/1.jpg" id="image3">
-					    </center>
+				<div class="col-lg-1 col-md-2 col-sm-12 entornodiv" style="padding: 0px;">
+					<div class="imgpequeño ecfecto " id="img_peque">
+						<!--Aqui va las imagenes ppequeñas-->
 					</div>
 					
 				</div>
@@ -22,19 +18,19 @@ require'header_c.php';
 					<div class="imgestilo">
 						<center>
 							<figure>
-							<img id="vidadigital" src="	" title="Vida Digital" width="200"/>
+							<img id="vidadigital" src="" title="Vida Verde">
 							</figure>
 					    </center>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-12 col-sm-12 rowww divhead">
 					
-					<center>
-						<span id="nombre_pl">Cucardas</span>
+					<center  style="border-radius: 20px;padding: 10px;background-color: aliceblue;">
+						<span id="nombre_planta"></span>
 						<form>
 							<div class="precio">
 						<hr>						
-						<h4 class="h2" id="precio">S/ 33.00</h4>
+						<h4 class="h2" id="precio">S/ 50.00</h4>
 					
 							<div style="margin: 25px;">
 
@@ -45,9 +41,9 @@ require'header_c.php';
 								 <label for="cantidad" class="formulario__label">Seleccionar Color</label>
 								<select name="provincia"id="colores"  class="formulario__input" required>
 									<option value="" disabled selected>Seleccionar</option>
-									<option value="1">Rosado</option>
-									<option value="2">Anaranjado</option>
-									<option value="3">Rojo</option>
+									<option value="1">Anaranjado</option>
+									<option value="2">Rosado</option>
+									<option value="3">Blanco</option>
 								</select>
 								<span id="colorselect" hidden required></span>
 							</div>
@@ -85,9 +81,10 @@ require'header_c.php';
 <?php
 require'footer_c.php';
 ?>
-<script type="text/javascript" src="carrito/js/carritouno.js"></script>
+<script type="text/javascript" src="carrito/js/c_buganvilla.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/compra_plantas.js"></script>
 
 <script type="text/javascript">	
 
@@ -113,7 +110,7 @@ require'footer_c.php';
     	 alert(selectedOption.text);*/
     	 document.getElementById('colorselect').innerHTML = selectedOption.text;
     });
-	
+
 	document.querySelector('#submit').addEventListener('click',function(){
 
 	    
@@ -123,10 +120,10 @@ require'footer_c.php';
 	    var colorselect =  document.getElementById("colorselect").innerText;
 
 
-	  // alert(precio);
+	   //alert(precio+nombre_planta+""+cantidad+colorselect);
 
 
-	    let url = "https://api.whatsapp.com/send?phone=+51921903945&text=*_universidad Peruana Unión_*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?%0A"+ nombre_planta + "%0A*Cantidad%0A" + cantidad + "%0A*precio por unidad*%0A"  + precio +"%0A*Color Seleccionado*%0A"  + colorselect + "%0A*¡Gracias por su preferencia!*%0A";
+	    let url = "https://api.whatsapp.com/send?phone=+51968701994&text=*_universidad Peruana Unión_*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?%0A"+ nombre_planta + "%0A*Cantidad%0A" + cantidad + "%0A*precio por unidad*%0A"  + precio +"%0A*Color Seleccionado*%0A"  + colorselect + "%0A*¡Gracias por su preferencia!*%0A";
 	    window.open(url);
 
 

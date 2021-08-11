@@ -103,8 +103,7 @@ function addImage(e,id) {
 	}else{
 		toastr.error('Seleccione una Imagen');$("#"+id+"_i").attr("src", "../public/img/default/img_defecto.png");
 		$("#"+id+"_nombre").html("");
-	}
-		
+	}	
 	
 }
 // ----------

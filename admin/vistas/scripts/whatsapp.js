@@ -65,6 +65,7 @@ function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
+		responsive: true,
 		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor

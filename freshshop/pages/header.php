@@ -113,7 +113,7 @@
                         <li class="nav-item active"><a class="nav-link" href="index.php">INICIO</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.php">ACERCA DE NOSOTROS</a></li>
                         <li class="nav-item"><a class="nav-link" href="gallery.php">GALERÍA</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">CONTACTANOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">CONTÁCTANOS</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

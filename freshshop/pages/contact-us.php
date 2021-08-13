@@ -110,7 +110,7 @@ require'header.php';
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Contactos</h2>
+                <h2>Contáctanos</h2>
             </div>
         </div>
     </div>
@@ -123,7 +123,7 @@ require'header.php';
         <div class="row">
             <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8">
                 <div class="contact-form-right">
-                    <h2 style="text-align: center;background-color: #84ba3f;color: white;">Nuestra localización para que nos visites</h2>
+                    <h2 style="text-align: center;border-bottom-color: #063e16;border-bottom-style: dashed;border-bottom-width: 1px;border-top-color: #000000;border-top-style: solid;border-top-width: 3px;">Nuestra localización para que nos visites</h2>
                      <iframe
                     src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7928.724102984434!2d-76.39413242763895!3d-6.475743320848087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x91ba0be1d1b624cd%3A0x330ef57aa98583aa!2sPlaza%20de%20Armas%20Morales%2C%20Tarapoto!3m2!1d-6.4787664!2d-76.3834224!4m5!1s0x91ba096491199175%3A0xad06a6682ec7f08c!2sUPEU%2C%20Tarapoto%2022201!3m2!1d-6.4723901!2d-76.3965549!5e0!3m2!1ses!2spe!4v1628860293016!5m2!1ses!2spe"
                     class="localizacion"

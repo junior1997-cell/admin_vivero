@@ -119,6 +119,20 @@
             $("#correo_f").html(data.email);
         })
         }
+        /**
+         * contactanos
+         */
+        function mostrar_contactanos() {
+        $.post("../../admin/ajax/vista_web.php?op=mostrar_contact_v", {
+        }, function(data, status) {
+            data = JSON.parse(data);
+           // console.log(data);
+            $("#direccion_contact").html(data.direccion);
+        // $("#telefono_f").val(data.coordenadas);
+            $("#telefono_contact").html(data.telefono);
+            $("#correo_contact").html(data.email);
+        })
+        }
         /**################# */
         function mostrar_descrp_v() {
         $.post("../../admin/ajax/vista_web.php?op=mostrar_descrp_v", {
@@ -140,6 +154,7 @@
         }
         mostrar_descrp_v_index();
         mostrar_contact_v();
+        mostrar_contactanos();
         mostrar_descrp_v();
     </script>
 

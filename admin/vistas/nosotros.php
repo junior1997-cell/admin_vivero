@@ -65,13 +65,13 @@ if ($_SESSION['institucion']==1)
                     </div>
 
                     <!-- ===================== ..:: INPUT COOR. MAPA ::.. ===================== -->
-                    <div class="form-group col-md-12">
+                   <!-- <div class="form-group col-md-12">
                       <label for="coordenadas" class="control-label">
                         <i class="fa fa-map-marker" style="font-size: 20px; "></i>
                         Coordenadas del mapa
                       </label>
                       <input id="coordenadas" name="coordenadas" type="text" class="form-control" placeholder="Ingrese las coordenadas del mapa...">
-                    </div>
+                    </div>-->
 
                     <!-- ===================== ..:: INPUT TELEFONO ::.. ===================== -->
                     <div class="form-group col-md-12">

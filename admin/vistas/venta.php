@@ -102,7 +102,7 @@ if ($_SESSION['ventas']==1)
                           </div>
                           <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <a data-toggle="modal" href="#myModal">           
-                              <button id="btnAgregarArt" type="button" class="btn btn-primary"> <span class="fa fa-plus"></span> Agregar Artículos</button>
+                              <button id="btnAgregarArt" type="button" class="btn btn-primary"> <span class="fa fa-plus"></span> Agregar Planta</button>
                             </a>
                           </div>
 
@@ -110,7 +110,7 @@ if ($_SESSION['ventas']==1)
                             <table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
                               <thead style="background-color:#A9D0F5">
                                     <th>Opciones</th>
-                                    <th>Artículo</th>
+                                    <th>Planta</th>
                                     <th>Cantidad</th>
                                     <th>Precio Venta</th>
                                     <th>Descuento</th>
@@ -152,7 +152,7 @@ if ($_SESSION['ventas']==1)
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Seleccione un Artículo</h4>
+          <h4 class="modal-title">Seleccionar Planta</h4>
         </div>
         <div class="modal-body table-responsive">
           <table id="tblarticulos" class="table table-striped table-bordered table-condensed table-hover" style="width: 100% !important;">

@@ -70,5 +70,12 @@ Class Venta
 		return ejecutarConsulta($sql);
 	}
 	
+	public function listarActivosVenta()
+	{
+		$sql="SELECT p.descripcion,p.idplanta, p.nombre, p.stock, p.img_1, p.id_categoria,p.precio_venta, c.nombre as categoria 
+				FROM admin_vivero.planta as p, admin_vivero.categoria as c 
+				where p.id_categoria = c.idcategoria";
+		return ejecutarConsulta($sql);		
+	}
 }
 ?>

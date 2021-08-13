@@ -10,7 +10,7 @@ if (!isset($_SESSION["nombre"]))
 else
 {
 //Validamos el acceso solo al usuario logueado y autorizado.
-if ($_SESSION['almacen']==1)
+if ($_SESSION['planta']==1)
 {
 require_once "../modelos/Color.php";
 

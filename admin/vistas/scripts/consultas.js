@@ -3,8 +3,11 @@ var tabla;
 //Función que se ejecuta al inicio
 function init(){
 	mostrar_ornamentales();
-    mostrar_planta()
-    mostrar_flores()
+    mostrar_planta();
+    mostrar_flores();
+
+	// $('#mEscritorio').addClass("treeview active");
+    $('#lEscritorio').addClass("active");
 }
 
 //Función total plantas ornamentales.
@@ -31,7 +34,7 @@ function mostrar_planta(){
     
 	$.post("../ajax/consultas.php?op=mostrar_arboles",{}, function(data, status){
 		data = JSON.parse(data);
-	alert(data);
+		// alert(data);
 
 		$("#totalarboles").html(data.totalornamnetal);
  		//$("#idcolor").val(data.idcolor);

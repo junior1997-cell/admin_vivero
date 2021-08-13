@@ -106,7 +106,7 @@ function listar()
 function guardaryeditar(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	$("#btnGuardar").prop("disabled",true);
+	// $("#btnGuardar").prop("disabled",true);
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
@@ -118,13 +118,20 @@ function guardaryeditar(e)
 
 	    success: function(datos)
 	    {                    
-	          bootbox.alert(datos);	          
-	          mostrarform(false);
-	          tabla.ajax.reload();
+	        // bootbox.alert(datos);	
+			if (datos == 'ok') {
+				$("#btnGuardar").prop("disabled",true);
+				toastr.success('Planta registrada correctamente')
+				mostrarform(false);
+	        	tabla.ajax.reload();
+				limpiar();
+			}else{
+				toastr.error(datos)
+			}	
 	    }
 
 	});
-	limpiar();
+	// limpiar();
 }
 
 function mostrar(idusuario)

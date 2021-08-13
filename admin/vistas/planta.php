@@ -8,7 +8,7 @@
   } else {
     require 'header.php';
      
-    if ($_SESSION['almacen']==1){
+    if ($_SESSION['planta']==1){
     ?>
     <!--Contenido-->
     <!-- Content Wrapper. Contains page content -->
@@ -169,7 +169,7 @@
     ?>
       <script type="text/javascript" src="../public/js/JsBarcode.all.min.js"></script>
       <script type="text/javascript" src="../public/js/jquery.PrintArea.js"></script>
-      <script type="text/javascript" src="scripts/articulo.js"></script>
+      <script type="text/javascript" src="scripts/planta.js"></script>
       
       
     <?php 

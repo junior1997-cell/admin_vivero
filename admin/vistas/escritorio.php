@@ -10,7 +10,7 @@
   } else {
     require 'header.php';
 
-    if ($_SESSION['escritorio']==1) {
+    if (true) {
    	//imagenes escritorios
         //carousel ornamentales
         $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE id_categoria=1 AND pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";

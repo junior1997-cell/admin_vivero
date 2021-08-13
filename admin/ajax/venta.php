@@ -143,7 +143,7 @@ switch ($_GET["op"]){
 						<span class="description">'.substr($reg->descripcion, 0, 40).'...</span>
 					</div>',
  				"2"=>$reg->categoria,
- 				"3"=>$reg->stock,
+ 				"3"=>'<div class="text-center"> <small class="label label-success">'.$reg->stock.'</small> </div>', 
  				"4"=>$reg->precio_venta
  				);
  		}

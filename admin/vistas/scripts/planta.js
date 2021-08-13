@@ -11,14 +11,14 @@ function init(){
 	})
 	 
 	//Cargamos los items al select categoria
-	$.post("../ajax/articulo.php?op=selectCategoria", function(r){
+	$.post("../ajax/planta.php?op=selectCategoria", function(r){
 		$("#idcategoria").html(r);
 		$('#idcategoria').selectpicker('refresh');
 
 	});
 	
 	//Cargamos los items al select COLOR
-	$.post("../ajax/articulo.php?op=selectColor", function(r){
+	$.post("../ajax/planta.php?op=selectColor", function(r){
 		$("#idcolor").html(r);
 		$('#idcolor').selectpicker('refresh');
 
@@ -26,7 +26,7 @@ function init(){
 
 	$("#imagenmuestra").hide();
 	$('#mAlmacen').addClass("treeview active");
-    $('#lArticulos').addClass("active");
+    $('#lPlanta').addClass("active");
 
 	$("#foto1_i").click(function() {
 		$('#foto1').trigger('click');
@@ -213,7 +213,7 @@ function listar()
 		        ],
 		"ajax":
 				{
-					url: '../ajax/articulo.php?op=listar',
+					url: '../ajax/planta.php?op=listar',
 					type : "get",
 					dataType : "json",						
 					error: function(e){
@@ -244,7 +244,7 @@ function guardaryeditar(e)
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
-		url: "../ajax/articulo.php?op=guardaryeditar",
+		url: "../ajax/planta.php?op=guardaryeditar",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
@@ -273,7 +273,7 @@ function mostrar(idplanta)
 {
 	limpiar();
 
-	$.post("../ajax/articulo.php?op=mostrar",{idplanta : idplanta}, function(data, status)
+	$.post("../ajax/planta.php?op=mostrar",{idplanta : idplanta}, function(data, status)
 	{
 		data = JSON.parse(data);
 		// console.log(data); 		
@@ -322,7 +322,7 @@ function mostrar(idplanta)
 	// 	});
  	// });
 
-	$.post("../ajax/articulo.php?op=mostrar_color&id_planta="+idplanta, function(data, status)
+	$.post("../ajax/planta.php?op=mostrar_color&id_planta="+idplanta, function(data, status)
 	{
 		data = JSON.parse(data);
 		// console.log(data);
@@ -338,7 +338,7 @@ function desactivar(idplanta)
 	bootbox.confirm("¿Está Seguro de desactivar el artículo?", function(result){
 		if(result)
         {
-        	$.post("../ajax/articulo.php?op=desactivar", {idplanta : idplanta}, function(e){
+        	$.post("../ajax/planta.php?op=desactivar", {idplanta : idplanta}, function(e){
         		if (e == 'ok') {
 					toastr.success('Planta Desactivada correctamente')
 					tabla.ajax.reload();
@@ -357,7 +357,7 @@ function activar(idplanta)
 	bootbox.confirm("¿Está Seguro de activar el Artículo?", function(result){
 		if(result)
         {
-        	$.post("../ajax/articulo.php?op=activar", {idplanta : idplanta}, function(e){
+        	$.post("../ajax/planta.php?op=activar", {idplanta : idplanta}, function(e){
         		if (e == 'ok') {
 					toastr.success('Planta Activada correctamente')
 					tabla.ajax.reload();

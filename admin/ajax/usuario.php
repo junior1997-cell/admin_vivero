@@ -28,7 +28,7 @@ switch ($_GET["op"]){
 		else
 		{
 			//Validamos el acceso solo al usuario logueado y autorizado.
-			if ($_SESSION['almacen']==1)
+			if ($_SESSION['acceso']==1)
 			{
 				if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name']))
 				{
@@ -48,11 +48,11 @@ switch ($_GET["op"]){
 
 				if (empty($idusuario)){
 					$rspta=$usuario->insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
-					echo $rspta ? "Usuario registrado" : "No se pudieron registrar todos los datos del usuario";
+					echo $rspta ? "ok" : "No se pudieron registrar todos los datos del usuario";
 				}
 				else {
 					$rspta=$usuario->editar($idusuario,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
-					echo $rspta ? "Usuario actualizado" : "Usuario no se pudo actualizar";
+					echo $rspta ? "ok" : "Usuario no se pudo actualizar";
 				}
 			//Fin de las validaciones de acceso
 			}
@@ -71,7 +71,7 @@ switch ($_GET["op"]){
 		else
 		{
 			//Validamos el acceso solo al usuario logueado y autorizado.
-			if ($_SESSION['almacen']==1)
+			if ($_SESSION['acceso']==1)
 			{
 				$rspta=$usuario->desactivar($idusuario);
  				echo $rspta ? "Usuario Desactivado" : "Usuario no se puede desactivar";
@@ -92,7 +92,7 @@ switch ($_GET["op"]){
 		else
 		{
 			//Validamos el acceso solo al usuario logueado y autorizado.
-			if ($_SESSION['almacen']==1)
+			if ($_SESSION['acceso']==1)
 			{
 				$rspta=$usuario->activar($idusuario);
  				echo $rspta ? "Usuario activado" : "Usuario no se puede activar";
@@ -113,7 +113,7 @@ switch ($_GET["op"]){
 		else
 		{
 			//Validamos el acceso solo al usuario logueado y autorizado.
-			if ($_SESSION['almacen']==1)
+			if ($_SESSION['acceso']==1)
 			{
 				$rspta=$usuario->mostrar($idusuario);
 		 		//Codificar el resultado utilizando json
@@ -135,7 +135,7 @@ switch ($_GET["op"]){
 		else
 		{
 			//Validamos el acceso solo al usuario logueado y autorizado.
-			if ($_SESSION['almacen']==1)
+			if ($_SESSION['acceso']==1)
 			{
 				$rspta=$usuario->listar();
 		 		//Vamos a declarar un array
@@ -206,7 +206,7 @@ switch ($_GET["op"]){
 	    //Hash SHA256 en la contraseña
 		$clavehash=hash("SHA256",$clavea);
 
-		$rspta=$usuario->verificar($logina, $clavea);
+		$rspta=$usuario->verificar($logina, $clavehash);
 
 		$fetch=$rspta->fetch_object();
 
@@ -231,20 +231,20 @@ switch ($_GET["op"]){
 
 			//Almacenamos los permisos marcados en el array
 			while ($per = $marcados->fetch_object())
-				{
-					array_push($valores, $per->idpermiso);
-				}
+			{
+				array_push($valores, $per->idpermiso);
+			}
 
 			//Determinamos los accesos del usuario
-			in_array(1,$valores)?$_SESSION['escritorio']=1:$_SESSION['escritorio']=0;
-			in_array(2,$valores)?$_SESSION['almacen']=1:$_SESSION['almacen']=0;
-			in_array(3,$valores)?$_SESSION['compras']=1:$_SESSION['compras']=0;
-			in_array(4,$valores)?$_SESSION['ventas']=1:$_SESSION['ventas']=0;
-			in_array(5,$valores)?$_SESSION['acceso']=1:$_SESSION['acceso']=0;
-			in_array(6,$valores)?$_SESSION['consultac']=1:$_SESSION['consultac']=0;
-			in_array(7,$valores)?$_SESSION['consultav']=1:$_SESSION['consultav']=0;
-
+			// in_array(1,$valores)?$_SESSION['escritorio']=1:$_SESSION['escritorio']=0;
+			in_array(1,$valores)?$_SESSION['planta']=1:$_SESSION['planta']=0;
+			in_array(2,$valores)?$_SESSION['institucion']=1:$_SESSION['institucion']=0;
+			in_array(3,$valores)?$_SESSION['ventas']=1:$_SESSION['ventas']=0;
+			in_array(4,$valores)?$_SESSION['acceso']=1:$_SESSION['acceso']=0;
+			in_array(5,$valores)?$_SESSION['carrucel']=1:$_SESSION['carrucel']=0;
+			in_array(6,$valores)?$_SESSION['whatsapp']=1:$_SESSION['whatsapp']=0;
 	    }
+
 	    echo json_encode($fetch);
 	break;
 

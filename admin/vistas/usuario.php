@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Número(*):</label>
-                      <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento" required />
+                      <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="9" placeholder="Documento" required />
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Dirección:</label>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Teléfono:</label>
-                      <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono" />
+                      <input type="text" class="form-control" name="telefono" id="telefono" maxlength="15" placeholder="Teléfono" />
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Email:</label>

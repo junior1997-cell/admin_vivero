@@ -132,9 +132,9 @@ if (strlen(session_id()) < 1)
           <ul class="sidebar-menu">
             <li class="header"></li>
             <?php 
-            if ($_SESSION['escritorio']==1)
+            if (true)
             {
-              echo '<li id="mEscritorio">
+              echo '<li id="lEscritorio">
               <a href="escritorio.php">
                 <i class="fa fa-tasks"></i> <span>Escritorio</span>
               </a>
@@ -143,7 +143,7 @@ if (strlen(session_id()) < 1)
             ?>
 
             <?php 
-            if ($_SESSION['almacen']==1)
+            if ($_SESSION['planta']==1)
             {
               echo '<li id="mAlmacen" class="treeview">
               <a href="#">
@@ -152,7 +152,7 @@ if (strlen(session_id()) < 1)
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="lArticulos"><a href="articulo.php"><i class="fa fa-circle-o"></i> Planta</a></li>
+                <li id="lPlanta"><a href="planta.php"><i class="fa fa-circle-o"></i> Planta</a></li>
                 <li id="lCategorias"><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
                 <li id="lColor"><a href="color.php"><i class="fa fa-circle-o"></i>Color</a></li>
               </ul>
@@ -163,38 +163,20 @@ if (strlen(session_id()) < 1)
         <!-- nosotros -->
 
             <?php 
-            if ($_SESSION['almacen']==1)
+            if ($_SESSION['institucion']==1)
             {
-              echo '<li id="mAlmacen" class="treeview">
+              echo '<li id="mInstitucion" class="treeview">
               <a href="#">
                 <i class="fa fa-university"></i>
                 <span>Institucion</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="lArticulos"><a href="nosotros.php"><i class="fa fa-circle-o"></i> nosotros</a></li>                
+                <li id="lNosotros"><a href="nosotros.php"><i class="fa fa-circle-o"></i> nosotros</a></li>                
               </ul>
             </li>';
             }
-            ?>
-
-
-            <?php 
-            if ($_SESSION['compras']==1)
-            {
-              echo '<li id="mCompras" class="treeview">
-              <a href="#">
-                <i class="fa fa-th"></i>
-                <span>Compras</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="lIngresos"><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li id="lProveedores"><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-              </ul>
-            </li>';
-            }
-            ?>
+            ?>            
 
             <?php 
             if ($_SESSION['ventas']==1)
@@ -231,39 +213,33 @@ if (strlen(session_id()) < 1)
             ?>
 
             <?php 
-            if ($_SESSION['consultac']==10)
+            if ($_SESSION['carrucel']==1)
             {
-              echo '<li id="mConsultaC" class="treeview">
-              <a href="#">
-                <i class="fa fa-bar-chart"></i> <span>Consulta Compras</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="lConsulasC"><a href="comprasfecha.php"><i class="fa fa-circle-o"></i> Consulta Compras</a></li>                
-              </ul>
-            </li>';
+              echo '<li id="lCarrucel">
+                    <a href="carrucel.php">
+                      <i class="fa fa-picture-o"></i> <span>Carrousel</span>
+                    </a>
+                  </li>';
             }
             ?>
 
-             <?php 
-            if ($_SESSION['consultav']==10)
+            <?php 
+            if ($_SESSION['whatsapp']==1)
             {
-              echo '<li id="mConsultaV" class="treeview">
-              <a href="#">
-                <i class="fa fa-bar-chart"></i> <span>Consulta Ventas</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="lConsulasV"><a href="ventasfechacliente.php"><i class="fa fa-circle-o"></i> Consulta Ventas</a></li>                
-              </ul>
-            </li>';
+              echo '<li id="lWhatsapp">
+                    <a href="carrucel.php">
+                      <i class="fa fa-whatsapp"></i> <span>Whatsapp</span>
+                    </a>
+                  </li>';
             }
-            ?>
-            <li>
+            ?>           
+
+             
+            <!-- <li>
               <a href="carrucel.php">
                 <i class="fa fa-plus-square"></i> <span>Carrousel</span>
               </a>
-            </li>
+            </li> -->
 
             <!--<li>
               <a href="ayuda.php">

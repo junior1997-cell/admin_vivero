@@ -93,12 +93,7 @@ if (strlen(session_id()) < 1)
                       <p class="text-muted text-center"><?php echo $_SESSION['cargo']; ?></p>
 
                       <ul class="list-group list-group-unbordered">
-                        <li class="list-group-item">
-                          <b>Direccion</b>
-                          <p class="text-muted" style="margin-bottom:0px;">
-                            <?php echo $_SESSION['direccion']; ?>
-                          </p>  
-                        </li>
+                         
                         <li class="list-group-item">
                           <b>Telefono</b>
                           <p class="text-muted" style="margin-bottom:0px;">

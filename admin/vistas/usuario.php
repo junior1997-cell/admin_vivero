@@ -96,7 +96,8 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Clave (*):</label>
-                      <input type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" required />
+                      <input type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" />
+                      <input type="hidden" name="clave_antigua" id="clave_antigua">
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Permisos:</label>

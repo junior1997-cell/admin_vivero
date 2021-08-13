@@ -17,6 +17,7 @@ $email=isset($_POST["email"])? limpiarCadena($_POST["email"]):"";
 $cargo=isset($_POST["cargo"])? limpiarCadena($_POST["cargo"]):"";
 $login=isset($_POST["login"])? limpiarCadena($_POST["login"]):"";
 $clave=isset($_POST["clave"])? limpiarCadena($_POST["clave"]):"";
+$clave_antigua=isset($_POST["clave_antigua"])? limpiarCadena($_POST["clave_antigua"]):"";
 $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
 
 switch ($_GET["op"]){
@@ -44,13 +45,16 @@ switch ($_GET["op"]){
 					}
 				}
 				//Hash SHA256 en la contraseña
-				$clavehash=hash("SHA256",$clave);
+        if ($clave != "") {
+          $clavehash = hash("SHA256",$clave);
+        }else{
+          $clavehash = $clave_antigua;
+        }				
 
 				if (empty($idusuario)){
 					$rspta=$usuario->insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
 					echo $rspta ? "ok" : "No se pudieron registrar todos los datos del usuario";
-				}
-				else {
+				}else {
 					$rspta=$usuario->editar($idusuario,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
 					echo $rspta ? "ok" : "Usuario no se pudo actualizar";
 				}
@@ -217,10 +221,10 @@ switch ($_GET["op"]){
 	        $_SESSION['nombre']=$fetch->nombre;
 	        $_SESSION['imagen']=$fetch->imagen;
 	        $_SESSION['login']=$fetch->login;
-			$_SESSION['cargo']=$fetch->cargo;
-			$_SESSION['telefono']=$fetch->telefono;
-			$_SESSION['direccion']=$fetch->direccion;
-			$_SESSION['email']=$fetch->email;
+          $_SESSION['cargo']=$fetch->cargo;
+          $_SESSION['telefono']=$fetch->telefono;
+          $_SESSION['direccion']=$fetch->direccion;
+          $_SESSION['email']=$fetch->email;
 
 
 	        //Obtenemos los permisos del usuario

@@ -222,7 +222,7 @@ if (strlen(session_id()) < 1)
             if ($_SESSION['whatsapp']==1)
             {
               echo '<li id="lWhatsapp">
-                    <a href="carrucel.php">
+                    <a href="whatsapp.php">
                       <i class="fa fa-whatsapp"></i> <span>Whatsapp</span>
                     </a>
                   </li>';

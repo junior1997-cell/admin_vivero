@@ -25,9 +25,6 @@ if ($_SESSION['carrucel']==1)
           <div class="box-header with-border">
             <h1 class="box-title">
               Color <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button>
-              <a href="../reportes/rptcategorias.php" target="_blank">
-                <button class="btn btn-info"><i class="fa fa-clipboard"></i> Reporte</button>
-              </a>
             </h1>
             <div class="box-tools pull-right"></div>
           </div>

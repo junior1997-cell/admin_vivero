@@ -1,9 +1,9 @@
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 3.0.0
-        </div>
-        <strong>Copyright &copy; 2013-2019 <a href="www.incanatoit.com">IncanatoIT</a>.</strong> All rights reserved.
-    </footer>    
+<footer class="main-footer">
+  <div class="pull-right hidden-xs">
+    <b>Version</b> 1.0.0
+  </div>
+  <strong>Copyright &copy; <script>document.write(new Date().getFullYear())</script></strong> Todos los derechos reservados.
+</footer>
     <!-- jQuery -->
     <script src="../public/js/jquery-3.1.1.min.js"></script>
     <!-- Bootstrap 3.3.5 -->

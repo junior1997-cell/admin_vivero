@@ -32,7 +32,7 @@
                     <th>Opciones</th>
                     <th>Nombre</th>
                     <th>Categoría</th>
-                    <th>Código</th>
+                    <th>Familia</th>
                     <th>Stock</th>
                     <th>Estado</th>
                   </thead>
@@ -41,7 +41,7 @@
                     <th>Opciones</th>
                     <th>Nombre</th>
                     <th>Categoría</th>
-                    <th>Código</th>
+                    <th>Familia</th>
                     <th>Stock</th>
                     <th>Estado</th>
                   </tfoot>

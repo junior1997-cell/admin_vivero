@@ -29,7 +29,11 @@ Class Articulo
 			}		
 		}
 
-    	return $sw;
+		if ($id_color == "") {
+			return true;
+		} else {
+			return $sw;
+		}    	
 	}
 
 	//Implementamos un método para editar registros

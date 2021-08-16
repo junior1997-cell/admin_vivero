@@ -247,9 +247,10 @@
      overflow: inherit;
 }
  .bootstrap-select.btn-group .dropdown-menu{
-     border: none;
+     /* border: none; */
      padding: 0px;
-     border-radius: 0px;
+     border-radius: 10px;
+     box-shadow: 0 0 40px #111;
 }
  .right-phone-box{
      float: left;
@@ -2257,7 +2258,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #1111111;
+     color: #111111;
      font-weight: 600;
 }
  .new-account-login h5 a:hover{

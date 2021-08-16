@@ -32,7 +32,7 @@ require'header.php';
             <input id="precio" type="hidden" class="formulario__input" required />
 
             <label for="cantidad" class="formulario__label">Indica la cantidad</label>
-            <input id="cantidad" type="number" class="formulario__input" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+            <input id="cantidad" type="number" class="form-control" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
 
             <!-- <label>Categoría:</label>
 						<select id="idcolores" name="idcolores" class="form-control selectpicker" required data-live-search="true" title="Seleccione una categoria"></select>

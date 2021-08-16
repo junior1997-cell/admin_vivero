@@ -364,8 +364,8 @@
             liveSearchNormalize: false,
             liveSearchStyle: 'contains',
             actionsBox: false,
-            iconBase: 'fas ',
-            tickIcon: 'fa-eye',
+            iconBase: 'fa',
+            tickIcon: 'fa-check-square',
             showTick: false,
             template: {
                 caret: '<span class="caret"></span>',
@@ -583,7 +583,7 @@
                         (that.options.liveSearchNormalize ? ' data-normalized-text="' + normalizeToBase(htmlEscape($(text).html())) + '"' : '') +
                         (typeof tokens !== 'undefined' || tokens !== null ? ' data-tokens="' + tokens + '"' : '') +
                         ' role="option">' + text +
-                        '<span class="' + that.options.iconBase + ' ' + that.options.tickIcon + ' check-mark"></span>' +
+                        '<i class="' + that.options.iconBase + ' ' + that.options.tickIcon + ' check-mark"></i>' +
                         '</span>';
                 };
 

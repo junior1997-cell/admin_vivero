@@ -136,6 +136,7 @@ select.selectpicker {
   overflow: hidden;
   width: 100%;
   text-align: left;
+  font-size: 15px !important;
 }
 /* line 187, bootstrap-select.scss */
 .bootstrap-select.btn-group .dropdown-toggle .caret {
@@ -195,7 +196,7 @@ select.selectpicker {
   padding-left: 2.25em;
 }
 /* line 241, bootstrap-select.scss */
-.bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner span.check-mark {
+.bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner i.check-mark {
   display: none;
 }
 /* line 245, bootstrap-select.scss */
@@ -250,11 +251,12 @@ select.selectpicker {
   margin-top: -1px;
 }
 /* line 302, bootstrap-select.scss */
-.bootstrap-select.btn-group.show-tick .dropdown-menu a.selected span.dropdown-item-inner span.check-mark {
+.bootstrap-select.btn-group.show-tick .dropdown-menu a.selected span.dropdown-item-inner i.check-mark {
   position: absolute;
   display: inline-block;
   right: 15px;
   margin-top: 5px;
+  font-size: 15px;
 }
 /* line 309, bootstrap-select.scss */
 .bootstrap-select.btn-group.show-tick .dropdown-menu a a span.text {

@@ -72,6 +72,14 @@ switch ($_GET["op"]){
  		echo json_encode($results);
 
 	break;
+	case "selectWhatsapp":
+
+        $rspta = $whatsapp->select();
+
+        while ($reg = $rspta->fetch_object()) {
+          echo '<option  value=' . $reg->idwhatsapp . '>' . $reg->nombre . ' - '.$reg->numero.'</option>';
+        }
+        break;
 }
 //Fin de las validaciones de acceso
 }

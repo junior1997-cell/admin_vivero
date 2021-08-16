@@ -61,7 +61,7 @@ if ($_SESSION['carrucel']==1)
                    <!-- aqui va la previsualización --> 
                    <img onerror="this.src='../public/img/default/logo-video-y-foto.png';" src="../public/img/default/logo-video-y-foto.png" class="img-thumbnail"  style="cursor: pointer; height: 230px;" />
                 </div>                
-                <input style="display: none;" type="file" name="img" id="img" accept="video/*, .webp" required />
+                <input style="display: none;" type="file" name="img" id="img" accept="video/*, .webp"  />
                 <input type="hidden" name="img_actual" id="img_actual" />
                 <div class="text-center" id="foto1_nombre"><!-- aqui va el nombre de la FOTO --></div>
               </div>

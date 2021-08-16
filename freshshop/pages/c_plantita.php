@@ -1,5 +1,5 @@
 <?php
-require'header_c.php';
+require'header.php';
 ?>
 
 
@@ -22,7 +22,7 @@ require'header_c.php';
 					    </center>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-12 col-sm-12 rowww divhead">
+				<div class="col-lg-4 col-md-12 col-sm-12 rowww divhead" style="margin-bottom: 0px!important;border-width: 1px;border-style: solid;border-color: black;border-radius: 8px;">
 				<center>
 					<form action="" class="formulario">
 						<h1 class="formulario__titulo" id="nombre_v"></h1>
@@ -34,11 +34,21 @@ require'header_c.php';
 
 						<label for="cantidad" class="formulario__label">Indica la cantidad</label>
 						<input id="cantidad" type="number" class="formulario__input" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
-
+							
+						<label>Categoría:</label>
+						<select id="idcolor" name="idcolor" class="form-control selectpicker" required data-live-search="true" title="Seleccione una categoria"></select>
+						
 						<label for="c_preferencia" class="formulario__label">Indica la color de tu preferencia</label>
 						<input id="c_preferencia" type="text" class="formulario__input" required />
 
-						<button id="submit" class="formulario__submit">Enviar a WhatsApp</button>
+						<label for="whatsapp" class="formulario__label">¿Cuál es el servicio que se desea realizar?</label>
+							<select id="whatsapp" name="listawhatsapp" class="formulario__input">
+								<option value="921305769">whatsapp David</option>
+								<option value="916711593">whatsapp Laban</option>
+								<option value="921487276">whatsapp Junior</option>
+							</select>
+
+								<button id="submit"  type="button" class="formulario__submit btn btn-success">Contactar </button>
 						<!-- https://api.whatsapp.com/send?phone=573105010573&text=*_Barberia%20Lider_*%20%0AReservas%0A%0A*%C2%BFCual%20es%20tu%20nombre?*%0A"Nombres"%20%0A*Barbero%20de%20preferencia*%0A"Barbero"%20%0A -->
 					</form>
 				</center>
@@ -66,7 +76,7 @@ require'header_c.php';
 
 
 <?php
-require'footer_c.php';
+require'footer.php';
 ?>
 <!--form.js
 <script src=""></script>-->

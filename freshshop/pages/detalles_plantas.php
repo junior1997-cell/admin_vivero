@@ -45,9 +45,9 @@ require'header.php';
                     <div class="single-product-details">
 
                         <h2 style="text-align: center;" id="nombre"></h2>
-                        <p><b style="color: #1f1f1f;">Nombre Ciéntifico:</b> <span id="nombre_cient"></span>  </p>
+                        <p><b style="color: #1f1f1f;">Nombre Científico:</b> <span id="nombre_cient"></span>  </p>
                         <p><b style="color: #1f1f1f;">Familia:</b> <span id="familia"></span>  </p>
-                        <p><b style="color: #1f1f1f;">Támbien Conocida Como:</b> <span id="apodo"></span>  </p>
+                        <p><b style="color: #1f1f1f;">También  Conocida Como:</b> <span id="apodo"></span>  </p>
                          <h4>Descripción:</h4>
                         <p style="text-align: justify;" id="descripciones"></p>
                         

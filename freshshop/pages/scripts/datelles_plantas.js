@@ -79,6 +79,13 @@ function ver_detalle_plntss(idplanta){
                         '';
                         $("#carousel_images").append(carousel);
                         
+                    } else if (data.img_1=="" && data.img_2=="" && data.img_3=="") {
+                        var carousel = '' +
+                            '<div class="carousel-inner" role="listbox">'+
+                                 '<div class="carousel-item active"><img class="d-block w-100 stilo" src="../../admin/files/articulos/rosa_defecto_v.svg" alt="First slide"> </div>'+    
+                            '</div>'+
+                            '';
+                            $("#carousel_images").append(carousel);
                     }else{
                         $("#carousel_images").html('<div class="alert alert-warning alert-dismissible fade show" role="alert" style=" height: 50px; ">' +
                         '<strong>No hay registros!</strong> Puedes agregar uno desde tu administrador.' +

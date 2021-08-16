@@ -95,8 +95,10 @@ function listar_plnts_prncpal(id_categoria){
                 } else if (value.img_2!="") {
                     imagen=value.img_2;
                    // console.log('imagen3'+imagen);
-                }else{
+                }else if (value.img_3!=""){
                     imagen=value.img_3;
+                }else{
+                    imagen='rosa_defecto_v.svg';
                 }
                 
                 //var idpalntita =value.idplanta;
@@ -145,6 +147,7 @@ function listar_plnts_galery(id_categoria){
         
         var clasesbadge="";
         var imagen="";
+        var imagen_defecto="";
 
         if (data.length) {
 
@@ -165,9 +168,12 @@ function listar_plnts_galery(id_categoria){
                 } else if (value.img_2!="") {
                     imagen=value.img_2;
                    // console.log('imagen3'+imagen);
-                }else{
+                }else if (value.img_3!=""){
                     imagen=value.img_3;
+                }else{
+                    imagen='rosa_defecto_v.svg';
                 }
+
                 var plantas = '' +
                         '<div class="col-lg-3 col-md-6 special-grid bulbs">' +
                             '<div class="products-single fix">' +

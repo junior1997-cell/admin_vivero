@@ -47,9 +47,8 @@
                         </div>
                         <div class="our-link">
                             <ul>
-                                <li><a href="#"><i class="fa fa-user s_color"></i> Mi Perfil</a></li>
-                                <li><a href=""><i class="fas fa-location-arrow"></i> Localización</a></li>
-                                <li><a href="contact-us.php"><i class="fas fa-headset"></i> Contactos</a></li>
+                                <li><a href="contact-us.php"><i class="fas fa-location-arrow"></i> Localización</a></li>
+                                <li><a href="contact-us.php"><i class="fas fa-headset"></i> CONTÁCTANOS</a></li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +58,7 @@
                                 <option>Register Here</option>
                                 <option>Sign In</option>
                             </select>
-                        </div>-->
+                        </div>
                         <div class="text-slid-box  ">
                             <div id="offer-box" class="carouselTicker" style="float: right !important;">
                                 <ul class="offer-box">
@@ -84,7 +83,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     </div>
                 </div>

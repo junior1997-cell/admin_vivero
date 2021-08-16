@@ -93,7 +93,7 @@ require'header.php';
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="title-all text-center">
-                            <h1>Variedades De Plantas</h1>
+                            <h1>Variedades de Plantas</h1>
                             <p>Comercialización de plantas naturales y ornamentales al por mayor y menor</p>
                         </div>
                     </div>
@@ -123,7 +123,7 @@ require'header.php';
         <section>
             <div class="col-col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="title-all text-center">
-                    <h1>Acerca De Nosotros</h1>
+                    <h1>Acerca de Nosotros</h1>
                     <p>Somos una empresa reconocida</p>
                 </div>
 

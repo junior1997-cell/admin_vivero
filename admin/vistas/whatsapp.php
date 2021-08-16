@@ -57,7 +57,10 @@ if ($_SESSION['whatsapp']==1)
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <label>Numero:</label>
-                          <input type="text" class="form-control" name="numero" id="numero" maxlength="15" placeholder="Numero" required />
+                          <div class="input-group">
+                            <span class="input-group-addon">+51</span>
+                            <input type="number" class="form-control" name="numero" id="numero"  max="999999999" placeholder="Numero" required />
+                          </div>
                         </div>
                         <!-- Color Picker -->
                         <style>

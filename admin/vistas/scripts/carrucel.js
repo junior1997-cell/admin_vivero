@@ -42,6 +42,9 @@ function limpiar() {
   $("#img_i").html('<img src="../public/img/default/logo-video-y-foto.png" class="img-thumbnail"  style="cursor: pointer; height: 230px;" />');
   $("#img").val("");
   $("#img_actual").val("");
+
+  $("#barra_progress").css({"width":'0%'});
+  $("#barra_progress").text("0%");
 }
 //Función mostrar formulario
 function mostrarform(flag) {
@@ -87,7 +90,7 @@ function guardaryeditar(e) {
               var percentComplete = (evt.loaded / evt.total)*100;
               /*console.log(percentComplete + '%');*/
               $("#barra_progress").css({"width": percentComplete+'%'});
-              $("#barra_progress").text(percentComplete+"%");
+              $("#barra_progress").text(percentComplete.toFixed(2)+" %");
               if (percentComplete === 100) {
                  setTimeout(l_m, 600);
               }

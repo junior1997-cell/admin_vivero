@@ -66,9 +66,16 @@ if ($_SESSION['carrucel']==1)
                 <div class="text-center" id="foto1_nombre"><!-- aqui va el nombre de la FOTO --></div>
               </div>
 
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;">
+                <div class="progress" id="div_barra_progress">
+                  <div id="barra_progress" class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 0%;">
+                    0%
+                  </div>
+                </div>
+              </div>
+
               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
-
                 <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
               </div>
             </form>

@@ -74,14 +74,35 @@ function guardaryeditar(e) {
       if (datos == "ok") {
         toastr.success("imagen registrada");
         // bootbox.alert(datos);
-        mostrarform(false);
+        
         tabla.ajax.reload();
       } else {
         toastr.error(datos);
       }
     },
+    xhr: function () {
+      var xhr = new window.XMLHttpRequest();
+      xhr.upload.addEventListener("progress", function (evt) {
+          if (evt.lengthComputable) {
+              var percentComplete = (evt.loaded / evt.total)*100;
+              /*console.log(percentComplete + '%');*/
+              $("#barra_progress").css({"width": percentComplete+'%'});
+              $("#barra_progress").text(percentComplete+"%");
+              if (percentComplete === 100) {
+                 setTimeout(l_m, 600);
+              }
+          }
+      }, false);
+      return xhr;
+    }
   });
+}
+
+function l_m(){
+  mostrarform(false);
   limpiar();
+  $("#barra_progress").css({"width":'0%'});
+  $("#barra_progress").text("0%");
 }
 
 /* PREVISUALIZAR LAS IMAGENES */

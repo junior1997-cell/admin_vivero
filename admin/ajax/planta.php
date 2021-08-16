@@ -148,8 +148,23 @@ if (!isset($_SESSION["nombre"])) {
         $rspta = $articulo->listar();
         //Vamos a declarar un array
         $data = [];
-
+        $img = "";
         while ($reg = $rspta->fetch_object()) {
+
+          if (!empty($reg->img_1)) {
+            $img = $reg->img_1;
+          } else {
+            if (!empty($reg->img_2)) {
+              $img = $reg->img_2;
+            } else {
+              if (!empty($reg->img_3)) {
+                $img = $reg->img_3;
+              } else {
+                $img = "rosa_defecto.svg";
+              }
+            }           
+          }
+          
           $data[] = [
             "0" => $reg->estado
               ? '<button class="btn btn-warning" onclick="mostrar(' .$reg->idplanta . ')"><i class="fa fa-pencil"></i></button>' .
@@ -157,7 +172,7 @@ if (!isset($_SESSION["nombre"])) {
               : '<button class="btn btn-warning" onclick="mostrar(' . $reg->idplanta . ')"><i class="fa fa-pencil"></i></button>' .
                 '<button class="btn btn-primary" onclick="activar(' . $reg->idplanta . ')"><i class="fa fa-check"></i></button>',
             "1" =>'<div class="user-block">
-                    <img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$reg->img_1.'" alt="user image">
+                    <img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$img.'" alt="user image">
                     <span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>
                     <span class="description">'.substr($reg->descripcion, 0, 30).'...</span>
                   </div>',

@@ -17,16 +17,16 @@ require_once "../modelos/Whatsapp.php";
 $whatsapp=new Whatsapp();
 
 $idwhatsapp=isset($_POST["idwhatsapp"])? limpiarCadena($_POST["idwhatsapp"]):"";
+$nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $numero=isset($_POST["numero"])? limpiarCadena($_POST["numero"]):"";
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idwhatsapp)){
-			$rspta=$whatsapp->insertar($numero);
+			$rspta=$whatsapp->insertar($nombre,$numero);
 			echo $rspta ? "ok" : "whatsapp no se pudo registrar";
-		}
-		else {
-			$rspta=$whatsapp->editar($idwhatsapp,$numero);
+		}else {
+			$rspta=$whatsapp->editar($idwhatsapp,$nombre,$numero);
 			echo $rspta ? "ok" : "whatsapp no se pudo actualizar";
 		}
 	break;
@@ -58,8 +58,9 @@ switch ($_GET["op"]){
  					' <button class="btn btn-danger" onclick="desactivar('.$reg->idwhatsapp.')"><i class="fa fa-close"></i></button>':
  					'<button class="btn btn-warning" onclick="mostrar('.$reg->idwhatsapp.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-primary" onclick="activar('.$reg->idwhatsapp.')"><i class="fa fa-check"></i></button>',
- 				"1"=>$reg->numero,
- 				"2"=>($reg->estado)?'<span class="label bg-green">Activado</span>':
+				"1"=>$reg->nombre,
+				"2"=>$reg->numero,
+ 				"3"=>($reg->estado)?'<span class="label bg-green">Activado</span>':
  				'<span class="label bg-red">Desactivado</span>'
  				);
  		}

@@ -23,7 +23,7 @@ if ($_SESSION['whatsapp']==1)
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 class="box-title">Color <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
+                          <h1 class="box-title">Whatsapp <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
                         <div class="box-tools pull-right">
                         </div>
                     </div>
@@ -34,6 +34,7 @@ if ($_SESSION['whatsapp']==1)
                           <thead>
                             <th>Opciones</th>
                             <th>Nombre</th>
+                            <th>Número</th>
                             <th>Estado</th>
                           </thead>
                           <tbody>                            
@@ -41,6 +42,7 @@ if ($_SESSION['whatsapp']==1)
                           <tfoot>
                             <th>Opciones</th>
                             <th>Nombre</th>
+                            <th>Número</th>
                             <th>Estado</th>
                           </tfoot>
                         </table>
@@ -48,9 +50,13 @@ if ($_SESSION['whatsapp']==1)
                     <div class="panel-body" style="height: 400px;" id="formularioregistros">
                     <form name="formulario" id="formulario" method="POST">
                       <div class="row">
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <label>Nombre:</label>
+                          <input type="hidden" name="idwhatsapp" id="idwhatsapp" />
+                          <input type="text" class="form-control" name="nombre" id="nombre" maxlength="15" placeholder="Nombre" required />
+                        </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <label>Numero:</label>
-                          <input type="hidden" name="idwhatsapp" id="idwhatsapp" />
                           <input type="text" class="form-control" name="numero" id="numero" maxlength="15" placeholder="Numero" required />
                         </div>
                         <!-- Color Picker -->

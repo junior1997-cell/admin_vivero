@@ -11,17 +11,17 @@ Class Whatsapp
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($numero)
+	public function insertar($nombre, $numero)
 	{
-		$sql="INSERT INTO whatsapp (numero)
-		VALUES ('$numero')";
+		$sql="INSERT INTO whatsapp (nombre, numero)
+		VALUES ('$nombre','$numero')";
 		return ejecutarConsulta($sql);
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idwhatsapp,$numero)
+	public function editar($idwhatsapp, $nombre, $numero)
 	{
-		$sql="UPDATE whatsapp SET numero='$numero' WHERE idwhatsapp='$idwhatsapp'";
+		$sql="UPDATE whatsapp SET numero='$numero',nombre='$nombre' WHERE idwhatsapp='$idwhatsapp'";
 		return ejecutarConsulta($sql);
 	}
 

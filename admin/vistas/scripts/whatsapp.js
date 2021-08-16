@@ -32,6 +32,7 @@ function limpiar()
 {
 	$("#idwhatsapp").val("");
 	$("#numero").val("");
+	$("#nombre").val("");
 }
 
 //Función mostrar formulario
@@ -141,6 +142,7 @@ function mostrar(idwhatsapp)
 		mostrarform(true);
 
 		$("#numero").val(data.numero);
+		$("#nombre").val(data.nombre);
  		$("#idwhatsapp").val(data.idwhatsapp);
 
  	})

@@ -26,7 +26,7 @@ if (!isset($_SESSION["nombre"])){
 		switch ($_GET["op"]){
 			case 'guardaryeditar':
 				if (empty($idventa)){
-					$rspta=$venta->insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$_POST["idarticulo"],$_POST["cantidad"],$_POST["precio_venta"],$_POST["descuento"]);
+					$rspta=$venta->insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$_POST["idarticulo"],$_POST["cantidad"],$_POST["stock_antg"],$_POST["precio_venta"],$_POST["descuento"]);
 					echo $rspta ? "ok" : "No se pudieron registrar todos los datos de la venta";
 				}
 				else {
@@ -131,17 +131,41 @@ if (!isset($_SESSION["nombre"])){
 				//Vamos a declarar un array
 				$datas= Array();
 				// echo json_encode($rspta);
+        $img = "";
+        $color_stock ="";
 				while ( $reg = $rspta->fetch_object() ){
-           
+          if (!empty($reg->img_1)) {
+            $img = $reg->img_1;
+          } else {
+            if (!empty($reg->img_2)) {
+              $img = $reg->img_2;
+            } else {
+              if (!empty($reg->img_3)) {
+                $img = $reg->img_3;
+              } else {
+                $img = "rosa_defecto.svg";
+              }
+            }           
+          }
+          if ($reg->stock <= 3 ) {
+            $color_stock = '<div class="text-center"> <small class="label label-danger">'.$reg->stock.'</small> </div>';
+          } else {
+            if ($reg->stock >= 3 && $reg->stock <= 6 ) {
+              $color_stock = '<div class="text-center"> <small class="label label-warning">'.$reg->stock.'</small> </div>';
+            }else{
+              $color_stock = '<div class="text-center"> <small class="label label-success">'.$reg->stock.'</small> </div>';
+            }
+          }
+          
 					$datas[]=array(
-						"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idplanta.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\')" data-toggle="tooltip" data-original-title="Agregar Planta"><span class="fa fa-plus"></span></button>',
+						"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idplanta.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\',\''.$reg->nombre.'\',\''.$reg->stock.'\')" data-toggle="tooltip" data-original-title="Agregar Planta"><span class="fa fa-plus"></span></button>',
 						"1"=>'<div class="user-block">
-								<img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$reg->img_1.'" alt="user image">
+								<img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$img.'" alt="user image">
 								<span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>
 								<span class="description">...</span>
 							</div>',
 						"2"=>$reg->categoria,
-						"3"=>'<div class="text-center"> <small class="label label-success">'.$reg->stock.'</small> </div>', 
+						"3"=>$color_stock, 
 						"4"=>$reg->precio_venta
 						);
 				}

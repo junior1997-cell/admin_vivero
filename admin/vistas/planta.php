@@ -33,6 +33,7 @@
                     <th>Nombre</th>
                     <th>Categoría</th>
                     <th>Familia</th>
+                    <th>Precio</th>
                     <th>Stock</th>
                     <th>Estado</th>
                   </thead>
@@ -42,6 +43,7 @@
                     <th>Nombre</th>
                     <th>Categoría</th>
                     <th>Familia</th>
+                    <th>Precio</th>
                     <th>Stock</th>
                     <th>Estado</th>
                   </tfoot>

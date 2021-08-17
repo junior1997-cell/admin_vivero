@@ -178,8 +178,9 @@ if (!isset($_SESSION["nombre"])) {
                   </div>',
             "2" => $reg->categoria,
             "3" => $reg->familia,
-            "4" => $reg->stock,
-            "5" => $reg->estado ? '<span class="label bg-green">Activado</span>' : '<span class="label bg-red">Desactivado</span>',
+            "4" => "S/. ".$reg->precio_venta,
+            "5" => $reg->stock,
+            "6" => $reg->estado ? '<span class="label bg-green">Activado</span>' : '<span class="label bg-red">Desactivado</span>',
           ];
         }
         $results = [

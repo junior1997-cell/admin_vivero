@@ -289,36 +289,39 @@ function marcarImpuesto()
     }
   }
 
-function agregarDetalle(idarticulo,articulo,precio_venta)
-  {
+function agregarDetalle(idarticulo,articulo,precio_venta,nombre, stock) {
   	var cantidad=1;
     var descuento=0;
 
     if (idarticulo!="")
     {
-    	var subtotal=cantidad*precio_venta;
-    	var fila='<tr class="filas" id="fila'+cont+'">'+
-    	'<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
-    	'<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
-    	'<td><input type="number" name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
-    	'<td><input type="number" name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'"></td>'+
-    	'<td><input type="number" name="descuento[]" value="'+descuento+'"></td>'+
-    	'<td><span name="subtotal" id="subtotal'+cont+'">'+subtotal+'</span></td>'+
-    	'<td><button type="button" onclick="modificarSubototales()" class="btn btn-info"><i class="fa fa-refresh"></i></button></td>'+
-    	'</tr>';
-    	cont++;
-    	detalles=detalles+1;
-    	$('#detalles').append(fila);
-    	modificarSubototales();
+      if (stock != 0) {
+        var subtotal=cantidad*precio_venta;
+        var fila='<tr class="filas" id="fila'+cont+'">'+
+        '<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
+        '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
+        '<td><input type="number" name="cantidad[]" id="cantidad[]" min="1" max="'+stock+'" value="'+cantidad+'"> <input type="hidden" name="stock_antg[]" id="stock_antg[]" value="'+stock+'"></td>'+
+        '<td><input type="number" name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'"></td>'+
+        '<td><input type="number" name="descuento[]" value="'+descuento+'"></td>'+
+        '<td><span name="subtotal" id="subtotal'+cont+'">'+subtotal+'</span></td>'+
+        '<td><button type="button" onclick="modificarSubototales()" class="btn btn-info"><i class="fa fa-refresh"></i></button></td>'+
+        '</tr>';
+        cont++;
+        detalles=detalles+1;
+        $('#detalles').append(fila);
+        modificarSubototales();
+        toastr.success('Planta: '+nombre+ ' agregada !!')
+      } else {
+        toastr.error('El STOCK es 0 de la planta: '+nombre)
+      }
+    	
+    } else {
+    	// alert("Error al ingresar el detalle, revisar los datos del artículo");
+		  toastr.error('Error al ingresar el detalle, revisar los datos de la planta.')
     }
-    else
-    {
-    	alert("Error al ingresar el detalle, revisar los datos del artículo");
-    }
-  }
+}
 
-  function modificarSubototales()
-  {
+function modificarSubototales() {
   	var cant = document.getElementsByName("cantidad[]");
     var prec = document.getElementsByName("precio_venta[]");
     var desc = document.getElementsByName("descuento[]");
@@ -335,8 +338,8 @@ function agregarDetalle(idarticulo,articulo,precio_venta)
     }
     calcularTotales();
 
-  }
-  function calcularTotales(){
+}
+function calcularTotales(){
   	var sub = document.getElementsByName("subtotal");
   	var total = 0.0;
 
@@ -346,9 +349,9 @@ function agregarDetalle(idarticulo,articulo,precio_venta)
 	$("#total").html("S/. " + total);
     $("#total_venta").val(total);
     evaluar();
-  }
+}
 
-  function evaluar(){
+function evaluar(){
   	if (detalles>0)
     {
       $("#btnGuardar_venta").show();
@@ -358,13 +361,14 @@ function agregarDetalle(idarticulo,articulo,precio_venta)
       $("#btnGuardar_venta").hide(); 
       cont=0;
     }
-  }
+}
 
-  function eliminarDetalle(indice){
-  	$("#fila" + indice).remove();
-  	calcularTotales();
-  	detalles=detalles-1;
-  	evaluar()
-  }
+function eliminarDetalle(indice){
+  $("#fila" + indice).remove();
+  calcularTotales();
+  detalles=detalles-1;
+  evaluar();
+  toastr.warning('Planta removida.'); 
+}
 
 init();

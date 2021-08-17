@@ -11,7 +11,7 @@ Class Venta
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento)
+	public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$idarticulo,$cantidad,$stock_antg,$precio_venta,$descuento)
 	{
 		$sql="INSERT INTO venta (idcliente,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,fecha_hora,impuesto,total_venta,estado)
 		VALUES ('$idcliente','$idusuario','$tipo_comprobante','$serie_comprobante','$num_comprobante','$fecha_hora','$impuesto','$total_venta','Aceptado')";
@@ -23,8 +23,13 @@ Class Venta
 
 		while ($num_elementos < count($idarticulo))
 		{
-			$sql_detalle = "INSERT INTO detalle_venta(idventa, idplanta,cantidad,precio_venta,descuento) VALUES ('$idventanew', '$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]')";
+			$sql_detalle = "INSERT INTO detalle_venta(idventa, idplanta,cantidad,precio_venta,descuento) 
+			VALUES ('$idventanew', '$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_venta[$num_elementos]','$descuento[$num_elementos]')";
 			ejecutarConsulta($sql_detalle) or $sw = false;
+
+		 	
+			$sql_detalle2 = "UPDATE admin_vivero.planta SET stock = '$stock_antg[$num_elementos]' - '$cantidad[$num_elementos]'  where idplanta = '$idarticulo[$num_elementos]' ;";
+			ejecutarConsulta($sql_detalle2) or $sw = false;
 			$num_elementos=$num_elementos + 1;
 		}
 

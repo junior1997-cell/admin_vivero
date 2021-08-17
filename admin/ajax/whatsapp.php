@@ -77,7 +77,7 @@ switch ($_GET["op"]){
         $rspta = $whatsapp->select();
 
         while ($reg = $rspta->fetch_object()) {
-          echo '<option  value=' . $reg->idwhatsapp . '>' . $reg->nombre . ' - '.$reg->numero.'</option>';
+          echo '<option  value=' . $reg->numero . '>' . $reg->nombre . ' - '.$reg->numero.'</option>';
         }
         break;
 }

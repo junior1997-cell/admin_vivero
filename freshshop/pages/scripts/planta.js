@@ -109,6 +109,11 @@ function listar_plnts_prncpal(id_categoria){
                             '<div class="box-img-hover">' +
                                 '<img src="../../admin/files/articulos/'+imagen+'" class="img-fluid" alt="Image" />' +
                                 '<div class="mask-icon">' +
+                                        '<div class="item-info">' +
+                                            '<div class="headline nombreplntita">' +
+                                                '<strong>'+value.nombre+'</strong>' +
+                                            '</div>' +
+                                        '</div>' +
                                     '<ul>' +
                                         '<li>' +
                                             '<a href="detalles_plantas.php" data-toggle="tooltip" data-placement="right" title="Ver detalle" onclick="ver_detalle_plnts('+value.idplanta+')"><i class="fas fa-eye" style="font-size: 27px;"></i></a>' +
@@ -175,30 +180,24 @@ function listar_plnts_galery(id_categoria){
                 }
 
                 var plantas = '' +
-                        '<div class="col-lg-3 col-md-6 special-grid bulbs">' +
-                            '<div class="products-single fix">' +
-                                 '<div class="shop-cat-box">' +
-                                 '<div class="special-box">' +
-                                '<div id="owl-demo">' +
-                                '<div class="item item-type-zoom">' +
-                                        '<a href="#" class="item-hover">' +
-                                            '<div class="item-info">' +
-                                                '<div class="headline">' +
-                                                    '<strong>'+value.nombre+'</strong>' +
-                                                    '<div class="line"></div>' +
-                                                    '<div class="dit-line">'+value.descripcion.substr(1,120)+'...</div>' +
-                                                '</div>' +
-                                            '</div>' +
-                                        '</a>' +
-                                '<div class="box-img-hover">' +
-                                    '<img src="../../admin/files/articulos/'+imagen+'" class="img-fluid" alt="Image">' +                            
-                                '</div>' +    
-                                '</div>' +   
+                    '<div class="col-lg-3 col-md-6 special-grid bulbs">' + 
+                        '<div class="products-single fix">' +
+                            '<div class="box-img-hover">' +
+                                    '<img src="../../admin/files/articulos/'+imagen+'" class="img-fluid" alt="Image" />' +
+                                '<div class="mask-icon">' +
+                                    '<div class="item-info">' +
+                                        '<div class="headline nombreplntita">' +
+                                            '<div>'+
+                                                '<strong>'+value.nombre+'</strong>' +
+                                                '<div class="line"></div>' +
+                                                '<div class="dit-line">'+value.descripcion.substr(1,120)+'...</div>' +
+                                            '</div>'+
+                                        '</div>' +
+                                    '</div>' +
                                 '</div>' +
-                                '</div>' + 
-                                '</div>' +                
                             '</div>' +
                         '</div>' +
+                    '</div>' +
                     '';
                 $("#plants_galery").append(plantas);
             });
@@ -224,3 +223,27 @@ function id_planta_compra(idplanta){
 }
 
 init();
+
+/**
+ * 
+ * 
+    '<div class="shop-cat-box">' +
+        '<div class="special-box">' +
+            '<div id="owl-demo">' +
+                '<div class="item item-type-zoom">' +
+                    '<a href="#" class="item-hover">' +
+                        '<div class="item-info">' +
+                            '<div class="headline">' +
+                                '<strong>'+value.nombre+'</strong>'+ 
+                                '<div class="line"></div>' +
+                                '<div class="dit-line">'+value.descripcion.substr(1,120)+'...</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</a>' +
+                    '<div class="box-img-hover">' + '<img src="../../admin/files/articulos/'+imagen+'" class="img-fluid" alt="Image" />' + '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>' +
+ */
+

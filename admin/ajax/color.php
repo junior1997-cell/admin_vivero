@@ -71,6 +71,13 @@ switch ($_GET["op"]){
  		echo json_encode($results);
 
 	break;
+	case "selectColor":
+        $rspta = $color->select();
+
+        while ($reg = $rspta->fetch_object()) {
+          echo '<option  value=' . $reg->nombre . '>' . $reg->nombre . '</option>';
+        }
+        break;
 }
 //Fin de las validaciones de acceso
 }

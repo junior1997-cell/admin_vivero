@@ -1311,6 +1311,11 @@
      vertical-align: middle;
      height: 100%;
 }
+.hov-in i{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
  .hov-in i{
      color: #000000;
      font-size: 48px;

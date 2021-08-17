@@ -4,6 +4,78 @@ require'header.php';
 <style>
 .mi_iamgen:hover {filter: blur(5px);}
 
+@media (min-width:350px) and (max-width: 567px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 150px 0px 0px 0px;
+        font-size: 23px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }
+       /**/
+ }
+ @media (min-width:567px) and (max-width: 767px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 170px 0px 0px 0px;
+        font-size: 28px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }
+       /**/
+ }
+ @media (min-width:768px) and (max-width: 992px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 135px 0px 0px 0px;
+        font-size: 28px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }2024
+       /**/
+ }
+ @media (min-width:992px) and (max-width: 2024px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 100px 0px 0px 0px;
+        font-size: 23px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }
+       /**/
+ }
+ /*.nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 100px 0px 0px 0px;
+        font-size: 20px;
+    }*/
+
 </style>
 
 

@@ -21,7 +21,7 @@
                         <div class="ins-inner-box">
                             <img src="../../admin/files/articulos/<?php echo $row['img']; ?>" alt="" />
                             <div class="hov-in">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <i class="fab fa-pagelines"></i>                         
                             </div>
                         </div>
                     </div>
@@ -53,10 +53,10 @@
                                             <p><i class="fas fa-location-arrow"></i>Dirección: <a href="#" id="direccion_f"></a></p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-phone-square"></i>Phone: <a href="#" id="telefono_f"></a></p>
+                                            <p><i class="fas fa-phone-square"></i>Teléfono: <a href="#" id="telefono_f"></a></p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-envelope"></i>Email: <a href="#" id="correo_f"></a></p>
+                                            <p><i class="fas fa-envelope"></i>Correo: <a href="#" id="correo_f"></a></p>
                                         </li>
                                     </ul>
                                 </div>

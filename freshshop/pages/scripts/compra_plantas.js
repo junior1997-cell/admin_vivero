@@ -5,7 +5,7 @@ function init() {
   ver_planta_compra(idplanta_compra);
 
   //Cargamos los items al select COLOR
-  $.post("../../admin/ajax/planta.php?op=selectColor", function (r) {
+  $.post("../../admin/ajax/color.php?op=selectColor", function (r) {
     $("#idcolor").html(r);
     // console.log(r);
     $("#idcolor").selectpicker("refresh");
@@ -29,8 +29,8 @@ function ver_planta_compra(idplanta_compra) {
      */
     $("#nombre_v").html(data.nombre);
     $("#nombre").val(data.nombre);
-    $("#precio_v").html(data.precio_venta);
-    $("#precio").val(data.precio_venta);
+   /* $("#precio_v").html(data.precio_venta);
+    $("#precio").val(data.precio_venta);*/
     /**1-2-3 */
     if (data.img_1 != "" && data.img_2 == "" && data.img_3 == "") {
       var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/' + data.img_1 + '" id="image1">' + "</center>" + "";
@@ -200,27 +200,29 @@ function ver_planta_compra(idplanta_compra) {
 
 document.querySelector("#submit").addEventListener("click", function () {
   let nombre = document.querySelector("#nombre").value;
-  let precio = document.querySelector("#precio").value;
+ // let precio = document.querySelector("#precio").value;
   let cantidad = document.querySelector("#cantidad").value;
-  let c_preferencia = document.querySelector("#c_preferencia").value;
-  let whatsapp = document.querySelector("#whatsapp").value;
+  //let color = document.querySelector("#idcolor").value;
+  let listawhatsapp = document.querySelector("#listawhatsapp").value;
 
-  //console.log(nombre+preciooo+cantidad+c_preferencia);
+  const selected = document.querySelectorAll('#idcolor option:checked');
+  const values = Array.from(selected).map(el => el.value);
+  console.log(values);
   // Guardar
   //localStorage.setItem("nombre......", nombre);
+  /**    "%0A*Precio por unidad*%0A"+
+    precio+ */
 
   let url =
-    "https://api.whatsapp.com/send?phone=+51" +
-    whatsapp +
-    "&text=*__Universidad Peruana Unión__*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?*%0A" +
-    nombre +
-    "%0A*Precio por unidad*%0A" +
-    precio +
-    "%0A*Cantidad*%0A" +
-    cantidad +
-    "%0A*Color de preferencia*%0A" +
-    c_preferencia +
-    "%0A*¡Gracias por su preferencia!*%0A%0A*¡EN SEGUIDA CONFIRMAMOS SU PEDIDO!*%0A";
+    "https://api.whatsapp.com/send?phone=+51"+
+    listawhatsapp+
+    "&text=*__Universidad Peruana Unión__*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?*%0A"+
+    nombre+
+    "%0A*Cantidad*%0A"+
+    cantidad+
+    "%0A*Color de preferencia*%0A"+
+    values+
+    "%0A%0A*¡Gracias por su preferencia!*%0A%0A*¡EN SEGUIDA CONFIRMAMOS SU PEDIDO!*%0A";
   window.open(url);
 });
 

@@ -4,7 +4,12 @@ require'header.php';
 
 <link id="changeable-colors" rel="stylesheet" href="../css/colors/vivid-yellow.css" />
 
+<style>
+        .item-type-zoom .item-info .headline:hover {
+        background-color: #4644408c;
 
+    }
+</style>
 
     <!-- Start Top Search -->
     <div class="top-search">

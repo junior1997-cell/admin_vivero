@@ -22,6 +22,7 @@ select.selectpicker {
 /* line 48, bootstrap-select.scss */
 .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
   color: #999;
+  border: 1px solid #28a745
 }
 /* line 56, bootstrap-select.scss */
 .bootstrap-select > select {
@@ -94,6 +95,7 @@ select.selectpicker {
 /* line 135, bootstrap-select.scss */
 .form-inline .bootstrap-select.btn-group, .form-horizontal .bootstrap-select.btn-group, .form-group .bootstrap-select.btn-group {
   margin-bottom: 0;
+  /*border: 1px solid #28a745!important;*/
 }
 /* line 141, bootstrap-select.scss */
 .form-group-lg .bootstrap-select.btn-group.form-control, .form-group-sm .bootstrap-select.btn-group.form-control {

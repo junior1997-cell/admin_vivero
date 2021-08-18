@@ -38,15 +38,6 @@
                     <th>Estado</th>
                   </thead>
                   <tbody></tbody>
-                  <tfoot>
-                    <th>Opciones</th>
-                    <th>Nombre</th>
-                    <th>Categoría</th>
-                    <th>Familia</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                    <th>Estado</th>
-                  </tfoot>
                 </table>
               </div>
               <div class="panel-body" id="formularioregistros">

@@ -103,7 +103,20 @@ require'header.php';
                      </video>  
                      <div class="head-overlay"></div>        
                      </div> 
-                <div class="row">       
+                <div class="row"> 
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                </div>      
                         <div class="col-md-12 banner-cell" style="margin-top: 120px;">                   
                         <h1 style = "font-family:CLAN PRO" class="m-b-20"><strong>BIENVENIDOS AL <br> VIVERO UPeU</strong></h1><br>
                         <h1 style = "font-family:Clan Pro News; font-size:23px;"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>

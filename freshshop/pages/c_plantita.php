@@ -36,13 +36,13 @@ require'header.php';
 
             <div class="form-group">
               <label style="font-size: 18px;font-weight: 900;">Color:</label><br />
-              <select id="idcolor" name="idcolor[]" class="form-control selectpicker"  multiple data-live-search="true" title="Seleccione los colores" data-actions-box="true"></select>
+              <select id="idcolor" name="idcolor[]" class="form-control selectpicker"  multiple data-live-search="true" title="Seleccione los colores" data-actions-box="true" required></select>
             </div>
 
             <label for="whatsapp" class="formulario__label" style="font-size: 18px;font-weight: 900;">¿Con quien desea contactarse?</label>
-            <select id="listawhatsapp" name="listawhatsapp" class="form-control selectpicker"  title="Selec. un contacto" data-live-search="true"> </select>
+            <select id="listawhatsapp" name="listawhatsapp" class="form-control selectpicker"  title="Selec. un contacto" data-live-search="true" required> </select>
             <br> <br>
-            <button id="submit" type="button" class="formulario__submit btn btn-outline-success" style="margin-bottom: 10px;">Contactar</button>
+            <button id="submit" class="formulario__submit btn btn-outline-success" style="margin-bottom: 10px;">Contactar</button>
             <!-- https://api.whatsapp.com/send?phone=573105010573&text=*_Barberia%20Lider_*%20%0AReservas%0A%0A*%C2%BFCual%20es%20tu%20nombre?*%0A"Nombres"%20%0A*Barbero%20de%20preferencia*%0A"Barbero"%20%0A -->
           </form>
         </center>

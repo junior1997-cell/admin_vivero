@@ -110,7 +110,7 @@ require'header.php';
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Contáctanos</h2>
+                <h2>CONTÁCTANOS</h2>
             </div>
         </div>
     </div>

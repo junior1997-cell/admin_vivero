@@ -163,7 +163,7 @@ if (strlen(session_id()) < 1)
               echo '<li id="mInstitucion" class="treeview">
               <a href="#">
                 <i class="fa fa-university"></i>
-                <span>Institucion</span>
+                <span>Institución</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">

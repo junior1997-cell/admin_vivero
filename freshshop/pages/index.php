@@ -103,11 +103,18 @@ require'header.php';
                      </video>  
                      <div class="head-overlay"></div>        
                      </div> 
-                <div class="row">       
+                     <div class="row">       
                         <div class="col-md-12 banner-cell cssbanner">                   
                              <h1 class="m-b-20 title"><strong>BIENVENIDOS AL <br> VIVERO UPeU</strong></h1><br>
                              <h1 class="subtitle"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
                              <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Árboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1> <br>
+                       </div>      
+                        <div class="col-md-12 banner-cell" style="margin-top: 120px;">                   
+                        <h1 style = "font-family:CLAN PRO" class="m-b-20"><strong>BIENVENIDOS AL <br> VIVERO UPeU</strong></h1><br>
+                        <h1 style = "font-family:Clan Pro News; font-size:23px;"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
+
+                        <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Árboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1> <br>
+
                      </div>
                  </div>
                 </div>

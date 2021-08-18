@@ -581,7 +581,7 @@
      padding-right: 30px;
 }
  nav.navbar.bootsnav ul.nav li.active > a{
-     color: #b0b435;
+     color: black;
 }
  nav.navbar.bootsnav ul.nav li.active > a:hover{
      color: #b0b435;
@@ -712,7 +712,7 @@
      transform: perspective(1px) translateZ(0);
      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
      position: relative;
-     background: #b0b435;
+     background: green;
      -webkit-transition-property: color;
      transition-property: color;
      -webkit-transition-duration: 0.3s;
@@ -1665,7 +1665,7 @@
      width: 100%;
      height: 5px;
      border-radius: 0px;
-     background: #6b202e;
+     background: green;
      position: absolute;
      top: 0;
      left: 0;
@@ -1676,7 +1676,7 @@
      width: 100%;
      height: 0;
      border-radius: 0px;
-     background: #b0b435;
+     background: green;
      position: absolute;
      top: 0;
      left: 0;

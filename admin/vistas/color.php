@@ -38,11 +38,6 @@ if ($_SESSION['planta']==1)
                           </thead>
                           <tbody>                            
                           </tbody>
-                          <tfoot>
-                            <th>Opciones</th>
-                            <th>Nombre</th>
-                            <th>Estado</th>
-                          </tfoot>
                         </table>
                     </div>
                     <div class="panel-body" style="height: 400px;" id="formularioregistros">

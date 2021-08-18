@@ -54,21 +54,35 @@ switch($op){
         while ($reg=$rspta->fetch_object()) {
            // $id++;
             $data[] = array(
-                "idplanta " => $reg->idplanta,
-                "id_categoria " => $reg->id_categoria,
-                "nombre" => $reg->nombre,
-                "stock" => $reg->stock,
-                "familia" => $reg->familia,
-                "apodo" => $reg->apodo,
-                "descripcion" => $reg->descripcion,
-                "img" => $reg->img,
-                "prioridad" => $reg->prioridad
+                "idplanta"=>$reg->idplanta,
+                "id_categoria"=>$reg->id_categoria,
+                "nombre"=>$reg->nombre,
+                "nombre_cientifico"=>$reg->nombre_cientifico,
+                "stock"=>$reg->stock,
+                "familia"=>$reg->familia,
+                "apodo"=>$reg->apodo,
+                "descripcion"=>$reg->descripcion,
+                "img_1"=>$reg->img_1,
+                "img_2"=>$reg->img_2,
+                "img_3"=>$reg->img_3
+
             );
         }
 
         echo json_encode($data);
 
     break;
+	case 'detalles_plantas':
+		$idplanta = $_POST["idplanta"];
+		$rspta = $vista_web ->detalles_plantas($idplanta);
+		echo json_encode($rspta);
+	break;
+
+    case 'ver_planta_compra':
+		$idplanta_compra = $_POST["idplanta_compra"];
+		$rspta = $vista_web ->detalles_plantas($idplanta_compra);
+		echo json_encode($rspta);
+	break;
 }
 
 //Fin de las validaciones de acceso

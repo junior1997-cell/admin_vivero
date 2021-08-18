@@ -30,18 +30,25 @@ Class Vista_web
     // Plantas all
     
   public function listar_plantas_all(){
-    $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE pl.idplanta=plimg.id_planta AND plimg.prioridad='p1' ORDER BY idplanta DESC";
+    $sql = "SELECT * FROM planta WHERE estado=1  
+    ORDER BY idplanta DESC";
     return ejecutarConsulta($sql);
   }
     // Plantas por categorias.
   public function listar_plantas_cat($idcategoria){
     $sql = "SELECT * 
-    FROM planta as pl, plantaimg as plimg 
+    FROM planta as pl
     WHERE 
-    pl.idplanta=plimg.id_planta AND plimg.prioridad='p1' AND pl.id_categoria='$idcategoria' AND pl.estado=1 
+    pl.id_categoria='$idcategoria' AND pl.estado=1 
     ORDER BY idplanta DESC";
 
     return ejecutarConsulta($sql);
+  }
+
+  public function detalles_plantas($idplanta){
+    $sql = "SELECT * FROM planta WHERE estado=1 AND  idplanta='$idplanta'
+    ORDER BY idplanta DESC";
+    return ejecutarConsultaSimpleFila($sql);
   }
     //=====fin seccion Plantas===========
 

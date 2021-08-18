@@ -20,9 +20,6 @@
                 <div class="box-header with-border">
                   <h1 class="box-title">
                     Usuario <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button>
-                    <a href="../reportes/rptusuarios.php" target="_blank">
-                      <button class="btn btn-info"><i class="fa fa-clipboard"></i> Reporte</button>
-                    </a>
                   </h1>
                   <div class="box-tools pull-right"></div>
                 </div>
@@ -72,7 +69,7 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Número(*):</label>
-                      <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento" required />
+                      <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="9" placeholder="Documento" required />
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Dirección:</label>
@@ -80,7 +77,7 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Teléfono:</label>
-                      <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono" />
+                      <input type="text" class="form-control" name="telefono" id="telefono" maxlength="15" placeholder="Teléfono" />
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Email:</label>
@@ -96,7 +93,8 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Clave (*):</label>
-                      <input type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" required />
+                      <input type="password" class="form-control" name="clave" id="clave" maxlength="64" placeholder="Clave" />
+                      <input type="hidden" name="clave_antigua" id="clave_antigua">
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Permisos:</label>

@@ -3,11 +3,79 @@ require'header.php';
 ?>
 <style>
 .mi_iamgen:hover {filter: blur(5px);}
-.paint_select_span {
-    background-color: #6B6B6B !important;
-    color: #E2E2E2 !important;
-    border-bottom: 3px solid #f65e48 !important;
-}
+
+@media (min-width:350px) and (max-width: 567px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 150px 0px 0px 0px;
+        font-size: 23px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }
+       /**/
+ }
+ @media (min-width:567px) and (max-width: 767px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 170px 0px 0px 0px;
+        font-size: 28px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }
+       /**/
+ }
+ @media (min-width:768px) and (max-width: 992px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 135px 0px 0px 0px;
+        font-size: 28px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }
+       /**/
+ }
+ @media (min-width:992px) and (max-width: 2024px) { 
+    
+    .nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 100px 0px 0px 0px;
+        font-size: 23px;
+    }
+    .nombreplntita strong{
+        border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    }
+       /**/
+ }
+ /*.nombreplntita{
+        text-align: center;
+        color: white;
+
+        padding: 100px 0px 0px 0px;
+        font-size: 20px;
+    }*/
+
 </style>
 
 
@@ -97,7 +165,7 @@ require'header.php';
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="title-all text-center">
-                            <h1>Variedades De Plantas</h1>
+                            <h1>Variedades de Plantas</h1>
                             <p>Comercialización de plantas naturales y ornamentales al por mayor y menor</p>
                         </div>
                     </div>
@@ -113,7 +181,7 @@ require'header.php';
                     </div>
                 </div>
 
-                <div class="row special-list" id="listar_plantas">
+                <div class="row" style="height: 100%!important" id="listar_plantas">
                     
                     <!--Se lista las plantas-->
                     
@@ -127,7 +195,7 @@ require'header.php';
         <section>
             <div class="col-col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="title-all text-center">
-                    <h1>Acerca De Nosotros</h1>
+                    <h1>Acerca de Nosotros</h1>
                     <p>Somos una empresa reconocida</p>
                 </div>
 

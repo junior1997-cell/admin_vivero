@@ -55,6 +55,7 @@ function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
+		responsive: true,
 		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
@@ -105,10 +106,16 @@ function guardaryeditar(e)
 	    processData: false,
 
 	    success: function(datos)
-	    {                    
-	          bootbox.alert(datos);	          
-	          mostrarform(false);
-	          tabla.ajax.reload();
+	    { 
+        if (datos = "ok") {
+          // bootbox.alert(datos);	          
+          mostrarform(false);
+          toastr.success('Cliente Registrado Correctamente')
+          tabla.ajax.reload();
+        } else {
+          toastr.error(datos)
+        }                   
+	          
 	    }
 
 	});
@@ -136,16 +143,20 @@ function mostrar(idpersona)
 }
 
 //Función para eliminar registros
-function eliminar(idpersona)
-{
+function eliminar(idpersona){
 	bootbox.confirm("¿Está Seguro de eliminar el cliente?", function(result){
-		if(result)
-        {
-        	$.post("../ajax/persona.php?op=eliminar", {idpersona : idpersona}, function(e){
-        		bootbox.alert(e);
-	            tabla.ajax.reload();
-        	});	
+		if(result){
+      $.post("../ajax/persona.php?op=eliminar", {idpersona : idpersona}, function(e){
+        if (e == "ok") {
+          // bootbox.alert(e);
+          toastr.warning('Cliente eliminado')
+          tabla.ajax.reload();
+        } else {
+          toastr.error(e)
         }
+        
+      });	
+    }
 	})
 }
 

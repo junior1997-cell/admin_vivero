@@ -29,17 +29,17 @@ switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idpersona)){
 			$rspta=$persona->insertar($tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email);
-			echo $rspta ? "Persona registrada" : "Persona no se pudo registrar";
+			echo $rspta ? "ok" : "Persona no se pudo registrar";
 		}
 		else {
 			$rspta=$persona->editar($idpersona,$tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email);
-			echo $rspta ? "Persona actualizada" : "Persona no se pudo actualizar";
+			echo $rspta ? "ok" : "Persona no se pudo actualizar";
 		}
 	break;
 
 	case 'eliminar':
 		$rspta=$persona->eliminar($idpersona);
- 		echo $rspta ? "Persona eliminada" : "Persona no se puede eliminar";
+ 		echo $rspta ? "ok" : "Persona no se puede eliminar";
 	break;
 
 	case 'mostrar':

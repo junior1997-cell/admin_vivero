@@ -22,6 +22,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Bootstrap select -->
+    <link rel="stylesheet" href="../css/bootstrap.select.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive CSS -->
@@ -30,11 +32,6 @@
     <link rel="stylesheet" href="../css/custom.css">
 
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -50,9 +47,8 @@
                         </div>
                         <div class="our-link">
                             <ul>
-                                <li><a href="#"><i class="fa fa-user s_color"></i> Mi Perfil</a></li>
-                                <li><a href=""><i class="fas fa-location-arrow"></i> Localización</a></li>
-                                <li><a href="contact-us.php"><i class="fas fa-headset"></i> Contactos</a></li>
+                                <li><a href="contact-us.php"><i class="fas fa-location-arrow"></i> Localización</a></li>
+                                <li><a href="contact-us.php"><i class="fas fa-headset"></i> CONTÁCTANOS</a></li>
                             </ul>
                         </div>
                     </div>
@@ -62,7 +58,7 @@
                                 <option>Register Here</option>
                                 <option>Sign In</option>
                             </select>
-                        </div>-->
+                        </div>
                         <div class="text-slid-box  ">
                             <div id="offer-box" class="carouselTicker" style="float: right !important;">
                                 <ul class="offer-box">
@@ -87,7 +83,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     </div>
                 </div>
@@ -114,41 +110,13 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.php">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">ACERCA DE nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.php">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contactos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.php">ACERCA DE NOSOTROS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.php">GALERÍA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">CONTÁCTANOS</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
-            <!-- Start Side Menu -->
-            <div class="side">
-                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                <li class="cart-box">
-                    <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
-                    </ul>
-                </li>
-            </div>
-            <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>

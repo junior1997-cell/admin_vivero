@@ -10,7 +10,7 @@ if (!isset($_SESSION["nombre"]))
 else
 {
 //Validamos el acceso solo al usuario logueado y autorizado.
-if ($_SESSION['almacen']==1)
+if ($_SESSION['planta']==1)
 {
 require_once "../modelos/Color.php";
 
@@ -71,6 +71,13 @@ switch ($_GET["op"]){
  		echo json_encode($results);
 
 	break;
+	case "selectColor":
+        $rspta = $color->select();
+
+        while ($reg = $rspta->fetch_object()) {
+          echo '<option  value=' . $reg->nombre . '>' . $reg->nombre . '</option>';
+        }
+        break;
 }
 //Fin de las validaciones de acceso
 }

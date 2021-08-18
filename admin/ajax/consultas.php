@@ -10,7 +10,7 @@ if (!isset($_SESSION["nombre"]))
 else
 {
 //Validamos el acceso solo al usuario logueado y autorizado.
-if ($_SESSION['consultac']==1 || $_SESSION['consultav']==1)
+if (true )
 {
 require_once "../modelos/Consultas.php";
 

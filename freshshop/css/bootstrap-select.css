@@ -22,6 +22,7 @@ select.selectpicker {
 /* line 48, bootstrap-select.scss */
 .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
   color: #999;
+  border: 1px solid #28a745
 }
 /* line 56, bootstrap-select.scss */
 .bootstrap-select > select {
@@ -94,6 +95,7 @@ select.selectpicker {
 /* line 135, bootstrap-select.scss */
 .form-inline .bootstrap-select.btn-group, .form-horizontal .bootstrap-select.btn-group, .form-group .bootstrap-select.btn-group {
   margin-bottom: 0;
+  /*border: 1px solid #28a745!important;*/
 }
 /* line 141, bootstrap-select.scss */
 .form-group-lg .bootstrap-select.btn-group.form-control, .form-group-sm .bootstrap-select.btn-group.form-control {
@@ -136,6 +138,7 @@ select.selectpicker {
   overflow: hidden;
   width: 100%;
   text-align: left;
+  font-size: 15px !important;
 }
 /* line 187, bootstrap-select.scss */
 .bootstrap-select.btn-group .dropdown-toggle .caret {
@@ -195,7 +198,7 @@ select.selectpicker {
   padding-left: 2.25em;
 }
 /* line 241, bootstrap-select.scss */
-.bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner span.check-mark {
+.bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner i.check-mark {
   display: none;
 }
 /* line 245, bootstrap-select.scss */
@@ -250,11 +253,12 @@ select.selectpicker {
   margin-top: -1px;
 }
 /* line 302, bootstrap-select.scss */
-.bootstrap-select.btn-group.show-tick .dropdown-menu a.selected span.dropdown-item-inner span.check-mark {
+.bootstrap-select.btn-group.show-tick .dropdown-menu a.selected span.dropdown-item-inner i.check-mark {
   position: absolute;
   display: inline-block;
   right: 15px;
   margin-top: 5px;
+  font-size: 15px;
 }
 /* line 309, bootstrap-select.scss */
 .bootstrap-select.btn-group.show-tick .dropdown-menu a a span.text {

@@ -30,6 +30,7 @@ function limpiar()
 	$("#cargo").val("");
 	$("#login").val("");
 	$("#clave").val("");
+	$("#clave_antigua").val("");
 	$("#imagenmuestra").attr("src","");
 	$("#imagenactual").val("");
 	$("#idusuario").val("");
@@ -106,7 +107,7 @@ function listar()
 function guardaryeditar(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	$("#btnGuardar").prop("disabled",true);
+	// $("#btnGuardar").prop("disabled",true);
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
@@ -118,13 +119,20 @@ function guardaryeditar(e)
 
 	    success: function(datos)
 	    {                    
-	          bootbox.alert(datos);	          
-	          mostrarform(false);
-	          tabla.ajax.reload();
+	        // bootbox.alert(datos);	
+			if (datos == 'ok') {
+				$("#btnGuardar").prop("disabled",true);
+				toastr.success('Planta registrada correctamente')
+				mostrarform(false);
+	        	tabla.ajax.reload();
+				limpiar();
+			}else{
+				toastr.error(datos)
+			}	
 	    }
 
 	});
-	limpiar();
+	// limpiar();
 }
 
 function mostrar(idusuario)
@@ -143,7 +151,7 @@ function mostrar(idusuario)
 		$("#email").val(data.email);
 		$("#cargo").val(data.cargo);
 		$("#login").val(data.login);
-		$("#clave").val(data.clave);
+		$("#clave_antigua").val(data.clave);
 		$("#imagenmuestra").show();
 		$("#imagenmuestra").attr("src","../files/usuarios/"+data.imagen);
 		$("#imagenactual").val(data.imagen);

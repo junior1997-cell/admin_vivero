@@ -4,7 +4,59 @@ require'header.php';
 
 <link id="changeable-colors" rel="stylesheet" href="../css/colors/vivid-yellow.css" />
 
+<style>
+    .item-type-zoom .item-info .headline:hover {
+        background-color: #4644408c;
 
+    }
+    .nombreplntita p{
+        text-align: center;
+        border-bottom-color: #2ead63;
+        border-bottom-style: solid;
+        border-bottom-width: 1px; 
+    }
+    @media (min-width:350px) and (max-width: 567px) { 
+    
+    .descrplntita{
+        padding: 115px 15px 15px 15px;
+        text-align: justify;
+        color: white;
+        font-size: 20px;
+    }
+       /**/
+ }
+ @media (min-width:567px) and (max-width: 767px) { 
+    
+    .descrplntita{
+        padding: 115px 65px 35px 65px;
+        text-align: justify;
+        color: white;
+        font-size: 20px;
+    }
+       /**/
+ }
+ @media (min-width:768px) and (max-width: 992px) { 
+    
+    .descrplntita{
+        padding: 80px 15px 15px 15px;
+        text-align: justify;
+        color: white;
+        font-size: 18px;
+    }
+       /**/
+ }
+ @media (min-width:992px) and (max-width: 2024px) { 
+    
+    .descrplntita{
+        padding: 50px 15px 15px 15px;
+        text-align: justify;
+        color: white;
+    }
+       /**/
+ }
+
+    /***/
+</style>
 
     <!-- Start Top Search -->
     <div class="top-search">
@@ -47,322 +99,16 @@ require'header.php';
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">Todo</button>
-                            <button data-filter=".bulbs">Flores</button>
-                            <button data-filter=".fruits">Arboles</button>
-							<button data-filter=".podded-vegetables">Ornamentales</button>							
+                        <div class="special-menu text-center">
+                            <div class="button-group filter-button-group" id="planta_categ_galery">
+                                <!--Se lista de las categorias-->
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
 
-            <div class="row special-list">
-                
-
-                <div class="col-lg-3 col-md-6 special-grid bulbs">
-                    <div class="products-single fix">
-                         <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>IXERA</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/ixora.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div> 
-                        </div>                
-                    </div>
-                </div>
-
-
-                 <div class="col-lg-3 col-md-6 special-grid fruits">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>DELINEADOR</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/delineador.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>  
-                        </div>               
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid bulbs">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>ORQUIDEA DE TIERRA</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/orquidea de tierra.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div> 
-                        </div>                
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid fruits">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>POMARROSA</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/pomarosa.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>  
-                        </div>               
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid bulbs">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>FAROLITO CHINO</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/farolito chino.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>  
-                        </div>               
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid fruits">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>LENGUA DE SUEGRA</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/lengua de suegra.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>  
-                        </div>               
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid fruits">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>CHOCLO AMARILLO</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/choclo amarillo.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div> 
-                        </div>                
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid bulbs">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>PERUANITA</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/peruanita.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>  
-                        </div>               
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid podded-vegetables">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>FLORA</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/masetero4.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>  
-                        </div>               
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid podded-vegetables">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>FLOR AMARILLO</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/masetero5.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div> 
-                        </div>                
-                    </div>
-                </div>
-
-                   <div class="col-lg-3 col-md-6 special-grid bulbs">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>BUGANVILLA</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/buganvilla- 2174.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>   
-                        </div>              
-                    </div>
-                </div>
-
-                 <div class="col-lg-3 col-md-6 special-grid bulbs">
-                    <div class="products-single fix">
-                        <div class="shop-cat-box">
-                         <div class="special-box">
-                        <div id="owl-demo">
-                        <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            <strong>CUCARDAS</strong>
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
-                        <div class="box-img-hover">
-                            <img src="../images/upeu/cucardas.png" class="img-fluid" alt="Image">                            
-                        </div>    
-                        </div>   
-                        </div>
-                        </div>    
-                        </div>             
-                    </div>
-                </div>
-
-                
+            <div class="row"  style="height: 100%!important"  id="plants_galery">           
+                <!--Lista de plantas Galerìa-->
             </div>
         </div>
     </div>
@@ -371,3 +117,4 @@ require'header.php';
 <?php
 require'footer.php';
 ?>
+<script type="text/javascript" src="scripts/planta.js"></script>

@@ -17,15 +17,15 @@ function init(){
     actualizar_empresa(e);
   });
 
-   $('#mAlmacen').addClass("treeview active");
-    $('#lCategorias').addClass("active");
+  $('#mInstitucion').addClass("treeview active");
+  $('#lNosotros').addClass("active");
 
-    var Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 30
-    });
+  var Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 30
+  });
 
   contactanos(true);
   empresa(true);

@@ -21,7 +21,7 @@
                         <div class="ins-inner-box">
                             <img src="../../admin/files/articulos/<?php echo $row['img']; ?>" alt="" />
                             <div class="hov-in">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <i class="fab fa-pagelines"></i>                         
                             </div>
                         </div>
                     </div>
@@ -53,10 +53,10 @@
                                             <p><i class="fas fa-location-arrow"></i>Dirección: <a href="#" id="direccion_f"></a></p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-phone-square"></i>Phone: <a href="#" id="telefono_f"></a></p>
+                                            <p><i class="fas fa-phone-square"></i>Teléfono: <a href="#" id="telefono_f"></a></p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-envelope"></i>Email: <a href="#" id="correo_f"></a></p>
+                                            <p><i class="fas fa-envelope"></i>Correo: <a href="#" id="correo_f"></a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -119,6 +119,20 @@
             $("#correo_f").html(data.email);
         })
         }
+        /**
+         * contactanos
+         */
+        function mostrar_contactanos() {
+        $.post("../../admin/ajax/vista_web.php?op=mostrar_contact_v", {
+        }, function(data, status) {
+            data = JSON.parse(data);
+           // console.log(data);
+            $("#direccion_contact").html(data.direccion);
+        // $("#telefono_f").val(data.coordenadas);
+            $("#telefono_contact").html(data.telefono);
+            $("#correo_contact").html(data.email);
+        })
+        }
         /**################# */
         function mostrar_descrp_v() {
         $.post("../../admin/ajax/vista_web.php?op=mostrar_descrp_v", {
@@ -140,6 +154,7 @@
         }
         mostrar_descrp_v_index();
         mostrar_contact_v();
+        mostrar_contactanos();
         mostrar_descrp_v();
     </script>
 

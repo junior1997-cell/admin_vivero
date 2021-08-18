@@ -108,7 +108,7 @@ require'header.php';
                         <h1 style = "font-family:CLAN PRO" class="m-b-20"><strong>BIENVENIDOS AL <br> VIVERO UPeU</strong></h1><br>
                         <h1 style = "font-family:Clan Pro News; font-size:23px;"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
 
-                        <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Arboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1> <br>
+                        <h1 style = "font-family:Brush Script MT"> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Árboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1> <br>
                      </div>
                  </div>
                 </div>
@@ -196,7 +196,6 @@ require'header.php';
             <div class="col-col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="title-all text-center">
                     <h1>Acerca de Nosotros</h1>
-                    <p>Somos una empresa reconocida</p>
                 </div>
 
                 <div class="row" style="background-color: aquamarine;">

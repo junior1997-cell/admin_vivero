@@ -39,7 +39,7 @@
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>ACERCA DE VIVERO UPeU</h4>
-                            <p id="descripcion"></p>
+                            <p id="descripcion" style="text-align: justify;"></p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -50,13 +50,13 @@
                                     <h4>CONTÁCTENOS</h4>
                                     <ul>
                                         <li>
-                                            <p><i class="fas fa-location-arrow"></i>Dirección: <a href="#" id="direccion_f"></a></p>
+                                            <p><i class="fas fa-location-arrow"></i>Dirección: <span id="direccion_f"></span></p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-phone-square"></i>Teléfono: <a href="#" id="telefono_f"></a></p>
+                                            <p><i class="fas fa-phone-square"></i>Teléfono: <span id="telefono_f"></span> </p>
                                         </li>
                                         <li>
-                                            <p><i class="fas fa-envelope"></i>Correo: <a href="#" id="correo_f"></a></p>
+                                            <p><i class="fas fa-envelope"></i>Correo: <span id="correo_f"></span></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -79,11 +79,10 @@
     </footer>
     <!-- End Footer  -->
 
-
     <!-- Start copyright  -->
     <div class="footer-copyright">
         <img src="../images/logo-footer-UPeU.png">
-        <p class="footer-company">Todos los derechos son reservados. &copy; 2020 <a href="https://www.upeu.edu.pe/">Universidad Peruana union</a> 
+        <p class="footer-company">Todos los derechos son reservados. &copy; <script>document.write(new Date().getFullYear())</script> <a href="https://www.upeu.edu.pe/">Universidad Peruana Unión</a> 
     </div>
     <!-- End copyright  -->
 
@@ -139,7 +138,7 @@
         }, function(data, status) {
             data = JSON.parse(data);
            // console.log(data);
-            $("#descripcion").html("<br>" + (data.descripcion.substr(1,250)+" ...").replace(/\n/ig, '<br>') + "<br>");
+            $("#descripcion").html("<br>" + (data.descripcion.substr(0,216)+" ...").replace(/\n/ig, '<br>') + "<br>");
         })
         }
         /**################ */

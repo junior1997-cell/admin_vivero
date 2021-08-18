@@ -43,16 +43,6 @@ if ($_SESSION['ventas']==1)
                           </thead>
                           <tbody>                            
                           </tbody>
-                          <tfoot>
-                            <th>Opciones</th>
-                            <th>Fecha</th>
-                            <th>Proveedor</th>
-                            <th>Usuario</th>
-                            <th>Documento</th>
-                            <th>Número</th>
-                            <th>Total Venta</th>
-                            <th>Estado</th>
-                          </tfoot>
                         </table>
                     </div>
                     <div class="panel-body" style="height: 100%;" id="formularioregistros">

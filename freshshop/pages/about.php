@@ -59,13 +59,13 @@ require'header.php';
                 <div class="col-sm-6 col-lg-6">
                     <div class="service-block-inner">
                         <h3>VISIÓN</h3>
-                        <p style="text-align: justify;"><?php echo $nosotros['mision'] ?> </p>
+                        <p style="text-align: justify;"><?php echo $nosotros['vision'] ?> </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-6">
                     <div class="service-block-inner">
                         <h3>MISIÓN</h3>
-                        <p style="text-align: justify;"><?php echo $nosotros['descripcion'] ?> </p>
+                        <p style="text-align: justify;"><?php echo $nosotros['mision'] ?> </p>
                     </div>
                 </div>
             </div>

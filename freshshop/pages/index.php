@@ -49,7 +49,7 @@ require'header.php';
         border-bottom-color: #ffffff;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    }2024
+    }
        /**/
  }
  @media (min-width:992px) and (max-width: 2024px) { 

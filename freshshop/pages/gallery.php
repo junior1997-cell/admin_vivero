@@ -5,10 +5,57 @@ require'header.php';
 <link id="changeable-colors" rel="stylesheet" href="../css/colors/vivid-yellow.css" />
 
 <style>
-        .item-type-zoom .item-info .headline:hover {
+    .item-type-zoom .item-info .headline:hover {
         background-color: #4644408c;
 
     }
+    .nombreplntita p{
+        text-align: center;
+        border-bottom-color: #2ead63;
+        border-bottom-style: solid;
+        border-bottom-width: 1px; 
+    }
+    @media (min-width:350px) and (max-width: 567px) { 
+    
+    .descrplntita{
+        padding: 115px 15px 15px 15px;
+        text-align: justify;
+        color: white;
+        font-size: 20px;
+    }
+       /**/
+ }
+ @media (min-width:567px) and (max-width: 767px) { 
+    
+    .descrplntita{
+        padding: 115px 65px 35px 65px;
+        text-align: justify;
+        color: white;
+        font-size: 20px;
+    }
+       /**/
+ }
+ @media (min-width:768px) and (max-width: 992px) { 
+    
+    .descrplntita{
+        padding: 80px 15px 15px 15px;
+        text-align: justify;
+        color: white;
+        font-size: 18px;
+    }
+       /**/
+ }
+ @media (min-width:992px) and (max-width: 2024px) { 
+    
+    .descrplntita{
+        padding: 50px 15px 15px 15px;
+        text-align: justify;
+        color: white;
+    }
+       /**/
+ }
+
+    /***/
 </style>
 
     <!-- Start Top Search -->

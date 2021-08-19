@@ -5,7 +5,7 @@ require'header.php';
 <link rel="stylesheet" href="../css/carrito.css" />
 <div class="box-add">
   <div class="container pt-4">
-    <div class="row classrow pt-3" style="padding-right: 15px; padding-left: 15px;">
+    <div class="row classrow pt-3" style="padding-right: 15px; padding-left: 15px; -webkit-box-shadow: 1px 1px 1px 1px #008000;">
       <div class="col-lg-1 col-md-2 col-sm-12 entornodiv" style="padding: 0px;">
         <div class="imgpequeño ecfecto" id="img_peque">
           <!--Aqui va las imagenes ppequeñas-->

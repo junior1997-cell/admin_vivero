@@ -132,6 +132,16 @@
             $("#correo_contact").html(data.email);
         })
         }
+        /**
+         * 
+         */
+        function telefonoheader() {
+        $.post("../../admin/ajax/vista_web.php?op=mostrar_contact_v", {
+        }, function(data, status) {
+            data = JSON.parse(data);
+            $("#telefono").html(data.telefono);
+        })
+        }
         /**################# */
         function mostrar_descrp_v() {
         $.post("../../admin/ajax/vista_web.php?op=mostrar_descrp_v", {
@@ -152,6 +162,7 @@
         })
         }
         mostrar_descrp_v_index();
+        telefonoheader();
         mostrar_contact_v();
         mostrar_contactanos();
         mostrar_descrp_v();

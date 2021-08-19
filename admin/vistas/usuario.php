@@ -19,7 +19,7 @@
               <div class="box">
                 <div class="box-header with-border">
                   <h1 class="box-title">
-                    Usuario <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button>
+                    USUARIOS <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button>
                   </h1>
                   <div class="box-tools pull-right"></div>
                 </div>

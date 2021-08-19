@@ -11,16 +11,15 @@
     require 'header.php';
 
     if (true) {
-   	//imagenes escritorios
-        //carousel ornamentales
-        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE id_categoria=1 AND pl.idplanta=plimg.id_planta AND pl.estado=1  ORDER BY idplanta DESC";
+   	//carousel ornamentales
+        $sql = "SELECT * FROM planta as pl WHERE id_categoria=1 AND estado=1 ORDER BY idplanta DESC;";
         $g_Ornamentales = ejecutarConsulta($sql);
         //var_dump($galeria);die();
         //carousel arboles
-        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE id_categoria=2 AND pl.idplanta=plimg.id_planta AND pl.estado=1  ORDER BY idplanta DESC";
+        $sql = "SELECT * FROM planta as pl WHERE id_categoria=2 AND estado=1 ORDER BY idplanta DESC;";
         $g_arboles = ejecutarConsulta($sql);
         //carousel flores
-        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE id_categoria=3 AND pl.idplanta=plimg.id_planta AND pl.estado=1 ORDER BY idplanta DESC ";
+        $sql = "SELECT * FROM planta as pl WHERE id_categoria=3 AND estado=1 ORDER BY idplanta DESC;";
         $g_flores = ejecutarConsulta($sql);
 ?>
 
@@ -115,9 +114,22 @@
                                         <div class="carousel-inner enventosg">
                                             <?php
                                                     $active = "active";
-                                                    while ($row = $g_Ornamentales->fetch_assoc()) { ?>
+                                                    $imagen = "";
+                                                    while ($row = $g_Ornamentales->fetch_assoc()) { 
+                                                        if ($row['img_1']!="") {
+                                                            $imagen=$row['img_1'];
+                                                            
+                                                        } else if ($row['img_2']!="") {
+                                                            $imagen=$row['img_2'];
+                                                           // console.log('imagen3'+imagen);
+                                                        }else if ($row['img_3']!=""){
+                                                            $imagen=$row['img_3'];
+                                                        }else{
+                                                            $imagen="rosa_defecto_v.svg";
+                                                        }
+                                                        ?>
                                             <div class="item <?php echo $active; ?>">
-                                                <img src="../files/articulos/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
+                                                <img src="../files/articulos/<?php echo $imagen; ?>";  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
                                                 <div>
                                                     <strong>Nombre:
                                                     <span><?php echo $row['nombre']; ?></span>
@@ -141,9 +153,22 @@
                                         <div class="carousel-inner enventosg">
                                             <?php
                                                     $active = "active";
-                                                    while ($row = $g_arboles->fetch_assoc()) { ?>
+                                                    $imagen = "";
+                                                    while ($row = $g_arboles->fetch_assoc()) { 
+                                                        if ($row['img_1']!="") {
+                                                            $imagen=$row['img_1'];
+                                                            
+                                                        } else if ($row['img_2']!="") {
+                                                            $imagen=$row['img_2'];
+                                                           // console.log('imagen3'+imagen);
+                                                        }else if ($row['img_3']!=""){
+                                                            $imagen=$row['img_3'];
+                                                        }else{
+                                                            $imagen="rosa_defecto_v.svg";
+                                                        }
+                                                        ?>
                                             <div class="item <?php echo $active; ?>">
-                                                <img src="../files/articulos/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
+                                                <img src="../files/articulos/<?php echo $imagen; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
                                                 <div>
                                                     <strong>Nombre:
                                                     <span><?php echo $row['nombre']; ?></span>
@@ -168,9 +193,22 @@
                                         <div class="carousel-inner enventosg">
                                             <?php
                                                     $active = "active";
-                                                    while ($row = $g_flores->fetch_assoc()) { ?>
+                                                    $imagen = "";
+                                                    while ($row = $g_flores->fetch_assoc()) {
+                                                        if ($row['img_1']!="") {
+                                                            $imagen=$row['img_1'];
+                                                            
+                                                        } else if ($row['img_2']!="") {
+                                                            $imagen=$row['img_2'];
+                                                           // console.log('imagen3'+imagen);
+                                                        }else if ($row['img_3']!=""){
+                                                            $imagen=$row['img_3'];
+                                                        }else{
+                                                            $imagen="rosa_defecto_v.svg";
+                                                        }
+                                                        ?>
                                             <div class="item <?php echo $active; ?>">
-                                                <img src="../files/articulos/<?php echo $row['img']; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
+                                                <img src="../files/articulos/<?php echo $imagen; ?>"  style="width: auto; height: auto; display: block; margin: auto; border-radius: 10px;" />
                                                 <div>
                                                     <strong>Nombre:
                                                     <span><?php echo $row['nombre']; ?></span>

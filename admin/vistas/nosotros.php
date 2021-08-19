@@ -36,7 +36,7 @@ if ($_SESSION['institucion']==1)
           <div class="col-md-6">
 
             <!-- ===================== ..:: BOX ::.. ===================== -->
-            <div class="box box-primary">
+            <div class="box box-success">
 
               <!-- ===================== ..:: BOX HEADER ::.. ===================== -->
               <div class="box-header">
@@ -98,7 +98,7 @@ if ($_SESSION['institucion']==1)
               <div class="box-footer">
                 <center>
                   <button id="btn_editar_m" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar</button>
-                  <button id="btn_actualizar_m" type="submit" class="btn btn-primary"><i class="fa fa-refresh"></i> Actualizar datos contáctanos</button>
+                  <button id="btn_actualizar_m" type="submit" class="btn btn-success"><i class="fa fa-refresh"></i> Actualizar datos contáctanos</button>
                 </center>
               </div>
             </div>
@@ -107,7 +107,7 @@ if ($_SESSION['institucion']==1)
 
           <div class="col-md-6">
             <!-- ===================== ..:: BOX::.. ===================== -->
-            <div class="box box-primary">
+            <div class="box box-success">
               <!-- ===================== ..:: BOX HEADER ::.. ===================== -->
               <div class="box-header">
                 <center>
@@ -188,7 +188,7 @@ if ($_SESSION['institucion']==1)
                   <button id="btn_editar_e" type="button" class="btn btn-warning">
                     <i class="fa fa-pencil"></i> Editar
                   </button>
-                  <button id="btn_actualizar_e" type="submit" class="btn btn-primary">
+                  <button id="btn_actualizar_e" type="submit" class="btn btn-success">
                     <i class="fa fa-refresh"></i> Actualizar datos empresa
                   </button>
                 </center>

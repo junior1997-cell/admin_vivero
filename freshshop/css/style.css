@@ -3112,13 +3112,13 @@
     z-index: 2;
   }
   .cssbanner{
-    padding-top: 300px;
+    padding-top: 130px;
   }
   .cssbanner .title{
-    font-size: 50px;
+    font-size: 68px;
   }
   .cssbanner .subtitle{
-    font-size: 30px;
+    font-size: 35px;
   }
 
 
@@ -3157,6 +3157,16 @@
      .head-content {
        z-index: 2;
      }
+     .cssbanner{
+        padding-top: 130px;
+      }
+      .cssbanner .title{
+        font-size: 68px;
+      }
+      .cssbanner .subtitle{
+        font-size: 35px;
+      }
+    
    
    }
    @media only screen and (min-width:  2200px) and (max-width: 2400px) {
@@ -3192,6 +3202,16 @@
      .head-content {
        z-index: 2;
      }
+
+     .cssbanner{
+        padding-top: 130px;
+      }
+      .cssbanner .title{
+        font-size: 68px;
+      }
+      .cssbanner .subtitle{
+        font-size: 35px;
+      }
    
    }
 
@@ -3227,6 +3247,15 @@
   
   .head-content {
     z-index: 2;
+  }
+  .cssbanner{
+    padding-top: 130px;
+  }
+  .cssbanner .title{
+    font-size: 68px;
+  }
+  .cssbanner .subtitle{
+    font-size: 35px;
   }
 
 }

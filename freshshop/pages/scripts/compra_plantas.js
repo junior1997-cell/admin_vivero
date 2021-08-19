@@ -30,8 +30,17 @@ function ver_planta_compra(idplanta_compra) {
     /**
      *
      */
+    var especificaciones="";
     $("#nombre_v").html(data.nombre);
     $("#nombre").val(data.nombre);
+    $("#detalle_pnta").html("<br>" + (data.descripcion).replace(/\n/ig, '<br>') + "<br>");
+    if (data.espcf_cuidado!=null) {
+      especificaciones=data.espcf_cuidado;
+    }else{
+      especificaciones='SIN ESPECIFICACIONES!!!';
+    }
+    $("#especif_cuidado").html("<br>" + (especificaciones).replace(/\n/ig, '<br>') + "<br>");
+
    /* $("#precio_v").html(data.precio_venta);
     $("#precio").val(data.precio_venta);*/
     /**1-2-3 */

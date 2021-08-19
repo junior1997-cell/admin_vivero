@@ -80,13 +80,15 @@ function listar_plnts_prncpal(id_categoria){
 
             $.each(data, function (index, value) {
 
-                if (value.stock!=0) {
-                    clasesbadge= "success";
+                if (value.stock>=0 && value.stock<=3) {
+                    clasesbadge= "danger";
                    // console.log(clasesbadge);
                     
-                }else{
-                    clasesbadge= "danger";
+                }else if (value.stock>=4 && value.stock<6) {
+                    clasesbadge= "warning";
                    
+                }else{
+                    clasesbadge= "success";
                 }
 
                 if (value.img_1!="") {
@@ -124,7 +126,7 @@ function listar_plnts_prncpal(id_categoria){
                             '</div>' +
                             '<div class="why-text">' +
                                 '<h4>'+value.nombre+'</h4>' +
-                                '<span class="badge bg-'+clasesbadge+'" style="font-size: 17px; color: white;">Stock '+ value.stock+'</span>'+
+                                '<span class="badge rounded-pill bg-'+clasesbadge+'" style="font-size: 17px; color: white;">Stock '+ value.stock+'</span>'+
                             '</div>' +
                         '</div>' +
                     '</div>'+

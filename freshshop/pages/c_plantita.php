@@ -51,13 +51,13 @@ require'header.php';
       <div class="col-sm-6 col-lg-6">
         <div class="service-block-inner">
           <h3><b>Detalle De La Planta</b></h3>
-          <p>Desarrollar personas <b>integras</b>, con espíritu de servicio <b>misionero</b> e <b>innovadoras</b> a fin de restaurar la imagen de Dios en el ser humano</p>
+          <p id="detalle_pnta"></p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-6">
         <div class="service-block-inner">
           <h3><b>Especificaciones y Cuidado</b></h3>
-          <p>Ser referente por la excelencia en el servicio <b>misionero</b> y la <b>calidad</b> educativa e <b>innovadora</b> en la iglesia y la sociedad.”</p>
+          <p id="especif_cuidado"></p>
         </div>
       </div>
     </div>

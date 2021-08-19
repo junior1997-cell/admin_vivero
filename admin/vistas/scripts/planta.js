@@ -136,7 +136,7 @@ function limpiar()
 	$("#familia").val("");
 	$("#apodo").val("");
 	$("#descripcion").val("");
-	
+	$("#espcf_cuidado").val("");
 	
 	$("#foto1_i").attr("src", "../public/img/default/img_defecto.png");
 	$("#foto1").val("");
@@ -290,6 +290,7 @@ function mostrar(idplanta)
 		$("#familia").val(data.familia);
 		$("#apodo").val(data.apodo);
 		$("#descripcion").val(data.descripcion);
+		$("#espcf_cuidado").val(data.espcf_cuidado);
 
 		$("#codigo").val(data.codigo);
 		if (data.codigo == "") {

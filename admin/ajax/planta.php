@@ -22,6 +22,7 @@ if (!isset($_SESSION["nombre"])) {
     $familia = isset($_POST["familia"]) ? limpiarCadena($_POST["familia"]) : "";
     $apodo = isset($_POST["apodo"]) ? limpiarCadena($_POST["apodo"]) : "";
     $descripcion = isset($_POST["descripcion"]) ? limpiarCadena($_POST["descripcion"]) : "";
+    $espcf_cuidado = isset($_POST["espcf_cuidado"]) ? limpiarCadena($_POST["espcf_cuidado"]) : "";
     // $img			=isset($_POST["files"])? limpiarCadena($_POST["files"]):"";
     $codigo = isset($_POST["codigo"]) ? limpiarCadena($_POST["codigo"]) : "";
 
@@ -71,7 +72,7 @@ if (!isset($_SESSION["nombre"])) {
         }
 
         if (empty($idplanta)) {
-          $rspta = $articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3,$precio_venta);
+          $rspta = $articulo->insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$espcf_cuidado,$foto1,$foto2, $foto3,$precio_venta);
           echo $rspta ? "ok" : "Planta: " . strtoupper($nombre) . " no se pudo registrar";
           
         } else {
@@ -96,7 +97,7 @@ if (!isset($_SESSION["nombre"])) {
               unlink("../files/articulos/".$nombre_img_3_ant);
             }
           }
-          $rspta = $articulo->editar($idplanta, $id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$foto1,$foto2, $foto3,$precio_venta);
+          $rspta = $articulo->editar($idplanta, $id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$espcf_cuidado,$foto1,$foto2, $foto3,$precio_venta);
           echo $rspta ? "ok" : "Planta: " . strtoupper($nombre) . " no se pudo registrar";
         }
        

@@ -64,23 +64,32 @@
                     <input type="number" class="form-control" name="precio_venta" id="precio_venta" required  min="0.10" step="0.1" />
                   </div>
 
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <label>Nombre Cientifico:</label>
-                    <input type="text" class="form-control" name="nombre_cientifico" id="nombre_cientifico" maxlength="256" placeholder="Descripción" />
+                    <input type="text" class="form-control" name="nombre_cientifico" id="nombre_cientifico" maxlength="50" placeholder="Descripción" />
                   </div>
+                  <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <label>Apodo:</label>
+                    <input type="text" class="form-control" name="apodo" id="apodo" maxlength="50" placeholder="Descripción" />
+                  </div>
+
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Familia:</label>
-                    <input type="text" class="form-control" name="familia" id="familia" maxlength="256" placeholder="Descripción" />
-                  </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <label>Apodo:</label>
-                    <input type="text" class="form-control" name="apodo" id="apodo" maxlength="256" placeholder="Descripción" />
-                  </div>
+                    <input type="text" class="form-control" name="familia" id="familia" maxlength="50" placeholder="Descripción" />
+                  </div>                  
+
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Descripción: <sub>*</sub> </label>
                     <!-- <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción" required> -->
                     <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50" required> </textarea>
                   </div>
+
+                  <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label>Especificaciones y cuidado: <sub>*</sub> </label>
+                    <!-- <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción" required> -->
+                    <textarea class="form-control" id="espcf_cuidado" name="espcf_cuidado" rows="4" cols="50" > </textarea>
+                  </div>
+
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <!-- <label>Imagen:</label>
                                 <input type="file" multiple="true" class="form-control" name="imagen" id="imagen" accept="image/x-png,image/gif,image/jpeg">

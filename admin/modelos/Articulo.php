@@ -11,10 +11,10 @@ Class Articulo
 	}
 
 	//Implementamos un método para insertar registros
-	public function insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $foto1,$foto2, $foto3,$precio_venta)
+	public function insertar($id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$espcf_cuidado, $foto1,$foto2, $foto3,$precio_venta)
 	{
-		$sql="INSERT INTO planta (id_categoria, nombre, stock, nombre_cientifico, familia, apodo, descripcion, img_1, img_2, img_3,precio_venta)
-		VALUES ('$id_categoria','$nombre','$stock','$nombre_cientifico','$familia','$apodo','$descripcion','$foto1','$foto2','$foto3','$precio_venta')";
+		$sql="INSERT INTO planta (id_categoria, nombre, stock, nombre_cientifico, familia, apodo, descripcion,espcf_cuidado, img_1, img_2, img_3,precio_venta)
+		VALUES ('$id_categoria','$nombre','$stock','$nombre_cientifico','$familia','$apodo','$descripcion','$espcf_cuidado','$foto1','$foto2','$foto3','$precio_venta')";
 
     	$planta_id = ejecutarConsulta_retornarID($sql);
 
@@ -37,11 +37,11 @@ Class Articulo
 	}
 
 	//Implementamos un método para editar registros
-	public function editar($idplanta,$id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion, $foto1,$foto2, $foto3,$precio_venta)
+	public function editar($idplanta,$id_categoria, $id_color, $nombre, $stock, $nombre_cientifico, $familia, $apodo, $descripcion,$espcf_cuidado, $foto1,$foto2, $foto3,$precio_venta)
 	{
 		$sw =true;
 		$sql="UPDATE admin_vivero.planta SET id_categoria='$id_categoria',nombre='$nombre', stock='$stock',nombre_cientifico = '$nombre_cientifico',
-		familia = '$familia',apodo = '$apodo',descripcion='$descripcion' ,img_1='$foto1' ,img_2='$foto2' ,img_3='$foto3',precio_venta = '$precio_venta'
+		familia = '$familia',apodo = '$apodo',descripcion='$descripcion', espcf_cuidado='$espcf_cuidado' ,img_1='$foto1' ,img_2='$foto2' ,img_3='$foto3',precio_venta = '$precio_venta'
 		WHERE idplanta='$idplanta'";
 		ejecutarConsulta($sql);
 

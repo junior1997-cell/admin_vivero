@@ -38,7 +38,7 @@ require'header.php';
               <select id="idcolor" name="idcolor[]" class="form-control selectpicker"  multiple data-live-search="true" title="Seleccione los colores" data-actions-box="true" required></select>
             </div>
 
-            <label for="whatsapp" class="formulario__label" style="font-size: 18px;font-weight: 900;">¿Con quien desea contactarse?</label>
+            <label for="whatsapp" class="formulario__label" style="font-size: 18px;font-weight: 900;">¿Con quién desea contactarse?</label>
             <select id="listawhatsapp" name="listawhatsapp" class="form-control selectpicker"  title="Selec. un contacto" data-live-search="true" required> </select>
             <br> <br>
             <button id="submit" type="button" class="form-control btn btn-outline-success" style="margin-bottom: 10px;">Contactar</button>
@@ -51,13 +51,13 @@ require'header.php';
       <div class="col-sm-6 col-lg-6">
         <div class="service-block-inner">
           <h3><b>Detalle De La Planta</b></h3>
-          <p id="detalle_pnta"></p>
+          <p id="detalle_pnta" style="text-align: justify;"></p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-6">
         <div class="service-block-inner">
           <h3><b>Especificaciones y Cuidado</b></h3>
-          <p id="especif_cuidado"></p>
+          <p id="especif_cuidado" style="text-align: justify;"></p>
         </div>
       </div>
     </div>

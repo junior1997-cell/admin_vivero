@@ -3,7 +3,8 @@ require'header.php';
 ?>
 
 <link rel="stylesheet" href="../css/carrito.css" />
-
+<!-- Toastr -->
+<link rel="stylesheet" href="../../admin/public/toastr/toastr.min.css">
 <div class="box-add">
   <div class="container">
     <div class="row classrow">
@@ -57,7 +58,7 @@ require'header.php';
       </div>
       <div class="col-sm-6 col-lg-6">
         <div class="service-block-inner">
-          <h3><b>Especifcaciones y Cuidado</b></h3>
+          <h3><b>Especificaciones y Cuidado</b></h3>
           <p>Ser referente por la excelencia en el servicio <b>misionero</b> y la <b>calidad</b> educativa e <b>innovadora</b> en la iglesia y la sociedad.”</p>
         </div>
       </div>
@@ -71,3 +72,6 @@ require'footer.php';
 <!--form.js
 <script src=""></script>-->
 <script type="text/javascript" src="scripts/compra_plantas.js"></script>
+<!-- Toastr -->
+<script src="../../admin/public/toastr/toastr.min.js"></script>
+

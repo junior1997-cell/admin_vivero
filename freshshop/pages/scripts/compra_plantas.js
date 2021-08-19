@@ -1,4 +1,7 @@
 function init() {
+toastr.warning("Hola");
+toastr.success("Holii");
+toastr.error("Hiiiii");
   // Conseguir elemento
   var idplanta_compra = localStorage.getItem("idplanta_compra");
   //console.log(idplanta_compra);

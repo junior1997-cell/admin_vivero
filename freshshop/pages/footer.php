@@ -92,7 +92,7 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="../js/jquery.superslides.min.js"></script>
+    
     
     <script src="../js/inewsticker.js"></script>
     <script src="../js/bootsnav.js."></script>
@@ -104,6 +104,9 @@
     <script src="../js/contact-form-script.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
+
+    <script src="../js/jquery.superslides.min.js"></script>
+    
     <!-- select PICKER -->
     <script src="../js/bootstrap-select.js"></script>
     <!-- Toastr -->

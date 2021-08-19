@@ -10,7 +10,7 @@ function init() {
   //Cargamos los items al select COLOR
   $.post("../../admin/ajax/vista_web.php?op=selectColor", function (r) {
     $("#idcolor").html(r);
-    // console.log(r);
+    console.log(r);
     $("#idcolor").selectpicker("refresh");
   });
 

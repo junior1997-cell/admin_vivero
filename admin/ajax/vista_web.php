@@ -85,7 +85,7 @@ switch($op){
 	break;
 
   case "selectColor":
-    $rspta = $color->select();
+    $rspta = $vista_web->select_color();
 
     while ($reg = $rspta->fetch_object()) {
       echo '<option  value=' . $reg->nombre . '>' . $reg->nombre . '</option>';
@@ -94,7 +94,7 @@ switch($op){
 
   case "selectWhatsapp":
 
-    $rspta = $whatsapp->select();
+    $rspta = $vista_web->select_whatsapp();
 
     while ($reg = $rspta->fetch_object()) {
       echo '<option  value=' . $reg->numero . '>' . $reg->nombre . ' - '.$reg->numero.'</option>';

@@ -52,6 +52,19 @@ Class Vista_web
   }
     //=====fin seccion Plantas===========
 
+  //Implementar un método para listar los registros y mostrar en el select
+  public function select_color()
+  {
+    $sql="SELECT * FROM color where estado=1";
+    return ejecutarConsulta($sql);    
+  }
+
+  public function select_whatsapp()
+  {
+    $sql="SELECT * FROM whatsapp where estado=1";
+    return ejecutarConsulta($sql);    
+  }
+
 
 }
 ?>

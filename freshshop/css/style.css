@@ -26,7 +26,7 @@
 @import url(bootsnav.css);
 @import url(owl.carousel.min.css);
 @import url(jquery-ui.css);
-@import url(nice-select.css);
+/*@import url(nice-select.css);*/
 @import url(baguetteBox.min.css);
 
 
@@ -581,7 +581,7 @@
      padding-right: 30px;
 }
  nav.navbar.bootsnav ul.nav li.active > a{
-     color: #b0b435;
+     color: black;
 }
  nav.navbar.bootsnav ul.nav li.active > a:hover{
      color: #b0b435;
@@ -712,7 +712,7 @@
      transform: perspective(1px) translateZ(0);
      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
      position: relative;
-     background: #b0b435;
+     background: green;
      -webkit-transition-property: color;
      transition-property: color;
      -webkit-transition-duration: 0.3s;
@@ -1665,7 +1665,7 @@
      width: 100%;
      height: 5px;
      border-radius: 0px;
-     background: #6b202e;
+     background: green;
      position: absolute;
      top: 0;
      left: 0;
@@ -1676,7 +1676,7 @@
      width: 100%;
      height: 0;
      border-radius: 0px;
-     background: #b0b435;
+     background: green;
      position: absolute;
      top: 0;
      left: 0;
@@ -2861,7 +2861,7 @@
 /*------------------------------------------------------------------
     videos
 -------------------------------------------------------------------*/
-@media only screen and (min-width: 350px) and (max-width: 550px) {
+@media only screen and (min-width: 350px) and (max-width: 479px) {
 
      
     .head-video {
@@ -2897,8 +2897,14 @@
      .head-content {
         z-index: 2;
       }
+      .cssbanner{
+        margin-top: 120px
+      }
+      .cssbanner .subtitle{
+        font-size: 23px;
+      }
 }
-@media only screen and (min-width: 550px) and (max-width: 999px) {
+@media only screen and (min-width: 479px) and (max-width: 767px) {
 
      
     .head-video {
@@ -2934,9 +2940,58 @@
      .head-content {
         z-index: 2;
       }
+      .cssbanner{
+        margin-top: 120px
+      }
+      .cssbanner .subtitle{
+        font-size: 23px;
+      }
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+
+     
+    .head-video {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100vh;
+       overflow: visible;
+     }
+     
+     .head-video video {
+       /*min-width: 10%;
+       min-height: 10%;
+       
+       margin-top: -100px;*/
+       max-height: 100%;
+       margin-left: -150px;
+       
+     }
+     
+     .head-overlay {
+       height: 150%;
+       width: 6000%;
+       position: absolute;
+       top: 0;
+       left: 0;
+       margin-left: -100px;
+       background: #F7F9FC;
+       opacity: .2;
+       margin-left: -340px;
+     }
+     .head-content {
+        z-index: 2;
+      }
+      .cssbanner{
+        margin-top: 120px
+      }
+      .cssbanner .subtitle{
+        font-size: 23px;
+      }
 }
 
-@media only screen and (min-width: 999px) and (max-width: 1379px) {
+@media only screen and (min-width: 991px) and (max-width: 1280px) {
 
      
     .head-video {
@@ -2954,7 +3009,7 @@
        
        margin-top: -100px;*/
        max-height: 150%;
-       margin-left: -350px;
+       margin-left: -300px;
      }
      
      .head-overlay {
@@ -2971,9 +3026,16 @@
      .head-content {
         z-index: 2;
       }
+      .cssbanner{
+        margin-top: 120px
+      }
+      .cssbanner .subtitle{
+        font-size: 23px;
+      }
+    
 }
 
-@media only screen and (min-width: 1379px) and (max-width: 1666px) {
+@media only screen and (min-width: 1280px) and (max-width: 1680px) {
 
      
  .head-video {
@@ -3007,9 +3069,15 @@
   .head-content {
     z-index: 2;
   }
+  .cssbanner{
+    margin-top: 120px
+  }
+  .cssbanner .subtitle{
+    font-size: 23px;
+  }
 
 }
-@media only screen and (min-width: 1666px) and (max-width: 2000px) {
+@media only screen and (min-width: 1680px) and (max-width: 1900px) {
      
  .head-video {
     position: absolute;
@@ -3034,7 +3102,7 @@
     top: 0;
     left: 0;
     margin-left: -100px;
-    background: #F7F9FC;
+    background: #a9b2c0;
     z-index: 1;
     opacity: .2;
     margin-left: -450px;
@@ -3043,9 +3111,20 @@
   .head-content {
     z-index: 2;
   }
+  .cssbanner{
+    padding-top: 300px;
+  }
+  .cssbanner .title{
+    font-size: 50px;
+  }
+  .cssbanner .subtitle{
+    font-size: 30px;
+  }
+
+
 
 }
-@media only screen and (min-width:  2000px) and (max-width: 2200px) {
+@media only screen and (min-width:  1900px) and (max-width: 2200px) {
      
     .head-video {
        position: absolute;
@@ -3059,7 +3138,7 @@
      .head-video video {
        min-width: 100%;
        min-height: 100%;
-       margin-left: -400px;
+       margin-left: -430px;
        margin-top: -100px;
      }
      

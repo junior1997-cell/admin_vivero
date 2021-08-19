@@ -24,7 +24,7 @@ if ($_SESSION['carrucel']==1)
         <div class="box">
           <div class="box-header with-border">
             <h1 class="box-title">
-              Color <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button>
+              Carousel <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button>
             </h1>
             <div class="box-tools pull-right"></div>
           </div>
@@ -39,12 +39,6 @@ if ($_SESSION['carrucel']==1)
                 <th>Estado</th>
               </thead>
               <tbody></tbody>
-              <tfoot>
-                <th>Opciones</th>
-                <th>Nombre</th>
-                <th>Imagen</th>
-                <th>Estado</th>
-              </tfoot>
             </table>
           </div>
           <div class="panel-body" style="height: 400px;" id="formularioregistros">

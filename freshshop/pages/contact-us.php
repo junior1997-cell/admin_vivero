@@ -110,7 +110,7 @@ require'header.php';
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Contáctanos</h2>
+                <h2>CONTÁCTANOS</h2>
             </div>
         </div>
     </div>
@@ -141,13 +141,13 @@ require'header.php';
                     </p>
                     <ul>
                         <li>
-                            <p style="font-size: 20px;font-weight: bold;"><i class="fas fa-location-arrow"></i>Dirección: <a href="#" style="font-weight: normal;" id="direccion_contact"></a></p>
+                            <p style="font-size: 20px;font-weight: bold;"><i class="fas fa-location-arrow"></i>Dirección: <span style="font-weight: normal;" id="direccion_contact"></span></p>
                         </li>
                         <li>
-                            <p style="font-size: 20px;font-weight: bold;"><i class="fas fa-phone-square"></i>Celular: <a href="#" style="font-weight: normal;" id="telefono_contact"></a></p>
+                            <p style="font-size: 20px;font-weight: bold;"><i class="fas fa-phone-square"></i>Celular: <span style="font-weight: normal;" id="telefono_contact"></span></p>
                         </li>
                         <li>
-                            <p style="font-size: 20px;font-weight: bold;" ><i class="fas fa-envelope"></i>Correo: <a href="#" style="font-weight: normal;" id="correo_contact"></a></p>
+                            <p style="font-size: 20px;font-weight: bold;" ><i class="fas fa-envelope"></i>Correo: <span  style="font-weight: normal;" id="correo_contact"></span></p>
                         </li>
                     </ul>
                 </div>

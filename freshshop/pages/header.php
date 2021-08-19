@@ -23,7 +23,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Bootstrap select -->
-    <link rel="stylesheet" href="../css/bootstrap.select.css">
+    <!--<link rel="stylesheet" href="../css/bootstrap.select.css">  -->
     <!-- Site CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive CSS -->
@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="../css/custom.css">
 
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
+    <!-- Toastr -->
+    <!-- <link rel="stylesheet" href="../../admin/public/toastr/toastr.min.css"> -->
 
 </head>
 
@@ -43,7 +45,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         
                         <div class="right-phone-box">
-                            <p>TELEFONO<a href="#"> +51 989 059 400</a></p>
+                            <p>TELÉFONO <span id="telefono"></span></p>
                         </div>
                         <div class="our-link">
                             <ul>
@@ -101,7 +103,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.php"><img src="../images/upeu/VIVERO_UPEU.png" width="350"  style="margin-left: -10%; margin-top: -8px" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="index.php"><img src="../images/upeu/VIVERO_UPEU.png" width="350"  style="margin-left: -30%; margin-top: -8px" class="logo" alt=""></a>
                 </div>
 
                 <!-- End Header Navigation    style="margin-left: -20%; margin-top:-5px"-->

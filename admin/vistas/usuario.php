@@ -39,17 +39,6 @@
                       <th>Estado</th>
                     </thead>
                     <tbody></tbody>
-                    <tfoot>
-                      <th>Opciones</th>
-                      <th>Nombre</th>
-                      <th>Documento</th>
-                      <th>Número</th>
-                      <th>Teléfono</th>
-                      <th>Email</th>
-                      <th>Login</th>
-                      <th>Foto</th>
-                      <th>Estado</th>
-                    </tfoot>
                   </table>
                 </div>
                 <div class="panel-body" id="formularioregistros">
@@ -89,7 +78,7 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Login (*):</label>
-                      <input type="text" class="form-control" name="login" id="login" maxlength="20" placeholder="Login" required />
+                      <input type="text" class="form-control" name="login" id="login" maxlength="20" placeholder="Usuario" required />
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>Clave (*):</label>

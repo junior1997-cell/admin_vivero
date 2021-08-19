@@ -187,10 +187,10 @@ function listar_plnts_galery(id_categoria){
                                 '<div class="mask-icon">' +
                                     '<div class="item-info">' +
                                         '<div class="headline nombreplntita">' +
-                                            '<div>'+
-                                                '<strong>'+value.nombre+'</strong>' +
+                                            '<div class="descrplntita">'+
+                                                '<p><strong>'+value.nombre+'</strong></p>' +
                                                 '<div class="line"></div>' +
-                                                '<div class="dit-line">'+value.descripcion.substr(1,120)+'...</div>' +
+                                                '<div class="dit-line">'+value.descripcion.substr(0,120)+'...</div>' +
                                             '</div>'+
                                         '</div>' +
                                     '</div>' +

@@ -35,9 +35,6 @@ if ($_SESSION['acceso']==1)
                           </thead>
                           <tbody>                            
                           </tbody>
-                          <tfoot>
-                            <th>Nombre</th>
-                          </tfoot>
                         </table>
                     </div>
                     

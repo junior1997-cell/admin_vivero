@@ -23,7 +23,7 @@ if ($_SESSION['institucion']==1)
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 class="box-title">CONTACTANOS </h1>
+                          <h1 class="box-title">CONTÁCTANOS </h1>
                         <div class="box-tools pull-right">
                         </div>
                     </div>
@@ -41,7 +41,7 @@ if ($_SESSION['institucion']==1)
               <!-- ===================== ..:: BOX HEADER ::.. ===================== -->
               <div class="box-header">
                 <center>
-                  <h3 class="box-title fa fa-book"> DATOS DE CONTACTANOS</h3>
+                  <h3 class="box-title fa fa-book"> DATOS DE CONTÁCTANOS</h3>
                 </center>
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -77,7 +77,7 @@ if ($_SESSION['institucion']==1)
                     <div class="form-group col-md-12">
                       <label for="telefono" class="control-label">
                         <i class="fa fa-telegram" style="font-size: 20px; "></i>
-                        Telefono
+                        Teléfono
                       </label>
                       <input id="telefono" name="telefono" type="text" class="form-control" placeholder="Ingrese telefono(s) de J&A Expeditions...">
                     </div>
@@ -98,7 +98,7 @@ if ($_SESSION['institucion']==1)
               <div class="box-footer">
                 <center>
                   <button id="btn_editar_m" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar</button>
-                  <button id="btn_actualizar_m" type="submit" class="btn btn-primary"><i class="fa fa-refresh"></i> Actualizar datos contactanos</button>
+                  <button id="btn_actualizar_m" type="submit" class="btn btn-primary"><i class="fa fa-refresh"></i> Actualizar datos contáctanos</button>
                 </center>
               </div>
             </div>
@@ -111,7 +111,7 @@ if ($_SESSION['institucion']==1)
               <!-- ===================== ..:: BOX HEADER ::.. ===================== -->
               <div class="box-header">
                 <center>
-                  <h3 class="box-title fa fa-university"> DATOS Del VIVERO-UPeU</h3>
+                  <h3 class="box-title fa fa-university"> DATOS DEL VIVERO-UPeU</h3>
                 </center>
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -137,7 +137,7 @@ if ($_SESSION['institucion']==1)
                     <div class="form-group col-md-12">
                       <label for="descripcion" class="control-label">
                         <i class="fa fa-calendar" style="font-size: 20px; "></i>
-                        Presentacion
+                        Presentación
                       </label>
                       <textarea class="form-control" name="descripcion" id="descripcion" rows="5"></textarea>
                     </div>

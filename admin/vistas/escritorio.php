@@ -124,7 +124,7 @@
                                                     </strong>
                                                 </div>  
                                                 <div>
-                                                    <strong>Nombre Ciéntifico:</strong>
+                                                    <strong>Nombre Científico:</strong>
                                                     <span><?php echo $row['nombre_cientifico']; ?></span>
                                                 </div> 
                                             </div>
@@ -150,7 +150,7 @@
                                                     </strong>
                                                 </div>  
                                                 <div>
-                                                    <strong>Nombre Ciéntifico:</strong>
+                                                    <strong>Nombre Científico:</strong>
                                                     <span><?php echo $row['nombre_cientifico']; ?></span>
                                                 </div> 
                                             </div>
@@ -177,7 +177,7 @@
                                                     </strong>
                                                 </div>  
                                                 <div>
-                                                    <strong>Nombre Ciéntifico:</strong>
+                                                    <strong>Nombre Científico:</strong>
                                                     <span><?php echo $row['nombre_cientifico']; ?></span>
                                                 </div>
                                             </div>

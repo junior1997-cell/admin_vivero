@@ -121,7 +121,7 @@ function listar_plnts_prncpal(id_categoria){
                                             '<a href="detalles_plantas.php" data-toggle="tooltip" data-placement="right" title="Ver detalle" onclick="ver_detalle_plnts('+value.idplanta+')"><i class="fas fa-eye" style="font-size: 27px;"></i></a>' +
                                         '</li>' +
                                     '</ul>' +
-                                    '<a class="cart" href="c_plantita.php" onclick="id_planta_compra('+value.idplanta+')">Al Carrito</a>' +
+                                    '<a class="cart" href="c_plantita.php" onclick="id_planta_compra('+value.idplanta+')"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>' +
                                 '</div>' +
                             '</div>' +
                             '<div class="why-text">' +

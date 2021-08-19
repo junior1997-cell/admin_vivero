@@ -434,6 +434,21 @@
          color: #eee;
     }
 }
+@media only screen and (min-width:  263px) and (max-width: 350px) {
+    nav.navbar .navbar-brand img.logo{
+        margin-left: 30%!important;
+        margin-top: -80px!important;
+        height: 100%;
+        width: 100%;
+    }
+    /*.dispt_peq{
+         width: 100%!important; 
+         height: 158.438px!important;
+    }
+*/
+
+
+}
 @media only screen and (min-width:  350px) and (max-width: 550px) {
     nav.navbar .navbar-brand img.logo{
         margin-left: 30%!important;
@@ -2861,6 +2876,14 @@
 /*------------------------------------------------------------------
     videos
 -------------------------------------------------------------------*/
+@media only screen and (min-width: 263px) and (max-width: 350px) {
+    .cover-slides{
+        display: none;
+    }
+    .products-box {
+        padding: 20px 0px;
+    }
+}
 @media only screen and (min-width: 350px) and (max-width: 479px) {
 
      
@@ -3124,7 +3147,7 @@
 
 
 }
-@media only screen and (min-width:  1900px) and (max-width: 2200px) {
+@media only screen and (min-width:  1900px) and (max-width: 2013px) {
      
     .head-video {
        position: absolute;
@@ -3169,7 +3192,7 @@
     
    
    }
-   @media only screen and (min-width:  2200px) and (max-width: 2400px) {
+   @media only screen and (min-width:  2013px) and (max-width: 2400px) {
      
     .head-video {
        position: absolute;

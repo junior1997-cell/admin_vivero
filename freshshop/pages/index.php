@@ -22,7 +22,7 @@ require "../../admin/config/Conexion.php";
 <!-- End Top Search -->
 
 <!-- Videos carousel Pincipal-->
-<div id="slides-shop" class="cover-slides">
+<div id="slides-shop" class="cover-slides" style="position: relative; overflow: hidden; width: 100%; height: 558.438px;">
     <ul class="slides-container">
     <?php
         while ($row = $g_Ornamentales->fetch_assoc()) { ?>
@@ -109,7 +109,21 @@ require "../../admin/config/Conexion.php";
     .mi_iamgen:hover {
         filter: blur(5px);
     }
+    @media (min-width: 263px) and (max-width: 350px) {
+        .nombreplntita {
+            text-align: center;
+            color: white;
 
+            padding: 150px 0px 0px 0px;
+            font-size: 23px;
+        }
+        .nombreplntita strong {
+            border-bottom-color: #ffffff;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+        }
+        /**/
+}
     @media (min-width: 350px) and (max-width: 567px) {
         .nombreplntita {
             text-align: center;

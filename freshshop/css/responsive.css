@@ -71,6 +71,11 @@
      .right-phone-box{
          display: none;
     }
+    nav.navbar.bootsnav .navbar-nav{
+        padding: 0px;
+        margin: 0px;
+        background-color: aliceblue;
+   }
 }
 /* mobile or only mobile */
  @media (max-width: 767px) {

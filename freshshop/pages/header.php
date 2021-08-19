@@ -39,58 +39,24 @@
 
 <body>
     <!-- Start Main Top -->
-        <div class="main-top">
-            <div class="container-fluid">
-                <div class="row" >
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="main-top">
+                <div class="container-fluid">
+                    <div class="row" >
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         
-                        <div class="right-phone-box">
-                            <p>TELÉFONO <span id="telefono"></span></p>
-                        </div>
-                        <div class="our-link">
-                            <ul>
-                                <li><a href="contact-us.php"><i class="fas fa-location-arrow"></i> Localización</a></li>
-                                <li><a href="contact-us.php"><i class="fas fa-headset"></i> CONTÁCTANOS</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <!--<div class="login-box">
-                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                                <option>Register Here</option>
-                                <option>Sign In</option>
-                            </select>
-                        </div>
-                        <div class="text-slid-box  ">
-                            <div id="offer-box" class="carouselTicker" style="float: right !important;">
-                                <ul class="offer-box">
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 20% CEBRA ORNAMENTAL
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 50% - 80% CUNA DE NIÑO
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 10% DE CROTOS ENANOS
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 50% ORQUIDEA DE TIERRA
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 10% DELINEADOR
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 50% - 80% DE PANAMEÑAS
-                                    </li>                                
-                                    </li>
+                            <div class="right-phone-box">
+                                <p>TELÉFONO <span id="telefono"></span></p>
+                            </div>
+                            <div class="our-link">
+                                <ul>
+                                    <li><a href="contact-us.php"><i class="fas fa-location-arrow"></i> Localización</a></li>
+                                    <li><a href="contact-us.php"><i class="fas fa-headset"></i> CONTÁCTANOS</a></li>
                                 </ul>
                             </div>
-                        </div>-->
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     <!-- End Main Top -->
 
     <!-- Start Main Top -->

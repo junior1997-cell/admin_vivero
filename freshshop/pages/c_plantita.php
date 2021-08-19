@@ -5,7 +5,7 @@ require'header.php';
 <link rel="stylesheet" href="../css/carrito.css" />
 <div class="box-add">
   <div class="container">
-    <div class="row classrow">
+    <div class="row classrow" style="padding-right: 15px; padding-left: 15px;">
       <div class="col-lg-1 col-md-2 col-sm-12 entornodiv" style="padding: 0px;">
         <div class="imgpequeño ecfecto" id="img_peque">
           <!--Aqui va las imagenes ppequeñas-->
@@ -20,7 +20,7 @@ require'header.php';
           </center>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 col-sm-12 rowww divhead" style="margin-bottom: 0px !important; border-width: 1px; border-style: solid; border-color: black; border-radius: 8px;">
+      <div class="col-lg-4 col-md-12 col-sm-12 rowww divhead" style="margin-bottom: 15px !important; border-width: 1px; border-style: solid; border-color: black; border-radius: 8px;">
         <center>
           <form action="" class="formulario">
             <h1 class="formulario__titulo" id="nombre_v"></h1>

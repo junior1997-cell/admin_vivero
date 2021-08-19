@@ -8,14 +8,14 @@ function init() {
   ver_planta_compra(idplanta_compra);
 
   //Cargamos los items al select COLOR
-  $.post("../../admin/ajax/color.php?op=selectColor", function (r) {
+  $.post("../../admin/ajax/vista_web.php?op=selectColor", function (r) {
     $("#idcolor").html(r);
     // console.log(r);
     $("#idcolor").selectpicker("refresh");
   });
 
   //Cargamos los items al select COLOR
-  $.post("../../admin/ajax/whatsapp.php?op=selectWhatsapp", function (r) {
+  $.post("../../admin/ajax/vista_web.php?op=selectWhatsapp", function (r) {
     $("#listawhatsapp").html(r);
     // console.log(r);
     $("#listawhatsapp").selectpicker("refresh");

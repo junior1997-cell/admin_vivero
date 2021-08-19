@@ -83,6 +83,23 @@ switch($op){
 		$rspta = $vista_web ->detalles_plantas($idplanta_compra);
 		echo json_encode($rspta);
 	break;
+
+  case "selectColor":
+    $rspta = $color->select();
+
+    while ($reg = $rspta->fetch_object()) {
+      echo '<option  value=' . $reg->nombre . '>' . $reg->nombre . '</option>';
+    }
+  break;
+
+  case "selectWhatsapp":
+
+    $rspta = $whatsapp->select();
+
+    while ($reg = $rspta->fetch_object()) {
+      echo '<option  value=' . $reg->numero . '>' . $reg->nombre . ' - '.$reg->numero.'</option>';
+    }
+  break;
 }
 
 //Fin de las validaciones de acceso

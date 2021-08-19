@@ -1,7 +1,7 @@
 function init() {
-toastr.warning("Hola");
-toastr.success("Holii");
-toastr.error("Hiiiii");
+//toastr.warning("Hola");
+//toastr.success("Holii");
+//toastr.error("Hiiiii");
   // Conseguir elemento
   var idplanta_compra = localStorage.getItem("idplanta_compra");
   //console.log(idplanta_compra);
@@ -202,15 +202,17 @@ function ver_planta_compra(idplanta_compra) {
 }
 
 document.querySelector("#submit").addEventListener("click", function () {
+  const selected = document.querySelectorAll('#idcolor option:checked');
+  const values = Array.from(selected).map(el => el.value);
+  if (document.querySelector("#cantidad").value=="" || values == "" || document.querySelector("#nombre").value=="" || document.querySelector("#listawhatsapp").value=="" ) {
+        alert("Estoy vacio");
+        console.log(document.querySelector("#cantidad").value);
+  } else {
   let nombre = document.querySelector("#nombre").value;
  // let precio = document.querySelector("#precio").value;
   let cantidad = document.querySelector("#cantidad").value;
   //let color = document.querySelector("#idcolor").value;
   let listawhatsapp = document.querySelector("#listawhatsapp").value;
-
-  const selected = document.querySelectorAll('#idcolor option:checked');
-  const values = Array.from(selected).map(el => el.value);
-  console.log(values);
   // Guardar
   //localStorage.setItem("nombre......", nombre);
   /**    "%0A*Precio por unidad*%0A"+
@@ -227,6 +229,7 @@ document.querySelector("#submit").addEventListener("click", function () {
     values+
     "%0A%0A*¡Gracias por su preferencia!*%0A%0A*¡EN SEGUIDA CONFIRMAMOS SU PEDIDO!*%0A";
   window.open(url);
+  }
 });
 
 init();

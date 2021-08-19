@@ -3,8 +3,6 @@ require'header.php';
 ?>
 
 <link rel="stylesheet" href="../css/carrito.css" />
-<!-- Toastr -->
-<link rel="stylesheet" href="../../admin/public/toastr/toastr.min.css">
 <div class="box-add">
   <div class="container">
     <div class="row classrow">

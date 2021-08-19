@@ -104,6 +104,8 @@
     <script src="../js/contact-form-script.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
+    <!-- Toastr -->
+    <!-- <script src="../public/toastr/toastr.min.js"></script> -->
 
     <script>
         /**Funciones para mostrar en la vista web */

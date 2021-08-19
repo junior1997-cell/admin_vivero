@@ -23,7 +23,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Bootstrap select -->
-    <link rel="stylesheet" href="../css/bootstrap.select.css">
+    <!--<link rel="stylesheet" href="../css/bootstrap.select.css">  -->
     <!-- Site CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive CSS -->
@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="../css/custom.css">
 
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
+    <!-- Toastr -->
+    <!-- <link rel="stylesheet" href="../../admin/public/toastr/toastr.min.css"> -->
 
 </head>
 

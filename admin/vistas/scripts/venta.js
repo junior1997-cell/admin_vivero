@@ -330,7 +330,7 @@ function agregarDetalle(idarticulo,articulo,precio_venta,nombre, stock,img) {
           '<td><input onkeyup="modificarSubototales()" onchange="modificarSubototales()" class="producto_'+idarticulo+' producto_selecionado" type="number" name="cantidad[]" id="cantidad[]" min="1" max="'+stock+'" value="'+cantidad+'"> <input type="hidden" name="stock_antg[]" id="stock_antg[]" value="'+stock+'"></td>'+
           '<td><input type="number" name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'" onkeyup="modificarSubototales()" onchange="modificarSubototales()"></td>'+
           '<td><input type="number" name="descuento[]" value="'+descuento+'" onkeyup="modificarSubototales()" onchange="modificarSubototales()"></td>'+
-          '<td><span name="subtotal" id="subtotal'+cont+'">'+subtotal+'</span></td>'+
+          '<td class="text-right"><span class="text-right" name="subtotal" id="subtotal'+cont+'">'+subtotal+'</span></td>'+
           '<td><button type="button" onclick="modificarSubototales()" class="btn btn-info"><i class="fa fa-refresh"></i></button></td>'+
           '</tr>';
           cont++;

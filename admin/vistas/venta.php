@@ -107,12 +107,18 @@ if ($_SESSION['ventas']==1)
                                     <th>Subtotal</th>
                                 </thead>
                                 <tfoot>
-                                    <th>TOTAL</th>
+                                    
                                     <th></th>
                                     <th></th>
                                     <th></th>
                                     <th></th>
-                                    <th><h4 id="total">S/. 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th> 
+                                    <th class="text-center"><h4>TOTAL</h4> </th>
+                                    <th>
+                                      <b>
+                                        <h4 id="total" style="font-weight: bold;">S/. 0.00</h4>
+                                        <input type="hidden" name="total_venta" id="total_venta">
+                                      </b>
+                                    </th> 
                                 </tfoot>
                                 <tbody>
                                   

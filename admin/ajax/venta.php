@@ -158,7 +158,7 @@ if (!isset($_SESSION["nombre"])){
           }
           
 					$datas[]=array(
-						"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idplanta.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\',\''.$reg->nombre.'\',\''.$reg->stock.'\')" data-toggle="tooltip" data-original-title="Agregar Planta"><span class="fa fa-plus"></span></button>',
+						"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idplanta.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\',\''.$reg->nombre.'\',\''.$reg->stock.'\',\''.$img.'\')" data-toggle="tooltip" data-original-title="Agregar Planta"><span class="fa fa-plus"></span></button>',
 						"1"=>'<div class="user-block">
 								<img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$img.'" alt="user image">
 								<span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>

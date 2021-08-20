@@ -2,21 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Vivero | Login</title>
-        <!-- Google Font: Source Sans Pro -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
-            <!-- Font Awesome -->
-        <link rel="stylesheet" href="../public/css/font-awesome.css">
-        <link rel="stylesheet" href="../../freshshop/css/style.css">
-        <link rel="apple-touch-icon" href="../../freshshop/images/logo-ico.png" />
-        <link rel="shortcut icon" href="../../freshshop/images/logo-ico.png" />
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
-        <link rel="apple-touch-icon" href="../freshshop/images/logo-ico.png" />
-        <link rel="shortcut icon" href="../freshshop/images/logo-ico.png" />
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <style type="text/css">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Vivero | Login</title>
+      <!-- Google Font: Source Sans Pro -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+          <!-- Font Awesome -->
+      <link rel="stylesheet" href="../public/css/font-awesome.css">
+      <link rel="stylesheet" href="../../freshshop/css/style.css">
+      <link rel="apple-touch-icon" href="../../freshshop/images/logo-ico.png" />
+      <link rel="shortcut icon" href="../../freshshop/images/logo-ico.png" />
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+      <link rel="apple-touch-icon" href="../freshshop/images/logo-ico.png" />
+      <link rel="shortcut icon" href="../freshshop/images/logo-ico.png" />
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <!-- Toastr -->
+      <link rel="stylesheet" href="../public/toastr/toastr.min.css">
+
+      <style type="text/css">
         html,body{
         background-size: cover;
         background-repeat: no-repeat;
@@ -100,92 +104,90 @@
         color: white;
         }
         #myVideo {
-        position: fixed;
-        opacity: 100%;
-        right: 0;
-        bottom: 0;      
-      }
+          position: fixed;
+          opacity: 100%;
+          right: 0;
+          bottom: 0;      
+        }
 
-      /* Add some content at the bottom of the video/page */
-      .content {
-        position: fixed;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        color: #f1f1f1;
-        width: 100%;
-        padding: 20px;
-      }
+        /* Add some content at the bottom of the video/page */
+        .content {
+          position: fixed;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          color: #f1f1f1;
+          width: 100%;
+          padding: 20px;
+        }
 
-      /* Style the button used to pause/play the video */
-      #myBtn {
-        width: 200px;
-        font-size: 18px;
-        padding: 10px;
-        border: none;
-        background: #000;
-        color: #fff;
-        cursor: pointer;
-      }
+        /* Style the button used to pause/play the video */
+        #myBtn {
+          width: 200px;
+          font-size: 18px;
+          padding: 10px;
+          border: none;
+          background: #000;
+          color: #fff;
+          cursor: pointer;
+        }
 
-      #myBtn:hover {
-        background: #ddd;
-        color: black;
-      }
-      .login-form{
-        background: url(../vistas/fondo_for.png)no-repeat 0px 0px;
-        background-size: cover;
-        background-position: center;
-      }
-
-
-
+        #myBtn:hover {
+          background: #ddd;
+          color: black;
+        }
+        .login-form{
+          background: url(../vistas/fondo_for.png)no-repeat 0px 0px;
+          background-size: cover;
+          background-position: center;
+        }
       </style>
   </head>
   <body class="hold-transition login-page">
        
-        <div class="container">
-            <div class="head content">
-             <div class="head-video">  
-
-             <video autoplay muted loop id="myVideo">
+    <div class="container">
+      <div class="head content">
+        <div class="head-video">
+          <video autoplay muted loop id="myVideo">
             <source src="video.mp4" type="video/mp4" />
-             </video>
-             <div class="head-overlay"></div>        
+          </video>
+          <div class="head-overlay"></div>        
         </div> 
-    </div>
+      </div>
 
-            <div class="d-flex justify-content-center h-100">
-                <div class="card" style="height: 45%">
-                    <div class="card-header text-center">
-                        <a href="#" class="h1"><b class="text-white">Vivero UPeU</b></a>
-                    </div>
-                    <div class="card-body">
-                        <form method="post" id="frmAcceso">
-                            <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" align="center" style="border-radius: 40px;"><i class="fa fa-user" ></i></span>
-                                </div>
-                                <input type="text" id="logina" name="logina" style="border-radius: 40px;" class="form-control" placeholder="Correo" />
-                            </div>
-                            <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" style="border-radius: 40px;"><i class="fa fa-lock"></i></span>
-                                </div>
-                                <input type="password" id="clavea" name="clavea" style="border-radius: 40px;" class="form-control" placeholder="Contraseña" />
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Login" class="btn float-right login_btn" />
-                            </div>
-                        </form>
-                    </div>
+      <div class="d-flex justify-content-center h-100">
+        <div class="card" style="height: 45%">
+          <div class="card-header text-center">
+              <a href="#" class="h1"><b class="text-white">Vivero UPeU</b></a>
+          </div>
+          <div class="card-body">
+            <form method="post" id="frmAcceso">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" align="center" style="border-radius: 40px;"><i class="fa fa-user" ></i></span>
                 </div>
-            </div>
+                <input type="text" id="logina" name="logina" style="border-radius: 40px;" class="form-control" placeholder="Correo" />
+              </div>
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" style="border-radius: 40px;"><i class="fa fa-lock"></i></span>
+                </div>
+                <input type="password" id="clavea" name="clavea" style="border-radius: 40px;" class="form-control" placeholder="Contraseña" />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Login" class="btn float-right login_btn" />
+              </div>
+            </form>
+          </div>
         </div>
-        <script src="../public/js/jquery-3.1.1.min.js"></script>
-        <!-- Bootstrap 3.3.5 -->
-        <script src="../public/js/bootstrap.min.js"></script>
-         <!-- Bootbox -->
-        <script src="../public/js/bootbox.min.js"></script>
-        <script type="text/javascript" src="scripts/login.js"></script>
-    </body>
+      </div>
+    </div>
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../public/js/bootstrap.min.js"></script>
+      <!-- Bootbox -->
+    <script src="../public/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
+    <!-- Toastr -->
+    <script src="../public/toastr/toastr.min.js"></script>
+  </body>
 </html> 

@@ -61,8 +61,14 @@ if (!isset($_SESSION["nombre"])){
 
 				while ($reg = $rspta->fetch_object())
 						{
-							echo '<tr class="filas"><td></td><td>'.$reg->nombre.'</td><td>'.$reg->cantidad.'</td><td>'.$reg->precio_venta.'</td><td>'.$reg->descuento.'</td><td>'.$reg->subtotal.'</td></tr>';
-							$total=$total+($reg->precio_venta*$reg->cantidad-$reg->descuento);
+							echo '<tr class="filas">
+                      <td></td>
+                      <td>'.$reg->nombre.'</td>
+                      <td>'.$reg->cantidad.'</td>
+                      <td>'.$reg->precio_venta.'</td>
+                      <td>'.$reg->descuento.'</td>
+                      <td>'.$reg->subtotal.'</td></tr>';
+							        $total=$total+($reg->precio_venta*$reg->cantidad-$reg->descuento);
 						}
 				echo '<tfoot>
 											<th>TOTAL</th>

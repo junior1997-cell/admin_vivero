@@ -26,6 +26,8 @@
     <!--<link rel="stylesheet" href="../css/bootstrap.select.css">  -->
     <!-- Site CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <!--bootsnav.css-->
+    <link rel="stylesheet" href="../css/bootsnav.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="../css/responsive.css">
     <!-- Custom CSS -->
@@ -84,7 +86,35 @@
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="side-menu"><a href="#">
+						<i class="fa fa-shopping-cart"></i>
+							<p>CARRITO</p>
+					</a></li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
             </div>
+            <!-- Start Side Menu -->
+            <div class="side">
+                <div>
+                <a href="#" class="close-side"><i class="fa fa-times-circle"></i></a>
+                </div>
+
+                <li class="cart-box" style="border-radius: 20px;">
+                    <ul class="cart-list" id="listahtml_c">
+                     
+                        <li class="total" style="border-bottom-right-radius: 17px; border-bottom-left-radius: 17px;">
+                        <button id="what" type="button" class="form-control btn btn-outline-success" style="margin-bottom: 10px; border: 2px solid #096424; border-bottom: solid 2px #096424 !important;">
+                        <i class="fab fa-whatsapp pr-3" aria-hidden="true"></i>  Contactar  <i class="fab fa-whatsapp pl-3" aria-hidden="true"></i>
+                        </button>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>

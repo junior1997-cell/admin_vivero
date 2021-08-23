@@ -288,7 +288,7 @@ ul.cart-list > li > p{
 }
 
 ul.cart-list > li.total{
-    background-color: #f5f5f5;
+    background-color: #73737378;
     padding-bottom: 15px !important;
 }
 
@@ -360,7 +360,7 @@ body.on-side{
     padding: 25px 15px;
     height: 100%;
     display: block;
-    background-color: #010101;
+    background-color: #0c772cb0;
     -webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -375,7 +375,7 @@ body.on-side{
 
 .side .close-side{
     float: right;
-    color: #fff;
+    color: rgb(255, 255, 255);
     position: relative;
     z-index: 2;
     font-size: 16px;
@@ -1273,7 +1273,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
     /* Tabs
     =================================*/ 
     nav.navbar.bootsnav .megamenu-content.tabbed{
-        padding-left: 0 !mportant;
+        padding-left: 0 !important;
     }
     
     nav.navbar.bootsnav .tabbed > li{

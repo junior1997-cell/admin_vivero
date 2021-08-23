@@ -289,28 +289,56 @@ function marcarImpuesto()
     }
   }
 
-function agregarDetalle(idarticulo,articulo,precio_venta,nombre, stock) {
+function agregarDetalle(idarticulo,articulo,precio_venta,nombre, stock,img) {
   	var cantidad=1;
     var descuento=0;
 
     if (idarticulo!="")
     {
       if (stock != 0) {
-        var subtotal=cantidad*precio_venta;
-        var fila='<tr class="filas" id="fila'+cont+'">'+
-        '<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
-        '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
-        '<td><input type="number" name="cantidad[]" id="cantidad[]" min="1" max="'+stock+'" value="'+cantidad+'"> <input type="hidden" name="stock_antg[]" id="stock_antg[]" value="'+stock+'"></td>'+
-        '<td><input type="number" name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'"></td>'+
-        '<td><input type="number" name="descuento[]" value="'+descuento+'"></td>'+
-        '<td><span name="subtotal" id="subtotal'+cont+'">'+subtotal+'</span></td>'+
-        '<td><button type="button" onclick="modificarSubototales()" class="btn btn-info"><i class="fa fa-refresh"></i></button></td>'+
-        '</tr>';
-        cont++;
-        detalles=detalles+1;
-        $('#detalles').append(fila);
-        modificarSubototales();
-        toastr.success('Planta: '+nombre+ ' agregada !!')
+        // $('.producto_'+idarticulo).addClass('producto_selecionado');
+        if ( $('.producto_'+idarticulo).hasClass('producto_selecionado') ) {
+
+          toastr.success('Planta: '+nombre+ ' agregada !!');
+          var cant_producto = $('.producto_'+idarticulo).val();
+          var sub_total = parseInt(cant_producto,10) + 1;
+          $('.producto_'+idarticulo).val(sub_total );
+          modificarSubototales();
+        } else {          
+        
+          var subtotal=cantidad*precio_venta;
+          var color_stock = "";
+          if (stock <= 3 ) {
+             color_stock = '<small class="label label-danger">'+stock+'</small>';
+          } else {
+            if (stock >= 3 && stock <= 6 ) {
+               color_stock = '<small class="label label-warning">'+stock+'</small>';
+            }else{
+               color_stock = '<small class="label label-success">'+stock+'</small>';
+            }
+          }
+          var fila='<tr class="filas" id="fila'+cont+'">'+
+          '<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
+          '<td>'+
+            '<input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+
+            '<div class="user-block">'+
+              '<img class="profile-user-img img-responsive img-circle" src="../files/articulos/'+img+'" alt="user image">'+
+              '<span class="username"><p style="margin-bottom: 0px !important;">'+articulo+'</p></span>'+
+              '<span class="description">Stock actual: '+color_stock+' </span>'+
+            '</div>'+
+          '</td>'+
+          '<td><input onkeyup="modificarSubototales()" onchange="modificarSubototales()" class="producto_'+idarticulo+' producto_selecionado" type="number" name="cantidad[]" id="cantidad[]" min="1" max="'+stock+'" value="'+cantidad+'"> <input type="hidden" name="stock_antg[]" id="stock_antg[]" value="'+stock+'"></td>'+
+          '<td><input type="number" name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'" onkeyup="modificarSubototales()" onchange="modificarSubototales()"></td>'+
+          '<td><input type="number" name="descuento[]" value="'+descuento+'" onkeyup="modificarSubototales()" onchange="modificarSubototales()"></td>'+
+          '<td class="text-right"><span class="text-right" name="subtotal" id="subtotal'+cont+'">'+subtotal+'</span></td>'+
+          '<td><button type="button" onclick="modificarSubototales()" class="btn btn-info"><i class="fa fa-refresh"></i></button></td>'+
+          '</tr>';
+          cont++;
+          detalles=detalles+1;
+          $('#detalles').append(fila);
+          modificarSubototales();
+          toastr.success('Planta: '+nombre+ ' agregada !!')
+        }
       } else {
         toastr.error('El STOCK es 0 de la planta: '+nombre)
       }

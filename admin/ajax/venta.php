@@ -61,8 +61,14 @@ if (!isset($_SESSION["nombre"])){
 
 				while ($reg = $rspta->fetch_object())
 						{
-							echo '<tr class="filas"><td></td><td>'.$reg->nombre.'</td><td>'.$reg->cantidad.'</td><td>'.$reg->precio_venta.'</td><td>'.$reg->descuento.'</td><td>'.$reg->subtotal.'</td></tr>';
-							$total=$total+($reg->precio_venta*$reg->cantidad-$reg->descuento);
+							echo '<tr class="filas">
+                      <td></td>
+                      <td>'.$reg->nombre.'</td>
+                      <td>'.$reg->cantidad.'</td>
+                      <td>'.$reg->precio_venta.'</td>
+                      <td>'.$reg->descuento.'</td>
+                      <td>'.$reg->subtotal.'</td></tr>';
+							        $total=$total+($reg->precio_venta*$reg->cantidad-$reg->descuento);
 						}
 				echo '<tfoot>
 											<th>TOTAL</th>
@@ -158,7 +164,7 @@ if (!isset($_SESSION["nombre"])){
           }
           
 					$datas[]=array(
-						"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idplanta.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\',\''.$reg->nombre.'\',\''.$reg->stock.'\')" data-toggle="tooltip" data-original-title="Agregar Planta"><span class="fa fa-plus"></span></button>',
+						"0"=>'<button class="btn btn-warning" onclick="agregarDetalle('.$reg->idplanta.',\''.$reg->nombre.'\',\''.$reg->precio_venta.'\',\''.$reg->nombre.'\',\''.$reg->stock.'\',\''.$img.'\')" data-toggle="tooltip" data-original-title="Agregar Planta"><span class="fa fa-plus"></span></button>',
 						"1"=>'<div class="user-block">
 								<img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$img.'" alt="user image">
 								<span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>

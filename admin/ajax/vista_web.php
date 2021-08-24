@@ -88,7 +88,7 @@ switch($op){
     $rspta = $vista_web->select_color();
 
     while ($reg = $rspta->fetch_object()) {
-      echo '<option  value=' . $reg->nombre . '>' . $reg->nombre . '</option>';
+      echo '<option  value="' . $reg->nombre . '">' . $reg->nombre . '</option>';
     }
   break;
 
@@ -97,7 +97,7 @@ switch($op){
     $rspta = $vista_web->select_whatsapp();
 
     while ($reg = $rspta->fetch_object()) {
-      echo '<option  value=' . $reg->numero . '>' . $reg->nombre . ' - '.$reg->numero.'</option>';
+      echo '<option  value="' . $reg->numero . '">' . $reg->nombre . ' - '.$reg->numero.'</option>';
     }
   break;
 }

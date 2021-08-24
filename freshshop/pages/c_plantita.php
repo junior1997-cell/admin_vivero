@@ -38,12 +38,11 @@ require'header.php';
               <select id="idcolor" name="idcolor[]" class="form-control selectpicker" title="Seleccione los colores" data-actions-box="true" required></select>
             </div>
 
-            <label for="whatsapp" class="formulario__label" style="font-size: 18px;font-weight: 900;">¿Con quién desea contactarse?</label>
-            <select id="listawhatsapp" name="listawhatsapp" class="form-control selectpicker"  title="Selec. un contacto" data-live-search="true" required> </select>
-            <br> <br>
-            <button id="submit" type="button" class="form-control btn btn-outline-success" style="margin-bottom: 10px;">
+             
+            <button id="agregar" type="button" class="form-control btn btn-outline-success" style="margin-bottom: 10px;">
               <i class="fa fa-shopping-cart pr-3" aria-hidden="true"></i>  Agregar al carrito  <i class="fa fa-shopping-cart pl-3" aria-hidden="true"></i>
             </button>
+             
             <!-- https://api.whatsapp.com/send?phone=573105010573&text=*_Barberia%20Lider_*%20%0AReservas%0A%0A*%C2%BFCual%20es%20tu%20nombre?*%0A"Nombres"%20%0A*Barbero%20de%20preferencia*%0A"Barbero"%20%0A -->
           </form>
         </center>
@@ -66,12 +65,37 @@ require'header.php';
   </div>
 </div>
 
+<div class="modal fade" id="modal_seguir_comprando" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cerrar_modal()">
+           Seguir Comprando
+        </button>
+        <button type="button" class="btn btn-success" onclick="ir_carrito()">
+          <i class="fa fa-shopping-cart pr-3" aria-hidden="true"></i>
+          Ir al carito
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <?php
 require'footer.php';
 ?>
 <!--form.js
 <script src=""></script>-->
-<script type="text/javascript" src="scripts/compra_plantas.js"></script>
+<script type="text/javascript" src="scripts/ver_plantas_carro.js"></script>
 <!-- Toastr -->
 <script src="../../admin/public/toastr/toastr.min.js"></script>
 

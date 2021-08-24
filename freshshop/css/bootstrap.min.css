@@ -2958,7 +2958,7 @@
   }
   .dropdown-item.active,
   .dropdown-item:active {
-    color: #fff;
+    color: rgb(14, 12, 12);
     text-decoration: none;
     background-color: #00ff3726;
   }

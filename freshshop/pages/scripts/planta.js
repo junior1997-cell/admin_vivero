@@ -71,7 +71,7 @@ function listar_plnts_prncpal(id_categoria){
     $("#listar_plantas").html('');
     $.post("../../admin/ajax/vista_web.php?op=listar_planta", { id_categoria: id_categoria }, function (data, status) {
         data = JSON.parse(data);
-        console.log(data);
+        // console.log(data);
         
         var clasesbadge="";
         var imagen="";
@@ -145,12 +145,12 @@ function listar_plnts_prncpal(id_categoria){
 }
 
 function listar_plnts_galery(id_categoria){
-    console.log(id_categoria);
+    // console.log(id_categoria);
 
     $("#plants_galery").html('');
     $.post("../../admin/ajax/vista_web.php?op=listar_planta", { id_categoria: id_categoria }, function (data, status) {
         data = JSON.parse(data);
-        console.log(data);
+        // console.log(data);
         
         var clasesbadge="";
         var imagen="";

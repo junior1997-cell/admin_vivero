@@ -104,13 +104,13 @@
     <script src="../js/contact-form-script.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
-
+    <script src="scripts/pedido_planta.js"></script>
 
     
     <!-- select PICKER -->
     <script src="../js/bootstrap-select.js"></script>
     <!-- Toastr -->
-    <!-- <script src="../public/toastr/toastr.min.js"></script> -->
+    <!-- <script src="../../admin/public/toastr/toastr.min.js"></script> -->
 
     <script>
         /**Funciones para mostrar en la vista web */

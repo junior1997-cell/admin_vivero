@@ -103,15 +103,19 @@
                 <a href="#" class="close-side"><i class="fa fa-times-circle"></i></a>
                 </div>
 
-                <li class="cart-box" style="border-radius: 20px;">
-                    <ul class="cart-list" id="listahtml_c">
-                     
-                        <li class="total" style="border-bottom-right-radius: 17px; border-bottom-left-radius: 17px;">
-                        <button id="what" type="button" class="form-control btn btn-outline-success" style="margin-bottom: 10px; border: 2px solid #096424; border-bottom: solid 2px #096424 !important;">
+                <li class="cart-box " style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                    <ul class="cart-list"  id="listahtml_c" >
+                        <span class="badge rounded-pill bg-warning py-2" style="font-size: 17px; color: white; width: 100% !important;">Carrito vacio</span>
+                    </ul>
+
+                    <li class="total px-3 py-3 bg-light" style="border-bottom-right-radius: 17px; border-bottom-left-radius: 17px;">
+                        <label for="whatsapp" class="formulario__label" style="font-size: 13px;font-weight: 900;">¿Con quién desea contactarse?</label>
+                        <select id="listawhatsapp" name="listawhatsapp" class="form-control selectpicker"  title="Selec. un contacto" data-live-search="true" required> </select>
+                        <br> <br>
+                        <button id="enviar_whatsapp" type="button" onclick="enviar_whatsapp()" class="form-control btn btn-success" style="margin-bottom: 10px; border: 2px solid #096424; border-bottom: solid 2px #096424 !important;">
                         <i class="fab fa-whatsapp pr-3" aria-hidden="true"></i>  Contactar  <i class="fab fa-whatsapp pl-3" aria-hidden="true"></i>
                         </button>
-                        </li>
-                    </ul>
+                    </li>
                 </li>
             </div>
             <!-- End Side Menu -->

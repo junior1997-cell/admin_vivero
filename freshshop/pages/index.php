@@ -26,7 +26,7 @@ require "../../admin/config/Conexion.php";
     <ul class="slides-container">
     <?php
         while ($row = $g_Ornamentales->fetch_assoc()) { ?>
-        <li class="text-center">
+        <li class="text-center"  >
             <div class="container">
                 <div class="head content">
                     <div class="head-video">

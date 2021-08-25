@@ -259,7 +259,7 @@ ul.cart-list > li{
 
 ul.cart-list > li > a.photo{
     padding: 0 !important;
-    margin-right: 15px;
+    margin-right: 8px;
     float: left;
     display: block;
     width: 50px;
@@ -355,8 +355,8 @@ body.on-side{
     position: fixed;
     overflow-y: auto;
     top: 0;
-    right: -280px;
-    width: 280px;
+    right: -315px;
+    width: 315px;
     padding: 25px 15px;
     height: 100%;
     display: block;
@@ -1386,7 +1386,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
     }
     
     .attr-nav > ul > li > a{
-        padding: 16px 10px 15px;
+        padding: 1px 10px 15px;
         padding-left: 0 !important;
     }
     

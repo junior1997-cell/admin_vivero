@@ -1,13 +1,15 @@
 function init_pedido(){
   plantascarrito();
 
-  //Cargamos los items al select CONTACTO
+  //Cargamos los items al select color
   $.post("../../admin/ajax/vista_web.php?op=selectWhatsapp", function (r) {
     $("#listawhatsapp").html(r);
     // console.log(r);
     $("#listawhatsapp").selectpicker("refresh");
   });
+
 }
+
 
 var articuloscarritos= [];
 // recuperamos las antiguas plantas      
@@ -20,7 +22,8 @@ if (localStorage.getItem("arrayplantas")) {
     const arrayplantas ={
       nombre:planta_exis.nombre,
       color:planta_exis.color,
-      cantidad:planta_exis.cantidad
+      cantidad:planta_exis.cantidad,
+      imagen:planta_exis.imagen
     }
     articuloscarritos=[...articuloscarritos,arrayplantas];
     var arrayplantasconvert = JSON.stringify(articuloscarritos);
@@ -33,7 +36,7 @@ if ($("#agregar").length) {
 
   document.querySelector("#agregar").addEventListener("click", function () {
 
-    if (document.querySelector("#nombre").value=="" || document.querySelector("#cantidad").value=="" ||document.querySelector("#idcolor").value=="" ) {
+    if (document.querySelector("#nombre").value=="" || document.querySelector("#cantidad").value=="") {
 
       alert("Estoy vacio");
       console.log(document.querySelector("#cantidad").value);
@@ -43,12 +46,14 @@ if ($("#agregar").length) {
       let nombre = document.querySelector("#nombre").value;
       let cantidad = document.querySelector("#cantidad").value;
       let color = document.querySelector("#idcolor").value;
-
+      let imagen= document.querySelector("#vidadigital").src;
+      //console.log(imagen);
       
       const arrayplantas ={
         nombre:nombre,
         color:color,
-        cantidad:cantidad
+        cantidad:cantidad,
+        imagen:imagen
       }
       articuloscarritos=[...articuloscarritos,arrayplantas];
       var arrayplantasconvert = JSON.stringify(articuloscarritos);
@@ -60,9 +65,7 @@ if ($("#agregar").length) {
       $('#modal_seguir_comprando').addClass('show'); 
       document.getElementById("modal_seguir_comprando").style.display="block";
        
-    }
-     
-     
+    } 
 
   });
 }
@@ -76,23 +79,27 @@ function plantascarrito(){
     console.log('lista: '); console.log(localStorage.getItem("arrayplantas"));
 
     listcarrito.forEach(planta => {
+      var color = planta.color=="" ? "Sin color" : planta.color;
       codigo_html = codigo_html+
         '<li>'+
-          '<a href="#" class="photo"><img src="../../admin/files/articulos/0162938615541.webp" class="cart-thumb" style="border-radius: 50%;"/></a>'+
-          '<h6><a href="#">'+planta.nombre+'</a></h6>'+
-          '<div class="row">'+
-              '<div class="col-lg-6">'+
-                '<select name="" id="" style="width: 60px; height: 30px; border: #f0ad4e; background: #00ff3726;">'+
-                    '<option value="">Select..</option>'+
-                    '<option value="">Amarillo</option>'+
-                    '<option value="">Anaranjadoooooo</option>'+
-                    '<option value="">Rojo</option>'+
-                '</select>'+
-              '</div>'+
-              '<div class="col-lg-6">'+
-                '<input type="number" value="'+planta.cantidad+'" min="1" max="99" style="width: 40px; height: 30px; border: #f0ad4e; background: #00ff3726;">'+
-              '</div>'+
+        '<a href="#" class="photo"><img src="'+planta.imagen+'" class="cart-thumb" style="border-radius: 50%;"/></a>'+
+        '<div class="row">'+
+          '<div class="col-lg-10" style="padding-left: 0px;">'+
+            
+            '<h6><a href="#">'+planta.nombre+'</a></h6>'+
+              '<div class="row">'+
+                '<div class="col-lg-9" style="padding-right: 0px;">'+
+                  '<span class="badge bg-secondary px-1 py-1" style="color: white;font-size: 14px;">'+color+'</span>'+
+                '</div>'+
+                '<div class="col-lg-3" style="padding-left: 6px;">'+
+                  '<input type="number" value="'+planta.cantidad+'" min="1" max="99" style="width: 40px;height: 30px;background: #00ff3726;padding: 0px 0px 0px 7px;border: 1px solid #28a745;">'+
+                '</div>'+
+            '</div>'+
           '</div>'+
+          '<div class="col-lg-2" >'+
+          '<i class="fas fa-trash-alt bt_eliminar" data-toggle="tooltip" data-original-title="Eliminar"></i>'+
+          '</div>'+
+        '</div>'+
         '</li>';
       });
     $('#listahtml_c').html(codigo_html);

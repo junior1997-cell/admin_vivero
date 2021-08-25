@@ -8,7 +8,7 @@ function init() {
   ver_planta_compra(idplanta_compra);
 
   //Cargamos los items al select COLOR
-  $.post("../../admin/ajax/vista_web.php?op=selectColor", function (r) {
+  $.post("../../admin/ajax/vista_web.php?op=selectColor", { idplanta_compra: idplanta_compra }, function (r) {
     $("#idcolor").html(r);
      
     $("#idcolor").selectpicker("refresh");

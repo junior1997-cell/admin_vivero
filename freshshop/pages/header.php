@@ -38,6 +38,12 @@
     <!-- <link rel="stylesheet" href="../../admin/public/toastr/toastr.min.css"> -->
 
 </head>
+<style>
+    .bt_eliminar:hover{
+        color: red;
+        cursor: pointer;
+    }
+</style>
 
 <body>
     <!-- Start Main Top -->
@@ -71,7 +77,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.php"><img src="../images/upeu/VIVERO_UPEU.png" width="350"  style="margin-left: -30%; margin-top: 3px" class="logo" alt=""></a>
+                    <a class="navbar-brand claselogo" href="index.php"><img src="../images/upeu/VIVERO_UPEU.png" width="350"  style="margin-left: -30%; margin-top: 3px" class="logo" alt=""></a>
                 </div>
 
                 <!-- End Header Navigation    style="margin-left: -20%; margin-top:-5px"-->
@@ -100,7 +106,7 @@
             <!-- Start Side Menu -->
             <div class="side">
                 <div>
-                <a href="#" class="close-side"><i class="fa fa-times-circle"></i></a>
+                <a href="#" class="close-side bt_eliminar"><i class="fa fa-times-circle"></i></a>
                 </div>
 
                 <li class="cart-box " style="border-top-left-radius: 20px; border-top-right-radius: 20px;">

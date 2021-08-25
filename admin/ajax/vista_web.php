@@ -85,12 +85,18 @@ switch($op){
 	break;
 
   case "selectColor":
-    $rspta = $vista_web->select_color();
-
-    while ($reg = $rspta->fetch_object()) {
-      echo '<option  value="' . $reg->nombre . '">' . $reg->nombre . '</option>';
+    $id_planta = $_POST["idplanta_compra"];
+    $rspta = $vista_web->select_color($id_planta);
+    if ($rspta->num_rows>0) {
+      while ($reg = $rspta->fetch_object()) {
+        echo '<option  value="' . $reg->nombre . '">' . $reg->nombre . '</option>';
+      }
+    }else{
+      echo '<option disabled>Sin color</option>';
     }
+
   break;
+  
 
   case "selectWhatsapp":
 

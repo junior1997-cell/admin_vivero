@@ -469,10 +469,19 @@
 }
 @media only screen and (min-width:  769px) and (max-width: 992px) {
     nav.navbar .navbar-brand img.logo{
-        margin-left: 30%!important;
+        margin-left: 10%!important;
         margin-top: -70px!important;
         height: 50%;
         width: 50%;
+    }
+
+}
+@media only screen and (min-width:  992px) and (max-width: 1280px) {
+    nav.navbar .navbar-brand img.logo{
+        margin-left: 10%!important;
+       /* margin-top: -70px!important;
+        height: 50%;*/
+        width: 250px;
     }
 
 }

@@ -53,9 +53,9 @@ Class Vista_web
     //=====fin seccion Plantas===========
 
   //Implementar un método para listar los registros y mostrar en el select
-  public function select_color()
+  public function select_color($id_planta)
   {
-    $sql="SELECT * FROM color where estado=1";
+    $sql="SELECT c.nombre, c.idcolor FROM admin_vivero.color as c, admin_vivero.plantacolor as pc where c.idcolor = pc.id_color and pc.id_planta ='$id_planta'" ;
     return ejecutarConsulta($sql);    
   }
 

@@ -5,7 +5,7 @@ require'header.php';
 <link rel="stylesheet" href="../css/carrito.css" />
 <div class="box-add">
   <div class="container pt-4">
-    <div class="row classrow pt-3" style="padding-right: 15px; padding-left: 15px; -webkit-box-shadow: 1px 1px 1px 1px #008000;">
+    <div class="row classrow pt-3">
       <div class="col-lg-1 col-md-2 col-sm-12 entornodiv" style="padding: 0px;">
         <div class="imgpequeño ecfecto" id="img_peque">
           <!--Aqui va las imagenes ppequeñas-->
@@ -20,10 +20,12 @@ require'header.php';
           </center>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 col-sm-12 rowww divhead" style="margin-bottom: 15px !important; border-width: 1px; border-style: solid; border-color: black; border-radius: 8px;">
+      <div class="col-lg-4 col-md-12 col-sm-12 rowww divhead">
         <center>
           <form action="" class="formulario">
             <h1 class="formulario__titulo" id="nombre_v"></h1>
+            <h1>stock: <span id="stock"></span> </h1>
+
             <input id="nombre" type="hidden" class="formulario__input" required />
 
             <!--<label for="precio" class="formulario__label">Precio</label>
@@ -35,7 +37,7 @@ require'header.php';
 
             <div class="form-group">
               <label style="font-size: 18px;font-weight: 900;">Color:</label><br />
-              <select id="idcolor" name="idcolor[]" class="form-control selectpicker" title="Seleccione los colores" data-actions-box="true" required></select>
+              <select id="idcolor" name="idcolor[]" class="form-control selectpicker" style="border: 1px solid #28a745!important;" title="Seleccione un color" data-actions-box="true" required></select>
             </div>
 
              
@@ -50,13 +52,13 @@ require'header.php';
       </div>
     </div>
     <div class="row my-5">
-      <div class="col-sm-6 col-lg-6">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="service-block-inner">
           <h3><b>Detalle De La Planta</b></h3>
           <p id="detalle_pnta" style="text-align: justify;"></p>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-6">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="service-block-inner">
           <h3><b>Especificaciones y Cuidado</b></h3>
           <p id="especif_cuidado" style="text-align: justify;"></p>

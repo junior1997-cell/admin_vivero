@@ -26,10 +26,13 @@ function ver_planta_compra(idplanta_compra) {
     /**
      *
      */
+   // console.log('stock : '+data.stock);
     var especificaciones="";
     $("#nombre_v").html(data.nombre);
     $("#nombre").val(data.nombre);
+    $("#stock").html(data.stock);
     $("#detalle_pnta").html("<br>" + (data.descripcion).replace(/\n/ig, '<br>') + "<br>");
+
     if (data.espcf_cuidado!=null) {
       especificaciones=data.espcf_cuidado;
     }else{
@@ -41,7 +44,7 @@ function ver_planta_compra(idplanta_compra) {
     $("#precio").val(data.precio_venta);*/
     /**1-2-3 */
     if (data.img_1 != "" && data.img_2 == "" && data.img_3 == "") {
-      var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/' + data.img_1 + '" id="image1">' + "</center>" + "";
+      var secc_img_p = "" + "<center>" + '<img class="rounded-circle" src="../../admin/files/articulos/' + data.img_1 + '" id="image1">' + "</center>" + "";
       $("#img_peque").append(secc_img_p);
 
       document.getElementById("vidadigital").src = "../../admin/files/articulos/" + data.img_1 + "";
@@ -58,7 +61,7 @@ function ver_planta_compra(idplanta_compra) {
         });
       }
     } else if (data.img_1 == "" && data.img_2 != "" && data.img_3 == "") {
-      var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/' + data.img_2 + '" id="image1">' + "</center>" + "";
+      var secc_img_p = "" + "<center>" + '<img class="rounded-circle" src="../../admin/files/articulos/' + data.img_2 + '" id="image1">' + "</center>" + "";
       $("#img_peque").append(secc_img_p);
 
       document.getElementById("vidadigital").src = "../../admin/files/articulos/" + data.img_2 + "";
@@ -75,7 +78,7 @@ function ver_planta_compra(idplanta_compra) {
         });
       }
     } else if (data.img_1 == "" && data.img_2 == "" && data.img_3 != "") {
-      var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/' + data.img_3 + '" id="image1">' + "</center>" + "";
+      var secc_img_p = "" + "<center>" + '<img class="rounded-circle" src="../../admin/files/articulos/' + data.img_3 + '" id="image1">' + "</center>" + "";
       $("#img_peque").append(secc_img_p);
 
       document.getElementById("vidadigital").src = "../../admin/files/articulos/" + data.img_3 + "";
@@ -94,7 +97,7 @@ function ver_planta_compra(idplanta_compra) {
 
       /**12--13 */
     } else if (data.img_1 != "" && data.img_2 != "" && data.img_3 == "") {
-      var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/' + data.img_1 + '" id="image1">' + '<img src="../../admin/files/articulos/' + data.img_2 + '" id="image1">' + "</center>" + "";
+      var secc_img_p = "" + "<center>" + '<img class="rounded-circle" src="../../admin/files/articulos/' + data.img_1 + '" id="image1">' + '<img class="rounded-circle" src="../../admin/files/articulos/' + data.img_2 + '" id="image1">' + "</center>" + "";
       $("#img_peque").append(secc_img_p);
 
       document.getElementById("vidadigital").src = "../../admin/files/articulos/" + data.img_1 + "";
@@ -111,7 +114,7 @@ function ver_planta_compra(idplanta_compra) {
         });
       }
     } else if (data.img_1 != "" && data.img_2 == "" && data.img_3 != "") {
-      var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/' + data.img_1 + '" id="image1">' + '<img src="../../admin/files/articulos/' + data.img_3 + '" id="image1">' + "</center>" + "";
+      var secc_img_p = "" + "<center>" + '<img class="rounded-circle" src="../../admin/files/articulos/' + data.img_1 + '" id="image1">' + '<img class="rounded-circle"  src="../../admin/files/articulos/' + data.img_3 + '" id="image1">' + "</center>" + "";
       $("#img_peque").append(secc_img_p);
 
       document.getElementById("vidadigital").src = "../../admin/files/articulos/" + data.img_1 + "";
@@ -129,7 +132,7 @@ function ver_planta_compra(idplanta_compra) {
       }
       /**21-23 */
     } else if (data.img_1 == "" && data.img_2 != "" && data.img_3 != "") {
-      var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/' + data.img_2 + '" id="image1">' + '<img src="../../admin/files/articulos/' + data.img_3 + '" id="image1">' + "</center>" + "";
+      var secc_img_p = "" + "<center>" + '<img class="rounded-circle" src="../../admin/files/articulos/' + data.img_2 + '" id="image1">' + '<img  class="rounded-circle" src="../../admin/files/articulos/' + data.img_3 + '" id="image1">' + "</center>" + "";
       $("#img_peque").append(secc_img_p);
 
       document.getElementById("vidadigital").src = "../../admin/files/articulos/" + data.img_2 + "";
@@ -150,13 +153,13 @@ function ver_planta_compra(idplanta_compra) {
       var secc_img_p =
         "" +
         "<center>" +
-        '<img src="../../admin/files/articulos/' +
+        '<img class="rounded-circle" src="../../admin/files/articulos/' +
         data.img_1 +
         '" id="image1">' +
-        '<img src="../../admin/files/articulos/' +
+        '<img class="rounded-circle" src="../../admin/files/articulos/' +
         data.img_2 +
         '" id="image1">' +
-        '<img src="../../admin/files/articulos/' +
+        '<img class="rounded-circle" src="../../admin/files/articulos/' +
         data.img_3 +
         '" id="image1">' +
         "</center>" +
@@ -177,7 +180,7 @@ function ver_planta_compra(idplanta_compra) {
         });
       }
     } else if (data.img_1 == "" && data.img_2 == "" && data.img_3 == "") {
-      var secc_img_p = "" + "<center>" + '<img src="../../admin/files/articulos/rosa_defecto_v.svg" id="image1">' + "</center>" + "";
+      var secc_img_p = "" + "<center>" + '<img class="rounded-circle" src="../../admin/files/articulos/rosa_defecto_v.svg" id="image1">' + "</center>" + "";
       $("#img_peque").append(secc_img_p);
 
       document.getElementById("vidadigital").src = "../../admin/files/articulos/rosa_defecto_v.svg";

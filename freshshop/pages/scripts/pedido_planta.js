@@ -150,11 +150,11 @@ function eliminar_pedido(id) {
 
   // $("#pedido_" + id).remove();
 
-  var plantas=JSON.parse(localStorage.getItem("arrayplantas"));
+  articuloscarritos=JSON.parse(localStorage.getItem("arrayplantas"));
 
-  console.log(plantas);
+  console.log(articuloscarritos);
   var id_delete = 0;
-  plantas.forEach(function(elemento, indice, array) {
+  articuloscarritos.forEach(function(elemento, indice, array) {
     
     if (elemento.id_planta == id) {
       console.log(elemento.id_planta, indice);
@@ -162,10 +162,10 @@ function eliminar_pedido(id) {
     }
   });
 
-  var removed = plantas.splice(id_delete, 1);
-  console.log(plantas);
+  var removed = articuloscarritos.splice(id_delete, 1);
+  console.log(articuloscarritos);
 
-  var removed_convert = JSON.stringify(plantas);      
+  var removed_convert = JSON.stringify(articuloscarritos);      
   localStorage.setItem("arrayplantas", removed_convert);
   plantascarrito();
 }

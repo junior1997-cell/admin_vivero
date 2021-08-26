@@ -80,30 +80,35 @@ function plantascarrito(){
     var listcarrito=JSON.parse(localStorage.getItem("arrayplantas"));
     console.log('lista: '); console.log(localStorage.getItem("arrayplantas"));
 
-    listcarrito.forEach(planta => {
-      var color = planta.color=="" ? "Sin color" : planta.color;
-      codigo_html = codigo_html+
-        '<li id="pedido_'+planta.id_planta+'">'+
-        '<a href="#" class="photo"><img src="'+planta.imagen+'" class="cart-thumb" style="border-radius: 50%;"/></a>'+
-        '<div class="row">'+
-          '<div class="col-lg-10" style="padding-left: 0px;">'+
-            
-            '<h6><a href="#">'+planta.nombre+'</a></h6>'+
-              '<div class="row">'+
-                '<div class="col-lg-9" style="padding-right: 0px;">'+
-                  '<span class="badge bg-secondary px-1 py-1" style="color: white;font-size: 14px;">'+color+'</span>'+
-                '</div>'+
-                '<div class="col-lg-3" style="padding-left: 6px;">'+
-                  '<input type="number" value="'+planta.cantidad+'" min="1" max="99" style="width: 40px;height: 30px;background: #00ff3726;padding: 0px 0px 0px 7px;border: 1px solid #28a745;">'+
-                '</div>'+
+    if (listcarrito.length != 0 ) {
+      listcarrito.forEach(planta => {
+        var color = planta.color=="" ? "Sin color" : planta.color;
+        codigo_html = codigo_html+
+          '<li id="pedido_'+planta.id_planta+'">'+
+          '<a href="#" class="photo"><img src="'+planta.imagen+'" class="cart-thumb" style="border-radius: 50%;"/></a>'+
+          '<div class="row">'+
+            '<div class="col-lg-10" style="padding-left: 0px;">'+
+              
+              '<h6><a href="#">'+planta.nombre+'</a></h6>'+
+                '<div class="row">'+
+                  '<div class="col-lg-9" style="padding-right: 0px;">'+
+                    '<span class="badge bg-secondary px-1 py-1" style="color: white;font-size: 14px;">'+color+'</span>'+
+                  '</div>'+
+                  '<div class="col-lg-3" style="padding-left: 6px;">'+
+                    '<input type="number" value="'+planta.cantidad+'" min="1" max="99" style="width: 40px;height: 30px;background: #00ff3726;padding: 0px 0px 0px 7px;border: 1px solid #28a745;">'+
+                  '</div>'+
+              '</div>'+
+            '</div>'+
+            '<div class="col-lg-2" >'+
+            '<i class="fas fa-trash-alt bt_eliminar" data-toggle="tooltip" data-original-title="Eliminar" onclick="eliminar_pedido('+planta.id_planta+')"></i>'+
             '</div>'+
           '</div>'+
-          '<div class="col-lg-2" >'+
-          '<i class="fas fa-trash-alt bt_eliminar" data-toggle="tooltip" data-original-title="Eliminar" onclick="eliminar_pedido('+planta.id_planta+')"></i>'+
-          '</div>'+
-        '</div>'+
-        '</li>';
+          '</li>';
       });
+    }else{
+      codigo_html= '<span class="badge rounded-pill bg-warning py-2" style="font-size: 17px; color: white; width: 100% !important;">Carrito vacio</span>';
+    }
+    
     $('#listahtml_c').html(codigo_html);
   }
   

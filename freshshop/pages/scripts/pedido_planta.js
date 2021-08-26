@@ -143,7 +143,7 @@ function ir_carrito() {
 
 function eliminar_pedido(id) {
 
-  $("#pedido_" + id).remove();
+  // $("#pedido_" + id).remove();
 
   var plantas=JSON.parse(localStorage.getItem("arrayplantas"));
 
@@ -159,5 +159,9 @@ function eliminar_pedido(id) {
 
   var removed = plantas.splice(id_delete, 1);
   console.log(plantas);
+
+  var removed_convert = JSON.stringify(plantas);      
+  localStorage.setItem("arrayplantas", removed_convert);
+  plantascarrito();
 }
 init_pedido();

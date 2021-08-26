@@ -88,14 +88,15 @@ function plantascarrito(){
           '<a href="#" class="photo"><img src="'+planta.imagen+'" class="cart-thumb" style="border-radius: 50%;"/></a>'+
           '<div class="row">'+
             '<div class="col-lg-10" style="padding-left: 0px;">'+
-              
+              '<input type="hidden" name="color_p[]" >'+
+              '<input type="hidden" name="nombre_p[]" >'+
               '<h6><a href="#">'+planta.nombre+'</a></h6>'+
                 '<div class="row">'+
                   '<div class="col-lg-9" style="padding-right: 0px;">'+
                     '<span class="badge bg-secondary px-1 py-1" style="color: white;font-size: 14px;">'+color+'</span>'+
                   '</div>'+
                   '<div class="col-lg-3" style="padding-left: 6px;">'+
-                    '<input type="number" value="'+planta.cantidad+'" min="1" max="99" style="width: 40px;height: 30px;background: #00ff3726;padding: 0px 0px 0px 7px;border: 1px solid #28a745;">'+
+                    '<input type="number" value="'+planta.cantidad+'" name="cantidad_p[]" min="1" max="99" style="width: 40px;height: 30px;background: #00ff3726;padding: 0px 0px 0px 7px;border: 1px solid #28a745;">'+
                   '</div>'+
               '</div>'+
             '</div>'+
@@ -116,24 +117,61 @@ function plantascarrito(){
 
 
 function enviar_whatsapp() {
+  var nombre_envio = "";
+  var color_envio = "";
+  var cantidad_envio = "";
+  var cuerpo_envio ="";
   
-  /*let url =
-        "https://api.whatsapp.com/send?phone=+51"+
-        listawhatsapp+
-        "&text=*__Universidad Peruana Unión__*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?*%0A"+
-        nombre+
-        "%0A*Cantidad*%0A"+
-        cantidad+
-        "%0A*Color de preferencia*%0A"+
-        values+
-        "%0A%0A*¡Gracias por su preferencia!*%0A%0A*¡EN SEGUIDA CONFIRMAMOS SU PEDIDO!*%0A";
-    window.open(url);*/
   
   // limpiamos el HTML, localStorage y el array= articuloscarritos
-  $('#listahtml_c').html('<span class="badge rounded-pill bg-warning py-2" style="font-size: 17px; color: white; width: 100% !important;">Carrito vacio</span>');
-  localStorage.removeItem("arrayplantas");
-  articuloscarritos= [];
+  var nombre_p = document.getElementsByName('nombre_p[]');
+  var color_p = document.getElementsByName('color_p[]');
+  var cantidad_p = document.getElementsByName('cantidad_p[]');
+  var num_whatsapp = document.querySelector("#listawhatsapp").value;
+
+  if (num_whatsapp != "") {
+    // optenemos el nombre
+    for (var i = 0; i < nombre_p.length; i++) {
+      var a = nombre_p[i];
+      nombre_envio =  a.value;
+
+      // optenemos el color
+      for (var j = 0; j < color_p.length; j++) {
+        var b = color_p[j];
+        if (j == i) {
+          color_envio =  b.value ;
+        }              
+      }
+
+      // optenemos el cantidad
+      for (var k = 0; k < cantidad_p.length; k++) {
+        var c = cantidad_p[k];
+        if (k == i) {
+          cantidad_envio =  c.value; 
+        }           
+      }  
+
+      cuerpo_envio = '%0A*Planta:* '+nombre_envio+'%0A*Color:* '+ color_envio + '%0A*Cantidad:* ' + cantidad_envio + '%0A_________________________________________%0A'+cuerpo_envio;     
+    } 
+    console.log('cuerpo: ' + cuerpo_envio); 
+    let url =
+      "https://api.whatsapp.com/send?phone=+51"+
+      num_whatsapp+
+      "&text=*__Universidad Peruana Unión__*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?*%0A_________________________________________"+
+      cuerpo_envio+
+      "%0A%0A*¡Gracias por su preferencia!*%0A%0A*¡EN SEGUIDA CONFIRMAMOS SU PEDIDO!*%0A";
+    // saltamos a otra pagina
+    window.open(url);
+
+    $('#listahtml_c').html('<span class="badge rounded-pill bg-warning py-2" style="font-size: 17px; color: white; width: 100% !important;">Carrito vacio</span>');
+    localStorage.removeItem("arrayplantas");
+    articuloscarritos= [];
+  }else{
+    alert("Selecione un contacto");
+  }
+  
 }
+
 
 function cerrar_modal() {
   $('#modal_seguir_comprando').removeClass('show'); 

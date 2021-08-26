@@ -20,6 +20,7 @@ if (localStorage.getItem("arrayplantas")) {
   var existe_planta=JSON.parse(localStorage.getItem("arrayplantas"));
   existe_planta.forEach(planta_exis => {
     const arrayplantas ={
+      id_planta:planta_exis.id_planta,
       nombre:planta_exis.nombre,
       color:planta_exis.color,
       cantidad:planta_exis.cantidad,
@@ -42,7 +43,7 @@ if ($("#agregar").length) {
       console.log(document.querySelector("#cantidad").value);
 
     } else {
-
+      let id_planta = Math.random();;
       let nombre = document.querySelector("#nombre").value;
       let cantidad = document.querySelector("#cantidad").value;
       let color = document.querySelector("#idcolor").value;
@@ -50,6 +51,7 @@ if ($("#agregar").length) {
       //console.log(imagen);
       
       const arrayplantas ={
+        id_planta:id_planta,
         nombre:nombre,
         color:color,
         cantidad:cantidad,
@@ -81,7 +83,7 @@ function plantascarrito(){
     listcarrito.forEach(planta => {
       var color = planta.color=="" ? "Sin color" : planta.color;
       codigo_html = codigo_html+
-        '<li>'+
+        '<li id="pedido_'+planta.id_planta+'">'+
         '<a href="#" class="photo"><img src="'+planta.imagen+'" class="cart-thumb" style="border-radius: 50%;"/></a>'+
         '<div class="row">'+
           '<div class="col-lg-10" style="padding-left: 0px;">'+
@@ -97,7 +99,7 @@ function plantascarrito(){
             '</div>'+
           '</div>'+
           '<div class="col-lg-2" >'+
-          '<i class="fas fa-trash-alt bt_eliminar" data-toggle="tooltip" data-original-title="Eliminar"></i>'+
+          '<i class="fas fa-trash-alt bt_eliminar" data-toggle="tooltip" data-original-title="Eliminar" onclick="eliminar_pedido('+planta.id_planta+')"></i>'+
           '</div>'+
         '</div>'+
         '</li>';
@@ -137,5 +139,25 @@ function ir_carrito() {
   $('.side').addClass('on');
   $('#modal_seguir_comprando').removeClass('show'); 
   document.getElementById("modal_seguir_comprando").style.display="none";
+}
+
+function eliminar_pedido(id) {
+
+  $("#pedido_" + id).remove();
+
+  var plantas=JSON.parse(localStorage.getItem("arrayplantas"));
+
+  console.log(plantas);
+  var id_delete = 0;
+  plantas.forEach(function(elemento, indice, array) {
+    
+    if (elemento.id_planta == id) {
+      console.log(elemento.id_planta, indice);
+      id_delete = indice;
+    }
+  });
+
+  var removed = plantas.splice(id_delete, 1);
+  console.log(plantas);
 }
 init_pedido();

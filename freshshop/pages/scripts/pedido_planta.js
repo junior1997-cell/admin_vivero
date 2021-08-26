@@ -88,8 +88,8 @@ function plantascarrito(){
           '<a href="#" class="photo"><img src="'+planta.imagen+'" class="cart-thumb" style="border-radius: 50%;"/></a>'+
           '<div class="row">'+
             '<div class="col-lg-10" style="padding-left: 0px;">'+
-              '<input type="hidden" name="color_p[]" >'+
-              '<input type="hidden" name="nombre_p[]" >'+
+            '<input type="hidden" name="color_p[]" value="'+planta.color+'">'+
+            '<input type="hidden" name="nombre_p[]" value="'+planta.nombre+'" >'+
               '<h6><a href="#">'+planta.nombre+'</a></h6>'+
                 '<div class="row">'+
                   '<div class="col-lg-9" style="padding-right: 0px;">'+

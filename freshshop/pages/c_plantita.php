@@ -33,7 +33,7 @@ require'header.php';
             <input id="precio" type="hidden" class="formulario__input" required />-->
 
             <label for="cantidad" class="formulario__label" style="font-size: 18px;font-weight: 900;">Indica la cantidad</label>
-            <input id="cantidad" type="number" class="form-control" style="border: 1px solid #28a745;" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+            <input id="cantidad" type="number" class="form-control" min="1" style="border: 1px solid #28a745;" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
 
             <div class="form-group">
               <label style="font-size: 18px;font-weight: 900;">Color:</label><br />

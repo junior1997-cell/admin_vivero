@@ -104,6 +104,8 @@
     <script src="../js/contact-form-script.js"></script>
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
+    <script src="../js/whatsappme.min.js"></script>
+    
     <script src="scripts/pedido_planta.js"></script>
 
     

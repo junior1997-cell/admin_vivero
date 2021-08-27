@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
+    <!--whasap.css-->
+    <link rel="stylesheet" href="../css/whatsappme.min.css">
 
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
     <!-- Toastr -->

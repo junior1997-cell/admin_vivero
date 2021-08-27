@@ -70,8 +70,8 @@ require'header.php';
 
 <div class="modal fade" id="modal_seguir_comprando" style="background-color: #06060685;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content ">
-      <div class="modal-header" style="box-shadow: 0px 50px 30px #00000042; justify-content: space-evenly!important;">
+    <div class="modal-content " style="border-radius: 0.7rem;">
+      <div class="modal-header" style="box-shadow: 0px 50px 30px #00000042; justify-content: space-evenly!important; border-bottom:none">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cerrar_modal()">
            Seguir Comprando
         </button>

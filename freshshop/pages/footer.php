@@ -10,7 +10,102 @@
 ?> 
 
   <!-- Start Footer  -->
-   
+  <div class="container">
+      <div class="title-all text-center mt-5">
+          <h1>COMENTARIOS</h1>
+      </div>
+             <p>
+            <button class="btn btn-outline-success" type="button" style="margin-bottom: 10px;" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Registrar comentario
+            </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <select name="" id="" class="form-control">
+                                            <option  disabled selected >Seleccionar sexo</option>
+                                            <option value="">Varon</option>
+                                            <option value="">Mujer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <textarea class="form-control" id="espcf_cuidado" name="espcf_cuidado" rows="4" cols="50" > </textarea>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                        <button type="submit"  class="btn btn-outline-success mb-3">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+            <table class="table caption-top">
+                <caption>List of users</caption>
+                <tbody>
+                    <!--1-->
+                    <tr>
+                        <th scope="row" style="width: 20%;">
+                            <div class="row">
+                                <div class="col-lg-4" style="padding-right: 0px;">
+                                    <img class="profile-user-img img-responsive img-circle" src="../images/avatar_mujer.jpg" style="width: 90%;" alt="user">
+                                </div>
+                                <div class="col-lg-8"  style="padding-right: 0px;">
+                                    <span class="username"><p style="margin-bottom: 0px !important;">Hermelinda Guaman</p></span>
+                                    <span class="description">27/07/21</span>
+                                </div>
+                            </div>
+                        </th>
+                        <td>
+                            <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non dolorem officiis rem ducimus, 
+                            reiciendis maxime aliquam at dignissimos expedita natus consequuntur obcaecati repudiandae minus 
+                            autem recusandae explicabo sunt saepe.
+                            </p>
+                        </td>
+                    </tr>
+                    <!--1-->
+                    <tr>
+                        <th scope="row">
+                            <div class="row">
+                                <div class="col-lg-4" style="padding-right: 0px;">
+                                    <img class="profile-user-img img-responsive img-circle" src="../images/avatar_varon.png" style="width: 90%;" alt="user">
+                                </div>
+                                <div class="col-lg-8"  style="padding-right: 0px;">
+                                    <span class="username"><p style="margin-bottom: 0px !important;">Junior Cercado</p></span>
+                                    <span class="description">27/07/21</span>
+                                </div>
+                            </div>
+                        </th>
+                        <td>
+                            <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non dolorem officiis rem ducimus, 
+                            reiciendis maxime aliquam at dignissimos expedita natus consequuntur obcaecati repudiandae minus 
+                            autem recusandae explicabo sunt saepe.
+                            </p>
+                        </td>
+                    </tr>
+                    <!--1-->
+
+                </tbody>
+            </table>
+
+                
+
+            </div>
+
+    </div>
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
@@ -31,6 +126,7 @@
         </div>
     </div>
     <!-- End Instagram Feed  -->
+
     <footer>
         <div class="footer-main">
             <div class="container">
@@ -105,7 +201,7 @@
     <script src="../js/custom.js"></script>
     <script src="../js/all.js"></script>
     <script src="../js/whatsappme.min.js"></script>
-    
+
     <script src="scripts/pedido_planta.js"></script>
 
     

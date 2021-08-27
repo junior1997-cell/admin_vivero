@@ -6,6 +6,8 @@ require "../../admin/config/Conexion.php";
         //carousel ornamentales
         $sql = "SELECT * FROM carrucel where estado=1";
         $g_Ornamentales = ejecutarConsulta($sql);
+        $sql = "SELECT * FROM whatsapp ORDER BY idwhatsapp DESC LIMIT 1";
+        $num_whatsap = ejecutarConsultaSimpleFila($sql);
 
 ?>
 
@@ -108,7 +110,7 @@ require "../../admin/config/Conexion.php";
 <!-- boton flotante de whatsap  -->
 <div
         class="whatsappme whatsappme--right"
-        data-settings='{"telephone":"51923910869","mobile_only":false,"button_delay":1,"whatsapp_web":false,"message_text":"Hola!\nen que podemos ayudarte","message_delay":2,"message_badge":false,"message_send":""}'
+        data-settings='{"telephone":"51<?php echo $num_whatsap['numero'] ?>","mobile_only":false,"button_delay":1,"whatsapp_web":false,"message_text":"Hola!\nen que podemos ayudarte","message_delay":2,"message_badge":false,"message_send":""}'
     >
     <div class="whatsappme__button">
         <svg class="whatsappme__button__open" viewBox="0 0 24 24">

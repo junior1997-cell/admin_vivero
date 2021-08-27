@@ -12,10 +12,18 @@ function init() {
     $("#idcolor").html(r);
      
     $("#idcolor").selectpicker("refresh");
-  });
+    console.log('color listado');
 
-  
-  
+    if ($("#sin_color").length) {
+      $('.ocultar-select-color').hide();
+      $('#cantidad').addClass('mb-4');
+      console.log('color ocultdo');
+    }else{
+      $('.ocultar-select-color').show();
+      $('#cantidad').removeClass('mb-4');
+      console.log('color visto');
+    }
+  });
 }
 
 function ver_planta_compra(idplanta_compra) {
@@ -227,3 +235,10 @@ function cargarEventListeners(){
  }*/
 
 init();
+
+function ocultar_color() {
+  
+}
+
+ocultar_color();
+

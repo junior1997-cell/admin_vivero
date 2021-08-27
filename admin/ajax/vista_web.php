@@ -92,7 +92,7 @@ switch($op){
         echo '<option  value="' . $reg->nombre . '">' . $reg->nombre . '</option>';
       }
     }else{
-      echo '<option disabled>Sin color</option>';
+      echo '<option disabled id="sin_color">Sin color</option>';
     }
 
   break;

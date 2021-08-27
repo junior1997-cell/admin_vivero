@@ -365,6 +365,7 @@ function modificarSubototales() {
     	document.getElementsByName("subtotal")[i].innerHTML = inpS.value;
     }
     calcularTotales();
+    toastr.success('Precio Actualizado !!!');
 
 }
 function calcularTotales(){

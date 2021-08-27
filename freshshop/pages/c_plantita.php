@@ -77,7 +77,7 @@ require'header.php';
         </button>
         <button type="button" class="btn btn-success" onclick="ir_carrito()">
           <i class="fa fa-shopping-cart pr-3" aria-hidden="true"></i>
-          Ir al carito
+          Ir al carrito
         </button>
       </div>
     </div>

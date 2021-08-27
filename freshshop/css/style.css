@@ -141,7 +141,8 @@
      opacity: 1;
 }
  .bootstrap-select .dropdown-toggle:focus{
-     box-shadow: none !important 
+     box-shadow: none !important; 
+    border: 1px solid #28a745;
 }
 /*------------------------------------------------------------------ LOADER -------------------------------------------------------------------*/
  #back-to-top {

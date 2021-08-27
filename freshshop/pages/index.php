@@ -6,7 +6,7 @@ require "../../admin/config/Conexion.php";
         //carousel ornamentales
         $sql = "SELECT * FROM carrucel where estado=1";
         $g_Ornamentales = ejecutarConsulta($sql);
-        $sql = "SELECT * FROM whatsapp ORDER BY idwhatsapp DESC LIMIT 1";
+        $sql = "SELECT * FROM whatsapp where estado=1 ORDER BY idwhatsapp DESC LIMIT 1";
         $num_whatsap = ejecutarConsultaSimpleFila($sql);
 
 ?>

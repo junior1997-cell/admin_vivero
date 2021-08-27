@@ -87,20 +87,20 @@ function plantascarrito(){
           '<li id="pedido_'+planta.id_planta+'">'+
           '<a href="#" class="photo"><img src="'+planta.imagen+'" class="cart-thumb" style="border-radius: 50%;"/></a>'+
           '<div class="row">'+
-            '<div class="col-lg-10" style="padding-left: 0px;">'+
+            '<div class="col-10 col-sm-10 col-md-10 col-lg-10" style="padding-left: 0px;">'+
             '<input type="hidden" name="color_p[]" value="'+planta.color+'">'+
             '<input type="hidden" name="nombre_p[]" value="'+planta.nombre+'" >'+
               '<h6><a href="#">'+planta.nombre+'</a></h6>'+
                 '<div class="row">'+
-                  '<div class="col-lg-9" style="padding-right: 0px;">'+
+                  '<div class="col-6 col-sm-6	col-md-6 col-lg-9" style="padding-right: 0px;">'+
                     '<span class="badge bg-secondary px-1 py-1" style="color: white;font-size: 14px;">'+color+'</span>'+
                   '</div>'+
-                  '<div class="col-lg-3" style="padding-left: 6px;">'+
+                  '<div class="col-6 col-sm-6 col-md-6 col-lg-3" style="padding-left: 6px;">'+
                     '<input type="number" value="'+planta.cantidad+'" name="cantidad_p[]" min="1" max="99" style="width: 40px;height: 30px;background: #00ff3726;padding: 0px 0px 0px 7px;border: 1px solid #28a745;">'+
                   '</div>'+
               '</div>'+
             '</div>'+
-            '<div class="col-lg-2" >'+
+            '<div class="col-2 col-sm-2 col-md-2 col-lg-2" >'+
             '<i class="fas fa-trash-alt bt_eliminar" data-toggle="tooltip" data-original-title="Eliminar" onclick="eliminar_pedido('+planta.id_planta+')"></i>'+
             '</div>'+
           '</div>'+

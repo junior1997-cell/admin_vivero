@@ -29,18 +29,18 @@
                             <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre" minlength="3" maxlength="50" >
+                                        <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre" minlength="3" maxlength="50" required>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <select name="sexo" id="sexo" class="form-control">
+                                        <select name="sexo" id="sexo" class="form-control" required>
                                             <option  disabled selected >Seleccionar sexo</option>
                                             <option value="1">Varon</option>
                                             <option value="0">Mujer</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <select id="id_planta_coment" name="id_planta_coment" class="form-control selectpicker" required data-live-search="true" title="Seleccione una plantita"></select>
+                                        <select id="id_planta_coment" name="id_planta_coment" class="form-control selectpicker" data-live-search="true" title="Seleccione una plantita"></select>
                                     </div>
                                 </div>
                             </div>
@@ -70,12 +70,12 @@
                                 <img class="profile-user-img img-responsive img-circle" src="../images/avatar_mujer.svg" style="width: 70px;" alt="user">
                             <?php } ?>
                         </div>
-                        <div class="col-lg-1"  style="padding-right: 0px;">
-                            <span class="username"><p style="margin-bottom: 0px !important;"> <?php echo $row['nombre']; ?> </p></span>
+                        <div class="col-lg-2"  style="padding-right: 0px;">
+                            <span class="username"><p style="margin-bottom: 0px !important; font-weight: bold;"> <?php echo $row['nombre']; ?> </p></span>
                             <span><?php echo substr($row['fecha'], 0, 10); ?></span>
                         </div>
-                        <div class="col-lg-10"  style="padding-right: 0px;">
-                            <p> <?php echo $row['comentario'];?> </p>
+                        <div class="col-lg-9"  style="padding-right: 0px;">
+                            <p class="coment" > <?php echo $row['comentario'];?> </p>
                         </div>
                     </div>
                 </li>
@@ -260,6 +260,18 @@
                 color: #666;
                 font-size: 17px;
             }
+            li:hover{
+                background-color: #9e9e9e54;
+                border-radius: 8px;
+            }
+            .coment{
+                margin: 0px;
+                font-size: 17px;
+            }
+            .coment:hover{
+                font-weight: bold;
+            }
+
     </style>
     <script>
         $(document).ready(function() {

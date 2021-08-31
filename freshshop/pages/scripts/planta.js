@@ -269,7 +269,7 @@ function guardar(e)
 	        //bootbox.alert(datos);
 			if (datos == 'ok') {
 				$("#btnGuardar").prop("disabled",true);
-                //alert("Comentario registrado exitosamente");
+                alert("Comentario registrado exitosamente");
                
 			}else{
                 alert(datos);
@@ -282,8 +282,6 @@ function guardar(e)
 	});
 	limpiar();
     
-   
-
 }
 function actualizarLaPagina(){
     window.location.reload();

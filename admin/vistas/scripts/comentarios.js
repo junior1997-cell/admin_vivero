@@ -5,12 +5,9 @@ function init(){
 	mostrarform(false);
 	listar();
 
-	$("#formulario").on("submit",function(e)
-	{
-		guardaryeditar(e);	
-	});
+	$("#formulario").on("submit",function(e){ guardaryeditar(e); });
     $('#mPlanta').addClass("treeview active");
-    $('#lCategorias').addClass("active");
+    $('#lComentarios').addClass("active");
 
     var Toast = Swal.mixin({
       toast: true,
@@ -23,9 +20,8 @@ function init(){
 //Función limpiar
 function limpiar()
 {
-	$("#idcategoria").val("");
+	$("#idcolor").val("");
 	$("#nombre").val("");
-	$("#descripcion").val("");
 }
 
 //Función mostrar formulario
@@ -59,7 +55,6 @@ function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
-		responsive: true,
 		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
@@ -72,7 +67,7 @@ function listar()
 		        ],
 		"ajax":
 				{
-					url: '../ajax/categoria.php?op=listar',
+					url: '../ajax/comentarios.php?op=listar',
 					type : "get",
 					dataType : "json",						
 					error: function(e){
@@ -103,7 +98,7 @@ function guardaryeditar(e)
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
-		url: "../ajax/categoria.php?op=guardaryeditar",
+		url: "../ajax/comentarios.php?op=guardaryeditar",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
@@ -121,27 +116,26 @@ function guardaryeditar(e)
 	limpiar();
 }
 
-function mostrar(idcategoria)
+function mostrar(idcolor)
 {
-	$.post("../ajax/categoria.php?op=mostrar",{idcategoria : idcategoria}, function(data, status)
+	$.post("../ajax/comentarios.php?op=mostrar",{idcolor : idcolor}, function(data, status)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
 
 		$("#nombre").val(data.nombre);
-		$("#descripcion").val(data.descripcion);
- 		$("#idcategoria").val(data.idcategoria);
+ 		$("#idcolor").val(data.idcolor);
 
  	})
 }
 
 //Función para desactivar registros
-function desactivar(idcategoria)
+function desactivar(idcolor)
 {
-	bootbox.confirm("¿Está Seguro de desactivar la Categoría?", function(result){
+	bootbox.confirm("<div class='font-weight-bolder'> ¿Está Seguro de <span class='label bg-red'>Desactivar</span> el comentario? </div> <div class=''>El comentario se ocultara de la página, y no sera visible hasta que lo actives.</div>", function(result){
 		if(result)
         {
-        	$.post("../ajax/categoria.php?op=desactivar", {idcategoria : idcategoria}, function(e){
+        	$.post("../ajax/comentarios.php?op=desactivar", {idcolor : idcolor}, function(e){
         		// bootbox.alert(e);
         		toastr.warning(e)        		
 	            tabla.ajax.reload();
@@ -151,12 +145,12 @@ function desactivar(idcategoria)
 }
 
 //Función para activar registros
-function activar(idcategoria)
+function activar(idcolor)
 {
-	bootbox.confirm("¿Está Seguro de activar la Categoría?", function(result){
+	bootbox.confirm("<div class='font-weight-bolder'> ¿Está Seguro de <span class='label bg-green'>Activar</span> el comentario? </div> <div class=''>El comentario se será visible en la página web</div>", function(result){
 		if(result)
         {
-        	$.post("../ajax/categoria.php?op=activar", {idcategoria : idcategoria}, function(e){
+        	$.post("../ajax/comentarios.php?op=activar", {idcolor : idcolor}, function(e){
         		// bootbox.alert(e);
        			toastr.success(e)
 	            tabla.ajax.reload();

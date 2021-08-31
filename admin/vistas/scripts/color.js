@@ -9,7 +9,7 @@ function init(){
 	{
 		guardaryeditar(e);	
 	});
-    $('#mAlmacen').addClass("treeview active");
+    $('#mPlanta').addClass("treeview active");
     $('#lColor').addClass("active");
 
     var Toast = Swal.mixin({

@@ -25,7 +25,7 @@ function init(){
 	});
 
 	$("#imagenmuestra").hide();
-	$('#mAlmacen').addClass("treeview active");
+	$('#mPlanta').addClass("treeview active");
     $('#lPlanta').addClass("active");
 
 	$("#foto1_i").click(function() {

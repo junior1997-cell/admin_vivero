@@ -61,7 +61,7 @@ if (strlen(session_id()) < 1)
     <div class="wrapper">
 
       <header class="main-header">
-
+       
         <!-- Logo -->
         <a href="#" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -143,18 +143,20 @@ if (strlen(session_id()) < 1)
             <?php 
             if ($_SESSION['planta']==1)
             {
-              echo '<li id="mAlmacen" class="treeview">
-              <a href="#">
-                <i class="fa fa-tree"></i>
-                <span>Planta</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li id="lPlanta"><a href="planta.php"><i class="fa fa-circle-o"></i> Planta</a></li>
-                <li id="lCategorias"><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
-                <li id="lColor"><a href="color.php"><i class="fa fa-circle-o"></i>Color</a></li>
-              </ul>
-            </li>';
+              echo '
+              <li id="mPlanta" class="treeview">
+                <a href="#">
+                  <i class="fa fa-tree"></i>
+                  <span>Planta</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li id="lPlanta"><a href="planta.php"><i class="fa fa-circle-o"></i> Planta</a></li>
+                  <li id="lCategorias"><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                  <li id="lColor"><a href="color.php"><i class="fa fa-circle-o"></i>Color</a></li>
+                  <li id="lComentarios"><a href="comentarios.php"><i class="fa fa-commenting-o" aria-hidden="true"></i>Comentarios</a></li>
+                </ul>
+              </li>';
             }
             ?>
 
@@ -222,14 +224,14 @@ if (strlen(session_id()) < 1)
             ?>
 
             <?php 
-            if ($_SESSION['whatsapp']==1)
-            {
-              echo '<li id="lWhatsapp">
-                    <a href="whatsapp.php">
-                      <i class="fa fa-whatsapp"></i> <span>Whatsapp</span>
-                    </a>
-                  </li>';
-            }
+              if ($_SESSION['whatsapp']==1)
+              {
+                echo '<li id="lWhatsapp">
+                      <a href="whatsapp.php">
+                        <i class="fa fa-whatsapp"></i> <span>Whatsapp</span>
+                      </a>
+                    </li>';
+              }
             ?>           
 
              

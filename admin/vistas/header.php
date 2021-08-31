@@ -43,6 +43,9 @@ if (strlen(session_id()) < 1)
 
     <!-- Bootstrap Color Picker -->
     <link rel="stylesheet" href="../public/colorpicker/bootstrap-colorpicker.min.css">
+
+    <!-- stylo junoir -->
+    <link rel="stylesheet" href="../public/css/style_junior.css">
     <style>
       .dropdown-menu {
         box-shadow: 0 0 40px #111;
@@ -84,9 +87,9 @@ if (strlen(session_id()) < 1)
                   <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="user-image" alt="User Image">
                   <span class="hidden-xs"><?php echo $_SESSION['nombre']; ?></span>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu mt-2">
                    
-                  <div class="box box-primary">
+                  <div class="box box-success">
                     <div class="box-body box-profile">
                       <img class="profile-user-img img-responsive img-circle" src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" alt="User profile picture">
                       <h3 class="profile-username text-center"><?php echo $_SESSION['nombre']; ?></h3>

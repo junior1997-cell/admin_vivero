@@ -46,7 +46,7 @@ if ($_SESSION['ventas']==1)
                         </table>
                     </div>
                     <div class="panel-body" style="height: 100%;" id="formularioregistros">
-                        <form name="formulario_venta" id="formulario_venta" method="POST">
+                        <form name="formulario_venta" id="formulario_venta" method="POST" autocomplete="off">
                           <!-- CLIENTE -->
                           <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <label>Cliente(*):</label>
@@ -72,7 +72,7 @@ if ($_SESSION['ventas']==1)
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Tipo Comprobante(*):</label>
-                            <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required="">
+                            <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required="" data-live-search="true">
                                <option value="Boleta">Boleta</option>
                                <option value="Factura">Factura</option>
                                <option value="Ticket">Ticket</option>
@@ -80,25 +80,25 @@ if ($_SESSION['ventas']==1)
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Serie:</label>
-                            <input type="text" class="form-control" name="serie_comprobante" id="serie_comprobante" maxlength="7" placeholder="Serie">
+                            <input type="text" class="form-control" name="serie_comprobante" autocomplete="off" id="serie_comprobante" maxlength="7" placeholder="Serie">
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Número:</label>
-                            <input type="text" class="form-control" name="num_comprobante" id="num_comprobante" maxlength="10" placeholder="Número" >
+                            <input type="text" class="form-control" name="num_comprobante" autocomplete="off" id="num_comprobante" maxlength="10" placeholder="Número" >
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Impuesto:</label>
-                            <input type="text" class="form-control" name="impuesto" id="impuesto" >
+                            <input type="text" class="form-control" name="impuesto" autocomplete="off" id="impuesto" >
                           </div>
                           <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <a data-toggle="modal" href="#myModal">           
-                              <button id="btnAgregarArt" type="button" class="btn btn-primary"> <span class="fa fa-plus"></span> Agregar Planta</button>
+                              <button id="btnAgregarArt" type="button" class="btn btn-success"> <span class="fa fa-plus"></span> Agregar Planta</button>
                             </a>
                           </div>
 
                           <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 table-responsive">
                             <table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
-                              <thead style="background-color:#A9D0F5">
+                              <thead style="background-color:#5cb88e87">
                                     <th>Opciones</th>
                                     <th>Planta</th>
                                     <th>Cantidad</th>
@@ -127,7 +127,7 @@ if ($_SESSION['ventas']==1)
                           </div>
 
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button class="btn btn-primary" type="submit" id="btnGuardar_venta"><i class="fa fa-save"></i> Guardar</button>
+                            <button class="btn btn-success" type="submit" id="btnGuardar_venta"><i class="fa fa-save"></i> Guardar</button>
 
                             <button id="btnCancelar" class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
                           </div>
@@ -177,18 +177,18 @@ if ($_SESSION['ventas']==1)
   <div class="example-modal">
     <div class="modal fade " id="agregar_cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius: 10px;">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Agregar Cliente <i class="fa fa-user" aria-hidden="true"></i></h4>
           </div>
           <div class="modal-body">
-            <form name="formulario_cliente" id="formulario_cliente" method="POST">
+            <form name="formulario_cliente" id="formulario_cliente" method="POST" autocomplete="off">
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Nombre:</label>
                 <input type="hidden" name="idpersona" id="idpersona">
                 <input type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
-                <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del proveedor" required>
+                <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" autocomplete="off" placeholder="Nombre del proveedor" required>
               </div>
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Tipo Documento:</label>
@@ -200,31 +200,28 @@ if ($_SESSION['ventas']==1)
               </div>
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Número Documento:</label>
-                <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento">
+                <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" autocomplete="off" placeholder="Documento">
               </div>
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Dirección:</label>
-                <input type="text" class="form-control" name="direccion" id="direccion" maxlength="70" placeholder="Dirección">
+                <input type="text" class="form-control" name="direccion" id="direccion" maxlength="70" autocomplete="off" placeholder="Dirección">
               </div>
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Teléfono:</label>
-                <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono">
+                <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" autocomplete="off" placeholder="Teléfono">
               </div>
               <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <label>Email:</label>
-                <input type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="email" maxlength="50" autocomplete="off" placeholder="Email">
               </div>
 
               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
-
+                <button class="btn btn-success" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
                 <button class="btn btn-danger"  type="button" data-dismiss="modal" aria-label="Close"><i class="fa fa-arrow-circle-left" ></i> Cancelar</button>
               </div>
             </form>
           </div>
-          <div class="modal-footer">
-            
-          </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ if ($_SESSION['whatsapp']==1)
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <label>Numero:</label>
                           <div class="input-group">
-                            <span class="input-group-addon">+51</span>
+                            <span class="input-group-addon" style="border-top-left-radius: 10px !important; border-bottom-left-radius: 10px !important; border-color: #0095519e; background-color: #0095512b;">+51</span>
                             <input type="number" class="form-control" name="numero" id="numero"  max="999999999" placeholder="Numero" required />
                           </div>
                         </div>
@@ -65,7 +65,7 @@ if ($_SESSION['whatsapp']==1)
                         </style>
 
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                          <button class="btn btn-success" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
                           <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
                         </div>
                       </div>

@@ -41,11 +41,11 @@
                 </table>
               </div>
               <div class="panel-body" id="formularioregistros">
-                <form name="formulario" id="formulario" method="POST">
+                <form name="formulario" id="formulario" method="POST" autocomplete="off">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Nombre: <sub>*</sub> </label>
                     <input type="hidden" name="idplanta" id="idplanta" />
-                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required />
+                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" autocomplete="off" placeholder="Nombre" required />
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Categoría: <sub>*</sub> </label>
@@ -57,36 +57,36 @@
                   </div>
                   <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-6">
                     <label>Stock: <sub>*</sub> </label>
-                    <input type="number" class="form-control" name="stock" id="stock" required min="1"/>
+                    <input type="number" class="form-control" name="stock" id="stock" required min="1" autocomplete="off" placeholder="Stock"/>
                   </div>
-                  <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                  <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-6 ">
                     <label>Precio Venta: <sub>*</sub> </label>
-                    <input type="number" class="form-control" name="precio_venta" id="precio_venta" required  min="0.10" step="0.1" />
+                    <input type="number" class="form-control" name="precio_venta" id="precio_venta" required  min="0.10" step="0.1" autocomplete="off" placeholder="Precio"/>
                   </div>
 
                   <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <label>Nombre Cientifico:</label>
-                    <input type="text" class="form-control" name="nombre_cientifico" id="nombre_cientifico" maxlength="50" placeholder="Descripción" />
+                    <input type="text" class="form-control" name="nombre_cientifico" id="nombre_cientifico" maxlength="50" autocomplete="off" placeholder="Descripción" />
                   </div>
                   <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <label>Apodo:</label>
-                    <input type="text" class="form-control" name="apodo" id="apodo" maxlength="50" placeholder="Descripción" />
+                    <input type="text" class="form-control" name="apodo" id="apodo" maxlength="50" autocomplete="off" placeholder="Descripción" />
                   </div>
 
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Familia:</label>
-                    <input type="text" class="form-control" name="familia" id="familia" maxlength="50" placeholder="Descripción" />
+                    <input type="text" class="form-control" name="familia" id="familia" maxlength="50" autocomplete="off" placeholder="Descripción" />
                   </div>                  
 
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Descripción: <sub>*</sub> </label>
-                    <!-- <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción" required> -->
+                    <!-- <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" autocomplete="off" placeholder="Descripción" required> -->
                     <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50" required> </textarea>
                   </div>
 
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Especificaciones y cuidado: <sub>*</sub> </label>
-                    <!-- <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" placeholder="Descripción" required> -->
+                    <!-- <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="256" autocomplete="off" placeholder="Descripción" required> -->
                     <textarea class="form-control" id="espcf_cuidado" name="espcf_cuidado" rows="4" cols="50" > </textarea>
                   </div>
 
@@ -131,7 +131,7 @@
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Código:</label>
-                    <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código Barras" />
+                    <input type="text" class="form-control mb-2" name="codigo" id="codigo" autocomplete="off" placeholder="Código Barras" />
                     <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar</button>
                     <button class="btn btn-info" type="button" onclick="imprimir()"><i class="fa fa-print" aria-hidden="true"></i></button>
                     <button class="btn btn-danger" type="button" onclick="eliminar_barcode()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -141,7 +141,7 @@
                   </div>
 
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                    <button class="btn btn-success" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
 
                     <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
                   </div>

@@ -237,11 +237,11 @@
     text-decoration: none;
   }
   .skin-blue-light .treeview-menu > li > a {
-    color: #777;
+    color: #77777785;
   }
   .skin-blue-light .treeview-menu > li.active > a,
   .skin-blue-light .treeview-menu > li > a:hover {
-    color: rgb(43, 12, 219);
+    color: rgb(0, 149, 81);
   }
   .skin-blue-light .treeview-menu > li.active > a {
     font-weight: 600;

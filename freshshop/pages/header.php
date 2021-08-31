@@ -18,7 +18,6 @@
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="../images/simbolo.jpeg" type="image/x-icon">
-    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -38,6 +37,11 @@
     <link id="changeable-colors" rel="stylesheet" href="../css/colors/orange.css" />
     <!-- Toastr -->
     <!-- <link rel="stylesheet" href="../../admin/public/toastr/toastr.min.css"> -->
+        
+    <!-- DATATABLES -->
+    <link rel="stylesheet" type="text/css" href="../../admin/public/datatables/jquery.dataTables.min.css">    
+    <link href="../../admin/public/datatables/buttons.dataTables.min.css" rel="stylesheet"/>
+    <link href="../../admin/public/datatables/responsive.dataTables.min.css" rel="stylesheet"/>
 
 </head>
 <style>

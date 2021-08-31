@@ -1,3 +1,4 @@
+//var comentario;
 function init() {
     //Cargamos los items al select planta
     $.post("../../admin/ajax/vista_web.php?op=selectPlantaComent", function(r){
@@ -11,11 +12,13 @@ function init() {
 		guardar(e);	
         //console.log('clik en el boton');
 	})
-    listar();
+   //listar();
     listar_categorias();
     listar_categorias_galery();
-    listar_plnts_prncpal(id_categoria);
-    listar_plnts_galery(id_categoria);
+
+    listar_plnts_prncpal(0);
+
+    listar_plnts_galery(0);
 
 
 
@@ -266,7 +269,8 @@ function guardar(e)
 	        //bootbox.alert(datos);
 			if (datos == 'ok') {
 				$("#btnGuardar").prop("disabled",true);
-                alert("Comentario registrado exitosamente");
+                //alert("Comentario registrado exitosamente");
+               
 			}else{
                 alert(datos);
 			}	
@@ -277,11 +281,17 @@ function guardar(e)
 
 	});
 	limpiar();
+    
+   
+
 }
+function actualizarLaPagina(){
+    window.location.reload();
+} 
 
-function listar(){
+/*function listar(){
 
-    $("#items_comentarios").html('');
+    $("#myList").html('');
 
     $.post("../../admin/ajax/vista_web.php?op=listar_comentarios", {}, function (data, status) { 
         data = JSON.parse(data);
@@ -297,28 +307,27 @@ function listar(){
                 }
 
                 var comentarios = '' +
-                '<tr>'+
-                '<th scope="row" style="width: 20%;">'+
+                '<li>'+
                     '<div class="row">'+
-                        '<div class="col-lg-4" style="padding-right: 0px;">'+
-                            '<img class="profile-user-img img-responsive img-circle" src="../images/'+imagen+'" style="width: 90%;" alt="user">'+
+                        '<div class="col-lg-1" style="padding-right: 0px;">'+
+                            '<img class="profile-user-img img-responsive img-circle" src="../images/'+imagen+'" style="width: 70px;" alt="user">'+
                         '</div>'+
-                        '<div class="col-lg-8"  style="padding-right: 0px;">'+
+                        '<div class="col-lg-1"  style="padding-right: 0px;">'+
                             '<span class="username"><p style="margin-bottom: 0px !important;">'+value.nombre+'</p></span>'+
-                            '<span class="description">'+value.fecha.substring(0, 10)+'</span>'+
+                            '<span class="description">'+value.fecha+'</span>'+
+                        '</div>'+
+                        '<div class="col-lg-10"  style="padding-right: 0px;">'+
+                            '<p>'+value.comentario+'</p>'+
                         '</div>'+
                     '</div>'+
-                '</th>'+
-                '<td>'+
-                    '<p>'+value.comentario+'</p>'+
-                '</td>'+
-            '</tr>'+
-            '';
+                '</li>'+
                 
-                $("#items_comentarios").append(comentarios);
+                '';
+                
+                $("#myList").append(comentarios);
             });
         } else {
-            $("#items_comentarios").html('<div class="alert alert-warning alert-dismissible fade show" role="alert" style=" height: 50px; ">' +
+            $("#myList").html('<div class="alert alert-warning alert-dismissible fade show" role="alert" style=" height: 50px; ">' +
                 '<strong>No hay registros!</strong> Sin comentarios.' +
                 '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
                 '<span aria-hidden="true">&times;</span>' +
@@ -327,7 +336,9 @@ function listar(){
         }
 
     });
-}
+}*/
+
+
 
 init();
 

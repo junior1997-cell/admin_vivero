@@ -74,17 +74,16 @@ Class Vista_web
       VALUES ('$nombre','$sexo','$comentario','$id_planta','1')";
       return ejecutarConsulta($sql);
     }
-    //Implementamos un método para listar registros
+    /*Implementamos un método para listar registros
     public function listar_comentarios(){
       $sql="SELECT * FROM comentarios  WHERE estado=1 ORDER BY idcomentarios DESC";
       return ejecutarConsulta($sql);
-    }
+    }*/
 
      // Plantas all
     
      public function listar_plantas_coment(){
-      $sql = "SELECT * FROM planta WHERE estado=1  
-      ORDER BY idplanta DESC";
+      $sql = "SELECT * FROM planta WHERE estado=1 ORDER BY idplanta DESC";
       return ejecutarConsulta($sql);
     }
 

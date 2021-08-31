@@ -1,11 +1,14 @@
 <?php
     //Incluímos inicialmente la conexión a la base de datos
     require "../../admin/config/Conexion.php";
-
-   	//imagenes escritorios
+        //comentarios.
+        $sql="SELECT * FROM comentarios  WHERE estado=1 ORDER BY idcomentarios DESC";
+        $comentarios = ejecutarConsulta($sql);
+    	//imagenes escritorios
         //carousel 
         $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";
         $carousel_f = ejecutarConsulta($sql);
+
 
 ?> 
 
@@ -48,23 +51,59 @@
 
                         </div>
                         <div class="text-center">
-                        <button type="submit"  class="btn btn-outline-success mb-3" id="btnGuardar">Submit</button>
+                        <button type="submit"  class="btn btn-outline-success mb-3" id="btnGuardar" onClick="actualizarLaPagina()" >Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div>
-            <table class="table caption-top">
-                <caption>List of users</caption>
-                <tbody id="items_comentarios">
-                    <!--1-->
-                </tbody>
-            </table>
+            
+            <ul id="myList">
+            <?php while ($row = $comentarios->fetch_assoc()) { 
+            ?>
+                <li>
+                    <div class="row">
+                        <div class="col-lg-1" style="padding-right: 0px;">
+                          
+                            <?php if ($row['sexo']=='1') { ?>
+                                <img class="profile-user-img img-responsive img-circle" src="../images/avatar_varon.svg" style="width: 70px;" alt="user">
+                            <?php } else { ?>
+                                <img class="profile-user-img img-responsive img-circle" src="../images/avatar_mujer.svg" style="width: 70px;" alt="user">
+                            <?php } ?>
+                        </div>
+                        <div class="col-lg-1"  style="padding-right: 0px;">
+                            <span class="username"><p style="margin-bottom: 0px !important;"> <?php echo $row['nombre']; ?> </p></span>
+                            <span><?php echo substr($row['fecha'], 0, 10); ?></span>
+                        </div>
+                        <div class="col-lg-10"  style="padding-right: 0px;">
+                            <p> <?php echo $row['comentario'];?> </p>
+                        </div>
+                    </div>
+                </li>
+            <?php
+            }
+            ?>
+            </ul>
 
-                
-
+    </div>
+    
+    <div class="continaer">
+        <div class="row" style="margin: 10px;">
+            <div class="col-6">
+                <div id="loadMore" style="text-align: end;">
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                        Mostrar más</button>
+                </div>
             </div>
+            <div class="col-6">
 
+                <div id="showLess">
+                    <button class="btn btn-danger btn-sm">
+                        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                        Mostrar menos</button>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -162,16 +201,82 @@
     <script src="../js/all.js"></script>
     <script src="../js/whatsappme.min.js"></script>
 
+    <!-- DATATABLES -->
+    <script src="../../admin/public/datatables/jquery.dataTables.min.js"></script>    
+    <script src="../../admin/public/datatables/dataTables.buttons.min.js"></script>
+    <script src="../../admin/public/datatables/buttons.html5.min.js"></script>
+    <script src="../../admin/public/datatables/buttons.colVis.min.js"></script>
+    <script src="../../admin/public/datatables/jszip.min.js"></script>
+    <script src="../../admin/public/datatables/pdfmake.min.js"></script>
+    <script src="../../admin/public/datatables/vfs_fonts.js"></script>
+
+    <!-- Responsive datatable -->
+    <script src="../../admin/public/datatables/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../../admin/public/datatables/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+
+    
     <script src="scripts/pedido_planta.js"></script>
     <script src="scripts/planta.js"></script>
 
-    
     <!-- select PICKER -->
     <script src="../js/bootstrap-select.js"></script>
     <!-- Toastr -->
     <!-- <script src="../../admin/public/toastr/toastr.min.js"></script> -->
+    <style>
+            #myList li {
+                display: none;
+                margin-bottom: 15px;
+            }
 
+            #loadMore {
+                color: green;
+                cursor: pointer;
+            }
+
+            #loadMore:hover {
+                color: black;
+            }
+
+            #showLess {
+                color: red;
+                cursor: pointer;
+            }
+
+            #showLess:hover {
+                color: black;
+            }
+
+            .imagen {
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                border-radius: 17px;
+
+            }
+
+            .conten {
+                text-align: justify;
+                color: #666;
+                font-size: 17px;
+            }
+    </style>
     <script>
+        $(document).ready(function() {
+            size_li = $("#myList li").size();
+            x = 5;
+            $('#myList li:lt(' + x + ')').show();
+
+            $('#loadMore').click(function() {
+                x = (x + 3 <= size_li) ? x + 3 : size_li;
+                $('#myList li:lt(' + x + ')').show();
+            });
+
+            $('#showLess').click(function() {
+                x = (x - 3 < 1) ? 1 : x - 3;
+                $('#myList li').not(':lt(' + x + ')').hide();
+            });
+        });
         /**Funciones para mostrar en la vista web */
         function mostrar_contact_v() {
         $.post("../../admin/ajax/vista_web.php?op=mostrar_contact_v", {
@@ -232,6 +337,8 @@
         mostrar_contact_v();
         mostrar_contactanos();
         mostrar_descrp_v();
+
+   
     </script>
 
 </body>

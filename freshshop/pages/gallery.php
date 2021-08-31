@@ -113,4 +113,4 @@ require'header.php';
 <?php
 require'footer.php';
 ?>
-<script type="text/javascript" src="scripts/planta.js"></script>
+<!--<script type="text/javascript" src="scripts/planta.js"></script>-->

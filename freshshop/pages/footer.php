@@ -21,31 +21,34 @@
             </p>
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
-                    <form>
+                    <form name="formulario_coment" id="formulario_coment" method="POST" autocomplete="off">
                         <div class="row">
                             <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre" minlength="3" maxlength="50" >
                                     </div>
 
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <select name="" id="" class="form-control">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <select name="sexo" id="sexo" class="form-control">
                                             <option  disabled selected >Seleccionar sexo</option>
-                                            <option value="">Varon</option>
-                                            <option value="">Mujer</option>
+                                            <option value="1">Varon</option>
+                                            <option value="0">Mujer</option>
                                         </select>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <select id="id_planta_coment" name="id_planta_coment" class="form-control selectpicker" required data-live-search="true" title="Seleccione una plantita"></select>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <textarea class="form-control" id="espcf_cuidado" name="espcf_cuidado" rows="4" cols="50" > </textarea>
+                                <textarea class="form-control" id="comentario" name="comentario" rows="4" cols="50" > </textarea>
                             </div>
 
                         </div>
                         <div class="text-center">
-                        <button type="submit"  class="btn btn-outline-success mb-3">Submit</button>
+                        <button type="submit"  class="btn btn-outline-success mb-3" id="btnGuardar">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -53,51 +56,8 @@
             <div>
             <table class="table caption-top">
                 <caption>List of users</caption>
-                <tbody>
+                <tbody id="items_comentarios">
                     <!--1-->
-                    <tr>
-                        <th scope="row" style="width: 20%;">
-                            <div class="row">
-                                <div class="col-lg-4" style="padding-right: 0px;">
-                                    <img class="profile-user-img img-responsive img-circle" src="../images/avatar_mujer.jpg" style="width: 90%;" alt="user">
-                                </div>
-                                <div class="col-lg-8"  style="padding-right: 0px;">
-                                    <span class="username"><p style="margin-bottom: 0px !important;">Hermelinda Guaman</p></span>
-                                    <span class="description">27/07/21</span>
-                                </div>
-                            </div>
-                        </th>
-                        <td>
-                            <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non dolorem officiis rem ducimus, 
-                            reiciendis maxime aliquam at dignissimos expedita natus consequuntur obcaecati repudiandae minus 
-                            autem recusandae explicabo sunt saepe.
-                            </p>
-                        </td>
-                    </tr>
-                    <!--1-->
-                    <tr>
-                        <th scope="row">
-                            <div class="row">
-                                <div class="col-lg-4" style="padding-right: 0px;">
-                                    <img class="profile-user-img img-responsive img-circle" src="../images/avatar_varon.png" style="width: 90%;" alt="user">
-                                </div>
-                                <div class="col-lg-8"  style="padding-right: 0px;">
-                                    <span class="username"><p style="margin-bottom: 0px !important;">Junior Cercado</p></span>
-                                    <span class="description">27/07/21</span>
-                                </div>
-                            </div>
-                        </th>
-                        <td>
-                            <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non dolorem officiis rem ducimus, 
-                            reiciendis maxime aliquam at dignissimos expedita natus consequuntur obcaecati repudiandae minus 
-                            autem recusandae explicabo sunt saepe.
-                            </p>
-                        </td>
-                    </tr>
-                    <!--1-->
-
                 </tbody>
             </table>
 
@@ -203,6 +163,7 @@
     <script src="../js/whatsappme.min.js"></script>
 
     <script src="scripts/pedido_planta.js"></script>
+    <script src="scripts/planta.js"></script>
 
     
     <!-- select PICKER -->

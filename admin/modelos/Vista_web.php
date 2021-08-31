@@ -65,6 +65,29 @@ Class Vista_web
     return ejecutarConsulta($sql);    
   }
 
+  ///comentarios
+
+  	//Implementamos un método para insertar registros
+    public function insertar($nombre,$sexo,$id_planta,$comentario)
+    {
+      $sql="INSERT INTO comentarios (nombre,sexo,comentario,id_planta,estado)
+      VALUES ('$nombre','$sexo','$comentario','$id_planta','1')";
+      return ejecutarConsulta($sql);
+    }
+    //Implementamos un método para listar registros
+    public function listar_comentarios(){
+      $sql="SELECT * FROM comentarios  WHERE estado=1 ORDER BY idcomentarios DESC";
+      return ejecutarConsulta($sql);
+    }
+
+     // Plantas all
+    
+     public function listar_plantas_coment(){
+      $sql = "SELECT * FROM planta WHERE estado=1  
+      ORDER BY idplanta DESC";
+      return ejecutarConsulta($sql);
+    }
+
 
 }
 ?>

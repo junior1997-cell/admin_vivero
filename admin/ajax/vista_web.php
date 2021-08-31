@@ -9,6 +9,39 @@ $vista_web=new Vista_web();
 
 $op = $_GET["op"];
 switch($op){
+  case 'guardar':
+    $nombre = $_POST["nombre"];
+    $sexo = $_POST["sexo"];
+    $id_planta = $_POST["id_planta_coment"];
+    $comentario = $_POST["comentario"];
+
+			$rspta=$vista_web->insertar($nombre,$sexo,$id_planta,$comentario);
+			echo $rspta ? "ok" : "No se pudo registrar comentario";
+	break;
+  //listar_comentarios
+	case 'listar_comentarios':
+  
+      $rspta = $vista_web->listar_comentarios();
+    
+    $data = array();
+   // $id = 0;
+
+    while ($reg=$rspta->fetch_object()) {
+       // $id++;
+        $data[] = array(
+            "idcomentarios "=>$reg->idcomentarios ,
+            "nombre"=>$reg->nombre,
+            "sexo"=>$reg->sexo,
+            "comentario"=>$reg->comentario,
+            "id_planta "=>$reg->id_planta, 
+            "fecha"=>$reg->fecha 
+        );
+    }
+
+    echo json_encode($data);
+
+break;
+
 	//Mostrar en la vista footer
 	case 'mostrar_contact_v':
 		$rspta = $vista_web ->mostrar();
@@ -72,6 +105,14 @@ switch($op){
         echo json_encode($data);
 
     break;
+  case "selectPlantaComent":
+    $rspta = $vista_web->listar_plantas_coment();
+
+    while ($reg = $rspta->fetch_object()) {
+      echo '<option value=' . $reg->idplanta  . '>' . $reg->nombre . '</option>';
+    }
+    break;
+
 	case 'detalles_plantas':
 		$idplanta = $_POST["idplanta"];
 		$rspta = $vista_web ->detalles_plantas($idplanta);

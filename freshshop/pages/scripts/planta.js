@@ -1,11 +1,34 @@
 function init() {
+    //Cargamos los items al select planta
+    $.post("../../admin/ajax/vista_web.php?op=selectPlantaComent", function(r){
+        $("#id_planta_coment").html(r);
+        $('#id_planta_coment').selectpicker('refresh');
+
+    });
+
+    $("#formulario_coment").on("submit",function(e)
+	{
+		guardar(e);	
+        //console.log('clik en el boton');
+	})
+    listar();
     listar_categorias();
-    listar_categorias_galery()
+    listar_categorias_galery();
     listar_plnts_prncpal(id_categoria);
     listar_plnts_galery(id_categoria);
 
 
+
+
 };
+//Función limpiar
+function limpiar()
+{
+	$("#nombre").val("");
+	$("#sexo").val("");
+	$("#id_planta_coment").val('default').selectpicker("refresh");
+    $("#comentario").val("");
+}
 
 function listar_categorias() {
 
@@ -223,29 +246,90 @@ function id_planta_compra(idplanta){
     // Guardar
     localStorage.setItem("idplanta_compra", idplanta);
 }
+//Función para guardar comentario
+
+function guardar(e)
+{
+	e.preventDefault(); //No se activará la acción predeterminada del evento
+	
+	var formData = new FormData($("#formulario_coment")[0]);
+
+	$.ajax({
+		url: "../../admin/ajax/vista_web.php?op=guardar",
+	    type: "POST",
+	    data: formData,
+	    contentType: false,
+	    processData: false,
+
+	    success: function(datos)
+	    {                    
+	        //bootbox.alert(datos);
+			if (datos == 'ok') {
+				$("#btnGuardar").prop("disabled",true);
+                alert("Comentario registrado exitosamente");
+			}else{
+                alert(datos);
+			}	
+          //  alert("muy bien")          
+	        
+	    }
+        
+
+	});
+	limpiar();
+}
+
+function listar(){
+
+    $("#items_comentarios").html('');
+
+    $.post("../../admin/ajax/vista_web.php?op=listar_comentarios", {}, function (data, status) { 
+        data = JSON.parse(data);
+        console.log(data);
+
+        if (data.length) {
+            var imagen="";
+            $.each(data, function (index, value) {
+                if (value.sexo ==1) {
+                    imagen="avatar_varon.svg";
+                } else {
+                    imagen="avatar_mujer.svg";
+                }
+
+                var comentarios = '' +
+                '<tr>'+
+                '<th scope="row" style="width: 20%;">'+
+                    '<div class="row">'+
+                        '<div class="col-lg-4" style="padding-right: 0px;">'+
+                            '<img class="profile-user-img img-responsive img-circle" src="../images/'+imagen+'" style="width: 90%;" alt="user">'+
+                        '</div>'+
+                        '<div class="col-lg-8"  style="padding-right: 0px;">'+
+                            '<span class="username"><p style="margin-bottom: 0px !important;">'+value.nombre+'</p></span>'+
+                            '<span class="description">'+value.fecha.substring(0, 10)+'</span>'+
+                        '</div>'+
+                    '</div>'+
+                '</th>'+
+                '<td>'+
+                    '<p>'+value.comentario+'</p>'+
+                '</td>'+
+            '</tr>'+
+            '';
+                
+                $("#items_comentarios").append(comentarios);
+            });
+        } else {
+            $("#items_comentarios").html('<div class="alert alert-warning alert-dismissible fade show" role="alert" style=" height: 50px; ">' +
+                '<strong>No hay registros!</strong> Sin comentarios.' +
+                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                '<span aria-hidden="true">&times;</span>' +
+                '</button>' +
+                '</div>')
+        }
+
+    });
+}
 
 init();
 
-/**
- * 
- * 
-    '<div class="shop-cat-box">' +
-        '<div class="special-box">' +
-            '<div id="owl-demo">' +
-                '<div class="item item-type-zoom">' +
-                    '<a href="#" class="item-hover">' +
-                        '<div class="item-info">' +
-                            '<div class="headline">' +
-                                '<strong>'+value.nombre+'</strong>'+ 
-                                '<div class="line"></div>' +
-                                '<div class="dit-line">'+value.descripcion.substr(1,120)+'...</div>' +
-                            '</div>' +
-                        '</div>' +
-                    '</a>' +
-                    '<div class="box-img-hover">' + '<img src="../../admin/files/articulos/'+imagen+'" class="img-fluid" alt="Image" />' + '</div>' +
-                '</div>' +
-            '</div>' +
-        '</div>' +
-    '</div>' +
- */
+
 

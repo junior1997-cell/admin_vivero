@@ -10,12 +10,14 @@ $vista_web=new Vista_web();
 $op = $_GET["op"];
 switch($op){
   case 'guardar':
-    $nombre = $_POST["nombre"];
-    $sexo = $_POST["sexo"];
-    $id_planta = $_POST["id_planta_coment"];
-    $comentario = $_POST["comentario"];
+    $nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
+    $sexo = isset($_POST["sexo"]) ? limpiarCadena($_POST["sexo"]) : "";
+    $id_planta = isset($_POST["id_planta_coment"]) ? limpiarCadena($_POST["id_planta_coment"]) : ""; 
+    $comentario = isset($_POST["comentario"]) ? limpiarCadena($_POST["comentario"]) : "";
 
-			$rspta=$vista_web->insertar($nombre,$sexo,$id_planta,$comentario);
+    $id_plant = empty( $id_planta) ? "" : $id_planta; 
+
+			$rspta=$vista_web->insertar($nombre,$sexo,$comentario,$id_plant);
 			echo $rspta ? "ok" : "No se pudo registrar comentario";
 	break;
   //listar_comentarios

@@ -2,8 +2,9 @@
     //Incluímos inicialmente la conexión a la base de datos
     require "../../admin/config/Conexion.php";
         //comentarios.
-        $sql="SELECT * FROM comentarios  WHERE estado=1 ORDER BY idcomentarios DESC";
+        $sql="SELECT * FROM comentarios  WHERE estado=1 ORDER BY id_comentario DESC";
         $comentarios = ejecutarConsulta($sql);
+
     	//imagenes escritorios
         //carousel 
         $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";
@@ -58,30 +59,33 @@
             </div>
             
             <ul id="myList">
-            <?php while ($row = $comentarios->fetch_assoc()) { 
-            ?>
-                <li>
-                    <div class="row">
-                        <div class="col-lg-1" style="padding-right: 0px;">
-                          
-                            <?php if ($row['sexo']=='1') { ?>
-                                <img class="profile-user-img img-responsive img-circle" src="../images/avatar_varon.svg" style="width: 70px;" alt="user">
-                            <?php } else { ?>
-                                <img class="profile-user-img img-responsive img-circle" src="../images/avatar_mujer.svg" style="width: 70px;" alt="user">
-                            <?php } ?>
-                        </div>
-                        <div class="col-lg-2"  style="padding-right: 0px;">
-                            <span class="username"><p style="margin-bottom: 0px !important; font-weight: bold;"> <?php echo $row['nombre']; ?> </p></span>
-                            <span><?php echo substr($row['fecha'], 0, 10); ?></span>
-                        </div>
-                        <div class="col-lg-9"  style="padding-right: 0px;">
-                            <p class="coment" > <?php echo $row['comentario'];?> </p>
-                        </div>
-                    </div>
-                </li>
-            <?php
-            }
-            ?>
+                <?php
+                        // echo "1";
+                    $imagen ="";
+                    while ($row = $comentarios->fetch_assoc()) { 
+                        // echo json_encode($row);
+                        if ($row['sexo']=='1') {
+                            $imagen="avatar_varon.svg";
+                        } else { 
+                            $imagen="avatar_mujer.svg";
+                        } 
+
+                        echo '<li>
+                                <div class="row">
+                                    <div class="col-lg-1" style="padding-right: 0px;">
+                                    <img class="profile-user-img img-responsive img-circle" src="../images/'.$imagen.'" style="width: 70px;" alt="user">
+                                    </div>
+                                    <div class="col-lg-2"  style="padding-right: 0px;">
+                                        <span class="username"><p style="margin-bottom: 0px !important; font-weight: bold;">'.$row['nombre'].'</p></span>
+                                        <span>'.substr($row['fecha'], 0, 10).'</span>
+                                    </div>
+                                    <div class="col-lg-9"  style="padding-right: 0px;">
+                                        <p class="coment" >'.$row['comentario'].'</p>
+                                    </div>
+                                </div>
+                            </li>';
+                    }
+                ?>
             </ul>
 
     </div>

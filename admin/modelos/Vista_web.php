@@ -68,7 +68,7 @@ Class Vista_web
   ///comentarios
 
   	//Implementamos un método para insertar registros
-    public function insertar($nombre,$sexo,$id_planta,$comentario)
+    public function insertar($nombre,$sexo,$comentario,$id_planta)
     {
       $sql="INSERT INTO comentarios (nombre,sexo,comentario,id_planta,estado)
       VALUES ('$nombre','$sexo','$comentario','$id_planta','1')";

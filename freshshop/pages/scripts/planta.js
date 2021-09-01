@@ -268,9 +268,9 @@ function guardar(e)
 	    {                    
 	        //bootbox.alert(datos);
 			if (datos == 'ok') {
-				$("#btnGuardar").prop("disabled",true);
+			     $("#btnGuardar").prop("disabled",true);
                 alert("Comentario registrado exitosamente");
-               
+                $('#recargar').click();
 			}else{
                 alert(datos);
 			}	
@@ -284,6 +284,7 @@ function guardar(e)
     
 }
 function actualizarLaPagina(){
+     
     window.location.reload();
 } 
 

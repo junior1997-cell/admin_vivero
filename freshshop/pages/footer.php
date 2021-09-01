@@ -29,20 +29,20 @@
                         <div class="row">
                             <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre" minlength="3" maxlength="50" required>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <select name="sexo" id="sexo" class="form-control" required>
                                             <option  disabled selected >Seleccionar sexo</option>
                                             <option value="1">Varon</option>
                                             <option value="0">Mujer</option>
                                         </select>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                         <select id="id_planta_coment" name="id_planta_coment" class="form-control selectpicker" data-live-search="true" title="Seleccione una plantita"></select>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -52,7 +52,8 @@
 
                         </div>
                         <div class="text-center">
-                        <button type="submit"  class="btn btn-outline-success mb-3" id="btnGuardar" onClick="actualizarLaPagina()" >Submit</button>
+                        <button type="submit"  class="btn btn-outline-success mb-3" id="btnGuardar"  >Submit</button>
+                        <button style="display: none !important;"  id="recargar" onclick="actualizarLaPagina()" >recargar</button>
                         </div>
                     </form>
                 </div>

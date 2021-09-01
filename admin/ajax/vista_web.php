@@ -12,12 +12,12 @@ switch($op){
   case 'guardar':
     $nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
     $sexo = isset($_POST["sexo"]) ? limpiarCadena($_POST["sexo"]) : "";
-    $id_planta = isset($_POST["id_planta_coment"]) ? limpiarCadena($_POST["id_planta_coment"]) : ""; 
+    // $id_planta = isset($_POST["id_planta_coment"]) ? limpiarCadena($_POST["id_planta_coment"]) : ""; 
     $comentario = isset($_POST["comentario"]) ? limpiarCadena($_POST["comentario"]) : "";
 
-    $id_plant = empty( $id_planta) ? "" : $id_planta; 
+    // $id_plant = empty( $id_planta) ? "" : $id_planta; 
 
-			$rspta=$vista_web->insertar($nombre,$sexo,$comentario,$id_plant);
+			$rspta=$vista_web->insertar($nombre,$sexo,$comentario);
 			echo $rspta ? "ok" : "No se pudo registrar comentario";
 	break;
   //listar_comentarios

@@ -68,10 +68,10 @@ Class Vista_web
   ///comentarios
 
   	//Implementamos un método para insertar registros
-    public function insertar($nombre,$sexo,$comentario,$id_planta)
+    public function insertar($nombre,$sexo,$comentario)
     {
-      $sql="INSERT INTO comentarios (nombre,sexo,comentario,id_planta,estado)
-      VALUES ('$nombre','$sexo','$comentario','$id_planta','1')";
+      $sql="INSERT INTO comentarios (nombre,sexo,comentario,estado)
+      VALUES ('$nombre','$sexo','$comentario','1')";
       return ejecutarConsulta($sql);
     }
     /*Implementamos un método para listar registros

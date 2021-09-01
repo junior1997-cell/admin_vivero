@@ -56,10 +56,10 @@ switch ($_GET["op"]){
  			$data[]=array(
  				"0"=>($reg->estado)?''.
  					'<div class="text-center">
-					 	<button class="btn btn-danger" onclick="desactivar('.$reg->idcomentarios.')"><i class="fa fa-close"></i></button>
+					 	<button class="btn btn-danger" onclick="desactivar('.$reg->id_comentario.')"><i class="fa fa-close"></i></button>
 					</div>':
  					'<div class="text-center">
-					 	<button class="btn btn-primary" onclick="activar('.$reg->idcomentarios.')"><i class="fa fa-check"></i></button>
+					 	<button class="btn btn-primary" onclick="activar('.$reg->id_comentario.')"><i class="fa fa-check"></i></button>
 					</div>',
  				"1"=>($reg->sexo)?''.
           '<div class="user-block">

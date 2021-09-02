@@ -103,7 +103,7 @@
                       <h3 class="align-self-start" style="margin-top: 0px !important;"><i class="fa fa-info-circle"></i> Alert!</h3>
                       <ol>
                         <li>Tiene que ser imagen .WEBP</li>
-                        <li>La imagen tiene que ser cuadrada.</li>
+                        <li>La imagen tiene que ser cuadrada (400x400).</li>
                         <li>La imagen tine que tener 2 Mb como maximo.</li>
                       </ol>
                     </div>

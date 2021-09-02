@@ -7,7 +7,7 @@
 
     	//imagenes escritorios
         //carousel 
-        $sql = "SELECT * FROM planta as pl, plantaimg as plimg WHERE pl.idplanta=plimg.id_planta ORDER BY idplanta DESC";
+        $sql = "SELECT * FROM planta  WHERE estado=1 ORDER BY idplanta DESC";
         $carousel_f = ejecutarConsulta($sql);
 
 
@@ -114,11 +114,28 @@
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <?php
-                while ($row = $carousel_f->fetch_assoc()) { 
+                $imagen_carrucel ="rosa_defecto.svg";
+                while ($row = $carousel_f->fetch_assoc()) {
+                 if ($row['img_1'] != "" || $row['img_1'] != null ) {
+                    $imagen_carrucel = $row['img_1'];
+                 } else {
+                    if ($row['img_2'] != "" || $row['img_2'] != null) {
+                        $imagen_carrucel = $row['img_2'];
+                    } else {
+                        if ($row['img_3'] != "" || $row['img_3'] != null) {
+                            $imagen_carrucel = $row['img_2'];
+                        } else {
+                            $imagen_carrucel = "rosa_defecto.svg";
+                        }
+                        
+                    }
+                    
+                 }
+                 
             ?>
                     <div class="item">
                         <div class="ins-inner-box">
-                            <img src="../../admin/files/articulos/<?php echo $row['img']; ?>" alt="" />
+                            <img src="../../admin/files/articulos/<?php echo $imagen_carrucel; ?>" alt="" />
                             <div class="hov-in">
                                 <i class="fab fa-pagelines"></i>                         
                             </div>

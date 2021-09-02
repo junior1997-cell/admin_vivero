@@ -89,7 +89,7 @@ require'header.php';
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Nuestra Galería</h1>
-                        <p>Conoce algunas de nuestras plantas.</p>
+                        <p>Conoce las especificaciones técnicas de todas nuestras plantas.</p>
                     </div>
                 </div>
             </div>

@@ -155,8 +155,47 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>ACERCA DE VIVERO UPeU</h4>
-                            <p id="descripcion" style="text-align: justify;"></p>
+                            <h4>EQUIPO DE TRABAJO</h4>
+                            <!-- <p id="descripcion" style="text-align: justify;"></p> -->
+                            <div class="row text-center">
+                                <div class="col-lg-12">
+                                    <p class="pt-1 mb-3">
+                                        Esta página fue desarrollada por los estudiantes de escuela profesional de ingeniería de sistemas. 
+                                        Bajo la dirección del Ing. Balwin Huamán y el Mg. Dany Lévano.
+                                    </p>
+                                </div> 
+                                <div class="col-lg-3">
+                                    <img src="../../admin/files/desarolladores/mirella.jpeg" class="profile-user-img">
+                                    <p class="pb-1" style="font-size: 10px;">Jefe de Proyecto</p>
+                                    <p class="pb-1">Lisset Huamán</p>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="../../admin/files/desarolladores/jhon.jpeg" class="profile-user-img">
+                                    <p class="pb-1" style="font-size: 10px;">Analista de Base de Datos</p>
+                                    <p class="pb-1">Jhon Melendrez</p>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="../../admin/files/desarolladores/david.jpeg" class="profile-user-img">
+                                    <p class="pb-1" style="font-size: 10px;">Programador Front End</p>
+                                    <p class="pb-1">David Requejo</p>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="../../admin/files/desarolladores/junior.jpg" class="profile-user-img">
+                                    <p class="pb-1" style="font-size: 10px;">Programador Back End</p>
+                                    <p class="pb-1">Junior Cercado</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img src="../../admin/files/desarolladores/laban.jpg" class="profile-user-img">
+                                    <p class="pb-1" style="font-size: 10px;">Manager Principal</p>
+                                    <p class="pb-1">Ing. Balwin Huamán</p>
+                                </div> 
+                                <div class="col-lg-6">
+                                    <img src="../../admin/files/desarolladores/dany.jfif" class="profile-user-img">
+                                    <p class="pb-1" style="font-size: 10px;">Manager Secundario</p>
+                                    <p class="pb-1">Mg. Dany Lévano</p>
+                                </div>
+                                       
+                            </div>                            
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -199,7 +238,7 @@
     <!-- Start copyright  -->
     <div class="footer-copyright">
         <img src="../images/logo-footer-UPeU.png">
-        <p class="footer-company">Todos los derechos son reservados. &copy; <script>document.write(new Date().getFullYear())</script> <a href="https://www.upeu.edu.pe/">Universidad Peruana Unión</a> 
+        <p class="footer-company">Todos los derechos son reservados. &copy; <script>document.write(new Date().getFullYear())</script> <a href="https://www.upeu.edu.pe/">EP - Ingeniería de Sistemas FT</a> 
     </div>
     <!-- End copyright  -->
 

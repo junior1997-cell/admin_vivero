@@ -49,6 +49,13 @@
         color: red;
         cursor: pointer;
     }
+    .profile-user-img {
+        margin: 0 auto;
+        width: 50px;
+        padding: 3px;
+        border: 3px solid #096424;
+        border-radius: 50%;
+    }
 </style>
 
 <body>
@@ -91,7 +98,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">INICIO</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.php">TIENDA</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.php">ACERCA DE NOSOTROS</a></li>
                         <li class="nav-item"><a class="nav-link" href="gallery.php">GALERÍA</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact-us.php">CONTÁCTANOS</a></li>

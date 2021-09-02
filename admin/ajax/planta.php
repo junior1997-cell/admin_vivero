@@ -171,10 +171,12 @@ if (!isset($_SESSION["nombre"])) {
               ? '<div class="text-center"> 
                   <button class="btn btn-warning" onclick="mostrar(' .$reg->idplanta . ')"><i class="fa fa-pencil"></i></button>
                   <button class="btn btn-danger ml-1" onclick="desactivar(' . $reg->idplanta . ')"><i class="fa fa-close"></i></button>
+                  <button class="btn btn-info ml-1" onclick="ver_detalle(' . $reg->idplanta . ')"><i class="fa fa-eye"></i></button>
                 </div>'
               : '<div class="text-center">
                   <button class="btn btn-warning" onclick="mostrar(' . $reg->idplanta . ')"><i class="fa fa-pencil"></i></button>
                   <button class="btn btn-primary ml-1" onclick="activar(' . $reg->idplanta . ')"><i class="fa fa-check"></i></button>
+                  <button class="btn btn-info ml-1" onclick="ver_detalle(' . $reg->idplanta . ')"><i class="fa fa-eye"></i></button>
                 </div>',
             "1" =>'<div class="user-block">
                     <img class="profile-user-img img-responsive img-circle" src="../files/articulos/'.$img.'" alt="user image">

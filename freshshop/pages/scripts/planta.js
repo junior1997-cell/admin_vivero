@@ -35,7 +35,7 @@ function limpiar()
 
 function listar_categorias() {
 
-    listar_plnts_prncpal('0');
+   // listar_plnts_prncpal('0');
 
     $('#planta_categorias').html('');
 
@@ -65,7 +65,7 @@ function listar_categorias() {
 
 function listar_categorias_galery() {
 
-    listar_plnts_galery('0');
+    //listar_plnts_galery('0');
 
     $('#planta_categ_galery').html('');
 

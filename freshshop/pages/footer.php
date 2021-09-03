@@ -164,32 +164,32 @@
                                         Bajo la dirección del Ing. Balwin Huamán y el Mg. Dany Lévano.
                                     </p>
                                 </div> 
-                                <div class="col-lg-3">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                                     <img src="../../admin/files/desarolladores/mirella.jpeg" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Jefe de Proyecto</p>
                                     <p class="pb-1">Lisset Huamán</p>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                                     <img src="../../admin/files/desarolladores/jhon.jpeg" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Analista de Base de Datos</p>
                                     <p class="pb-1">Jhon Melendrez</p>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                                     <img src="../../admin/files/desarolladores/david.jpeg" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Programador Front End</p>
                                     <p class="pb-1">David Requejo</p>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                                     <img src="../../admin/files/desarolladores/junior.jpg" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Programador Back End</p>
                                     <p class="pb-1">Junior Cercado</p>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                     <img src="../../admin/files/desarolladores/laban.jpg" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Manager Principal</p>
                                     <p class="pb-1">Ing. Balwin Huamán</p>
                                 </div> 
-                                <div class="col-lg-6">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                     <img src="../../admin/files/desarolladores/dany.jfif" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Manager Secundario</p>
                                     <p class="pb-1">Mg. Dany Lévano</p>

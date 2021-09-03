@@ -5605,3 +5605,42 @@ a:hover .text-hover-primary {
 .text-warning {
   color: #ec9a3c !important;
 }
+
+.imagen-carrucel {   
+  height:300px;
+  width: auto;  
+}
+
+.nombre-carrucel {
+  border-radius: 50px;
+  background: rgb(3 58 7 / 56%);
+}
+
+@media (min-width: 1370px) {
+  .modal-grande-responsive{
+    width: 85% !important;
+  } 
+
+}
+@media (min-width: 1200px) {
+  .modal-grande-responsive{
+    width: 85% !important;
+  }
+    
+}
+
+@media (min-width: 992px) {
+  .modal-grande-responsive{
+    width: 85% !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-grande-responsive{
+    /* width: 1140px !important; */
+  }
+    
+}
+
+
+  

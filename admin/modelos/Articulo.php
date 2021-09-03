@@ -81,7 +81,9 @@ Class Articulo
 	//Implementar un método para mostrar los datos de un registro a modificar
 	public function mostrar($idplanta)
 	{
-		$sql="SELECT * FROM admin_vivero.planta WHERE idplanta='$idplanta'";
+		$sql="SELECT c.nombre as categoria ,p.id_categoria, p.idplanta, p.nombre , p.stock, p.nombre_cientifico, p.familia, p.apodo, p.descripcion, p.img_1, p.img_2, p.img_3, p.precio_venta, p.espcf_cuidado, p.fecha, p.estado
+		FROM admin_vivero.planta as p, admin_vivero.categoria as c 
+		WHERE p.id_categoria = c.idcategoria and idplanta='$idplanta'";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
@@ -94,7 +96,13 @@ Class Articulo
 	//Ver colores selecionados
 	public function mostrar_color($idplanta)
 	{
-		$sql="SELECT pc.id_color  FROM admin_vivero.plantacolor as pc, admin_vivero.planta as p where p.idplanta = pc.id_planta and p.idplanta = '$idplanta';";
+		$sql="SELECT pc.id_color FROM admin_vivero.plantacolor as pc, admin_vivero.planta as p where p.idplanta = pc.id_planta  and p.idplanta = '$idplanta';";
+		return ejecutarConsulta($sql);
+	}
+
+	public function mostrar_nombre_color($idplanta)
+	{
+		$sql="SELECT c.nombre FROM admin_vivero.plantacolor as pc, admin_vivero.planta as p, admin_vivero.color as c where p.idplanta = pc.id_planta and c.idcolor = pc.id_color and p.idplanta = '$idplanta';";
 		return ejecutarConsulta($sql);
 	}
 

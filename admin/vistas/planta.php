@@ -156,6 +156,110 @@
         <!-- /.row -->
       </section>
       <!-- /.content -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="modal_detalle_planta" tabindex="-1" aria-labelledby="modal_detalle_plantaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-grande-responsive">
+          <div class="modal-content" style="border-radius: 10px">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal_detalle_plantaLabel">Detalle Planta</h5>              
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-12 col-md-6  col-lg-5 col-xl-5">
+                  <div id="carousel-example-generic" class="carousel slide mb-5" data-ride="carousel" style="background: #003e199e">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                    </ol>
+                    <div class="carousel-inner ">
+                      <div class="item active  ">
+                        <center>
+                        <img src="../files/articulos/0162938615541.webp" id="d_img1" alt="First slide" class="imagen-carrucel" >
+                        </center>
+                        
+                        <div class="carousel-caption nombre-carrucel" style="text-shadow: -6px 7px 2px rgb(0 0 0) !important;">
+                          <i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <center>
+                          <img src="../files/articulos/0162938615541.webp" id="d_img2" alt="Second slide" class="imagen-carrucel" >
+                        </center>
+                        <div class="carousel-caption nombre-carrucel" style="text-shadow: -6px 7px 2px rgb(0 0 0) !important;">
+                          <i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <center>
+                          <img src="../files/articulos/0162938615541.webp" id="d_img3" alt="Third slide" class="imagen-carrucel" >
+                        </center>
+                        <div class="carousel-caption nombre-carrucel" style="text-shadow: -6px 7px 2px rgb(0 0 0) !important;">
+                          <i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                      <span class="fa fa-angle-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                      <span class="fa fa-angle-right"></span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-7 col-xl-7">
+                  <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                      <b>Categoria: </b>  
+                      <p id="d_categoria">Hola como estna</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                      <b>Precio Venta:</b>
+                      <p id="d_precio">Hola como estna</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                      <b>Stock:</b>
+                      <p id="d_stock">Hola como estna</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                      <b>Apodo:</b>
+                      <p id="d_apodo">Hola como estna</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                      <b>Color:</b>
+                      <p id="d_color">Hola como estna</p>
+                    </div>                                
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                      <b>Nombre Cientifico:</b>
+                      <p id="d_cientifico">Hola como estna</p>
+                    </div>                
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                      <b>Familia:</b>
+                      <p id="d_familia">Hola como estna</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                      <b>Descripción:</b>
+                      <p id="d_descripcion">Hola como estna</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                      <b>Especificaciones y cuidado:</b>
+                      <p id="d_cuidado">Hola como estna</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
     </div>
     <!-- /.content-wrapper -->
     <!--Fin-Contenido-->

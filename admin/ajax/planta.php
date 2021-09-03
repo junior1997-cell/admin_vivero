@@ -144,6 +144,16 @@ if (!isset($_SESSION["nombre"])) {
         }
         echo json_encode($array_color);
         break;
+      case 'mostrar_nombre_color':
+          $rspta = $articulo->mostrar_nombre_color($_GET['id_planta']);
+          //Vamos a declarar un array
+          $array_nombre_color = [];
+          
+          while ($reg = $rspta->fetch_object()) {
+            array_push( $array_nombre_color , $reg->nombre);
+          }
+          echo json_encode($array_nombre_color);
+        break;
 
       case 'listar':
         $rspta = $articulo->listar();

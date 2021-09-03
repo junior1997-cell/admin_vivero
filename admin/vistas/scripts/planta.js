@@ -28,7 +28,7 @@ function init(){
 	$('#mPlanta').addClass("treeview active");
     $('#lPlanta').addClass("active");
 
-	$("#foto1_i").click(function() {
+	$("#d_img1").click(function() {
 		$('#foto1').trigger('click');
 	});
 	$("#foto2_i").click(function() {
@@ -384,4 +384,59 @@ function imprimir()
 	$("#print").printArea();
 }
 
+function ver_detalle(idplanta) {
+	var color_nombre = "";
+	$("#modal_detalle_planta").modal("show");
+	$("#d_categoria").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');		
+	$("#d_stock").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');
+	$("#d_precio").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');
+	$("#d_cientifico").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');
+	$("#d_familia").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');
+	$("#d_apodo").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');
+	$("#d_descripcion").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');
+	$("#d_cuidado").html('<i class="fa fa-spinner fa-pulse fa-fw" style="font-size: 1.5em;"></i>');
+
+	$.post("../ajax/planta.php?op=mostrar",{idplanta : idplanta}, function(data, status)
+	{
+		data = JSON.parse(data);
+		// console.log(data); 		
+		$(".nombre-carrucel").html(data.nombre);
+		$("#d_categoria").html(data.categoria);		
+		$("#d_stock").html(data.stock);
+		$("#d_precio").html(data.precio_venta);
+		$("#d_cientifico").html(data.nombre_cientifico);
+		$("#d_familia").html(data.familia);
+		$("#d_apodo").html(data.apodo);
+		$("#d_descripcion").html(data.descripcion);
+		$("#d_cuidado").html(data.espcf_cuidado);
+		// Imagenes---
+		if (data.img_1 != "") {
+			$("#d_img1").attr("src", "../files/articulos/" + data.img_1);
+		}else{
+			$("#d_img2").attr("src", "../files/articulos/rosa_defecto.svg");
+		} 
+		if (data.img_2 != "") {
+			$("#d_img2").attr("src", "../files/articulos/rosa_defecto.svg");
+		}else{
+			$("#d_img2").attr("src", "../files/articulos/rosa_defecto.svg");
+		}
+		if (data.img_3 != "") {
+			$("#d_img3").attr("src", "../files/articulos/rosa_defecto.svg");
+		}else{
+			$("#d_img2").attr("src", "../files/articulos/rosa_defecto.svg");
+		}
+ 	});
+
+	$.post("../ajax/planta.php?op=mostrar_nombre_color&id_planta="+idplanta, function(data, status)
+	{
+		data = JSON.parse(data);
+		// console.log(data);
+		$.each(data, function (index, value) {
+			color_nombre = value + ', '+ color_nombre;			 
+		}); 
+
+		$('#d_color').html(color_nombre );
+		
+ 	});
+}
 init();

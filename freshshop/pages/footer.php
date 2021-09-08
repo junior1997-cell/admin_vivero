@@ -184,15 +184,20 @@
                                     <p class="pb-1" style="font-size: 10px;">Programador Back End</p>
                                     <p class="pb-1">Junior Cercado</p>
                                 </div>
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                     <img src="../../admin/files/desarolladores/laban.jpg" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Manager Principal</p>
                                     <p class="pb-1">Ing. Balwin Huamán</p>
                                 </div> 
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                     <img src="../../admin/files/desarolladores/dany.jfif" class="profile-user-img">
                                     <p class="pb-1" style="font-size: 10px;">Manager Secundario</p>
                                     <p class="pb-1">Mg. Dany Lévano</p>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                    <img src="../../admin/files/desarolladores/teresa.webp" class="profile-user-img">
+                                    <p class="pb-1" style="font-size: 10px;">Partner</p>
+                                    <p class="pb-1">Teresa Gallegos</p>
                                 </div>
                                        
                             </div>                            

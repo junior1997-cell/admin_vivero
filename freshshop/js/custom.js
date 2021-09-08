@@ -90,10 +90,10 @@
 	   ................................................. */
 
 	$('.offer-box').inewsticker({
-		speed: 3000,
+		speed: 5000,
 		effect: 'fade',
 		dir: 'ltr',
-		font_size: 13,
+		font_size: 15,
 		color: '#ffffff',
 		font_family: 'Montserrat, sans-serif',
 		delay_after: 1000

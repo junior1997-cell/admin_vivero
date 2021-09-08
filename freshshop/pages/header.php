@@ -75,6 +75,24 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="text-slid-box  ">
+                                <div id="offer-box" class="carouselTicker" style="float: right !important;">
+                                    <ul class="offer-box">
+                                        <li>
+                                       <span style=" color: #ffffff;"> Horario de atencíon </span>
+                                        </li>
+                                        <li>
+                                           <span style=" color: #ffffff;" > Lunes a Jueves de 8:00am a 1:00pm - 3:00pm a 6:00pm </span> 
+                                        </li>
+                                        <li>
+                                           <span style=" color: #ffffff;">  Viernes  de 8:00am a 1:00pm </span> 
+                                        </li>                            
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

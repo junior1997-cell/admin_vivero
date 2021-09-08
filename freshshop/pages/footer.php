@@ -233,6 +233,31 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <div class="footer-link-contact">
+                                <h4 class="font-weight-bold text-color-light text-4 mb-2">HORARIO DE ATENCIÓN</h4>
+                                <div class="row ml-1">
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+                                        <ul class="list list-icons list-icons-lg text-left">
+                                            <li><h5 style="color: #ffffff;font-size: 16px;text-transform: uppercase;letter-spacing: 2px;margin-bottom: 20px;position: relative;font-weight: 700;" >Lunes a Jueves</h5></li>
+                                            <li class="mb-1 "><p class="m-0 text-color-light"><i class="fas fa-clock"></i> 8:00am a 1:00pm</p></li>
+                                            <li class="mb-1 "><p class="m-0 text-color-light"><i class="fas fa-clock"></i> 3:00pm a 6:00pm</p></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                        <ul class="list list-icons list-icons-lg text-left">
+                                            <li><h5 style="color: #ffffff;font-size: 16px;text-transform: uppercase;letter-spacing: 2px;margin-bottom: 20px;position: relative;font-weight: 700;" >Viernes</h5></li>
+                                            <li class="mb-1 "><p class="m-0 text-color-light"><i class="fas fa-clock"></i> 8:00am a 1:00pm</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -242,7 +267,7 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <img src="../images/logo-footer-UPeU.png">
+        <img src="">
         <p class="footer-company">Todos los derechos son reservados. &copy; <script>document.write(new Date().getFullYear())</script> <a href="https://www.upeu.edu.pe/">EP - Ingeniería de Sistemas FT</a> 
     </div>
     <!-- End copyright  -->

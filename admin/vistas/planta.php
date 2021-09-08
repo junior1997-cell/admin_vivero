@@ -69,7 +69,7 @@
                     <input type="text" class="form-control" name="nombre_cientifico" id="nombre_cientifico" maxlength="50" autocomplete="off" placeholder="Descripción" />
                   </div>
                   <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <label>Apodo:</label>
+                    <label>Nombre común:</label>
                     <input type="text" class="form-control" name="apodo" id="apodo" maxlength="50" autocomplete="off" placeholder="Descripción" />
                   </div>
 

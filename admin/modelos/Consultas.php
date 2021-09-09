@@ -17,6 +17,12 @@ Class Consultas
 		
 		return ejecutarConsultaSimpleFila($sql);
 	}
+	
+	public function ventasultimos_12meses()
+	{
+		$sql="SELECT DATE_FORMAT(fecha_hora,'%M') as fecha,SUM(total_venta) as total FROM venta GROUP by MONTH(fecha_hora) ORDER BY fecha_hora DESC limit 0,10";
+		return ejecutarConsulta($sql);
+	}
 }
 
 ?>

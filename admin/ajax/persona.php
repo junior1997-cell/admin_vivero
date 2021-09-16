@@ -18,22 +18,26 @@ $persona=new Persona();
 
 $idpersona=isset($_POST["idpersona"])? limpiarCadena($_POST["idpersona"]):"";
 $tipo_persona=isset($_POST["tipo_persona"])? limpiarCadena($_POST["tipo_persona"]):"";
+$tipo_cliente=isset($_POST["tipo_cliente"])? limpiarCadena($_POST["tipo_cliente"]):"";
 $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
+$apellidos_nombre_comercial=isset($_POST["apellidos_nombre_comercial"])? limpiarCadena($_POST["apellidos_nombre_comercial"]):"";
 $tipo_documento=isset($_POST["tipo_documento"])? limpiarCadena($_POST["tipo_documento"]):"";
 $num_documento=isset($_POST["num_documento"])? limpiarCadena($_POST["num_documento"]):"";
 $direccion=isset($_POST["direccion"])? limpiarCadena($_POST["direccion"]):"";
+$nacimiento=isset($_POST["nacimiento"])? limpiarCadena($_POST["nacimiento"]):"";
 $telefono=isset($_POST["telefono"])? limpiarCadena($_POST["telefono"]):"";
 $email=isset($_POST["email"])? limpiarCadena($_POST["email"]):"";
 
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idpersona)){
-			$rspta=$persona->insertar($tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email);
+			$rspta=$persona->insertar($tipo_persona,$tipo_cliente,$nombre,$apellidos_nombre_comercial,$tipo_documento,$num_documento,$direccion,$nacimiento,$telefono,$email);
 			echo $rspta ? "ok" : "Persona no se pudo registrar";
 		}
 		else {
-			$rspta=$persona->editar($idpersona,$tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email);
+			$rspta=$persona->editar($idpersona,$tipo_persona,$tipo_cliente,$nombre,$apellidos_nombre_comercial,$tipo_documento,$num_documento,$direccion,$nacimiento,$telefono,$email);
 			echo $rspta ? "ok" : "Persona no se pudo actualizar";
+			// echo $idpersona,$tipo_persona,$tipo_cliente,$nombre,$apellidos_nombre_comercial,$tipo_documento,$num_documento,$direccion,$nacimiento,$telefono,$email;
 		}
 	break;
 
@@ -82,9 +86,13 @@ switch ($_GET["op"]){
  			$data[]=array(
  				"0"=>'<button class="btn btn-warning" onclick="mostrar('.$reg->idpersona.')"><i class="fa fa-pencil"></i></button>'.
  					' <button class="btn btn-danger" onclick="eliminar('.$reg->idpersona.')"><i class="fa fa-trash"></i></button>',
- 				"1"=>$reg->nombre,
- 				"2"=>$reg->tipo_documento,
- 				"3"=>$reg->num_documento,
+ 				"1"=>'<div class="user-block">
+						<img class="profile-user-img img-responsive img-circle" src="../files/usuarios/cliente.svg" alt="user image">
+						<span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>
+						<span class="description"> <b>'.$reg->tipo_documento.'</b>: '.$reg->num_documento.'</span>
+					</div>',
+ 				"2"=>$reg->tipo_cliente,
+ 				"3"=>$reg->nacimiento,
  				"4"=>$reg->telefono,
  				"5"=>$reg->email
  				);
@@ -96,6 +104,26 @@ switch ($_GET["op"]){
  			"aaData"=>$data);
  		echo json_encode($results);
 
+	break;
+	// buscar datos de RENIEC
+	case 'reniec':
+             
+		$dni = $_POST["dni"];
+
+		$rspta=$persona->datos_reniec($dni);
+		 
+		echo json_encode($rspta);
+
+	break;
+	// buscar datos de SUNAT
+	case 'sunat':
+
+		$ruc = $_POST["ruc"];
+
+		$rspta=$persona->datos_sunat($ruc);
+		 
+		echo json_encode($rspta);	
+			
 	break;
 
 

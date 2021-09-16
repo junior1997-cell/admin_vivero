@@ -119,7 +119,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <div class="box box-primary" style="background: url(../public/images/fonde_report.mp4); background-size: 100% 100%; background-color: #cccccc;">
+                          <div class="box box-primary" style="background: url(../public/img/ornamental.png); background-size: 50% 50%; background-color: #cccccc;">
                               <div class="box-header with-border">
                                 Ventas de los últimos 12 meses
                               </div>

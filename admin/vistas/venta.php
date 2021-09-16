@@ -58,7 +58,7 @@ if ($_SESSION['ventas']==1)
                               </div>
                               <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" data-toggle="tooltip" data-original-title="Agregar Usuario" >
                                 <a data-toggle="modal" href="#agregar_cliente">           
-                                  <button  type="button" class="btn btn-success btn-block">
+                                  <button  type="button" class="btn btn-success btn-block" onclick="limpiar_cliente();">
                                     <i class="fa fa-user-plus" aria-hidden="true"></i>
                                   </button>
                                 </a>
@@ -176,7 +176,7 @@ if ($_SESSION['ventas']==1)
   <!-- agrgar cliente -->
   <div class="example-modal">
     <div class="modal fade " id="agregar_cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <div class="modal-content" style="border-radius: 10px;">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -184,35 +184,72 @@ if ($_SESSION['ventas']==1)
           </div>
           <div class="modal-body">
             <form name="formulario_cliente" id="formulario_cliente" method="POST" autocomplete="off">
-              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <label>Nombre:</label>
-                <input type="hidden" name="idpersona" id="idpersona">
-                <input type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
-                <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" autocomplete="off" placeholder="Nombre del proveedor" required>
-              </div>
-              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <input type="hidden" name="idpersona" id="idpersona">
+              <input type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
+              <!-- TIPO DE DOCUMENTO -->
+              <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4 cambiar">
                 <label>Tipo Documento:</label>
-                <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
-                  <option value="DNI">DNI</option>
+                <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required title="Seleccione" onchange="ocultar_inputs();">
+                  <option selected value="DNI">DNI</option>
                   <option value="RUC">RUC</option>
                   <option value="CEDULA">CEDULA</option>
+                  <option value="OTRO">OTRO</option>
                 </select>
               </div>
-              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <!-- NUMERO DE DOCUMENTO -->
+              <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4 cambiar">
                 <label>Número Documento:</label>
-                <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" autocomplete="off" placeholder="Documento">
+                <div class="input-group">                              
+                  <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento">
+                  <span class="input-group-addon" style="border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-color: #0095519e; cursor: pointer;" onclick="buscar_sunat_reniec();" data-toggle="tooltip" data-original-title="Buscar SUNAT/RENIEC">
+                    <i class="fa fa-search text-success" id="search"></i>
+                    <i class="fa fa-spinner fa-pulse fa-fw fa-lg" id="charge" style="display: none;"></i>
+                  </span>
+                </div>
               </div>
-              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <!-- TIPO DE CLIENTE -->
+              <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4 cambiar">
+                <label>Tipo de cliente:</label>
+                <select class="form-control select-picker" name="tipo_cliente" id="tipo_cliente" required title="Seleccione">
+                  <option value="NATURAL">NATURAL</option>
+                  <option value="JURÍDICO">JURÍDICO</option>
+                </select>
+              </div>
+              <!-- NOMBRE / RAZON SOCIAL -->
+              <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 validar_nombre" >
+                <label id="label_nombre">Nombres y Apellidos</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" maxlength="250" placeholder="Nombres y Apellidos" required>
+              </div>
+              <!-- APELLIDOS NOMBRE COMERCIAL -->
+              <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6" id="ocultar_nombre_comercial">
+                <label>Nombre-Comercial:</label>
+                <input type="text" class="form-control" name="apellidos_nombre_comercial" id="apellidos_nombre_comercial" maxlength="250" placeholder="Nombre-Comercial del cliente">
+              </div>
+              <!-- DIRECCION -->
+              <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <label>Dirección:</label>
-                <input type="text" class="form-control" name="direccion" id="direccion" maxlength="70" autocomplete="off" placeholder="Dirección">
+                <input type="text" class="form-control" name="direccion" id="direccion" maxlength="350" placeholder="Dirección">
               </div>
-              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <!-- NACIMIENTO -->
+              <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" name="nacimiento" id="nacimiento"placeholder="Fecha de Nacimiento" onclick="edades();" onchange="edades();">                            
+              </div>
+              <!-- EDAD -->
+              <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <label>Edad:</label>
+                <p id="p_edad">0 años.</p>                            
+              </div>
+              
+              <!-- TELEFONO -->
+              <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <label>Teléfono:</label>
-                <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" autocomplete="off" placeholder="Teléfono">
+                <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono">
               </div>
-              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <!-- EMAIL -->
+              <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <label>Email:</label>
-                <input type="email" class="form-control" name="email" id="email" maxlength="50" autocomplete="off" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="Email">
               </div>
 
               <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">

@@ -142,7 +142,7 @@ function mostrar(idcolor)
 //Función para desactivar registros
 function desactivar(idcolor)
 {
-	bootbox.confirm("¿Está Seguro de desactivar la Categoría?", function(result){
+	bootbox.confirm("¿Está Seguro de <span class='label bg-red'>Desactivar</span> el Color?", function(result){
 		if(result)
         {
         	$.post("../ajax/color.php?op=desactivar", {idcolor : idcolor}, function(e){
@@ -157,7 +157,7 @@ function desactivar(idcolor)
 //Función para activar registros
 function activar(idcolor)
 {
-	bootbox.confirm("¿Está Seguro de activar la Categoría?", function(result){
+	bootbox.confirm("¿Está Seguro de <span class='label bg-green'>Activar</span> el Color?", function(result){
 		if(result)
         {
         	$.post("../ajax/color.php?op=activar", {idcolor : idcolor}, function(e){

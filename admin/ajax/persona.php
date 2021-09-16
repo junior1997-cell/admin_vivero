@@ -46,6 +46,16 @@ switch ($_GET["op"]){
  		echo $rspta ? "ok" : "Persona no se puede eliminar";
 	break;
 
+	case 'desactivar':
+		$rspta=$persona->desactivar($idpersona);
+ 		echo $rspta ? "Persona Desactivada" : "Persona no se puede desactivar";
+	break;
+
+	case 'activar':
+		$rspta=$persona->activar($idpersona);
+ 		echo $rspta ? "Persona activada" : "Persona no se puede activar";
+	break;
+
 	case 'mostrar':
 		$rspta=$persona->mostrar($idpersona);
  		//Codificar el resultado utilizando json
@@ -84,8 +94,16 @@ switch ($_GET["op"]){
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
- 				"0"=>'<button class="btn btn-warning" onclick="mostrar('.$reg->idpersona.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-danger" onclick="eliminar('.$reg->idpersona.')"><i class="fa fa-trash"></i></button>',
+
+				"0"=>($reg->estado)?'
+					<div class="text-center">
+						<button class="btn btn-warning" onclick="mostrar('.$reg->idpersona.')"><i class="fa fa-pencil"></i></button>
+						<button class="btn btn-danger" onclick="desactivar('.$reg->idpersona.')"><i class="fa fa-close"></i></button>
+					</div>':
+					'<div class="text-center">
+						<button class="btn btn-warning" onclick="mostrar('.$reg->idpersona.')"><i class="fa fa-pencil"></i></button>
+						<button class="btn btn-primary" onclick="activar('.$reg->idpersona.')"><i class="fa fa-check"></i></button>
+					</div>',
  				"1"=>'<div class="user-block">
 						<img class="profile-user-img img-responsive img-circle" src="../files/usuarios/cliente.svg" alt="user image">
 						<span class="username"><p style="margin-bottom: 0px !important;">'.$reg->nombre.'</p></span>
@@ -94,7 +112,9 @@ switch ($_GET["op"]){
  				"2"=>$reg->tipo_cliente,
  				"3"=>$reg->nacimiento,
  				"4"=>$reg->telefono,
- 				"5"=>$reg->email
+ 				"5"=>$reg->email,
+				"6"=>($reg->estado)?'<span class="label bg-green">Activado</span>':
+ 				'<span class="label bg-red">Desactivado</span>'
  				);
  		}
  		$results = array(

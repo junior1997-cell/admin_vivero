@@ -37,6 +37,7 @@ if ($_SESSION['ventas']==1)
                             <th>Nacimiento</th>
                             <th>Teléfono</th>
                             <th>Email</th>
+                            <th>Estado</th>
                           </thead>
                           <tbody>                            
                           </tbody>

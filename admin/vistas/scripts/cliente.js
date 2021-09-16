@@ -190,6 +190,35 @@ function eliminar(idpersona){
 	})
 }
 
+//Función para desactivar registros
+function desactivar(idpersona)
+{
+	bootbox.confirm("¿Está Seguro de <span class='label bg-red'>Desactivar</span> el Cliente?", function(result){
+		if(result)
+        {
+        	$.post("../ajax/persona.php?op=desactivar", {idpersona : idpersona}, function(e){
+        		// bootbox.alert(e);
+        		toastr.warning(e)        		
+	            tabla.ajax.reload();
+        	});	
+        }
+	})
+}
+
+//Función para activar registros
+function activar(idpersona)
+{
+	bootbox.confirm("¿Está Seguro de <span class='label bg-green'>Activar</span> el Cliente?", function(result){
+		if(result)
+        {
+        	$.post("../ajax/persona.php?op=activar", {idpersona : idpersona}, function(e){
+        		// bootbox.alert(e);
+       			toastr.success(e)
+	            tabla.ajax.reload();
+        	});	
+        }
+	})
+}
 function buscar_sunat_reniec() {
     console.log("busca");
     $('#search').hide();

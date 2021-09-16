@@ -37,6 +37,20 @@ Class Persona
 		return ejecutarConsulta($sql);
 	}
 
+	//Implementamos un método para desactivar color
+	public function desactivar($idpersona)
+	{
+		$sql="UPDATE persona SET estado='0' WHERE idpersona='$idpersona'";
+		return ejecutarConsulta($sql);
+	}
+
+	//Implementamos un método para activar color
+	public function activar($idpersona)
+	{
+		$sql="UPDATE persona SET estado='1' WHERE idpersona='$idpersona'";
+		return ejecutarConsulta($sql);
+	}
+
 	//Implementar un método para mostrar los datos de un registro a modificar
 	public function mostrar($idpersona)
 	{

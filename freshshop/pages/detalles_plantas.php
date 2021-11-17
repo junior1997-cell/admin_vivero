@@ -22,6 +22,9 @@ require'header.php';
     <div class="all-title-box">
         <div class="container">
             <div class="row" >
+            <div class="col-lg-12">
+                <a href="index.php" class="btn btn-info" style="float: left;" >Regresar al inicio</a>
+                </div>
                 <div class="col-lg-12">
                     <h2 id="nombre_c"></h2>  
                 </div>

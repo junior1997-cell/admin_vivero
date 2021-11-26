@@ -71,7 +71,7 @@ Class Venta
 	}
 
 	public function ventadetalle($idventa){
-		$sql="SELECT a.nombre as articulo,a.codigo,d.cantidad,d.precio_venta,d.descuento,(d.cantidad*d.precio_venta-d.descuento) as subtotal FROM detalle_venta d INNER JOIN articulo a ON d.idarticulo=a.idarticulo WHERE d.idventa='$idventa'";
+		$sql="SELECT a.nombre as planta,d.cantidad,d.precio_venta,d.descuento,(d.cantidad*d.precio_venta-d.descuento) as subtotal FROM detalle_venta d INNER JOIN planta a ON d.idplanta=a.idplanta WHERE d.idventa='$idventa';";
 		return ejecutarConsulta($sql);
 	}
 	

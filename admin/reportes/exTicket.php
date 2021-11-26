@@ -31,11 +31,11 @@ $rspta = $venta->ventacabecera($_GET["id"]);
 $reg = $rspta->fetch_object();
 
 //Establecemos los datos de la empresa
-$empresa = "Soluciones Innovadoras Perú S.A.C.";
-$documento = "20477157772";
-$direccion = "Chongoyape, José Gálvez 1368";
-$telefono = "931742904";
-$email = "jcarlos.ad7@gmail.com";
+$empresa = "Vivero UPeU S.A.C";
+$documento = "20138122256";
+$direccion = "Jr. Los Mártires Nro. 340";
+$telefono = "968 701 943";
+$email = "tpp@upeu.edu.pe";
 
 ?>
 <div class="zona_impresion">
@@ -69,47 +69,49 @@ $email = "jcarlos.ad7@gmail.com";
 </table>
 <br>
 <!-- Mostramos los detalles de la venta en el documento HTML -->
-<table border="0" align="center" width="300px">
+<table border="0" align="center" width="100px">
     <tr>
-        <td>CANT.</td>
-        <td>DESCRIPCIÓN</td>
-        <td align="right">IMPORTE</td>
+        <td>CANT</td>
+        <td align="center">DETALLE</td>
+        <td align="center">PU</td>
+        <td align="right">TOTAL</td>
     </tr>
     <tr>
-      <td colspan="3">==========================================</td>
+      <td colspan="5">=============================================</td>
     </tr>
-    <?php
+  <?php
     $rsptad = $venta->ventadetalle($_GET["id"]);
     $cantidad=0;
+
     while ($regd = $rsptad->fetch_object()) {
-        echo "<tr>";
-        echo "<td>".$regd->cantidad."</td>";
-        echo "<td>".$regd->articulo;
-        echo "<td align='right'>S/ ".$regd->subtotal."</td>";
-        echo "</tr>";
-        $cantidad+=$regd->cantidad;
-    }
+      echo "<tr>";
+      echo "<td>".$regd->cantidad."</td>";
+      echo "<td>".$regd->planta;
+      echo "<td>".$regd->precio_venta;
+      echo "<td align='right'>S/ ".$regd->subtotal."</td>";
+      echo "</tr>";
+      $cantidad+=$regd->cantidad;
+  }
     ?>
     <!-- Mostramos los totales de la venta en el documento HTML -->
     <tr>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td align="right"><b>TOTAL:</b></td>
     <td align="right"><b>S/  <?php echo $reg->total_venta;  ?></b></td>
     </tr>
     <tr>
-      <td colspan="3">Nº de artículos: <?php echo $cantidad; ?></td>
-    </tr>
-    <tr>
       <td colspan="3">&nbsp;</td>
-    </tr>      
+    </tr>
+    <br>      
     <tr>
       <td colspan="3" align="center">¡Gracias por su compra!</td>
     </tr>
     <tr>
-      <td colspan="3" align="center">IncanatoIT</td>
+      <td colspan="3" align="center">Vivero UPeU</td>
     </tr>
     <tr>
-      <td colspan="3" align="center">Chiclayo - Perú</td>
+      <td colspan="3" align="center">Tarapoto - Perú</td>
     </tr>
     
 </table>

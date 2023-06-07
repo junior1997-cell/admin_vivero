@@ -159,7 +159,7 @@ function enviar_whatsapp() {
       num_whatsapp+
       "&text=*__Universidad Peruana Unión__*%0A*Vivero UPeU*%0A%0A*¿Nombre de la planta?*%0A_________________________________________"+
       cuerpo_envio+
-      "%0A%0A*¡Gracias por su preferencia!*%0A%0A*¡EN SEGUIDA CONFIRMAMOS SU PEDIDO!*%0A";
+      "%0A%0A*¡Vengo desde su Sistema Web!*%0A%0A*¡NECESITO ESTAS PLANTAS!*%0A";
     // saltamos a otra pagina
     window.open(url);
 

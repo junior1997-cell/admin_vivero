@@ -4985,6 +4985,9 @@
 .space-bottom-5 {
   padding-bottom: 15rem !important;
 }
+
+.cursor-pointer{ cursor: pointer; }
+
 @media (min-width: 576px) {
   .space-sm-0,
   .space-top-sm-0 {

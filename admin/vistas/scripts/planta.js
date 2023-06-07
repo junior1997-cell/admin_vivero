@@ -5,10 +5,7 @@ function init(){
 	mostrarform(false);
 	listar();
 
-	$("#formulario").on("submit",function(e)
-	{
-		guardaryeditar(e);	
-	})
+	$("#formulario").on("submit",function(e){	guardaryeditar(e);	})
 	 
 	//Cargamos los items al select categoria
 	$.post("../ajax/planta.php?op=selectCategoria", function(r){
@@ -26,35 +23,20 @@ function init(){
 
 	$("#imagenmuestra").hide();
 	$('#mPlanta').addClass("treeview active");
-    $('#lPlanta').addClass("active");
+  $('#lPlanta').addClass("active");
 
-	$("#d_img1").click(function() {
-		$('#foto1').trigger('click');
-	});
-	$("#foto2_i").click(function() {
-		$('#foto2').trigger('click');
-	});
-	$("#foto3_i").click(function() {
-		$('#foto3').trigger('click');
-	});
+	$("#foto1_i").click(function() {	$('#foto1').trigger('click');	});
+	$("#foto2_i").click(function(){$('#foto2').trigger('click');	});
+	$("#foto3_i").click(function(){$('#foto3').trigger('click');	});
 
-	$("#foto1").change(function(e) {
-		addImage(e,$("#foto1").attr("id"));
-	});
-	$("#foto2").change(function(e) {
-		addImage(e,$("#foto2").attr("id"))
-	});
-	$("#foto3").change(function(e) {
-		addImage(e,$("#foto3").attr("id"));
-	});
+	$("#foto1").change(function(e) { addImage(e,$("#foto1").attr("id"));	});
+	$("#foto2").change(function(e) { addImage(e,$("#foto2").attr("id"));	});
+	$("#foto3").change(function(e) { addImage(e,$("#foto3").attr("id"));	});
 
 	// $('#idcolor').selectpicker('val', [1,3,4]); 
 	$('select[name=idcolor]').val(1);
-   $('select[name=idcolor]').change();
+  $('select[name=idcolor]').change();
 }
-
-
-
 
 
 /* PREVISUALIZAR LAS IMAGENES */
@@ -245,26 +227,22 @@ function guardaryeditar(e)
 
 	$.ajax({
 		url: "../ajax/planta.php?op=guardaryeditar",
-	    type: "POST",
-	    data: formData,
-	    contentType: false,
-	    processData: false,
-
-	    success: function(datos)
-	    {                    
-	        //bootbox.alert(datos);
+		type: "POST",
+		data: formData,
+		contentType: false,
+		processData: false,
+		success: function(datos) {                    
+			//bootbox.alert(datos);
 			if (datos == 'ok') {
 				$("#btnGuardar").prop("disabled",true);
 				toastr.success('Planta registrada correctamente')
 				mostrarform(false);
-	        	tabla.ajax.reload();
+				tabla.ajax.reload();
 				limpiar();
 			}else{
 				toastr.error(datos)
-			}	          
-	        
-	    }
-
+			}	        
+		}
 	});
 	
 }

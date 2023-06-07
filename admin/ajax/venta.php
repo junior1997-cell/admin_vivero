@@ -28,8 +28,8 @@ if (!isset($_SESSION["nombre"])){
 				if (empty($idventa)){
 					$rspta=$venta->insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$_POST["idarticulo"],$_POST["cantidad"],$_POST["stock_antg"],$_POST["precio_venta"],$_POST["descuento"]);
 					echo $rspta ? "ok" : "No se pudieron registrar todos los datos de la venta";
-				}
-				else {
+				}else {
+					echo  "Elimine el id de su venta";
 				}
 			break;
 

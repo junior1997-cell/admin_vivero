@@ -39,12 +39,12 @@ require "../../admin/config/Conexion.php";
                         <div class="col-md-12 banner-cell cssbanner">
                             <h1 class="m-b-20 title">
                                 <strong>
-                                    BIENVENIDOS AL <br />
-                                    VIVERO UPeU
+                                    BIENVENIDOS A <br />
+                                    GÉNESIS UPeU
                                 </strong>
                             </h1>
                             <br />
-                            <h1 class="subtitle"><b>TENEMOS TODAS LAS VARIEDADES QUE BUSCAS</b></h1>
+                            <h1 class="subtitle"><b>TENEMOS LOS PRODUCTOS QUE BUSCAS</b></h1>
                             <h1 style="font-family: Brush Script MT;">
                                 <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Ornamentales:Flores:Árboles" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span>
                             </h1>
@@ -64,8 +64,8 @@ require "../../admin/config/Conexion.php";
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-all text-center">
-                    <h1>Variedades de Plantas</h1>
-                    <p>Comercialización de plantas naturales y ornamentales al por mayor y menor</p>
+                    <h1>Variedades de Plantas, Productos y servicios</h1>
+                    <!-- <p>Comercialización de plantas naturales y ornamentales al por mayor y menor</p> -->
                 </div>
             </div>
         </div>

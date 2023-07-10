@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Vivero UPeU - Campus Tarapoto</title>
+    <title>Génesis UPeU - Campus Tarapoto</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="../images/simbolo.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/simbolo.png" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -108,7 +108,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand claselogo" href="index.php"><img src="../images/upeu/VIVERO_UPEU.png" width="350"  style="margin-left: -30%; margin-top: 3px" class="logo" alt=""></a>
+                    <a class="navbar-brand claselogo" href="index.php"><img src="../images/upeu/VIVERO_UPEU.svg" width="220"  style="margin-left: -30%; margin-top: 3px" class="logo" alt=""></a>
                 </div>
 
                 <!-- End Header Navigation    style="margin-left: -20%; margin-top:-5px"-->

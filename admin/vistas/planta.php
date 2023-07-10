@@ -109,21 +109,21 @@
                     </div>
                     <div class="col-md-4">
                       <label for="foto1">Imagen principal <sub>*</sub></label>
-                      <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto1_i" style="cursor: pointer; height: 230px;" width="300px" />
+                      <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail cursor-pointer" id="foto1_i" style="cursor: pointer; height: 230px;" width="300px" />
                       <input style="display: none;" type="file" name="foto1" id="foto1" accept=".webp" />
                       <input type="hidden" name="foto1_actual" id="foto1_actual" />
                       <div class="text-center" id="foto1_nombre"><!-- aqui va el nombre de la FOTO --></div>
                     </div>
                     <div class="col-md-4">
                       <label for="foto2">Imagen Secundaria 1</label>
-                      <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto2_i" style="cursor: pointer; height: 230px;" width="300px" />
+                      <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail cursor-pointer" id="foto2_i" style="cursor: pointer; height: 230px;" width="300px" />
                       <input style="display: none;" type="file" name="foto2" id="foto2" accept=".webp" />
                       <input type="hidden" name="foto2_actual" id="foto2_actual" />
                       <div class="text-center" id="foto2_nombre"><!-- aqui va el nombre de la FOTO --></div>
                     </div>
                     <div class="col-md-4">
                       <label for="foto3">Imagen Secundaria 2</label>
-                      <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail" id="foto3_i" style="cursor: pointer; height: 230px;" width="300px" />
+                      <img onerror="this.src='../public/img/default/img_defecto.png';" style="height: auto;" src="../public/img/default/img_defecto.png" class="img-thumbnail cursor-pointer" id="foto3_i" style="cursor: pointer; height: 230px;" width="300px" />
                       <input style="display: none;" type="file" name="foto3" id="foto3" accept=".webp" />
                       <input type="hidden" name="foto3_actual" id="foto3_actual" />
                       <div class="text-center" id="foto3_nombre"><!-- aqui va el nombre de la FOTO --></div>
